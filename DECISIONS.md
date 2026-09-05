@@ -206,6 +206,84 @@ these outcomes — only the access mechanism or the network does.
 
 ---
 
+## D-0015 — Only the board's own domain is authority for an official fact
+
+**Status:** ACCEPTED · **Date:** 2026-09-06 · **Decided by:** user instruction, session 003
+
+**Decision.** A `T1_OFFICIAL` fact may cite only a document served from a TGPRB /
+TSLPRB host (`tgprb.in`, `tslprb.in`, or a subdomain). Coaching websites, Instagram,
+YouTube, Telegram, Reddit, blogs, PDF re-hosts and search-result summaries are never
+authority for an official rule, even when they reproduce the notification exactly and
+even when the official domain is unreachable. Such material may enter
+`SOURCE_LEDGER.md` later as `T3_EXPERT`; it may never be relabelled upward.
+
+**Why.** The user's instruction says so directly, and the reason holds independently:
+a mirror cannot be hashed against the publisher. If a coaching site drops a clause,
+renumbers a section, or reproduces a superseded version, nothing downstream can detect
+it. Physical standards and mark schemes are the facts a candidate trains against for
+months — a wrong number there is not a cosmetic error.
+
+**Consequences.** `official_host()` in `tests/official/test_official_knowledge.py`
+enforces the host rule mechanically, and
+`test_every_registered_url_is_on_an_official_host` rejects any registry URL that is
+not on a board domain. When the board site is unreachable the correct outcome is
+`BLOCKED` with the refusal recorded — this is what happened in session 003 (`B-09`),
+and several coaching mirrors of the notification appeared in search results and were
+deliberately not registered.
+
+---
+
+## D-0016 — A complete container never implies complete content
+
+**Status:** ACCEPTED · **Date:** 2026-09-06 · **Decided by:** architect, per user instruction
+
+**Decision.** Structure and content carry separate statuses. A phase whose schemas,
+registries, slots, manifests and tests are all verifiable offline may report those
+artefacts `COMPLETE` while the phase itself is `BLOCKED` because no fact was
+extracted. Passing container tests is explicitly not a licence to report the phase
+`COMPLETE`; that sentence is written into `SPEC-OFF-001` §9 so a later session cannot
+mistake one for the other.
+
+**Why.** This is the failure mode the whole project is built to prevent. 25 fact slots
+with a schema, a registry of 6 documents and 69 passing tests look like an achievement
+and can be produced without ever reading the notification. The user's completion
+standard is unambiguous: `COMPLETE` requires acquired documents, extracted facts, a
+mapped syllabus and recorded provenance — "Do NOT report COMPLETE merely because you
+found a notification."
+
+**Consequences.** `PROJECT_STATE.md` states the split in its Snapshot and Current
+Phase sections; `KNOWLEDGE_LEDGER.md` keeps `Verified knowledge records: 0` while 25
+slots exist; and the reconciliation in `scripts/validate_bootstrap.py` check 18 fails
+if any slot ever holds a value without being `VERIFIED`, so the split cannot quietly
+collapse in either direction.
+
+---
+
+## D-0017 — An egress refusal is recorded, never routed around
+
+**Status:** ACCEPTED · **Date:** 2026-09-06 · **Decided by:** architect, per environment policy
+
+**Decision.** When this environment refuses an outbound request, the refusal is quoted
+verbatim into `source_material/official/RETRIEVAL_LOG.md` and the dependent work is
+marked `BLOCKED`. No alternative transport is attempted: no `curl`, `wget` or `lynx`,
+no Python HTTP client, no other language, and no cached, archived or mirrored copy of
+the blocked page.
+
+**Why.** The environment's fetch restrictions exist for legal and compliance reasons
+and apply to every retrieval method, not just the fetch tool. Beyond that, an archive
+copy would fail `D-0015` anyway: it is not served by the board, so it cannot be hashed
+against the publisher.
+
+**Consequences.** Session 003's six document requests were all refused before leaving
+the machine by an egress allowlist naming exactly one unrelated host (`tabitoken.com`),
+recorded as `B-09`. Because the refusal is host-level rather than a rate limit, a login
+wall or an outage, retrying changes nothing — the unblock routes are a network change
+or a manual download into `source_material/official/`. The registry already holds the
+six expected file identities, so hashing and fact extraction proceed offline with no
+code change once bytes exist.
+
+---
+
 ## Open decisions
 
 | ID       | Question                                              | Resolve when                                  |
@@ -215,5 +293,6 @@ these outcomes — only the access mechanism or the network does.
 | `D-0010` | Knowledge storage: files, SQLite, or both             | Data-model spec is written                     |
 | `D-0011` | Spaced-repetition algorithm (SM-2, FSRS, or custom)   | Revision feature spec is written               |
 | `D-0014` | Instagram access mechanism: anonymous (currently refused) / permitted authenticated access / different network context / defer | User decision, tracked as `B-08` / `T-0019` |
+| `D-0018` | Which board domain is legally controlling — `tgprb.in` or `tslprb.in` (`CONF-OFF-001`) | Both site roots can be read; tracked as `T-0038` |
 
 
