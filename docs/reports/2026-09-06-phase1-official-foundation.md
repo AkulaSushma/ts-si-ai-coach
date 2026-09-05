@@ -234,12 +234,20 @@ than the tests: `test_every_blocker_referenced_is_declared_in_project_state` rep
 
 ## 7. Git status
 
-Verification was run **before** committing, as instructed. Both checks pass, so a
-single checkpoint was created on `main` covering the files listed above; the exact hash
-and a clean `git status` are recorded by `git log --oneline -1` and `git status
---short` at the end of the session. No `.env`, key or token is tracked; nothing under
-`source_material/`, `knowledge/`, `pyq/`, `expert_methods/`, `verification/` or `data/`
-was deleted.
+Verification was run **before** committing, as instructed. Both checks passed, so three
+checkpoints were created on `main`:
+
+```
+fa76278 docs(state): record session 003 — 0 of 25 official facts, blocker B-09
+77967da test(bootstrap): replace ledger reconciliation stubs with real counting
+a209e05 feat(official): official knowledge foundation — container COMPLETE, facts BLOCKED
+```
+
+`git status --short` is empty — the working tree is clean. Both checks were re-run
+after the final commit: validator `21 passed, 0 failed`, exit `0`; suite `Ran 157
+tests … OK`. No `.env`, `*.key`, `*.pem` or credentials file is tracked (checked with
+`git ls-files`). Nothing under `source_material/`, `knowledge/`, `pyq/`,
+`expert_methods/`, `verification/` or `data/` was deleted.
 
 ## 8. Recommended next task
 

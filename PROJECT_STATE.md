@@ -15,7 +15,7 @@
 | Phase                  | 2 of 7 — Official source acquisition (in progress)       |
 | Overall status         | `PARTIAL` — the official-knowledge **container** is `COMPLETE` and tested; the **content** is `BLOCKED` at zero facts by `B-09` (network egress). Ingestion machinery `COMPLETE`-for-scope; live Instagram extraction `BLOCKED` by `B-08` |
 | Git branch             | `main`                                                   |
-| Latest commit          | Session-003 work verified before commit; run `git log --oneline` for the current head |
+| Latest commit          | Session 003 verified then committed as `a209e05` → `77967da` → `fa76278`; later commits are documentation only — run `git log --oneline` for the current head |
 | Structural checks      | 21 of 21 passed — `python scripts/validate_bootstrap.py` exit `0` |
 | Unit tests             | 157 of 157 passed — `python -m unittest discover -s tests` (45 bootstrap + 43 ingestion + 69 official), 0 failures, 0 errors, 0 skips |
 | Last re-verified       | 2026-09-06, session 003, after every file change below   |
