@@ -1,0 +1,27 @@
+{
+  "source_id": "IG001",
+  "platform": "instagram",
+  "run_mode": "extract",
+  "written_at": "2026-09-05T17:49:05Z",
+  "status": "blocked",
+  "stop_reason": "anonymous access refused: HTTP 429 for https://www.instagram.com/api/v1/users/web_profile_info/?username=venkis_alphanumerics",
+  "max_items": 299,
+  "expected": 0,
+  "expected_justification": "no declared count accessible; expected equals unique items actually discovered during this run and prior resumed runs",
+  "accounting": {
+    "discovered": 0,
+    "processed": 0,
+    "duplicate": 0,
+    "failed": 0,
+    "inaccessible": 0,
+    "irrelevant": 0
+  },
+  "identity_holds": true,
+  "profile": {
+    "user_id": null,
+    "declared_timeline_count": null,
+    "declared_reels_count": null,
+    "is_private": null,
+    "fetched_at": null
+  }
+}

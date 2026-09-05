@@ -1,0 +1,299 @@
+{
+  "version": 1,
+  "defaults": {
+    "max_items": 299,
+    "polite_delay_seconds": 2.5,
+    "max_retries": 3
+  },
+  "sources": [
+    {
+      "source_id": "IG001",
+      "platform": "instagram",
+      "username": "venkis_alphanumerics",
+      "profile_url": "https://www.instagram.com/venkis_alphanumerics/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG002",
+      "platform": "instagram",
+      "username": "amruthasacademy",
+      "profile_url": "https://www.instagram.com/amruthasacademy/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG003",
+      "platform": "instagram",
+      "username": "mallamcreations",
+      "profile_url": "https://www.instagram.com/mallamcreations/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG004",
+      "platform": "instagram",
+      "username": "mindsign_learners",
+      "profile_url": "https://www.instagram.com/mindsign_learners/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG005",
+      "platform": "instagram",
+      "username": "knowledge_is_divine01",
+      "profile_url": "https://www.instagram.com/knowledge_is_divine01/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG006",
+      "platform": "instagram",
+      "username": "upttake_jobs",
+      "profile_url": "https://www.instagram.com/upttake_jobs/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG007",
+      "platform": "instagram",
+      "username": "theknowledgeboard",
+      "profile_url": "https://www.instagram.com/theknowledgeboard/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG008",
+      "platform": "instagram",
+      "username": "scoreup_careers",
+      "profile_url": "https://www.instagram.com/scoreup_careers/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG009",
+      "platform": "instagram",
+      "username": "govtjobswale_notes",
+      "profile_url": "https://www.instagram.com/govtjobswale_notes/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG010",
+      "platform": "instagram",
+      "username": "reviseinseconds",
+      "profile_url": "https://www.instagram.com/reviseinseconds/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG011",
+      "platform": "instagram",
+      "username": "bhagyanagarbip",
+      "profile_url": "https://www.instagram.com/bhagyanagarbip/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG012",
+      "platform": "instagram",
+      "username": "onset_exam_app",
+      "profile_url": "https://www.instagram.com/onset_exam_app/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG013",
+      "platform": "instagram",
+      "username": "sscstudydiary",
+      "profile_url": "https://www.instagram.com/sscstudydiary/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG014",
+      "platform": "instagram",
+      "username": "thekushwahasir",
+      "profile_url": "https://www.instagram.com/thekushwahasir/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG015",
+      "platform": "instagram",
+      "username": "chandan_logics",
+      "profile_url": "https://www.instagram.com/chandan_logics/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG016",
+      "platform": "instagram",
+      "username": "times_of_india_g.k",
+      "profile_url": "https://www.instagram.com/times_of_india_g.k/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG017",
+      "platform": "instagram",
+      "username": "pi_academy_arni",
+      "profile_url": "https://www.instagram.com/pi_academy_arni/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG018",
+      "platform": "instagram",
+      "username": "successpathtelugu",
+      "profile_url": "https://www.instagram.com/successpathtelugu/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG019",
+      "platform": "instagram",
+      "username": "guinnessandmathguy",
+      "profile_url": "https://www.instagram.com/guinnessandmathguy/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG020",
+      "platform": "instagram",
+      "username": "trickify_brains",
+      "profile_url": "https://www.instagram.com/trickify_brains/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG021",
+      "platform": "instagram",
+      "username": "sudheergenzacademy",
+      "profile_url": "https://www.instagram.com/sudheergenzacademy/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05",
+      "notes": "Appeared twice in the original source list; stored once by instruction."
+    },
+    {
+      "source_id": "IG022",
+      "platform": "instagram",
+      "username": "deepakk.maths",
+      "profile_url": "https://www.instagram.com/deepakk.maths/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG023",
+      "platform": "instagram",
+      "username": "conhecimentomatematico2024",
+      "profile_url": "https://www.instagram.com/conhecimentomatematico2024/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG024",
+      "platform": "instagram",
+      "username": "ashusir_pw",
+      "profile_url": "https://www.instagram.com/ashusir_pw/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG025",
+      "platform": "instagram",
+      "username": "ap_dsc_2027",
+      "profile_url": "https://www.instagram.com/ap_dsc_2027/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG026",
+      "platform": "instagram",
+      "username": "math_station_by_pj",
+      "profile_url": "https://www.instagram.com/math_station_by_pj/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG027",
+      "platform": "instagram",
+      "username": "focus40_academy",
+      "profile_url": "https://www.instagram.com/focus40_academy/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG028",
+      "platform": "instagram",
+      "username": "venkislogics",
+      "profile_url": "https://www.instagram.com/venkislogics/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG029",
+      "platform": "instagram",
+      "username": "mathsbyrajat9196",
+      "profile_url": "https://www.instagram.com/mathsbyrajat9196/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG030",
+      "platform": "instagram",
+      "username": "gk_madhu_sir",
+      "profile_url": "https://www.instagram.com/gk_madhu_sir/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG031",
+      "platform": "instagram",
+      "username": "bsk.social",
+      "profile_url": "https://www.instagram.com/bsk.social/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    },
+    {
+      "source_id": "IG032",
+      "platform": "instagram",
+      "username": "bikshuyadav_official",
+      "profile_url": "https://www.instagram.com/bikshuyadav_official/",
+      "enabled": true,
+      "max_items": 299,
+      "added_at": "2026-09-05"
+    }
+  ]
+}

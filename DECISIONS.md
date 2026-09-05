@@ -152,6 +152,60 @@ date.
 
 ---
 
+## D-0012 — Ingestion subsystem: registry-driven, adapter-per-platform, collection separated from intelligence
+
+**Status:** ACCEPTED · **Date:** 2026-09-05 · **Decided by:** user instruction, session 002
+
+**Decision.** A multi-platform ingestion subsystem lives at
+`backend/app/ingestion/` inside this project, operated via `scripts/ingest.py`.
+Sources are registered in `config/source_registry.json` (adding a URL never
+requires code change); each platform implements the `SourceAdapter` interface;
+the runner enforces a hard per-source cap of 299 content items (posts,
+carousels, and reels counted against one budget); raw records are immutable
+and preserve unavailable fields as `null`; checkpointing is mandatory and
+resume is idempotent; nothing is discarded as "irrelevant" during collection.
+
+**Why.** The user's task instruction for session 002 is the requirements
+document; it mandates exactly this separation (registry / raw / normalized /
+candidate / verified / questions / provenance) and the 299 cap, and prohibits
+creating a separate project. Instagram is the first adapter; the interface
+(`adapters/base.py`) leaves room for YouTube, Telegram, websites, and PDFs
+without runner/storage/CLI changes.
+
+**Consequences.** Raw Instagram content is `T3_EXPERT` tier and never enters
+the trusted knowledge base directly. OCR/transcription and GLM classification
+are later stages; the normalized record carries their scaffold with null
+values so no later stage can claim ingestion produced classifications.
+
+---
+
+## D-0013 — Platform access refusals are recorded, never bypassed
+
+**Status:** ACCEPTED · **Date:** 2026-09-05 · **Decided by:** architect, per user instruction
+
+**Decision.** When a platform refuses access (HTTP 401/403/429, login wall,
+empty-but-ok payload), the adapter raises `AccessBlockedError`, the runner
+writes a `blocked`/`partial` checkpoint with an error-log entry and a balanced
+manifest, and stops. Polite behavior only: single requests, delays with
+jitter, bounded retries with backoff. No credential use, no request
+escalation, no bypass of any access control, and no fabrication of data that
+was never received.
+
+**Why.** The user's instruction is explicit: respect available access
+mechanisms, rate limits, authentication requirements, and platform rules.
+It also aligns with the project's honesty principle — a blocked source is a
+recorded fact, and pretending otherwise (by hammering or spoofing) would both
+violate platform terms and produce unreliable data.
+
+**Consequences.** Session 002's live test (IG001) is `BLOCKED` by an
+Instagram 429 refusal of anonymous API access; the profile HTML page is a
+JS-only shell with no posts. Resolution is a user decision (`B-08` in
+`PROJECT_STATE.md`): authenticated access the platform permits, a different
+network context, or deferral. The subsystem needs no code change for any of
+these outcomes — only the access mechanism or the network does.
+
+---
+
 ## Open decisions
 
 | ID       | Question                                              | Resolve when                                  |
@@ -160,5 +214,6 @@ date.
 | `D-0009` | Which model fills each agent role                     | API access confirmed and cost/quality measured |
 | `D-0010` | Knowledge storage: files, SQLite, or both             | Data-model spec is written                     |
 | `D-0011` | Spaced-repetition algorithm (SM-2, FSRS, or custom)   | Revision feature spec is written               |
+| `D-0014` | Instagram access mechanism: anonymous (currently refused) / permitted authenticated access / different network context / defer | User decision, tracked as `B-08` / `T-0019` |
 
 

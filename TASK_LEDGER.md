@@ -14,10 +14,13 @@ ID format: `T-####`, sequential, never reused.
 | `T-0012` | Write the data-model specification                | `BLOCKED` | `T-0011`   |
 | `T-0013` | Acquire previous-year papers with keys             | `BLOCKED` | `B-02`      |
 | `T-0014` | Confirm and pin provider model ID strings          | `BLOCKED` | `B-04`      |
+| `T-0019` | Decide Instagram access path (auth / network / defer) | `BLOCKED` | `B-08` — user decision |
+| `T-0020` | Bulk-extract remaining 31 IG sources               | `BLOCKED` | `T-0019` — single-source verification done; live access refused |
+| `T-0021` | OCR + transcription stage over stored media         | `BLOCKED` | Live ingestion producing raw records (`T-0019`) |
 
-`T-0010` is the only task that can start right now. Everything else waits on it,
-because the syllabus determines the taxonomy that the schema, the PYQ classification,
-and the methods all hang off.
+`T-0010` remains the highest-value unblocked-adjacent work. `T-0019` gates all
+Instagram content acquisition: the machinery is finished, and only the access
+decision is missing (see `B-08` in `PROJECT_STATE.md`).
 
 ## Blocked Tasks
 
@@ -43,6 +46,24 @@ and the methods all hang off.
 | `T-0007` | Initialise Git and create the first checkpoint  | `COMPLETE` | `git log`; clean `git status`                  |
 | `T-0008` | Record verified state in the ledgers           | `COMPLETE` | This file and `PROJECT_STATE.md`               |
 | `T-0009` | Resolve test failures; record verified results  | `COMPLETE` | Validator exit `0` (21/21); `unittest` `OK` (35/35) |
+
+## Session 002 — ingestion subsystem
+
+| ID       | Task                                                       | Status     | Verified by |
+| -------- | ----------------------------------------------------------- | ---------- | ----------- |
+| `T-0015a`| Write `SPEC-ING-001` before any code                        | `COMPLETE` | `specs/features/ingestion-subsystem.md` present with acceptance criteria |
+| `T-0015b`| Build registry of 32 unique IG sources, cap 299             | `COMPLETE` | `load_registry` assertions in 6 registry tests |
+| `T-0015c`| Build adapter architecture + Instagram adapter             | `COMPLETE` | 43 ingestion tests; `fetch_profile`/`fetch_page` contract tested offline |
+| `T-0015d`| Raw + normalized stores with provenance and AI scaffold    | `COMPLETE` | `TestRawPersistence` — schema, null honesty, slide order, hashes |
+| `T-0015e`| Checkpoint/resume + error log + manifests                  | `COMPLETE` | `TestCheckpointResume`, `TestFailureRecovery` — interrupt/resume equality with uninterrupted run |
+| `T-0015f`| CLI: extract / resume / status / add, idempotent           | `COMPLETE` | `TestCLI` + manual runs recorded in the evidence report |
+| `T-0015g`| Single-source live extraction test (IG001 only)            | `COMPLETE` | Run executed per instruction; outcome `blocked` (429) recorded honestly with checkpoint, error log, balanced manifest |
+
+Acceptance criteria for the ingestion tasks are in `SPEC-ING-001` §6; each
+criterion maps to a test class in `tests/ingestion/test_ingestion.py`. Criterion 11
+(live single-source run) is satisfied: the run happened, its real outcome
+(`blocked`) and all its artifacts were inspected and recorded. Bulk extraction is
+gated on the user's access-path decision (`T-0019`).
 
 ## Acceptance criteria for the completed bootstrap tasks
 

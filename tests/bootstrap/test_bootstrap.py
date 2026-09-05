@@ -257,9 +257,29 @@ class TestHonestyOfState(unittest.TestCase):
             for p in (ROOT / a).rglob("*")
             if p.is_file() and p.name not in {".gitkeep", "README.md"}
         ]
-        if not records:
+        raw_dir = ROOT / "data" / "raw"
+        raw_items = (
+            sum(1 for p in raw_dir.rglob("*.json") if p.name != "_profile.json")
+            if raw_dir.is_dir() else 0
+        )
+        sl = read("SOURCE_LEDGER.md")
+        if not records and raw_items == 0:
             self.assertIn("Verified knowledge records: 0", read("KNOWLEDGE_LEDGER.md"))
-            self.assertIn("Entries: 0", read("SOURCE_LEDGER.md"))
+            # Sources may be REGISTERED before any content is harvested; the
+            # ledger must then (a) state a zero-harvest figure and (b) have no
+            # row claiming AVAILABLE content, because nothing is stored.
+            self.assertTrue(
+                "Entries: 0" in sl or "harvested items: 0" in sl,
+                "ledger must state the zero-harvest figure",
+            )
+            available_rows = [
+                ln for ln in sl.splitlines()
+                if ln.startswith("| SRC-") and "`AVAILABLE`" in ln
+            ]
+            self.assertEqual(
+                available_rows, [],
+                "ledger rows claim AVAILABLE content while nothing is stored on disk",
+            )
         else:
             self.fail(
                 "records exist on disk, so the ledgers must be reconciled and this "

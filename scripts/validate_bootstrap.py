@@ -405,20 +405,56 @@ def _c_placeholders():
     return True, "none found"
 
 
-@check("ledger counts match the filesystem")
+@check("ledger claims match the filesystem")
 def _c_ledger_counts():
     areas = ["knowledge", "pyq", "expert_methods", "source_material", "verification"]
     actual = {a: count_records(a) for a in areas}
-    total = sum(actual.values())
-    kl = read("KNOWLEDGE_LEDGER.md")
+    # Raw ingestion records (data/raw/<platform>/<source_id>/*.json) are the
+    # other place acquired content lives. _profile.json is metadata, not a
+    # content record.
+    raw_items = 0
+    raw_dir = ROOT / "data" / "raw"
+    if raw_dir.is_dir():
+        raw_items = sum(
+            1 for p in raw_dir.rglob("*.json") if p.name != "_profile.json"
+        )
+    stored_total = sum(actual.values()) + raw_items
+
     sl = read("SOURCE_LEDGER.md")
-    if total == 0:
+    kl = read("KNOWLEDGE_LEDGER.md")
+    # A ledger row claims harvested content when it is AVAILABLE. Registration
+    # rows (INACCESSIBLE / pending) are honest bookkeeping of *intent*.
+    available_rows = [
+        ln for ln in sl.splitlines()
+        if ln.startswith("| SRC-") and "`AVAILABLE`" in ln
+    ]
+
+    if stored_total == 0:
+        problems = []
+        if available_rows:
+            problems.append(
+                f"{len(available_rows)} ledger row(s) claim AVAILABLE content "
+                f"but nothing is stored on disk"
+            )
+        if "Entries: 0" not in sl and "harvested items: 0" not in sl:
+            problems.append(
+                "SOURCE_LEDGER.md states no zero-harvest figure while disk "
+                "holds no records"
+            )
         if "Verified knowledge records: 0" not in kl:
-            return False, "filesystem holds 0 records but KNOWLEDGE_LEDGER.md does not say so"
-        if "Entries: 0" not in sl:
-            return False, "filesystem holds 0 sources but SOURCE_LEDGER.md does not say so"
-        return True, "0 records on disk, both ledgers agree"
-    return False, f"records exist ({actual}) but ledger reconciliation is not implemented yet"
+            problems.append(
+                "KNOWLEDGE_LEDGER.md does not declare zero verified records"
+            )
+        if problems:
+            return False, "; ".join(problems)
+        return True, (
+            "0 records on disk; sources may be registered as not-yet-harvested, "
+            "no row claims stored content, harvest figure stated"
+        )
+    return False, (
+        f"records exist on disk (area records {actual}, raw items {raw_items}) "
+        f"but positive ledger reconciliation is not implemented yet"
+    )
 @check("physical standards folder is empty until sourced")
 def _c_physical_guard():
     d = ROOT / "physical/standards"
