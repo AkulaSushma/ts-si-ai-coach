@@ -1,0 +1,109 @@
+# =============================================================
+# Telangana SI 2026 Coaching System — Git exclusions
+# Anything listed here is NOT saved into Git history.
+# =============================================================
+
+# --- SECRETS. Never remove these lines. ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+client_secret*.json
+service_account*.json
+*secret*
+*_token.json
+api_keys*
+
+# --- Runtime data (generated; back this up by copying the folder) ---
+data/*
+!data/README.md
+
+# --- SQLite databases are build products, not source ---
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.eggs/
+build/
+dist/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Node / frontend (framework not chosen yet — see D-0003) ---
+node_modules/
+.next/
+.nuxt/
+.svelte-kit/
+.vite/
+*.tsbuildinfo
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Large raw media: kept on disk only (decision D-0008) ---
+# Git stores every version of a binary forever and cannot diff it.
+# PDFs and text ARE tracked, because official documents matter and are small.
+*.mp4
+*.mkv
+*.webm
+*.avi
+*.mov
+*.flv
+*.mp3
+*.m4a
+*.wav
+*.aac
+*.opus
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.iso
+# If a single PDF or image is very large, add it here by name.
+
+# --- Editor / machine-specific ---
+.claude/settings.local.json
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# --- Operating system clutter ---
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# --- Temporary / scratch ---
+*.tmp
+*.temp
+*.bak
+*.orig
+*.log
+tmp/
+scratch/

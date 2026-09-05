@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-09-05",
+  "decision_ref": "D-0005",
+  "purpose": "Maps agent roles to AI providers. Roles are architecture; provider assignment is configuration. Change providers by editing this file only - never by editing code or prompts.",
+  "warning": "This file must never contain an API key. Keys are read from the environment variables named in each provider's api_key_env field.",
+
+  "providers": {
+    "anthropic": {
+      "display_name": "Anthropic (Claude)",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "base_url_env": null,
+      "model": null,
+      "model_status": "UNPINNED",
+      "availability": "ACCESS_CONFIRMED_BY_USER",
+      "notes": "Model ID intentionally left null. It must be pinned to a concrete string and recorded under D-0009 before first API call, because model IDs change over time and an unpinned model makes past output unexplainable."
+    },
+    "glm": {
+      "display_name": "GLM / Z.ai (GLM 5.3)",
+      "api_key_env": "GLM_API_KEY",
+      "base_url_env": "GLM_BASE_URL",
+      "model": "glm-5.3",
+      "model_status": "UNVERIFIED_STRING",
+      "availability": "ACCESS_CONFIRMED_BY_USER",
+      "notes": "The user named GLM 5.3. The exact API model string above has NOT been verified against the provider's API and must be confirmed before first use."
+    }
+  },
+
+  "roles": {
+    "BULK_RESEARCH": {
+      "provider": "glm",
+      "fallback": "anthropic",
+      "purpose": "High-volume ingestion of transcripts, pages and papers.",
+      "output_trust": "UNVERIFIED"
+    },
+    "CLASSIFICATION": {
+      "provider": "glm",
+      "fallback": "anthropic",
+      "purpose": "Assign subject, topic, subtopic and question family.",
+      "output_trust": "UNVERIFIED"
+    },
+    "SUMMARIZATION": {
+      "provider": "glm",
+      "fallback": "anthropic",
+      "purpose": "Condense long sources without losing provenance.",
+      "output_trust": "UNVERIFIED"
+    },
+    "DEEP_REASONING": {
+      "provider": "anthropic",
+      "fallback": "glm",
+      "purpose": "Derive methods, build recognition decision trees, design curricula.",
+      "output_trust": "UNVERIFIED"
+    },
+    "CODE_GENERATION": {
+      "provider": "anthropic",
+      "fallback": "glm",
+      "purpose": "Write project code.",
+      "output_trust": "UNVERIFIED"
+    },
+    "CODE_REVIEW": {
+      "provider": "glm",
+      "fallback": null,
+      "purpose": "Review code written by a different provider.",
+      "output_trust": "REVIEW_ONLY"
+    },
+    "VERIFICATION": {
+      "provider": "AUTO_NOT_AUTHOR",
+      "candidates": ["anthropic", "glm"],
+      "fallback": null,
+      "purpose": "Independently check a claim produced by another provider.",
+      "output_trust": "REVIEW_ONLY"
+    },
+    "ARBITRATION": {
+      "provider": "AUTO_NOT_AUTHOR",
+      "candidates": ["anthropic", "glm"],
+      "fallback": null,
+      "purpose": "Decide between two providers that disagree.",
+      "output_trust": "REVIEW_ONLY"
+    }
+  },
+
+  "independence_pairs": [
+    { "author_role": "CODE_GENERATION", "verifier_role": "CODE_REVIEW" },
+    { "author_role": "DEEP_REASONING", "verifier_role": "VERIFICATION" },
+    { "author_role": "CLASSIFICATION", "verifier_role": "VERIFICATION" },
+    { "author_role": "SUMMARIZATION", "verifier_role": "VERIFICATION" },
+    { "author_role": "BULK_RESEARCH", "verifier_role": "VERIFICATION" }
+  ],
+
+  "rules": {
+    "self_verification_forbidden": "A provider may never verify its own output. AUTO_NOT_AUTHOR resolves at runtime to any candidate provider other than the one that authored the item.",
+    "arbitration_limitation": "Only two providers exist, so no neutral third party is available. When both disagree, the item stays DISPUTED and is escalated to the user. Never ask a disputant to judge its own dispute.",
+    "capability_is_not_evidence": "A provider being strong is never a reason to skip verification.",
+    "deterministic_first": "If a claim is mathematical and checkable by code, it must be checked by code, not by any model in this file."
+  }
+}
