@@ -15,7 +15,7 @@
 | Phase                  | 2 of 7 — Official source acquisition (in progress)       |
 | Overall status         | `PARTIAL` — ingestion machinery `COMPLETE`-for-scope; live Instagram extraction `BLOCKED` by platform access refusal |
 | Git branch             | `main`                                                   |
-| Latest commit          | `589877c` — ingestion subsystem; 3 commits on `main`, working tree clean |
+| Latest commit          | Code verified at `589877c`; commits after it are documentation only — run `git log --oneline` for the current head |
 | Structural checks      | 21 of 21 passed — `scripts/validate_bootstrap.py` exit `0` |
 | Unit tests             | 78 of 78 passed — `unittest discover -s tests` (35 bootstrap + 43 ingestion) |
 | Last re-verified       | 2026-09-06 — both checks re-run at `589877c`: validator exit `0`, `unittest` `OK`, 0 failures, 0 errors, 0 skips |
