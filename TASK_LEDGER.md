@@ -46,6 +46,7 @@ decision is missing (see `B-08` in `PROJECT_STATE.md`).
 | `T-0007` | Initialise Git and create the first checkpoint  | `COMPLETE` | `git log`; clean `git status`                  |
 | `T-0008` | Record verified state in the ledgers           | `COMPLETE` | This file and `PROJECT_STATE.md`               |
 | `T-0009` | Resolve test failures; record verified results  | `COMPLETE` | Validator exit `0` (21/21); `unittest` `OK` (35/35) |
+| `T-0022` | Re-verify bootstrap at `589877c` after session-002 edits | `COMPLETE` | 2026-09-06: validator 21/21 exit `0`; `unittest` 78/78 `OK`; `git diff a77f793 HEAD` on bootstrap checks reviewed line by line |
 
 ## Session 002 — ingestion subsystem
 
@@ -67,7 +68,7 @@ gated on the user's access-path decision (`T-0019`).
 
 ## Acceptance criteria for the completed bootstrap tasks
 
-- `T-0002`: all 15 required top-level areas exist, each with a `README.md` stating its
+- `T-0002`: all 17 required top-level areas exist, each with a `README.md` stating its
   purpose and its provenance or safety rules.
 - `T-0003`: all nine governance files exist at the root, none near-empty, each
   containing its required section headings.
@@ -82,6 +83,16 @@ gated on the user's access-path decision (`T-0019`).
   and fixed at root cause: one wrong test expectation (corrected and strengthened) and one
   unresolved placeholder (filled with verified values), which also resolved a third,
   cascading failure.
+- `T-0022`: at commit `589877c` with a clean tree, both checks exit `0`; the placeholder
+  markers appear only in the two files exempted by design (`scripts/validate_bootstrap.py`,
+  `tests/bootstrap/test_bootstrap.py`), confirmed by `git grep`; and every change to a
+  bootstrap check since `a77f793` was reviewed and found to add strictness rather than
+  remove it. Two changes exist: the self-verification assertion was corrected to a string
+  that is actually in `VERIFICATION_POLICY.md` and two assertions were added; and the
+  ledger check was widened to count `data/raw/` records and to forbid any `SRC-` row
+  claiming `AVAILABLE` while nothing is stored on disk. The zero-harvest branch is not
+  vacuous: 32 sources are registered, 0 claim `AVAILABLE`, `data/raw/` does not exist, and
+  `SOURCE_LEDGER.md` states `harvested items: 0`.
 
 ## Rules for this ledger
 

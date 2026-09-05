@@ -10,14 +10,15 @@
 | ---------------------- | ------------------------------------------------------- |
 | Project                | Telangana Police SI 2026 AI Coaching System              |
 | Repository             | `D:\Projects\ts-si-ai-coach`                             |
-| Last updated           | 2026-09-05                                               |
+| Last updated           | 2026-09-06                                               |
 | Session                | 002 — Ingestion subsystem (Instagram adapter)            |
 | Phase                  | 2 of 7 — Official source acquisition (in progress)       |
 | Overall status         | `PARTIAL` — ingestion machinery `COMPLETE`-for-scope; live Instagram extraction `BLOCKED` by platform access refusal |
 | Git branch             | `main`                                                   |
-| Latest commit          | `9c11c6f` (session-001 reconciliation) + this session's ingestion commits |
+| Latest commit          | `589877c` — ingestion subsystem; 3 commits on `main`, working tree clean |
 | Structural checks      | 21 of 21 passed — `scripts/validate_bootstrap.py` exit `0` |
 | Unit tests             | 78 of 78 passed — `unittest discover -s tests` (35 bootstrap + 43 ingestion) |
+| Last re-verified       | 2026-09-06 — both checks re-run at `589877c`: validator exit `0`, `unittest` `OK`, 0 failures, 0 errors, 0 skips |
 | Evidence               | `docs/reports/2026-09-05-ingestion-subsystem.md`           |
 
 ## Current Phase
