@@ -405,6 +405,47 @@ def _c_placeholders():
     return True, "none found"
 
 
+BOOKKEEPING_NAMES = {".gitkeep", "README.md", "RETRIEVAL_LOG.md"}
+RECORD_LIST_KEYS = ("facts", "nodes", "entries", "records", "documents")
+
+
+def _record_list(data: dict) -> tuple[str, list] | tuple[None, None]:
+    """Return the (key, list) holding a registry's records, if it has one."""
+    for key in RECORD_LIST_KEYS:
+        value = data.get(key)
+        if isinstance(value, list):
+            return key, value
+    return None, None
+
+
+def knowledge_registries() -> list[Path]:
+    """Every JSON registry under knowledge/, excluding the declarative schemas."""
+    d = ROOT / "knowledge"
+    if not d.is_dir():
+        return []
+    return sorted(
+        p for p in d.rglob("*.json")
+        if p.is_file() and "schemas" not in p.relative_to(d).parts
+    )
+
+
+def stored_source_files() -> list[str]:
+    """Acquired source bytes under source_material/, excluding bookkeeping files."""
+    d = ROOT / "source_material"
+    if not d.is_dir():
+        return []
+    return sorted(
+        p.relative_to(ROOT).as_posix()
+        for p in d.rglob("*")
+        if p.is_file() and p.name not in BOOKKEEPING_NAMES
+    )
+
+
+def declared_number(body: str, label: str) -> int | None:
+    m = re.search(re.escape(label) + r":\s*\*{0,2}\s*(\d+)", body)
+    return int(m.group(1)) if m else None
+
+
 @check("ledger claims match the filesystem")
 def _c_ledger_counts():
     areas = ["knowledge", "pyq", "expert_methods", "source_material", "verification"]
@@ -418,7 +459,49 @@ def _c_ledger_counts():
         raw_items = sum(
             1 for p in raw_dir.rglob("*.json") if p.name != "_profile.json"
         )
-    stored_total = sum(actual.values()) + raw_items
+    stored = stored_source_files()
+    harvested_total = len(stored) + raw_items
+
+    problems: list[str] = []
+    verified_total = 0
+    records_total = 0
+
+    for path in knowledge_registries():
+        rel = path.relative_to(ROOT).as_posix()
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            problems.append(f"{rel} is not valid JSON ({exc})")
+            continue
+        if not isinstance(data, dict):
+            continue
+        key, records = _record_list(data)
+        if "record_count" in data and key is None:
+            problems.append(f"{rel} declares record_count but holds no recognised record list")
+            continue
+        if records is None:
+            continue
+        records = [r for r in records if isinstance(r, dict)]
+        records_total += len(records)
+        if isinstance(data.get("record_count"), int) and data["record_count"] != len(records):
+            problems.append(
+                f"{rel} declares record_count {data['record_count']} but holds {len(records)}"
+            )
+        for r in records:
+            rid = r.get("fact_id") or r.get("node_id") or r.get("entry_id") or "<no id>"
+            status = r.get("status")
+            if status == "VERIFIED":
+                verified_total += 1
+                if not (r.get("provenance") or {}).get("document_id"):
+                    problems.append(f"{rel}:{rid} is VERIFIED with no provenance document")
+            if r.get("value") is not None and status != "VERIFIED":
+                problems.append(f"{rel}:{rid} holds a value while status is {status!r}")
+        if isinstance(data.get("verified_count"), int):
+            got = sum(1 for r in records if r.get("status") == "VERIFIED")
+            if data["verified_count"] != got:
+                problems.append(
+                    f"{rel} declares verified_count {data['verified_count']} but holds {got}"
+                )
 
     sl = read("SOURCE_LEDGER.md")
     kl = read("KNOWLEDGE_LEDGER.md")
@@ -428,33 +511,40 @@ def _c_ledger_counts():
         ln for ln in sl.splitlines()
         if ln.startswith("| SRC-") and "`AVAILABLE`" in ln
     ]
-
-    if stored_total == 0:
-        problems = []
-        if available_rows:
-            problems.append(
-                f"{len(available_rows)} ledger row(s) claim AVAILABLE content "
-                f"but nothing is stored on disk"
-            )
-        if "Entries: 0" not in sl and "harvested items: 0" not in sl:
-            problems.append(
-                "SOURCE_LEDGER.md states no zero-harvest figure while disk "
-                "holds no records"
-            )
-        if "Verified knowledge records: 0" not in kl:
-            problems.append(
-                "KNOWLEDGE_LEDGER.md does not declare zero verified records"
-            )
-        if problems:
-            return False, "; ".join(problems)
-        return True, (
-            "0 records on disk; sources may be registered as not-yet-harvested, "
-            "no row claims stored content, harvest figure stated"
+    if available_rows and harvested_total == 0:
+        problems.append(
+            f"{len(available_rows)} ledger row(s) claim AVAILABLE content but nothing is stored"
         )
-    return False, (
-        f"records exist on disk (area records {actual}, raw items {raw_items}) "
-        f"but positive ledger reconciliation is not implemented yet"
+
+    declared_harvest = declared_number(sl, "harvested items")
+    if declared_harvest is None:
+        problems.append("SOURCE_LEDGER.md states no 'harvested items: N' figure")
+    elif declared_harvest != harvested_total:
+        problems.append(
+            f"SOURCE_LEDGER.md declares harvested items {declared_harvest}, "
+            f"disk holds {harvested_total}"
+        )
+
+    declared_verified = declared_number(kl, "Verified knowledge records")
+    if declared_verified is None:
+        problems.append("KNOWLEDGE_LEDGER.md states no 'Verified knowledge records: N' figure")
+    elif declared_verified != verified_total:
+        problems.append(
+            f"KNOWLEDGE_LEDGER.md declares {declared_verified} verified records, "
+            f"registries hold {verified_total}"
+        )
+
+    if problems:
+        return False, "; ".join(problems[:4]) + (
+            f" (+{len(problems) - 4} more)" if len(problems) > 4 else ""
+        )
+    return True, (
+        f"{records_total} knowledge record(s), {verified_total} VERIFIED and declared as such; "
+        f"{harvested_total} harvested item(s) ({len(stored)} stored file(s), {raw_items} raw); "
+        f"area files {actual}; no value without verification"
     )
+
+
 @check("physical standards folder is empty until sourced")
 def _c_physical_guard():
     d = ROOT / "physical/standards"

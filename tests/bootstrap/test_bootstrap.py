@@ -246,45 +246,195 @@ class TestSecretSafety(unittest.TestCase):
             if any(pat.search(body) for pat in SECRET_PATTERNS):
                 hits.append(rel)
         self.assertEqual(hits, [], f"credential-like strings found in: {hits}")
+RECORD_LIST_KEYS = ("facts", "nodes", "entries", "records", "documents")
+
+
+def declared_number(body: str, label: str):
+    m = re.search(re.escape(label) + r":\s*\*{0,2}\s*(\d+)", body)
+    return int(m.group(1)) if m else None
+
+
+def reconcile(registries: dict, stored: int, raw: int, sl: str, kl: str) -> list[str]:
+    """Return every disagreement between what the ledgers claim and what exists.
+
+    A pure function over plain data, so the tests below can feed it fabricated
+    registries and prove it complains. `registries` maps a path label to already
+    parsed JSON; `stored` and `raw` are counts of acquired files.
+    """
+    problems: list[str] = []
+    verified_total = 0
+    harvested = stored + raw
+
+    for rel, data in registries.items():
+        key, records = None, None
+        for k in RECORD_LIST_KEYS:
+            if isinstance(data.get(k), list):
+                key, records = k, [r for r in data[k] if isinstance(r, dict)]
+                break
+        if "record_count" in data and key is None:
+            problems.append(f"{rel} declares record_count but holds no record list")
+            continue
+        if records is None:
+            continue
+        if isinstance(data.get("record_count"), int) and data["record_count"] != len(records):
+            problems.append(
+                f"{rel} declares record_count {data['record_count']} but holds {len(records)}"
+            )
+        for r in records:
+            rid = r.get("fact_id") or r.get("node_id") or r.get("entry_id") or "<no id>"
+            if r.get("status") == "VERIFIED":
+                verified_total += 1
+                if not (r.get("provenance") or {}).get("document_id"):
+                    problems.append(f"{rel}:{rid} is VERIFIED with no provenance document")
+            if r.get("value") is not None and r.get("status") != "VERIFIED":
+                problems.append(f"{rel}:{rid} holds a value while status is {r.get('status')!r}")
+
+    available = [ln for ln in sl.splitlines() if ln.startswith("| SRC-") and "`AVAILABLE`" in ln]
+    if available and harvested == 0:
+        problems.append(f"{len(available)} ledger row(s) claim AVAILABLE while nothing is stored")
+
+    dh = declared_number(sl, "harvested items")
+    if dh is None:
+        problems.append("SOURCE_LEDGER.md states no 'harvested items: N' figure")
+    elif dh != harvested:
+        problems.append(f"SOURCE_LEDGER.md declares {dh} harvested, disk holds {harvested}")
+
+    dv = declared_number(kl, "Verified knowledge records")
+    if dv is None:
+        problems.append("KNOWLEDGE_LEDGER.md states no 'Verified knowledge records: N' figure")
+    elif dv != verified_total:
+        problems.append(
+            f"KNOWLEDGE_LEDGER.md declares {dv} verified, registries hold {verified_total}"
+        )
+    return problems
+
+
+BOOKKEEPING = {".gitkeep", "README.md", "RETRIEVAL_LOG.md"}
+
+
 class TestHonestyOfState(unittest.TestCase):
     """The project must not claim knowledge it does not have."""
 
-    def test_ledgers_declare_zero_while_disk_holds_zero(self):
-        areas = ["knowledge", "pyq", "expert_methods", "source_material", "verification"]
-        records = [
-            p.relative_to(ROOT).as_posix()
-            for a in areas
+    @staticmethod
+    def real_registries() -> dict:
+        out = {}
+        for p in sorted((ROOT / "knowledge").rglob("*.json")):
+            if "schemas" in p.relative_to(ROOT).parts:
+                continue
+            try:
+                data = json.loads(p.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as exc:  # a broken registry is its own failure
+                raise AssertionError(f"{p.relative_to(ROOT).as_posix()}: {exc}") from exc
+            if isinstance(data, dict):
+                out[p.relative_to(ROOT).as_posix()] = data
+        return out
+
+    @staticmethod
+    def stored_and_raw() -> tuple[int, int]:
+        stored = [
+            p for a in ("source_material", "pyq", "expert_methods")
             for p in (ROOT / a).rglob("*")
-            if p.is_file() and p.name not in {".gitkeep", "README.md"}
+            if p.is_file() and p.name not in BOOKKEEPING
         ]
-        raw_dir = ROOT / "data" / "raw"
+        raw = ROOT / "data" / "raw"
         raw_items = (
-            sum(1 for p in raw_dir.rglob("*.json") if p.name != "_profile.json")
-            if raw_dir.is_dir() else 0
+            sum(1 for p in raw.rglob("*.json") if p.name != "_profile.json")
+            if raw.is_dir() else 0
         )
-        sl = read("SOURCE_LEDGER.md")
-        if not records and raw_items == 0:
-            self.assertIn("Verified knowledge records: 0", read("KNOWLEDGE_LEDGER.md"))
-            # Sources may be REGISTERED before any content is harvested; the
-            # ledger must then (a) state a zero-harvest figure and (b) have no
-            # row claiming AVAILABLE content, because nothing is stored.
-            self.assertTrue(
-                "Entries: 0" in sl or "harvested items: 0" in sl,
-                "ledger must state the zero-harvest figure",
-            )
-            available_rows = [
-                ln for ln in sl.splitlines()
-                if ln.startswith("| SRC-") and "`AVAILABLE`" in ln
-            ]
-            self.assertEqual(
-                available_rows, [],
-                "ledger rows claim AVAILABLE content while nothing is stored on disk",
-            )
-        else:
-            self.fail(
-                "records exist on disk, so the ledgers must be reconciled and this "
-                f"test updated to check real counts: {records[:5]}"
-            )
+        return len(stored), raw_items
+
+    def test_ledgers_reconcile_with_what_is_actually_on_disk(self):
+        stored, raw = self.stored_and_raw()
+        problems = reconcile(
+            self.real_registries(), stored, raw,
+            read("SOURCE_LEDGER.md"), read("KNOWLEDGE_LEDGER.md"),
+        )
+        self.assertEqual(problems, [], "ledgers disagree with the repository: " + "; ".join(problems))
+
+    # A reconciliation that cannot object proves nothing, so each case below feeds
+    # `reconcile` fabricated data and requires the specific complaint.
+    CLEAN_SL = "| SRC-0001 | a source | `INACCESSIBLE` |\nharvested items: 0\n"
+    CLEAN_KL = "**Verified knowledge records: 0.**\n"
+
+    @staticmethod
+    def slot(**over) -> dict:
+        rec = {"fact_id": "OFF-F01", "value": None, "status": "BLOCKED",
+               "provenance": {"document_id": None}}
+        rec.update(over)
+        return rec
+
+    def reg(self, *records, **over) -> dict:
+        data = {"record_count": len(records), "facts": list(records)}
+        data.update(over)
+        return {"knowledge/official/required_facts.json": data}
+
+    def test_a_consistent_zero_state_is_accepted(self):
+        self.assertEqual(
+            reconcile(self.reg(self.slot()), 0, 0, self.CLEAN_SL, self.CLEAN_KL), []
+        )
+
+    def test_a_consistent_positive_state_is_accepted(self):
+        # Not hardwired to zero: one harvested file and one verified record also pass.
+        verified = self.slot(value="x", status="VERIFIED",
+                             provenance={"document_id": "DOC-OFF-002"})
+        self.assertEqual(
+            reconcile(self.reg(verified), 1, 0,
+                      "harvested items: 1\n", "Verified knowledge records: 1\n"),
+            [],
+        )
+
+    def test_a_value_without_verification_is_rejected(self):
+        problems = reconcile(
+            self.reg(self.slot(value="900 marks")), 0, 0, self.CLEAN_SL, self.CLEAN_KL
+        )
+        self.assertTrue(any("holds a value while status is" in p for p in problems), problems)
+
+    def test_verified_without_provenance_is_rejected(self):
+        problems = reconcile(
+            self.reg(self.slot(value="x", status="VERIFIED")), 0, 0,
+            self.CLEAN_SL, "Verified knowledge records: 1\n",
+        )
+        self.assertTrue(any("VERIFIED with no provenance" in p for p in problems), problems)
+
+    def test_a_wrong_record_count_is_rejected(self):
+        problems = reconcile(
+            self.reg(self.slot(), record_count=25), 0, 0, self.CLEAN_SL, self.CLEAN_KL
+        )
+        self.assertTrue(any("declares record_count 25" in p for p in problems), problems)
+
+    def test_a_record_count_without_records_is_rejected(self):
+        problems = reconcile(
+            {"knowledge/official/required_facts.json": {"record_count": 25}},
+            0, 0, self.CLEAN_SL, self.CLEAN_KL,
+        )
+        self.assertTrue(any("holds no record list" in p for p in problems), problems)
+
+    def test_an_overstated_knowledge_ledger_is_rejected(self):
+        problems = reconcile(
+            self.reg(self.slot()), 0, 0, self.CLEAN_SL,
+            "Verified knowledge records: 25\n",
+        )
+        self.assertTrue(any("declares 25 verified" in p for p in problems), problems)
+
+    def test_an_overstated_source_ledger_is_rejected(self):
+        problems = reconcile(
+            self.reg(self.slot()), 0, 0, "harvested items: 6\n", self.CLEAN_KL
+        )
+        self.assertTrue(any("declares 6 harvested" in p for p in problems), problems)
+
+    def test_an_available_row_with_nothing_stored_is_rejected(self):
+        problems = reconcile(
+            self.reg(self.slot()), 0, 0,
+            "| SRC-0001 | a source | `AVAILABLE` |\nharvested items: 0\n", self.CLEAN_KL,
+        )
+        self.assertTrue(any("claim AVAILABLE while nothing is stored" in p for p in problems),
+                        problems)
+
+    def test_a_ledger_that_states_no_figure_at_all_is_rejected(self):
+        problems = reconcile(self.reg(self.slot()), 0, 0, "no figure here\n", "none either\n")
+        self.assertEqual(len(problems), 2, problems)
+        self.assertTrue(any("SOURCE_LEDGER.md states no" in p for p in problems), problems)
+        self.assertTrue(any("KNOWLEDGE_LEDGER.md states no" in p for p in problems), problems)
 
     def test_physical_standards_are_not_invented(self):
         d = ROOT / "physical/standards"
