@@ -15,9 +15,10 @@
 | Phase                  | 1 of 7 — Bootstrap                                       |
 | Overall status         | `COMPLETE` for bootstrap scope only                      |
 | Git branch             | `main`                                                   |
-| Bootstrap commit       | `PENDING_VERIFICATION`                                   |
-| Structural checks      | `PENDING_VERIFICATION`                                   |
-| Unit tests             | `PENDING_VERIFICATION`                                   |
+| Bootstrap commit       | `a77f793` — `chore(bootstrap): establish project architecture...`  |
+| Structural checks      | 21 of 21 passed — `scripts/validate_bootstrap.py` exit `0`         |
+| Unit tests             | 35 of 35 passed — `unittest discover -s tests`                     |
+| Evidence               | `docs/reports/2026-09-05-bootstrap.md` (verbatim run output)        |
 
 ## Current Phase
 
@@ -39,9 +40,9 @@ is the accurate state, not a gap that was overlooked.
 | Governance files                 | `COMPLETE` | 9 root files, section checks pass                        |
 | `.gitignore` and secret safety   | `COMPLETE` | Secret patterns asserted by tests; no keys tracked       |
 | Model routing config             | `COMPLETE` | Valid JSON; independence rule mechanically enforced      |
-| Bootstrap validation script      | `COMPLETE` | `PENDING_VERIFICATION` — see run output                   |
-| L0 structural tests              | `COMPLETE` | `PENDING_VERIFICATION` — see run output                   |
-| Git repository + first checkpoint| `COMPLETE` | `PENDING_VERIFICATION` — commit hash recorded above       |
+| Bootstrap validation script      | `COMPLETE` | 21 checks, all pass; proven to fail on a broken tree      |
+| L0 structural tests              | `COMPLETE` | 35 tests, all pass; run output in `docs/reports/`         |
+| Git repository + first checkpoint| `COMPLETE` | Commit `a77f793` on `main`, 72 files, clean tree           |
 | Official syllabus                | `BLOCKED`  | Needs an official TGPRB document. Must not be guessed    |
 | Exam pattern / marks / duration  | `BLOCKED`  | Same                                                     |
 | Eligibility rules                | `BLOCKED`  | Same                                                     |
@@ -105,4 +106,4 @@ begin before it.
 
 | Session | Date       | Outcome                                                        |
 | ------- | ---------- | -------------------------------------------------------------- |
-| 001     | 2026-09-05 | Bootstrap: structure, governance, validation, first Git commit   |
+| 001     | 2026-09-05 | Bootstrap: 58 directories, 9 governance files, 17 area READMEs, 21 structural checks and 35 L0 tests all passing, two Git checkpoints. No examination fact recorded. Full evidence in `docs/reports/2026-09-05-bootstrap.md` |

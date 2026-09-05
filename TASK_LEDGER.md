@@ -42,6 +42,7 @@ and the methods all hang off.
 | `T-0006` | Run validation and fix every failure           | `COMPLETE` | See `docs/reports/2026-09-05-bootstrap.md`     |
 | `T-0007` | Initialise Git and create the first checkpoint  | `COMPLETE` | `git log`; clean `git status`                  |
 | `T-0008` | Record verified state in the ledgers           | `COMPLETE` | This file and `PROJECT_STATE.md`               |
+| `T-0009` | Resolve test failures; record verified results  | `COMPLETE` | Validator exit `0` (21/21); `unittest` `OK` (35/35) |
 
 ## Acceptance criteria for the completed bootstrap tasks
 
@@ -55,6 +56,11 @@ and the methods all hang off.
 - `T-0006`: validator and `unittest` suite both pass, with real output recorded.
 - `T-0007`: a commit exists on `main`, the working tree is clean, and no secret is
   tracked.
+- `T-0009`: both checks exit `0` with no test weakened, skipped or deleted, and the real
+  output is recorded in `docs/reports/2026-09-05-bootstrap.md`. Three failures were found
+  and fixed at root cause: one wrong test expectation (corrected and strengthened) and one
+  unresolved placeholder (filled with verified values), which also resolved a third,
+  cascading failure.
 
 ## Rules for this ledger
 

@@ -133,8 +133,9 @@ class TestGovernanceFiles(unittest.TestCase):
 
     def test_self_verification_is_forbidden_in_policy(self):
         body = read("VERIFICATION_POLICY.md")
-        self.assertIn("may never verify its own output", body)
+        self.assertIn("produced an output may never verify it", body)
         self.assertIn("SELF_REVIEW", body)
+        self.assertIn("not** a verification method", body)
 
     def test_no_unresolved_placeholder_markers(self):
         hits = []
