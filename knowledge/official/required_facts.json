@@ -1,0 +1,245 @@
+{
+  "registry_version": 1,
+  "spec": "SPEC-OFF-001",
+  "recruitment": "Telangana Police Recruitment 2026 — SCT SI (Civil) and equivalent posts",
+  "provenance_tier": "T1_OFFICIAL",
+  "purpose": "The 25 facts Phase 1 must establish from official documents. Each record is a slot with a provenance block, not a fact. A record holds a value only when the document behind it has been retrieved, stored and hashed.",
+  "record_count": 25,
+  "verified_count": 0,
+  "status": "BLOCKED",
+  "blocked_reason": "No official TGPRB / TSLPRB document has been retrieved. Network egress from this environment permits one unrelated host, so no official URL can be fetched. See source_material/official/RETRIEVAL_LOG.md and blocker B-09.",
+  "rules": [
+    "value stays null while status is not VERIFIED. A value without provenance is a fabrication regardless of how plausible it looks.",
+    "provenance.document_id must name a document whose retrieval_status is RETRIEVED in config/official_documents.json.",
+    "provenance.quote must be verbatim text from the document, so a later reader can re-check the reading without re-downloading.",
+    "status is one of BLOCKED, UNVERIFIED, VERIFIED. No fourth value; no 'probably'.",
+    "value_te is the Telugu companion field required from day one by D-0004; it is a translation of a sourced value, never an independent claim."
+  ],
+  "facts": [
+    {
+      "fact_id": "OFF-F01", "name": "Notification number",
+      "must_capture": "The Rc. / notification number exactly as printed, including its year and issuing section.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F02", "name": "Notification date",
+      "must_capture": "The date the notification was issued, as printed on the document itself rather than inferred from a file name.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F03", "name": "Application dates",
+      "must_capture": "Opening date, closing date, fee-payment window, and any correction window, each with its cut-off time if stated.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09). A supplementary notification may amend these, so DOC-OFF-003 must be read before any date is treated as final.",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F04", "name": "Number of vacancies",
+      "must_capture": "Total vacancies and the per-post breakdown as tabulated, plus whether the figure is stated as provisional or subject to variation.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F05", "name": "Post codes",
+      "must_capture": "Every post code in the recruitment, exactly as the notification numbers them, with the post each code denotes.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F06", "name": "Post names",
+      "must_capture": "Full official post names, including the SCT prefix and any 'or equivalent' wording, in the notification's own words.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F07", "name": "Eligibility requirements",
+      "must_capture": "Every eligibility condition: nationality, local-candidate status, marital or dependants clauses if any, disqualifications, and any post-specific condition.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F08", "name": "Educational qualifications",
+      "must_capture": "The required qualification per post code, the cut-off date by which it must be held, and how equivalence is treated.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F09", "name": "Age requirements",
+      "must_capture": "Minimum and maximum age, the reference date on which age is computed, and every relaxation with the category it applies to.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09). Age limits differ by post and category, so a single number would be wrong even if the range were remembered correctly.",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F10", "name": "Reservation and category rules",
+      "must_capture": "Reservation percentages and rules as the notification states them, including horizontal reservations and the certificate each requires.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09). Reservation rules are legal provisions; paraphrasing them is not acceptable and guessing them is worse.",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F11", "name": "Preliminary Written Test structure",
+      "must_capture": "Whether the PWT is one paper or several, objective or otherwise, its mode, and whether it is qualifying or counts towards the final merit.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09). Whether the PWT is merely qualifying changes how a candidate should allocate months of preparation, so it must not be assumed.",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F12", "name": "PWT subjects",
+      "must_capture": "The subject names as the notification lists them, in its order, with each subject's stated scope. These become the top level of the official syllabus.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F13", "name": "PWT number of questions",
+      "must_capture": "Question count per paper and per subject if broken down.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F14", "name": "PWT marks",
+      "must_capture": "Maximum marks per paper, marks per question, and how marks map to the final selection if at all.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F15", "name": "PWT duration",
+      "must_capture": "Time allowed per paper, plus any compensatory time provision.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09). Duration drives every timed-practice setting in this system, so an invented figure would silently mistrain pacing.",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F16", "name": "Negative marking",
+      "must_capture": "Whether marks are deducted for a wrong answer, the exact deduction, and the treatment of unattempted or multiply-marked answers.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09). Presence or absence of negative marking inverts the correct guessing strategy, so this must never be assumed in either direction.",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F17", "name": "Minimum qualifying requirements",
+      "must_capture": "Qualifying marks or percentages per stage and per category, and any separate sectional minimum.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F18", "name": "Physical Measurement Test requirements",
+      "must_capture": "Every measured standard with its unit and the category or gender it applies to, plus how measurement is conducted and whether it is qualifying.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09). Values land in physical/standards/ only from an official document; that folder is enforced empty until then, because wrong physical targets waste months of training and can injure.",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F19", "name": "Physical Efficiency Test requirements",
+      "must_capture": "Each event, its qualifying standard per category and gender, the number of attempts permitted, and whether events are scored or purely qualifying.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09). Same physical-standards rule as OFF-F18.",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F20", "name": "Final Written Examination structure",
+      "must_capture": "Number of papers, their mode, whether descriptive or objective, and how the FWE contributes to final merit.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F21", "name": "FWE subjects",
+      "must_capture": "Subject names and their stated scope per paper, in the notification's own order and wording. These become official syllabus subjects for the FWE.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F22", "name": "FWE marks",
+      "must_capture": "Maximum marks per paper, marks per question if stated, and the aggregate used for merit.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F23", "name": "FWE duration",
+      "must_capture": "Time allowed per paper.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F24", "name": "Selection sequence",
+      "must_capture": "The ordered stages from application to final selection, which stages are eliminating, which contribute marks, and the ratio used to shortlist at each stage.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09). The order of stages determines what to prepare first; an assumed order could waste an entire preparation cycle.",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    },
+    {
+      "fact_id": "OFF-F25", "name": "Official instructions affecting preparation",
+      "must_capture": "Instructions that change how a candidate should prepare: permitted languages and any language-of-question rule, calculator or device rules, syllabus annexures, translation-discrepancy clauses, tie-breaking rules, and any stated bar on material outside the syllabus.",
+      "value": null, "value_te": null, "status": "BLOCKED",
+      "blocked_reason": "No official document retrieved (B-09).",
+      "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
+      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "verification": {"method": null, "verified_on": null, "verified_by": null}
+    }
+  ]
+}

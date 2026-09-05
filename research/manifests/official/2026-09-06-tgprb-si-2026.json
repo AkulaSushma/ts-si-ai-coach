@@ -1,0 +1,43 @@
+{
+  "manifest_id": "OFF-2026-09-06-tgprb-si-2026",
+  "spec": "SPEC-OFF-001",
+  "harvest_target": "Official TGPRB / TSLPRB documents for Telangana Police Recruitment 2026, SCT SI (Civil) and equivalent posts",
+  "run_mode": "acquire",
+  "session": "003",
+  "written_at": "2026-09-05T19:15:00Z",
+  "local_date": "2026-09-06 (Asia/Kolkata)",
+  "status": "blocked",
+  "stop_reason": "Network egress from this environment is restricted to an allowlist containing exactly one host (tabitoken.com), which is unrelated to this project. Every official URL is refused before a request leaves the environment. Verbatim refusals in source_material/official/RETRIEVAL_LOG.md and config/official_documents.json.",
+  "expected": 7,
+  "expected_justification": "Counted, not estimated: 7 candidate documents were enumerated from URLs that a web search restricted to the official domain returned on 2026-09-06, plus the site root, plus two documents whose official URLs were inferred from sibling file names. This is a count of enumerated candidates, NOT a count read from the official site's own index page — that page could not be loaded, so the true total number of documents in this recruitment is unknown and may be larger.",
+  "accounting": {
+    "discovered": 7,
+    "processed": 0,
+    "inaccessible": 6,
+    "irrelevant": 1,
+    "duplicate": 0,
+    "failed": 0
+  },
+  "identity_holds": true,
+  "identity_check": "expected 7 = processed 0 + inaccessible 6 + irrelevant 1 + duplicate 0 + failed 0",
+  "inaccessible_items": [
+    {"document_id": "DOC-OFF-001", "url": "https://tgprb.in/", "reason": "egress allowlist refusal (host-level)"},
+    {"document_id": "DOC-OFF-002", "url": "https://www.tgprb.in/SI_PC_2026/SI%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf", "reason": "egress allowlist refusal (host-level); URL also inferred and unconfirmed"},
+    {"document_id": "DOC-OFF-003", "url": "https://www.tgprb.in/SI_PC_2026/Supplementary%20Notification%202026%20%20dated%2015-08-2026.pdf", "reason": "egress allowlist refusal (host-level)"},
+    {"document_id": "DOC-OFF-004", "url": "https://www.tgprb.in/SI_PC_2026/PC%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf", "reason": "egress allowlist refusal (host-level)"},
+    {"document_id": "DOC-OFF-005", "url": "https://www.tgprb.in/SI_PC_2026/ASI%20FPB%202026%20Notification%20dated%2029-07-2026.pdf", "reason": "egress allowlist refusal (host-level); URL also inferred and unconfirmed"},
+    {"document_id": "DOC-OFF-006", "url": "https://www.tslprb.in/", "reason": "egress allowlist refusal (host-level); registered to resolve the official-domain conflict CONF-OFF-001"}
+  ],
+  "irrelevant_items": [
+    {"url": "https://www.tgprb.in/DRVR_PDF/Selection%20Press%20Note%203rd%20August%202026.pdf", "reason": "Driver / mechanic recruitment press note — a different recruitment stream from SCT SI (Civil). Counted as irrelevant rather than registered, so the identity balances without pretending it is an SI source."}
+  ],
+  "facts_extracted": 0,
+  "syllabus_nodes_created": 0,
+  "excluded_by_policy": {
+    "count_seen": "not counted",
+    "types": ["coaching_website", "exam_aggregator", "mirror_of_official_pdf", "search_result_summary"],
+    "note": "Search results included coaching-site mirrors of official PDFs and articles asserting vacancy counts, age limits, qualifications and the selection sequence. None was used, counted as processed, or recorded as a fact. They are outside this manifest's scope by policy, not merely unprocessed: the session instruction and CLAUDE.md section 5 forbid them as authority for official rules."
+  },
+  "unblocks": ["B-09"],
+  "next_action": "Obtain the notification through any permitted route (allowlist the official domain, place the PDFs into source_material/official/ manually, or run retrieval from a network context where the domain is reachable), then hash, ledger, and extract fact by fact."
+}

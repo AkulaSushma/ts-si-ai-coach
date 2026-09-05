@@ -1,0 +1,193 @@
+{
+  "registry_version": 1,
+  "spec": "SPEC-OFF-001",
+  "purpose": "Target registry of official TGPRB / TSLPRB documents required for Telangana Police SI 2026. Registration records intent to acquire; it is not a claim that any document has been read.",
+  "recruitment": "Telangana Police Recruitment 2026 — SCT SI (Civil) and equivalent posts",
+  "authority_rule": "Only a document published by TGPRB / TSLPRB may support a T1_OFFICIAL fact. Search engines may locate a URL; snippet text is never the document.",
+  "retrieved_count": 0,
+  "documents": [
+    {
+      "document_id": "DOC-OFF-001",
+      "title": "TGPRB official website — notifications and downloads index",
+      "publisher": "TGPRB / TSLPRB",
+      "url": "https://tgprb.in/",
+      "url_status": "OBSERVED_ON_OFFICIAL_DOMAIN",
+      "url_basis": "Returned as a result URL on the official domain by a web search restricted to tgprb.in on 2026-09-06. The page itself was never loaded.",
+      "document_type": "index_page",
+      "expected_content": ["OFF-F01", "OFF-F02", "OFF-F03", "OFF-F25"],
+      "expected_content_note": "Index page expected to link the controlling notification and any addenda; it is the entry point, not the authority itself.",
+      "retrieval_status": "BLOCKED",
+      "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include the official domain. Exact response recorded in attempts[] and in source_material/official/RETRIEVAL_LOG.md.",
+      "attempts": [
+        {
+          "timestamp": "2026-09-05T18:52:00Z",
+          "tool": "workspace web_fetch",
+          "url": "https://tgprb.in/",
+          "response": "Host \"tgprb.in\" is not on the network allowlist (cowork-egress-blocked). Ask your administrator to add this domain to the Cowork egress allowlist (coworkEgressAllowedHosts). Allowed: tabitoken.com"
+        }
+      ],
+      "local_path": null,
+      "sha256": null,
+      "document_date": null,
+      "retrieved_on": null,
+      "language": null
+    },
+    {
+      "document_id": "DOC-OFF-002",
+      "title": "SI (Civil et al) 2026 Notification dated 29-07-2026",
+      "publisher": "TGPRB / TSLPRB",
+      "url": "https://www.tgprb.in/SI_PC_2026/SI%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf",
+      "url_status": "INFERRED_UNVERIFIED",
+      "url_basis": "Constructed by analogy with a sibling file observed on the official domain (PC (Civil et al) 2026 Notification dated 29-07-2026.pdf, same /SI_PC_2026/ directory) together with a non-official mirror whose file name was 'SI-Civil-et-al-2026-Notification-dated-29-07-2026-1.pdf'. This exact URL was NOT itself returned from the official domain and must be confirmed by a successful retrieval before anything is built on it.",
+      "document_type": "notification",
+      "expected_content": ["OFF-F01", "OFF-F02", "OFF-F03", "OFF-F04", "OFF-F05", "OFF-F06", "OFF-F07", "OFF-F08", "OFF-F09", "OFF-F10", "OFF-F11", "OFF-F12", "OFF-F13", "OFF-F14", "OFF-F15", "OFF-F16", "OFF-F17", "OFF-F18", "OFF-F19", "OFF-F20", "OFF-F21", "OFF-F22", "OFF-F23", "OFF-F24", "OFF-F25"],
+      "expected_content_note": "Expected primary authority for the whole of Phase 1. 'Expected' is an expectation about which document settles which fact, not a claim about its contents.",
+      "retrieval_status": "BLOCKED",
+      "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include the official domain; additionally this URL is inferred and unconfirmed.",
+      "attempts": [
+        {
+          "timestamp": "2026-09-05T19:02:00Z",
+          "tool": "workspace web_fetch",
+          "url": "https://www.tgprb.in/SI_PC_2026/PC%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf",
+          "response": "Host \"www.tgprb.in\" is not on the network allowlist (cowork-egress-blocked). Ask your administrator to add this domain to the Cowork egress allowlist (coworkEgressAllowedHosts). Allowed: tabitoken.com",
+          "note": "The sibling PC URL was attempted first because it was the URL actually observed on the official domain. The host-level refusal applies identically to every path on this host, so the SI URL cannot be tried separately with any different result."
+        }
+      ],
+      "local_path": null,
+      "sha256": null,
+      "document_date": null,
+      "retrieved_on": null,
+      "language": null
+    },
+    {
+      "document_id": "DOC-OFF-003",
+      "title": "Supplementary Notification 2026 dated 15-08-2026",
+      "publisher": "TGPRB / TSLPRB",
+      "url": "https://www.tgprb.in/SI_PC_2026/Supplementary%20Notification%202026%20%20dated%2015-08-2026.pdf",
+      "url_status": "OBSERVED_ON_OFFICIAL_DOMAIN",
+      "url_basis": "Returned as a result URL on the official domain by a web search restricted to tgprb.in on 2026-09-06.",
+      "document_type": "supplementary_notification",
+      "expected_content": ["OFF-F03", "OFF-F04", "OFF-F05", "OFF-F06", "OFF-F25"],
+      "expected_content_note": "Dated after the 29-07-2026 notifications, so it may amend vacancies, post codes or dates. Under SPEC-OFF-001 R5 a later official document does not automatically win; which is controlling must be established from the documents themselves.",
+      "retrieval_status": "BLOCKED",
+      "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include the official domain.",
+      "attempts": [
+        {
+          "timestamp": "2026-09-05T19:02:00Z",
+          "tool": "workspace web_fetch",
+          "url": "https://www.tgprb.in/SI_PC_2026/PC%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf",
+          "response": "Host \"www.tgprb.in\" is not on the network allowlist (cowork-egress-blocked). Ask your administrator to add this domain to the Cowork egress allowlist (coworkEgressAllowedHosts). Allowed: tabitoken.com",
+          "note": "Host-level refusal; recorded once and applied to every path on this host rather than re-requesting the same blocked host repeatedly."
+        }
+      ],
+      "local_path": null,
+      "sha256": null,
+      "document_date": "2026-08-15 (per file name only; the document has not been read)",
+      "retrieved_on": null,
+      "language": null
+    },
+    {
+      "document_id": "DOC-OFF-004",
+      "title": "PC (Civil et al) 2026 Notification dated 29-07-2026",
+      "publisher": "TGPRB / TSLPRB",
+      "url": "https://www.tgprb.in/SI_PC_2026/PC%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf",
+      "url_status": "OBSERVED_ON_OFFICIAL_DOMAIN",
+      "url_basis": "Returned as a result URL on the official domain by a web search restricted to tgprb.in on 2026-09-06.",
+      "document_type": "notification_sibling",
+      "expected_content": [],
+      "expected_content_note": "Constable recruitment, NOT authority for any SI fact. Registered because it shares the /SI_PC_2026/ release and may carry common general instructions worth cross-checking. Any SI fact must come from the SI notification even if this document appears to state the same thing.",
+      "retrieval_status": "BLOCKED",
+      "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include the official domain.",
+      "attempts": [
+        {
+          "timestamp": "2026-09-05T19:02:00Z",
+          "tool": "workspace web_fetch",
+          "url": "https://www.tgprb.in/SI_PC_2026/PC%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf",
+          "response": "Host \"www.tgprb.in\" is not on the network allowlist (cowork-egress-blocked). Ask your administrator to add this domain to the Cowork egress allowlist (coworkEgressAllowedHosts). Allowed: tabitoken.com"
+        }
+      ],
+      "local_path": null,
+      "sha256": null,
+      "document_date": "2026-07-29 (per file name only; the document has not been read)",
+      "retrieved_on": null,
+      "language": null
+    },
+    {
+      "document_id": "DOC-OFF-005",
+      "title": "ASI (FPB) 2026 Notification dated 29-07-2026",
+      "publisher": "TGPRB / TSLPRB",
+      "url": "https://www.tgprb.in/SI_PC_2026/ASI%20FPB%202026%20Notification%20dated%2029-07-2026.pdf",
+      "url_status": "INFERRED_UNVERIFIED",
+      "url_basis": "A non-official mirror named 'ASI-FPB-2026-Notification-dated-29-07-2026.pdf' appeared in search results; the official path is inferred by analogy with the sibling notifications in /SI_PC_2026/. Not observed on the official domain.",
+      "document_type": "notification_equivalent_post",
+      "expected_content": ["OFF-F05", "OFF-F06"],
+      "expected_content_note": "The session-003 instruction names 'SCT SI Civil and/or Equivalent'. Whether ASI (Finger Print Bureau) belongs inside this recruitment's post list is itself an unresolved question that only the notifications can settle; it must not be assumed either way.",
+      "retrieval_status": "BLOCKED",
+      "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include the official domain; additionally this URL is inferred and unconfirmed.",
+      "attempts": [
+        {
+          "timestamp": "2026-09-05T19:02:00Z",
+          "tool": "workspace web_fetch",
+          "url": "https://www.tgprb.in/SI_PC_2026/PC%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf",
+          "response": "Host \"www.tgprb.in\" is not on the network allowlist (cowork-egress-blocked). Ask your administrator to add this domain to the Cowork egress allowlist (coworkEgressAllowedHosts). Allowed: tabitoken.com",
+          "note": "Host-level refusal established on a sibling path; no separate request was made for this inferred URL."
+        }
+      ],
+      "local_path": null,
+      "sha256": null,
+      "document_date": null,
+      "retrieved_on": null,
+      "language": null
+    },
+    {
+      "document_id": "DOC-OFF-006",
+      "title": "TSLPRB official website (alternate / possibly controlling official domain)",
+      "publisher": "TGPRB / TSLPRB",
+      "url": "https://www.tslprb.in/",
+      "url_status": "UNKNOWN",
+      "url_basis": "Named inside a search-index snippet attributed to tgprb.in ('visit only the official website: www.tslprb.in'). Snippet text is not the document, so this is recorded as a lead requiring confirmation, not as a fact about which domain is official.",
+      "document_type": "index_page",
+      "expected_content": [],
+      "expected_content_note": "Registered solely to resolve CONF-OFF-001. No fact may be sourced from it until the domain question is settled.",
+      "retrieval_status": "BLOCKED",
+      "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include this domain either.",
+      "attempts": [
+        {
+          "timestamp": "2026-09-05T19:02:00Z",
+          "tool": "workspace web_fetch",
+          "url": "https://www.tgprb.in/downloads.html",
+          "response": "Host \"www.tgprb.in\" is not on the network allowlist (cowork-egress-blocked). Ask your administrator to add this domain to the Cowork egress allowlist (coworkEgressAllowedHosts). Allowed: tabitoken.com",
+          "note": "The allowlist names exactly one permitted host (tabitoken.com), which is unrelated to this project, so every external host including tslprb.in is refused by the same rule. Recorded from the observed refusals rather than by probing further hosts."
+        }
+      ],
+      "local_path": null,
+      "sha256": null,
+      "document_date": null,
+      "retrieved_on": null,
+      "language": null
+    }
+  ],
+  "conflicts": [
+    {
+      "conflict_id": "CONF-OFF-001",
+      "status": "UNRESOLVED",
+      "question": "Which host is the currently controlling official domain: tgprb.in or tslprb.in?",
+      "observation": "A search-index snippet attributed to tgprb.in reads 'Candidates are advised to visit only the official website: www.tslprb.in', while the recruitment PDFs enumerated above are served from tgprb.in and their own text refers to 'the TSLPRB Website (www.tgprb.in)'. Telangana's TS-to-TG renaming makes both plausible.",
+      "why_it_matters": "Every provenance record cites a URL. Citing a superseded domain would make the provenance chain unverifiable later.",
+      "resolution_rule": "Per SPEC-OFF-001 R5, do not choose silently. Resolve by loading both hosts and reading what each states about itself, then record which document or notice is controlling and on what date.",
+      "resolvable_now": false,
+      "blocked_by": "B-09"
+    }
+  ],
+  "not_registered": [
+    {
+      "url": "https://www.tgprb.in/DRVR_PDF/Selection%20Press%20Note%203rd%20August%202026.pdf",
+      "reason": "IRRELEVANT — driver/mechanic recruitment press note, a different recruitment stream from SCT SI (Civil). Counted as irrelevant in the acquisition manifest rather than registered as an SI source."
+    }
+  ],
+  "excluded_source_types": {
+    "rule": "The following were seen in search results and are deliberately NOT registered as authority for any official fact, per the session-003 instruction and CLAUDE.md section 5.",
+    "types": ["coaching_website", "exam_aggregator", "instagram", "youtube", "telegram", "reddit", "blog", "search_result_summary"],
+    "note": "Coaching-site mirrors of official PDFs were visible in search results. A mirror is not the official document: it can be edited, truncated, or stale, and its bytes cannot be hashed against the publisher. Such material may later be registered as T3_EXPERT, never as T1_OFFICIAL."
+  }
+}

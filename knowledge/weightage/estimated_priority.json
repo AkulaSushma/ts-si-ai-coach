@@ -1,0 +1,23 @@
+{
+  "registry_version": 1,
+  "spec": "SPEC-OFF-001",
+  "category": "estimated_preparation_priority",
+  "question_answered": "Given the official structure and the historical counts, what should be studied first?",
+  "provenance_tier": "T4_AI",
+  "only_valid_source": "Explicit judgement, which must name the official and historical inputs it was derived from",
+  "record_count": 0,
+  "status": "BLOCKED",
+  "blocked_reason": "Both inputs are missing: no official marks structure (B-09) and no counted papers (B-02). A priority ordering produced over no data would be indistinguishable from invention, and it would be the most persuasive kind because it would look like advice.",
+  "rules": [
+    "This is a judgement, labelled as one, and shown to a learner only with its tier visible.",
+    "Every entry must list the input record ids it was derived from. A priority with no inputs is deleted, not kept as a hunch.",
+    "Never merged into an official-looking figure. A learner must always be able to tell which numbers came from the board and which came from this file.",
+    "Revisable without ceremony. When counts change, priorities change; that is expected and is not an error to hide."
+  ],
+  "derivation_inputs": {
+    "official_marks_structure": "knowledge/weightage/official_marks_structure.json",
+    "historical_observed": "knowledge/weightage/historical_observed.json",
+    "both_currently_empty": true
+  },
+  "entries": []
+}

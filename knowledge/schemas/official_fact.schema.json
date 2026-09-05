@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "official_fact.schema.json",
+  "title": "Official examination fact (T1_OFFICIAL)",
+  "description": "One fact established from an official TGPRB / TSLPRB document. Validated by hand-written checks in tests/official/test_official_knowledge.py, because this project uses the standard library only (D-0006) and has no JSON Schema validator.",
+  "type": "object",
+  "required": ["fact_id", "name", "must_capture", "value", "value_te", "status", "provenance_tier", "provenance", "verification"],
+  "additionalProperties": false,
+  "properties": {
+    "fact_id": {"type": "string", "pattern": "^OFF-F[0-9]{2}$"},
+    "name": {"type": "string", "minLength": 3},
+    "must_capture": {"type": "string", "minLength": 10, "description": "What a correct reading of the document must capture. Written before the value, so a partial reading is visible as partial."},
+    "value": {"type": ["string", "number", "array", "object", "null"], "description": "null until status is VERIFIED. Never a paraphrase where the document is precise."},
+    "value_te": {"type": ["string", "array", "object", "null"], "description": "Telugu companion field (D-0004). A translation of a sourced value, never an independent claim."},
+    "status": {"enum": ["BLOCKED", "UNVERIFIED", "VERIFIED"]},
+    "blocked_reason": {"type": "string", "minLength": 5, "description": "Required whenever status is not VERIFIED."},
+    "provenance_tier": {"const": "T1_OFFICIAL"},
+    "expected_document": {"type": ["string", "null"], "description": "document_id expected to settle this fact. An expectation, not a citation."},
+    "provenance": {
+      "type": "object",
+      "required": ["document_id", "page", "section", "quote"],
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {"type": ["string", "null"], "pattern": "^DOC-OFF-[0-9]{3}$", "description": "Must name a document whose retrieval_status is RETRIEVED."},
+        "page": {"type": ["integer", "string", "null"]},
+        "section": {"type": ["string", "null"]},
+        "quote": {"type": ["string", "null"], "description": "Verbatim text from the document supporting the value."}
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": ["method", "verified_on", "verified_by"],
+      "additionalProperties": false,
+      "properties": {
+        "method": {"enum": ["SOURCE_DOCUMENT", "CROSS_SOURCE", "INDEPENDENT_MODEL", "DETERMINISTIC", "DB_CONSISTENCY", null], "description": "SELF_REVIEW is not a verification method (VERIFICATION_POLICY.md)."},
+        "verified_on": {"type": ["string", "null"]},
+        "verified_by": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "invariants": [
+    "value != null  =>  status == VERIFIED",
+    "status == VERIFIED  =>  provenance.document_id resolves to a RETRIEVED document AND provenance.quote is non-empty",
+    "status != VERIFIED  =>  value == null AND blocked_reason is non-empty"
+  ]
+}

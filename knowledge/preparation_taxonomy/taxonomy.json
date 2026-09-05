@@ -1,0 +1,29 @@
+{
+  "registry_version": 1,
+  "spec": "SPEC-OFF-001",
+  "area": "preparation_taxonomy",
+  "purpose": "Practical teaching breakdown: subtopics, question families and skill groupings that help a candidate prepare but that the official syllabus does not name. Deliberately separate from knowledge/official/ so it can never be read as official.",
+  "permitted_tiers": ["T2_HISTORICAL_PYQ", "T3_EXPERT", "T4_AI"],
+  "forbidden_tier": "T1_OFFICIAL",
+  "record_count": 0,
+  "status": "BLOCKED",
+  "blocked_reason": "The official syllabus these nodes anchor to does not exist yet (B-09), and no expert source or past paper has been ingested (B-08, B-02). A breakdown of an unread syllabus would be invention.",
+  "node_shape": {
+    "node_id": "PREP-####",
+    "title": "the practical topic name as taught",
+    "title_te": "Telugu companion field (D-0004)",
+    "official_anchor": "node_id in knowledge/official/syllabus.json, or the literal string NO_OFFICIAL_ANCHOR",
+    "anchor_justification": "why this node belongs under that official node, or why nothing official covers it",
+    "provenance_tier": "T2_HISTORICAL_PYQ | T3_EXPERT | T4_AI",
+    "derived_from": ["source ids, paper ids, question ids, or a recorded reasoning note"],
+    "teaching_note": "what a candidate is expected to be able to do",
+    "verification": {"method": null, "verified_on": null, "verified_by": null}
+  },
+  "rules": [
+    "official_anchor is either a resolvable official node id or the literal NO_OFFICIAL_ANCHOR. Silence is not allowed.",
+    "Never write T1_OFFICIAL as a tier in this file.",
+    "derived_from must be non-empty. A node no one can trace is a rumour.",
+    "Adding a node here never edits knowledge/official/syllabus.json. The official syllabus changes only when an official document does."
+  ],
+  "nodes": []
+}

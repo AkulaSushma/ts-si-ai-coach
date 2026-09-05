@@ -1,0 +1,30 @@
+{
+  "registry_version": 1,
+  "spec": "SPEC-OFF-001",
+  "category": "historical_observed_weightage",
+  "question_answered": "How many questions did real previous-year papers actually ask, per subject, topic and question family?",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "only_valid_source": "Questions counted from previous-year papers acquired under pyq/papers/ and normalized under pyq/questions/",
+  "record_count": 0,
+  "counted_papers": 0,
+  "counted_questions": 0,
+  "status": "BLOCKED",
+  "blocked_reason": "No previous-year paper has been acquired (blocker B-02), so nothing can be counted. Zero papers means zero observed weightage, not an estimated one.",
+  "rules": [
+    "Counted, never estimated. Every entry cites the paper ids and question ids it counted.",
+    "The research accounting identity must hold for the paper set: expected = processed + inaccessible + irrelevant + duplicate + failed.",
+    "Partial coverage is reported as a fraction (for example 120 / 250) and marked PARTIAL. It is never rounded up to a claim about the whole set.",
+    "Evidence of past behaviour is not a rule about future papers. A pattern observed across papers must never be relabelled T1_OFFICIAL."
+  ],
+  "accounting": {
+    "expected": 0,
+    "expected_justification": "No paper set enumerated yet; expected will be a counted figure with a recorded basis, not an estimate.",
+    "processed": 0,
+    "inaccessible": 0,
+    "irrelevant": 0,
+    "duplicate": 0,
+    "failed": 0
+  },
+  "identity_holds": true,
+  "entries": []
+}

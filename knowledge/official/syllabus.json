@@ -1,0 +1,34 @@
+{
+  "registry_version": 1,
+  "spec": "SPEC-OFF-001",
+  "recruitment": "Telangana Police Recruitment 2026 — SCT SI (Civil) and equivalent posts",
+  "provenance_tier": "T1_OFFICIAL",
+  "purpose": "The official syllabus as a strict Subject -> Topic -> Subtopic hierarchy, one record per node, every node traceable to a retrieved official document.",
+  "hierarchy_levels": ["subject", "topic", "subtopic"],
+  "record_count": 0,
+  "verified_count": 0,
+  "status": "BLOCKED",
+  "blocked_reason": "No official TGPRB / TSLPRB document has been retrieved, so no syllabus node can be created. Network egress from this environment permits one unrelated host; see source_material/official/RETRIEVAL_LOG.md and blocker B-09.",
+  "empty_is_correct_because": "An empty official syllabus is the honest state when no official document has been read. A populated one written from model recall or coaching material would be T4_AI or T3_EXPERT content wearing a T1_OFFICIAL label, which CLAUDE.md section 5 identifies as the most serious content error possible in this project.",
+  "node_shape": {
+    "node_id": "OFF-SYL-####",
+    "level": "subject | topic | subtopic",
+    "parent_id": "node_id of the level above; null only for a subject",
+    "paper": "which examination paper this node belongs to (PWT / FWE paper identifier as the notification names it)",
+    "title": "verbatim wording from the official document",
+    "title_te": "Telugu companion field (D-0004); a translation of sourced wording, never an independent claim",
+    "ordinal": "position within its parent, preserving the document's own order",
+    "provenance_tier": "T1_OFFICIAL",
+    "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+    "verification": {"method": null, "verified_on": null, "verified_by": null}
+  },
+  "rules": [
+    "parent_id must resolve to an existing node whose level is exactly one above.",
+    "A node exists only if provenance.document_id names a document whose retrieval_status is RETRIEVED.",
+    "title is the official wording. Do not tidy it, expand abbreviations, or merge two listed items into one node.",
+    "The document's own ordering is preserved in ordinal, because order sometimes signals emphasis.",
+    "A topic that coaching institutes teach but the official document does not name is NOT a node here. It belongs in knowledge/preparation_taxonomy/, linked by official_anchor or marked NO_OFFICIAL_ANCHOR.",
+    "If the official document gives only subject headings with no topic breakdown, then the official syllabus has exactly those subjects and no topics. Inventing a topic layer to look complete is prohibited."
+  ],
+  "nodes": []
+}

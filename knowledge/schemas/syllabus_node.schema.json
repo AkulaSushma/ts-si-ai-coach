@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "syllabus_node.schema.json",
+  "title": "Official syllabus node (T1_OFFICIAL)",
+  "description": "One node of the official syllabus hierarchy: subject -> topic -> subtopic. Validated by hand-written checks in tests/official/test_official_knowledge.py (D-0006: standard library only).",
+  "type": "object",
+  "required": ["node_id", "level", "parent_id", "title", "title_te", "ordinal", "provenance_tier", "provenance", "verification"],
+  "additionalProperties": false,
+  "properties": {
+    "node_id": {"type": "string", "pattern": "^OFF-SYL-[0-9]{4}$"},
+    "level": {"enum": ["subject", "topic", "subtopic"]},
+    "parent_id": {"type": ["string", "null"], "description": "node_id one level above. null only when level is subject."},
+    "paper": {"type": ["string", "null"], "description": "Which examination paper this node belongs to, as the notification names it."},
+    "title": {"type": "string", "minLength": 1, "description": "Verbatim official wording. Not tidied, not expanded, not merged."},
+    "title_te": {"type": ["string", "null"], "description": "Telugu companion field (D-0004)."},
+    "ordinal": {"type": "integer", "minimum": 1, "description": "Position within the parent, preserving the document's own order."},
+    "provenance_tier": {"const": "T1_OFFICIAL"},
+    "provenance": {
+      "type": "object",
+      "required": ["document_id", "page", "section", "quote"],
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {"type": ["string", "null"], "pattern": "^DOC-OFF-[0-9]{3}$"},
+        "page": {"type": ["integer", "string", "null"]},
+        "section": {"type": ["string", "null"]},
+        "quote": {"type": ["string", "null"]}
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": ["method", "verified_on", "verified_by"],
+      "additionalProperties": false,
+      "properties": {
+        "method": {"enum": ["SOURCE_DOCUMENT", "CROSS_SOURCE", "INDEPENDENT_MODEL", "DETERMINISTIC", "DB_CONSISTENCY", null]},
+        "verified_on": {"type": ["string", "null"]},
+        "verified_by": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "invariants": [
+    "level == subject  <=>  parent_id == null",
+    "level == topic    =>  parent_id resolves to a node whose level is subject",
+    "level == subtopic =>  parent_id resolves to a node whose level is topic",
+    "every node  =>  provenance.document_id resolves to a RETRIEVED document",
+    "node_id values are unique across the file",
+    "a node whose title matches a coaching syllabus but not the official document must not exist here; it belongs in knowledge/preparation_taxonomy/"
+  ]
+}

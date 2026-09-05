@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "official_document.schema.json",
+  "title": "Official document registry entry",
+  "description": "One target or acquired official document. Registration records intent to acquire and is not a claim the document was read. Validated by hand-written checks in tests/official/test_official_knowledge.py (D-0006).",
+  "type": "object",
+  "required": ["document_id", "title", "publisher", "url", "url_status", "url_basis", "document_type", "expected_content", "retrieval_status", "attempts", "local_path", "sha256", "document_date", "retrieved_on"],
+  "properties": {
+    "document_id": {"type": "string", "pattern": "^DOC-OFF-[0-9]{3}$"},
+    "title": {"type": "string", "minLength": 3},
+    "publisher": {"type": "string", "minLength": 3},
+    "url": {"type": "string", "pattern": "^https://"},
+    "url_status": {"enum": ["OBSERVED_ON_OFFICIAL_DOMAIN", "INFERRED_UNVERIFIED", "UNKNOWN"]},
+    "url_basis": {"type": "string", "minLength": 20, "description": "How the URL was obtained. Required, because an inferred URL is not a fact."},
+    "document_type": {"type": "string"},
+    "expected_content": {"type": "array", "items": {"type": "string", "pattern": "^OFF-F[0-9]{2}$"}, "description": "Which facts this document is expected to settle. An expectation about scope, not about content."},
+    "expected_content_note": {"type": "string"},
+    "retrieval_status": {"enum": ["RETRIEVED", "BLOCKED", "NOT_ATTEMPTED"]},
+    "blocked_reason": {"type": "string", "minLength": 10, "description": "Required unless retrieval_status is RETRIEVED."},
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "tool", "url", "response"],
+        "properties": {
+          "timestamp": {"type": "string"},
+          "tool": {"type": "string"},
+          "url": {"type": "string"},
+          "response": {"type": "string", "minLength": 5, "description": "Verbatim. Paraphrasing a failure loses the diagnostic detail that made it worth recording."},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "local_path": {"type": ["string", "null"], "description": "Path under source_material/official/, else null."},
+    "sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "document_date": {"type": ["string", "null"]},
+    "retrieved_on": {"type": ["string", "null"]},
+    "language": {"type": ["string", "null"]}
+  },
+  "invariants": [
+    "retrieval_status == RETRIEVED  =>  local_path, sha256 and retrieved_on are all non-null",
+    "retrieval_status != RETRIEVED  =>  blocked_reason is non-empty AND at least one attempt is recorded, OR retrieval_status == NOT_ATTEMPTED",
+    "url_status == INFERRED_UNVERIFIED  =>  no fact may cite this document until a retrieval confirms the URL",
+    "a mirror of an official document hosted elsewhere is never registered here; it cannot be hashed against the publisher"
+  ]
+}

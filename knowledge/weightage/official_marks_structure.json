@@ -1,0 +1,20 @@
+{
+  "registry_version": 1,
+  "spec": "SPEC-OFF-001",
+  "category": "official_marks_structure",
+  "question_answered": "What marks and duration does the official notification prescribe?",
+  "provenance_tier": "T1_OFFICIAL",
+  "only_valid_source": "The official TGPRB / TSLPRB notification for this recruitment",
+  "record_count": 0,
+  "verified_count": 0,
+  "status": "BLOCKED",
+  "blocked_reason": "No official notification retrieved. Network egress from this environment permits one unrelated host; see source_material/official/RETRIEVAL_LOG.md and blocker B-09.",
+  "rules": [
+    "Only what the notification itself states. Per-paper totals if that is all it gives.",
+    "Topic-wise marks are T1_OFFICIAL only if the notification prints a topic-wise distribution. Otherwise no official topic weightage exists, and this file records that absence rather than filling it.",
+    "Never merge a figure from this file with a figure from historical_observed.json or estimated_priority.json into a single displayed number."
+  ],
+  "official_topic_weightage_provided_by_notification": null,
+  "official_topic_weightage_note": "Unknown until the notification is read. null means unknown; it does not mean 'no'.",
+  "entries": []
+}
