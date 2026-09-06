@@ -11,48 +11,87 @@
 | Project                | Telangana Police SI 2026 AI Coaching System              |
 | Repository             | `D:\Projects\ts-si-ai-coach`                             |
 | Last updated           | 2026-09-06                                               |
-| Session                | 003 — Official knowledge foundation                      |
-| Phase                  | 2 of 7 — Official source acquisition (in progress)       |
-| Overall status         | `PARTIAL` — the official-knowledge **container** is `COMPLETE` and tested; the **content** is `BLOCKED` at zero facts by `B-09` (network egress). Ingestion machinery `COMPLETE`-for-scope; live Instagram extraction `BLOCKED` by `B-08` |
+| Session                | 005 — Official facts read + knowledge pipeline           |
+| Phase                  | 2 of 7 — Source acquisition (official half `PARTIAL`; Instagram half blocked) |
+| Overall status         | `PARTIAL` — 24 of 25 official facts `VERIFIED` from the stored notifications; official syllabus mapped (27 nodes); downstream knowledge pipeline `COMPLETE`-for-scope and tested offline against a fixture; live Instagram extraction still `BLOCKED` by `B-08` |
 | Git branch             | `main`                                                   |
-| Latest commit          | Session 003 verified then committed as `a209e05` → `77967da` → `fa76278`; later commits are documentation only — run `git log --oneline` for the current head |
+| Latest commits         | `f2674ac` (session-004 official facts) → `b91820f` (version-mismatch note) → `7a15b77` (SPEC-KNW-001 pipeline) — run `git log --oneline` for the head |
 | Structural checks      | 21 of 21 passed — `python scripts/validate_bootstrap.py` exit `0` |
-| Unit tests             | 157 of 157 passed — `python -m unittest discover -s tests` (45 bootstrap + 43 ingestion + 69 official), 0 failures, 0 errors, 0 skips |
-| Last re-verified       | 2026-09-06, session 003, after every file change below   |
-| Official facts verified| **0 of 25** — `B-09`. No examination fact exists anywhere in this repository |
-| Evidence               | `docs/reports/2026-09-06-phase1-official-foundation.md`   |
+| Unit tests             | 220 of 220 passed — `python -m unittest discover -s tests` (45 bootstrap + 43 ingestion + 71 official incl. evidence + 59 knowledge), 0 failures, 2 skips that are correct-by-design |
+| Official facts verified| **24 of 25** (`OFF-F03` honestly BLOCKED — the notification defers application dates to a future press release) |
+| Instagram knowledge    | **0 items processed.** No Instagram raw content exists; the fixture run is explicitly marked `test_fixture: true` and no real source was touched |
+| Evidence               | `docs/reports/2026-09-06-session005-knowledge-pipeline.md` |
 
 ## Current Phase
 
 **Phase 1 — Bootstrap: `COMPLETE`** (session 001).
 
-**Phase 2 — Source acquisition: `IN PROGRESS`** (sessions 002 and 003).
+**Phase 2 — Source acquisition: `PARTIAL`.**
 
-Session 003 worked the official-document half of this phase, which the session
-instruction called "Phase 1: official knowledge foundation" — the same work as
-this file's Phase 2, named differently. Outcome, stated plainly:
+- **Official half (sessions 003–004):** container built in 003; in 004 the user
+  supplied the two notification PDFs by browser download (`B-09` resolved for
+  `DOC-OFF-002`/`DOC-OFF-003` only — the environment still cannot re-fetch),
+  and both documents were read. 24 of 25 official facts are `VERIFIED` with
+  document/page/section/verbatim-quote provenance, mechanically re-checked by
+  `tests/official/test_official_evidence.py`. The official syllabus is mapped:
+  27 nodes from Annexures II–III, verbatim wording, no invented layer.
+  `OFF-F03` (application dates) is honestly `BLOCKED`: the notification defers
+  the dates to a future press release.
+- **Instagram half (session 002):** machinery `COMPLETE`; live access still
+  `BLOCKED` (`B-08`), recorded not bypassed.
+- **Downstream pipeline (session 005):** `SPEC-KNW-001` implemented and tested
+  — raw content → processing → GLM extraction schema → atomic candidate
+  knowledge → relevance scoring → dedup/corroboration → verification queue.
+  Fully operable offline via the committed fixture; **zero Instagram content
+  processed**; nothing marked `VERIFIED` by it.
 
-- The **container** is `COMPLETE`: an approved spec, a document registry, 25
-  provenance-bearing fact slots, an empty official syllabus with its emptiness
-  justified, three separated weightage categories, a separate preparation
-  taxonomy that forbids the official tier, three declarative schemas, a balanced
-  acquisition manifest, a research plan, and 69 tests.
-- The **content** is `BLOCKED`: 0 of 6 enumerated official documents retrieved,
-  therefore 0 of 25 facts `VERIFIED` and 0 syllabus nodes. Cause is `B-09`, the
-  environment's network egress allowlist, recorded verbatim in
-  `source_material/official/RETRIEVAL_LOG.md`.
+## The knowledge processing pipeline (new in session 005)
 
-Passing container tests does not license calling the phase `COMPLETE`; that is
-written into `SPEC-OFF-001` §9 so a later session cannot mistake one for the
-other. No examination fact has been written anywhere in this repository.
+Implements `specs/features/knowledge-processing-pipeline.md` (`SPEC-KNW-001`).
 
-**Phase 2 — Instagram half (session 002).** The ingestion machinery is built,
-specified, and tested. Live extraction was attempted against exactly one
-configured source (IG001) per instruction, and Instagram refused anonymous
-access (HTTP 429 on the web profile API; the profile HTML page returns 200 but
-contains only a JavaScript shell with no embedded posts). The refusal was
-recorded honestly as a `blocked` checkpoint with a balanced manifest; no bypass
-was attempted.
+- **Layers kept separate** — raw (ingestion, immutable) → processed
+  (`data/processed/`) → candidate knowledge + questions
+  (`data/knowledge/candidates|questions/`, `UNVERIFIED`) → concepts
+  (`data/knowledge/concepts/`, one concept, many supporting sources) →
+  verification queue (`data/knowledge/verification_queue.jsonl`). The trusted
+  `knowledge/` layer is untouched by this pipeline.
+- **Content processor** — null-safe text assembly (caption, slide OCR in
+  order, transcript, on-screen); empty content skipped with a reason and zero
+  model calls; OCR/transcription are interfaces only until raw media exists.
+- **GLM extraction** — strict machine-checkable output schema
+  (`extraction_schema.py`, field-path errors, enum-enforced); versioned prompt
+  `knowledge-extraction-v1` (atomic extraction, never summarize, never
+  invent, questions separate, source-claims-not-truth); routed via the new
+  `KNOWLEDGE_EXTRACTION` role in `config/model_routing.json` (GLM 5.3,
+  env-keyed; independence pair with `VERIFICATION` enforced by the validator).
+  Tests use a scripted client; the live client requires `GLM_API_KEY` and
+  reports honestly when absent.
+- **Candidate knowledge** — one record per atomic unit with full provenance
+  (`source_id, content_id, url, published_at, extraction model, prompt
+  version, timestamp, T3_EXPERT`), deterministic ids, `verification_status`
+  `UNVERIFIED` (the pipeline structurally cannot create anything else).
+- **Questions/MCQs** — extracted separately; answers stored only when
+  `STATED_BY_SOURCE`; options never invented.
+- **Scoring** — deterministic rules in `docs/relevance_scale.md` v1;
+  `pyq_similarity` is `null` until PYQs exist (no denominator, no number);
+  `constable_relevance` carries an explicit PROVISIONAL basis because the
+  Constable notification is not yet retrieved.
+- **Dedup & corroboration** — concept keys over stopword-stripped,
+  curated-synonym-canonicalized content words plus knowledge type
+  (`config/dedup_synonyms.json` is reviewed data; "not" is never dropped);
+  one concept holds every supporting source (`source_count`,
+  `source_diversity`); corroboration is explicitly not verification.
+- **Verification queue** — append-only; records the required verifier
+  provider (resolved `AUTO_NOT_AUTHOR`, differing from the author's);
+  performs and can perform no verification.
+- **Batch + resume** — checkpoint after every item; resume skips
+  dispositioned items and retries failed ones; prompt/model version is part
+  of the checkpoint scope so re-extraction is always explicit. Cost controls:
+  empty content, already-processed, and within-run duplicate text never reach
+  the model.
+- **CLI** — `python scripts/process_knowledge.py process --fixture |
+  --source IG001 | --platform instagram`, `status`. The `--fixture` run is
+  the offline "first GLM test" against the committed dataset.
 
 
 ## The ingestion subsystem (new in session 002)
@@ -108,14 +147,20 @@ Implements `specs/features/ingestion-subsystem.md` (`SPEC-ING-001`).
 | **OCR / transcription stage**     | `BLOCKED`  | Depends on media download, which depends on live access; pipeline order puts OCR after raw storage by design |
 | **GLM classification stage**     | `BLOCKED`  | Scaffolded (`ai_processing` fields, `taxonomy.py` enums); needs live raw data first |
 | **Official knowledge spec**       | `COMPLETE` | `specs/features/official-knowledge-foundation.md` (`SPEC-OFF-001`), status `APPROVED` |
-| **Official document registry**    | `COMPLETE` | `config/official_documents.json`: 6 documents enumerated and registered, 0 retrieved, 1 conflict recorded |
-| **Official fact slots (25)**      | `COMPLETE` | `knowledge/official/required_facts.json`: `OFF-F01`–`OFF-F25`, every value `null`, every status `BLOCKED` with a reason |
-| **Official fact values**          | `BLOCKED`  | `B-09` — 0 of 25 `VERIFIED`. Nothing may be written without a retrieved, hashed document |
-| **Official knowledge tests**      | `COMPLETE` | `tests/official/test_official_knowledge.py` — 69 tests including 30 that feed the checkers fabricated records and require rejection |
-| Official syllabus                | `BLOCKED`  | `B-09` — container exists (`knowledge/official/syllabus.json`, 0 nodes, reason recorded). Must not be guessed |
-| Exam pattern / marks / duration  | `BLOCKED`  | `B-09` — `knowledge/weightage/official_marks_structure.json`, 0 entries |
-| Eligibility rules                | `BLOCKED`  | `B-09` — fact slots `OFF-F07`–`OFF-F10` |
-| Physical event standards         | `BLOCKED`  | `B-09` — fact slots `OFF-F18`, `OFF-F19`; `physical/standards/` stays empty. Wrong numbers here waste months of training |
+| **Official document registry**    | `COMPLETE` | `config/official_documents.json`: 6 registered, **2 RETRIEVED** (DOC-OFF-002, DOC-OFF-003, user-supplied downloads, hashed), 4 blocked by `B-09` |
+| **Official fact slots (25)**      | `COMPLETE` | `knowledge/official/required_facts.json`: `OFF-F01`–`OFF-F25` with provenance structure |
+| **Official fact values**          | `PARTIAL` | **24 of 25 `VERIFIED`** with document/page/quote; OFF-F03 honestly `BLOCKED` (notification defers application dates to a press release) |
+| **Official fact evidence test**   | `COMPLETE` | `tests/official/test_official_evidence.py` — every quote (incl. `supporting[]`) reproducible from the cited artefact page; stored PDFs hash-checked |
+| **Official knowledge tests**      | `COMPLETE` | 71 tests (69 original + 4 evidence incl. hash-tamper check) |
+| Official syllabus                | `COMPLETE_FOR_RETRIEVED_DOCUMENTS` | 27 nodes, verbatim from Annexures II–III (pages 42–44), generated with quotes located in the artefact at write time |
+| Exam pattern / marks / duration  | `VERIFIED` | Covered by verified facts OFF-F12–OFF-F14 |
+| Eligibility rules                | `VERIFIED` | Covered by verified facts OFF-F07–OFF-F10 |
+| Physical event standards         | `VERIFIED` | Covered by verified facts OFF-F18, OFF-F19; `physical/standards/` still empty pending its own structured extraction |
+| **Knowledge pipeline spec**       | `COMPLETE` | `specs/features/knowledge-processing-pipeline.md` (`SPEC-KNW-001`), `APPROVED` |
+| **Knowledge pipeline package**    | `COMPLETE` | `backend/app/knowledge/` — processor, schema, prompt v1, routed client, candidates, scoring, dedup, queue, pipeline |
+| **Knowledge pipeline tests**      | `COMPLETE` | 59 tests covering all 18 SPEC-KNW-001 criteria; zero network calls |
+| **Fixture GLM test**              | `COMPLETE` | Offline deterministic run: 9 items → 7 candidates, 2 questions, 6 concepts, 7 queued; cross-source merge and idempotency verified |
+| **GLM classification stage**      | `READY`   | Live execution blocked on real raw content (`B-08`) — the schema, prompt and routing are tested; no live call has been made |
 | PYQ database                     | `BLOCKED`  | No papers acquired                                       |
 | Question-family taxonomy         | `BLOCKED`  | Depends on PYQs                                          |
 | Recognition training             | `BLOCKED`  | Depends on question families                             |
@@ -135,14 +180,14 @@ produces exam knowledge.
 
 | ID     | Blocker                                                        | What unblocks it                                            |
 | ------ | -------------------------------------------------------------- | ------------------------------------------------------------ |
-| `B-01` | No official TGPRB document has been obtained                   | Acquire the current SI notification and syllabus PDF          |
+| `B-01` | ~~No official TGPRB document has been obtained~~ **CLOSED in session 004** for the SI notification and its supplement | Two documents stored and hashed; the other four remain blocked (`B-09`) |
 | `B-02` | No previous-year papers obtained                               | Acquire PYQ papers, ideally with official answer keys          |
-| `B-03` | Physical event standards unknown                               | Official document only — `physical/standards/` stays empty     |
-| `B-04` | Provider model ID strings unpinned/unverified                  | Confirm exact model strings, then record under `D-0009`        |
-| `B-05` | First outbound network calls made (session 002); Instagram refuses anonymous API access with HTTP 429 | Record access approach per platform; for Instagram see `B-08`  |
+| `B-03` | Physical event standards — **resolved in substance**: OFF-F18/OFF-F19 verified from the notification; structured `physical/standards/` records still to be written | Data entry from the already-verified facts; no new source needed |
+| `B-04` | Provider model ID strings unpinned/unverified                  | Confirm exact model strings, then record under `D-0009`. The GLM string `glm-5.3` remains `UNVERIFIED_STRING` until a live call is made |
+| `B-05` | First outbound network calls made; Instagram refuses anonymous API access with HTTP 429 | For Instagram see `B-08`; the knowledge pipeline's live GLM call has not been attempted (no key set in this environment) |
 | `B-06` | Frontend framework undecided                                   | Write and approve the first UI spec (`D-0003`)                 |
-| `B-07` | Data-model spec not written, so no schema and no database      | Write `specs/data-model/` spec (`D-0010`)                      |
-| `B-08` | **Instagram refuses anonymous content access from this client** (API 429; feed 401; profile HTML is a JS shell with no posts) | User decision: either (a) provide authenticated access through a mechanism Instagram permits, (b) run extraction from a network context where anonymous access is allowed, or (c) deprioritize Instagram ingestion until (a)/(b). The offline pipeline is ready; nothing else in the subsystem needs to change |
+| `B-07` | Data-model spec not written, so no schema and no database      | Write `specs/data-model/` spec (`D-0010`). The knowledge pipeline's file-based record shapes (candidates/concepts/questions) are a ready 1:1 source for the migration |
+| `B-08` | **Instagram refuses anonymous content access from this client** (API 429; feed 401; profile HTML is a JS shell with no posts) | User decision: (a) authenticated access through a mechanism Instagram permits, (b) a network context where anonymous access is allowed, or (c) defer. The ingestion AND knowledge pipelines are both ready end-to-end; nothing downstream needs to change |
 | `B-09` | **No official TGPRB / TSLPRB document can be fetched from this environment.** Network egress is restricted to an allowlist naming exactly one host (`tabitoken.com`), unrelated to this project. Every board URL is refused before a request leaves the machine — host-level, not rate limiting, not a login wall, not an outage | Any one of: (a) add `tgprb.in`, `www.tgprb.in`, `www.tslprb.in` to the environment's egress allowlist and re-run retrieval; (b) download the notification PDFs by hand into `source_material/official/` — the registry already holds the expected file identities, so hashing and fact extraction proceed offline with no code change; (c) run retrieval from a network context where the board domain is reachable. This blocker gates all 25 `OFF-F##` facts, the official syllabus, the official marks structure, `physical/standards/`, and conflict `CONF-OFF-001` |
 
 Note on `B-09`: `B-01` records the *absence* of an official document; `B-09`
@@ -176,30 +221,25 @@ invented facts — the exact failure this architecture is designed to prevent.
 
 ## Next Action
 
-**Get the official notification PDFs into `source_material/official/` (`B-09`).**
-This is now the single highest-value action in the project: 25 fact slots, the
-syllabus, the marks structure, the physical standards and conflict
-`CONF-OFF-001` are all waiting on bytes, and none of them can be filled by any
-amount of further engineering.
+**Decide the Instagram access path (`B-08`, user decision)** — the entire
+chain is now built and tested end-to-end on both sides of the blocker:
 
-The easiest route needs no code and no network change: open
-`https://tgprb.in/` in an ordinary browser, download the SI (Civil et al) 2026
-notification and the supplementary notification, and save them into
-`D:\Projects\ts-si-ai-coach\source_material\official\`. A later session hashes
-them, ledgers them, and extracts the facts one at a time with page, section and
-a verbatim quote. Two of the six registered URLs are inferred rather than
-observed (`DOC-OFF-002`, `DOC-OFF-005`), so whatever the site actually serves
-is the authority — the registry's URL gets corrected to match, not the other
-way round.
+raw Instagram content → ingestion (session 002) → knowledge pipeline
+(session 005) → verification queue → future verification stage. The only
+missing input is real raw content:
 
-Alternatives, if that is inconvenient: add `tgprb.in`, `www.tgprb.in` and
-`www.tslprb.in` to the environment's egress allowlist and re-run retrieval, or
-run retrieval from a network context where the board domain is reachable.
+- Option A — authenticated access through an account the user controls, via a
+  mechanism Instagram permits, recorded as a decision in `DECISIONS.md` first.
+- Option B — run `python scripts/ingest.py extract` from a network context
+  where anonymous access is allowed, then
+  `python scripts/process_knowledge.py process --platform instagram`.
+- Option C — defer Instagram; the highest-value alternative work is (1)
+  populating `physical/standards/` from the already-verified facts,
+  (2) writing the data-model spec (`D-0010`) now that real record shapes
+  exist, or (3) acquiring PYQ papers (`B-02`), which unlocks weightage and
+  `pyq_similarity`.
 
-Still open in parallel: the Instagram access decision (`B-08`) — options (a)
-authenticated access through a mechanism Instagram permits, (b) a network
-context where anonymous access is allowed, or (c) deprioritize until later. The
-offline pipeline is ready either way.
+No code change is required for any option.
 
 
 ## Session History
@@ -209,4 +249,5 @@ offline pipeline is ready either way.
 | 001     | 2026-09-05 | Bootstrap: 58 directories, 9 governance files, 17 area READMEs, 21 structural checks and 35 L0 tests all passing, two Git checkpoints. No examination fact recorded. Full evidence in `docs/reports/2026-09-05-bootstrap.md` |
 | 002     | 2026-09-05 | Ingestion subsystem built and tested (spec, registry of 32 IG sources, adapter architecture, raw/normalized stores, checkpoint/resume, error logs, manifests, CLI; 43 offline tests, all passing). Live single-source run (IG001) honestly `BLOCKED` by Instagram's anonymous-access refusal (429) — recorded, not bypassed. 78/78 tests green. Full evidence in `docs/reports/2026-09-05-ingestion-subsystem.md` |
 | 003     | 2026-09-06 | Official knowledge foundation. `SPEC-OFF-001` approved; 6 official documents enumerated and registered; 25 fact slots created with every value `null`; empty official syllabus with its emptiness justified; three separated weightage categories; preparation taxonomy that forbids `T1_OFFICIAL`; three schemas; balanced acquisition manifest; `PLAN-OFF-001`; 69 new tests, 30 of them proving the checkers reject fabricated records. Two self-declared reconciliation stubs replaced with real counting (`T-0039`), adding 10 bootstrap tests. Suite 157/157 `OK`, validator 21/21 exit `0`. Retrieval `BLOCKED` by the environment's egress allowlist (`B-09`) — refusals recorded verbatim, no bypass and no coaching-site substitute. **0 examination facts written.** Full evidence in `docs/reports/2026-09-06-phase1-official-foundation.md` |
-
+| 004     | 2026-09-06 | User supplied the two notification PDFs by browser download (`B-09` resolved for those two documents only). Reproducible page-marked extraction artefacts committed with digests; **24 of 25 official facts `VERIFIED`** with document/page/section/verbatim-quote provenance; `OFF-F03` honestly `BLOCKED` (notification defers application dates). **Official syllabus mapped: 27 nodes**, verbatim from Annexures II–III, quotes located in the artefact at write time. New `tests/official/test_official_evidence.py` mechanically re-checks every quote and the stored-PDF hashes; an `--check` digest mismatch was investigated and recorded as a pdftotext version difference (xpdf 4.06 vs poppler 22.02.0), not content drift. Suite 161/161 `OK` |
+| 005     | 2026-09-06 | Knowledge processing pipeline (`SPEC-KNW-001`): raw → processed → GLM extraction schema (`knowledge-extraction-v1` prompt, strict enums, field-path errors) → atomic candidates + questions with full provenance → deterministic documented scoring → concept dedup with cross-source corroboration → UNVERIFIED-only verification queue with provider separation. Batch checkpoint/resume, idempotency and cost controls (empty and duplicate content never reach the model). `KNOWLEDGE_EXTRACTION` role added to routing with enforced independence pair. 59 new tests over all 18 criteria; offline fixture run verified (9 items → 7 candidates, 2 questions, 6 concepts, cross-source merge proven). **Zero Instagram content processed, zero network calls, nothing marked VERIFIED.** Suite 220/220 `OK`, validator 21/21. Evidence in `docs/reports/2026-09-06-session005-knowledge-pipeline.md` |

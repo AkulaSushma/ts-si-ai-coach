@@ -9,20 +9,31 @@ ID format: `T-####`, sequential, never reused.
 
 | ID       | Task                                              | Status    | Depends on |
 | -------- | ------------------------------------------------- | --------- | ---------- |
-| `T-0010` | Acquire official TGPRB SI notification + syllabus  | `BLOCKED` | `B-01`, `B-09` |
-| `T-0011` | Extract official syllabus into `knowledge/official/syllabus.json` | `BLOCKED` | `T-0034`   |
-| `T-0012` | Write the data-model specification                | `BLOCKED` | `T-0011`   |
+| `T-0010` | Acquire official TGPRB SI notification + syllabus  | `PARTIAL` | Main notification + supplement RETRIEVED and read (session 004); 4 of 6 registered documents still blocked (`B-09`) |
+| `T-0011` | Extract official syllabus into `knowledge/official/syllabus.json` | `COMPLETE` | 27 nodes verified against DOC-OFF-002 pages 42–44; quotes mechanically re-checked |
+| `T-0012` | Write the data-model specification                | `BLOCKED` | `T-0011` complete — unblocked; knowledge-pipeline record shapes are ready inputs |
 | `T-0013` | Acquire previous-year papers with keys             | `BLOCKED` | `B-02`      |
-| `T-0014` | Confirm and pin provider model ID strings          | `BLOCKED` | `B-04`      |
+| `T-0014` | Confirm and pin provider model ID strings          | `BLOCKED` | `B-04`; `glm-5.3` still `UNVERIFIED_STRING` — no live call yet |
 | `T-0019` | Decide Instagram access path (auth / network / defer) | `BLOCKED` | `B-08` — user decision |
-| `T-0020` | Bulk-extract remaining 31 IG sources               | `BLOCKED` | `T-0019` — single-source verification done; live access refused |
-| `T-0021` | OCR + transcription stage over stored media         | `BLOCKED` | Live ingestion producing raw records (`T-0019`) |
-| `T-0033` | Get the official notification PDFs into `source_material/official/` | `BLOCKED` | `B-09` — egress allowlist, or a manual download |
-| `T-0034` | Hash, ledger and confirm the retrieved documents    | `BLOCKED` | `T-0033` — nothing to hash |
-| `T-0035` | Extract the 25 official facts, each with document, page/section and verbatim quote | `BLOCKED` | `T-0034` |
-| `T-0036` | Map the official syllabus Subject → Topic → Subtopic | `BLOCKED` | `T-0034` |
-| `T-0037` | Populate `knowledge/weightage/official_marks_structure.json` | `BLOCKED` | `T-0034` |
-| `T-0038` | Resolve `CONF-OFF-001` — which board domain is controlling | `BLOCKED` | `T-0033` |
+| `T-0020` | Bulk-extract remaining 31 IG sources               | `BLOCKED` | `T-0019` — live access refused |
+| `T-0021` | OCR + transcription stage over stored media         | `BLOCKED` | Live ingestion producing raw records (`T-0019`); interfaces exist |
+| `T-0033` | Get the official notification PDFs into `source_material/official/` | `PARTIAL` | DOC-OFF-002/003 supplied by user and hashed; DOC-OFF-001/004/005/006 still blocked (`B-09`) |
+| `T-0034` | Hash, ledger and confirm the retrieved documents    | `COMPLETE` | SHA-256 in `config/official_documents.json` + `EXTRACTION_MANIFEST.json`; hash-tamper test green |
+| `T-0035` | Extract the 25 official facts, each with document, page/section and verbatim quote | `PARTIAL` | 24 of 25 `VERIFIED`; OFF-F03 honestly `BLOCKED` (dates deferred to a press release by the notification itself) |
+| `T-0036` | Map the official syllabus Subject → Topic → Subtopic | `COMPLETE` | 27 nodes; document prints no subtopic layer, so none exists (by design rule) |
+| `T-0037` | Populate `knowledge/weightage/official_marks_structure.json` | `PARTIAL` | Covered facts-wise by OFF-F12–F14; the weightage file itself still to be populated from those verified facts |
+| `T-0038` | Resolve `CONF-OFF-001` — which board domain is controlling | `BLOCKED` | `T-0033` partial — still needs an egress-enabled fetch of tslprb.in |
+| `T-0040` | Write `SPEC-KNW-001` before any pipeline code      | `COMPLETE` | `specs/features/knowledge-processing-pipeline.md`, `APPROVED`, 18 acceptance criteria in §12 |
+| `T-0041` | Build the content-processing stage (null-safe)      | `COMPLETE` | `processor.py`; 6 processing tests incl. all-null, OCR-only, transcript-only |
+| `T-0042` | Build the GLM extraction schema + versioned prompt  | `COMPLETE` | `extraction_schema.py` (field-path errors, enum-enforced), `prompts/knowledge_extraction_v1.py` (`knowledge-extraction-v1`) |
+| `T-0043` | Route extraction through model_routing.json        | `COMPLETE` | `KNOWLEDGE_EXTRACTION` role (glm/anthropic fallback) + independence pair; validator enforces separation |
+| `T-0044` | Build candidate + question construction with provenance | `COMPLETE` | `candidates.py`; deterministic ids; provenance asserted field-by-field in tests |
+| `T-0045` | Implement documented deterministic scoring          | `COMPLETE` | `scoring.py` + `docs/relevance_scale.md` v1; PYQ similarity null without denominator |
+| `T-0046` | Implement dedup + cross-source corroboration       | `COMPLETE` | `dedup.py` + `config/dedup_synonyms.json`; 42nd-Amendment fixture pair → one concept, 2 sources, still UNVERIFIED |
+| `T-0047` | Build the verification queue (no fake verification) | `COMPLETE` | `verify_queue.py`; UNVERIFIED-only; provider separation recorded per line; no verify method exists |
+| `T-0048` | Batch processing with checkpoint/resume/idempotency/cost controls | `COMPLETE` | `pipeline.py`; resume-from-crash, idempotent rerun (0 new files, 0 re-calls) tested |
+| `T-0049` | Fixture dataset + offline "first GLM test"         | `COMPLETE` | `tests/fixtures/raw_records/` (test_fixture: true, IGFIX* ids); run verified: 9→7 candidates, 2 questions, 6 concepts, 7 queued |
+| `T-0050` | Tests for all 18 SPEC-KNW-001 criteria            | `COMPLETE` | 59 tests in `tests/knowledge/test_knowledge_pipeline.py`; full suite 220/220 |
 
 `T-0033` is now the highest-value action in the entire project: 25 fact slots, the
 official syllabus, the marks structure, `physical/standards/` and `CONF-OFF-001` all

@@ -284,6 +284,84 @@ code change once bytes exist.
 
 ---
 
+## D-0019 — Candidate knowledge is UNVERIFIED by construction; corroboration is not verification
+
+**Status:** ACCEPTED · **Date:** 2026-09-06 · **Decided by:** user instruction, session 005 (SPEC-KNW-001)
+
+**Decision.** Social-media-derived content flows through a separate candidate
+layer and may never be treated as verified truth. The pipeline
+(`backend/app/knowledge/`) can only create records with `verification_status:
+UNVERIFIED`; it has no verify method at all. Multiple accounts repeating a
+claim are recorded as corroboration (`source_count`, `supporting_sources`,
+`source_diversity`) on a single concept — and every concept carries
+`corroboration_is_not_verification: true`. Verification remains a separate
+stage consuming the append-only queue, whose required verifier provider is
+resolved at queue time from `config/model_routing.json` and must differ from
+the authoring provider.
+
+**Why.** The user's instruction is explicit: social-media content must
+initially become candidate knowledge; a claim repeated by many coaching
+accounts is still one social-media claim, possibly copied from a single wrong
+origin. This also aligns with `VERIFICATION_POLICY.md` (no self-verification;
+capability is not evidence) and with the provenance-tier rule (coaching
+content is `T3_EXPERT`, never relabelled upward).
+
+**Consequences.** The trusted `knowledge/` layer is untouched by the pipeline.
+Test `test_pipeline_has_no_verify_method` asserts the structural
+impossibility, and queue tests assert every line is `UNVERIFIED` with a
+distinct verifier provider. Promotion to `VERIFIED` requires a future
+verification run recorded under `verification/runs/` — none exists yet.
+
+---
+
+## D-0020 — Deterministic dedup via curated synonym data, not fuzzy similarity
+
+**Status:** ACCEPTED · **Date:** 2026-09-06 · **Decided by:** architect, per user instruction session 005
+
+**Decision.** Concept deduplication groups candidates by a key over
+stopword-stripped, order-insensitive content words, canonicalized through a
+small human-reviewed synonym table (`config/dedup_synonyms.json`), plus the
+knowledge type. No embedding, no similarity threshold, no model call.
+Negation words are never stopwords or synonyms, so a fact and its negation
+can never merge. Provenance is append-only: a concept keeps its first
+representative text and gains every supporting source.
+
+**Why.** A similarity threshold (e.g. token-overlap ≥ 0.8) would silently
+merge genuinely different facts that merely share vocabulary ("The President
+is elected by an electoral college" vs "The Vice President is elected by an
+electoral college"), and would make dedup nondeterministic across model
+versions. The user's own example — "Fundamental Duties were added by the 42nd
+Amendment" vs "The 42nd Amendment introduced Fundamental Duties" — differs by
+one surface verb, exactly the variation a curated table handles safely and a
+threshold handles dangerously.
+
+**Consequences.** New phrasings that should collide require adding a row to
+`dedup_synonyms.json` — a data review, not a code change, each row auditable.
+The 42nd-Amendment pair is a fixture test and must keep colliding. A future
+embedding-based assistant may *propose* merges, but only deterministic keys
+decide.
+
+---
+
+## D-0021 — pyq_similarity stays null until a counted PYQ denominator exists
+
+**Status:** ACCEPTED · **Date:** 2026-09-06 · **Decided by:** architect, session 005
+
+**Decision.** The `pyq_similarity` field exists on every candidate but is
+always `null` until previous-year papers are acquired and counted. No
+estimated, model-guessed, or rounded value is ever written.
+
+**Why.** TEST_PLAN.md L3 forbids percentages from uncounted denominators; a
+"similarity to PYQs" number with no PYQ database would be fabricated
+precision. The user's required schema asks for the field — so the field
+exists, and its basis string records why it is null.
+
+**Consequences.** `docs/relevance_scale.md` §5 documents the rule; scoring
+tests assert the null. When `B-02` unblocks, the rule is recomputed and the
+scale version is bumped.
+
+---
+
 ## Open decisions
 
 | ID       | Question                                              | Resolve when                                  |
