@@ -39,6 +39,7 @@
       "page_numbering": "Single page; footer reads 'Page 1 of 1'."
     }
   ],
+  "version_check_note": "On 2026-09-06, `extract_official_pdf.py --all --check` on this machine reported digest mismatches for both artefacts. Investigated before acting: this machine's pdftotext is xpdf 4.06 (mingw64), not poppler 22.02.0 that produced the committed artefacts. A letter-level diff of DOC-OFF-003 shows the two extractions are content-identical modulo whitespace and glyph encoding (xpdf renders 'AMENDMENT:' with per-letter spacing, splits 'LAKDI-KA-PUL' differently). For DOC-OFF-002 the differences are likewise glyph-level: poppler preserves en-dashes and the rupee sign where xpdf substitutes/omits them ('–' vs '-', '₹' dropped, one fee-table number repositioned). The committed artefacts remain the reading basis because they preserve more of the document's own characters; they were NOT regenerated. A `--check` mismatch on a non-poppler machine is the expected signal of tool-version difference, not evidence of tampering; confirm by comparing the stored PDF sha256 against this manifest, which `tests/official/test_official_evidence.py::test_manifest_source_pdfs_exist_and_match_hashes` does mechanically.",
   "known_gaps": [
     {
       "gap_id": "EXT-GAP-001",
