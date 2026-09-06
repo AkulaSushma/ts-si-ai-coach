@@ -280,13 +280,22 @@ def reconcile(registries: dict, stored: int, raw: int, sl: str, kl: str) -> list
             problems.append(
                 f"{rel} declares record_count {data['record_count']} but holds {len(records)}"
             )
+        def node_is_verified(r: dict) -> bool:
+            # Same two legitimate record shapes as validate_bootstrap.py: fact
+            # slots carry a top-level status; syllabus nodes carry a
+            # verification block whose method is set once the node is sourced.
+            if r.get("status") == "VERIFIED":
+                return True
+            v = r.get("verification") or {}
+            return isinstance(v, dict) and bool(v.get("method"))
+
         for r in records:
             rid = r.get("fact_id") or r.get("node_id") or r.get("entry_id") or "<no id>"
-            if r.get("status") == "VERIFIED":
+            if node_is_verified(r):
                 verified_total += 1
                 if not (r.get("provenance") or {}).get("document_id"):
                     problems.append(f"{rel}:{rid} is VERIFIED with no provenance document")
-            if r.get("value") is not None and r.get("status") != "VERIFIED":
+            if r.get("value") is not None and r.get("status") not in (None, "VERIFIED"):
                 problems.append(f"{rel}:{rid} holds a value while status is {r.get('status')!r}")
 
     available = [ln for ln in sl.splitlines() if ln.startswith("| SRC-") and "`AVAILABLE`" in ln]

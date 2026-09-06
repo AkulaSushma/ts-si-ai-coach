@@ -4,7 +4,13 @@
   "purpose": "Target registry of official TGPRB / TSLPRB documents required for Telangana Police SI 2026. Registration records intent to acquire; it is not a claim that any document has been read.",
   "recruitment": "Telangana Police Recruitment 2026 — SCT SI (Civil) and equivalent posts",
   "authority_rule": "Only a document published by TGPRB / TSLPRB may support a T1_OFFICIAL fact. Search engines may locate a URL; snippet text is never the document.",
-  "retrieved_count": 0,
+  "retrieved_count": 2,
+  "acquisition_routes": {
+    "note": "How bytes reached source_material/official/ matters to provenance, so it is recorded per document in acquisition{} rather than left implied by retrieval_status.",
+    "DIRECT_FETCH": "This session requested the URL and received the bytes. Confirms both the document and the URL.",
+    "USER_SUPPLIED_DOWNLOAD": "The user downloaded the file from the board's site in an ordinary browser and placed it in source_material/official/. Confirms the document was obtained from the publisher by a human, but does NOT confirm the exact URL string recorded here, because this session never saw the request.",
+    "current_route": "USER_SUPPLIED_DOWNLOAD for DOC-OFF-002 and DOC-OFF-003; B-09 still forbids DIRECT_FETCH from this environment, so the publisher's copy cannot be re-fetched and byte-compared."
+  },
   "documents": [
     {
       "document_id": "DOC-OFF-001",
@@ -37,13 +43,48 @@
       "title": "SI (Civil et al) 2026 Notification dated 29-07-2026",
       "publisher": "TGPRB / TSLPRB",
       "url": "https://www.tgprb.in/SI_PC_2026/SI%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf",
-      "url_status": "INFERRED_UNVERIFIED",
-      "url_basis": "Constructed by analogy with a sibling file observed on the official domain (PC (Civil et al) 2026 Notification dated 29-07-2026.pdf, same /SI_PC_2026/ directory) together with a non-official mirror whose file name was 'SI-Civil-et-al-2026-Notification-dated-29-07-2026-1.pdf'. This exact URL was NOT itself returned from the official domain and must be confirmed by a successful retrieval before anything is built on it.",
+      "url_status": "UNKNOWN",
+      "url_basis": "Held deliberately conservative. The URL string above was CONSTRUCTED by analogy with a sibling file observed on the official domain (PC (Civil et al) 2026 Notification dated 29-07-2026.pdf, same /SI_PC_2026/ directory); it was never returned by the board's own domain, and it is NOT the route by which the stored bytes arrived — the user downloaded the file in a browser (see acquisition). It was INFERRED_UNVERIFIED before acquisition and is downgraded to UNKNOWN rather than upgraded, because acquiring the document out of band confirms the document, not the URL. url_corroboration records the one piece of real evidence that the path is probably right.",
+      "url_corroboration": {
+        "observation": "The stored file's name is 'SI+(Civil+et+al)+2026+Notification+dated+29-07-2026.pdf'. That is exactly the basename of the inferred URL with every %20 rendered as +, including the parentheses.",
+        "control": "The same transform holds exactly for DOC-OFF-003, whose full URL WAS observed on the official domain — its observed basename contains a double %20 before 'dated', and the stored file name contains a matching double +. A coincidence would not reproduce that quirk.",
+        "strength": "Corroborating, not conclusive. It supports the file name, not the /SI_PC_2026/ directory, and a browser could in principle have rewritten the name. Recorded as evidence; url_status stays UNKNOWN.",
+        "how_to_settle": "One successful DIRECT_FETCH of this exact URL once B-09 is lifted."
+      },
       "document_type": "notification",
       "expected_content": ["OFF-F01", "OFF-F02", "OFF-F03", "OFF-F04", "OFF-F05", "OFF-F06", "OFF-F07", "OFF-F08", "OFF-F09", "OFF-F10", "OFF-F11", "OFF-F12", "OFF-F13", "OFF-F14", "OFF-F15", "OFF-F16", "OFF-F17", "OFF-F18", "OFF-F19", "OFF-F20", "OFF-F21", "OFF-F22", "OFF-F23", "OFF-F24", "OFF-F25"],
-      "expected_content_note": "Expected primary authority for the whole of Phase 1. 'Expected' is an expectation about which document settles which fact, not a claim about its contents.",
-      "retrieval_status": "BLOCKED",
-      "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include the official domain; additionally this URL is inferred and unconfirmed.",
+      "expected_content_note": "Confirmed by reading: this document is the primary authority for Phase 1. It settles every fact above except OFF-F03 (application dates), which it explicitly defers to a later press release, and it is amended on age by DOC-OFF-003.",
+      "retrieval_status": "RETRIEVED",
+      "acquisition": {
+        "method": "USER_SUPPLIED_DOWNLOAD",
+        "acquired_by": "the user, in an ordinary browser, from the board's site",
+        "acquired_on": "2026-09-06",
+        "placed_at": "source_material/official/",
+        "url_used": "NOT_OBSERVED_BY_THIS_SESSION",
+        "unblocks": "B-09 for this document only; the blocker itself remains open because the environment still cannot reach the board's domain."
+      },
+      "authenticity": {
+        "status": "CONTENT_SELF_IDENTIFIED",
+        "checks_passed": [
+          "Names its issuer in its own text: 'TELANGANA STATE LEVEL POLICE RECRUITMENT BOARD, DGP OFFICE COMPLEX, LAKDI-KA-PUL, HYDERABAD' (page 1).",
+          "Carries a file number and date consistent throughout: 'Rc. No. 225 / Rect. / Rect.1 / 2026' and 'Date: 29th July 2026' (page 1).",
+          "Every one of the 57 pages carries the same footer identifying the same file number and date, so no page was substituted or appended: 'Rc No. 225 / Rect. / Rect-1 / 2026 dated 29th July 2026' with 'Page N of 57'.",
+          "Signed off by a named officer: '(V V SRINIVASA RAO, IPS) CHAIRMAN TSLPRB HYDERABAD' (page 39).",
+          "Producer metadata is consistent with a board office document rather than a re-render: Creator and Producer 'Microsoft Word 2024', created 2026-07-30T13:51:10+05:30 — one day after the notification date, not months later.",
+          "Mutually corroborated by DOC-OFF-003, which independently cites this document's Rc number AND the specific paragraph 'Para No. 15-B (i)' — a paragraph that is in fact the age-limit paragraph in this document. A fabricated pair would have to agree on internal paragraph numbering.",
+          "Both documents cite the same prior order, 'G O Ms No. 87, General Administration (Services-A) Department dated 18-05-2026'."
+        ],
+        "limitations": [
+          "NOT digitally signed. pdfsig reports no signature, and the file contains zero occurrences of /Sig, /ByteRange, /Perms and /AcroForm. Absence of a signature is normal for these notifications and is not itself suspicious, but it means authenticity cannot be established cryptographically.",
+          "The bytes cannot be compared against the publisher's copy while B-09 stands, so this is not proof of authenticity — it is a recorded basis for treating the document as the board's, open to being overturned by a DIRECT_FETCH byte comparison later.",
+          "Not encrypted, no embedded JavaScript, no form fields, all fonts embedded — checked so that 'the file behaves like a plain published PDF' is an observation rather than an assumption."
+        ]
+      },
+      "prior_status": {
+        "was": "BLOCKED",
+        "reason_then": "Network egress from this environment is restricted to an allowlist that does not include the official domain; additionally this URL is inferred and unconfirmed.",
+        "kept_because": "The attempts below are the evidence trail for B-09 and are retained verbatim, not overwritten by success."
+      },
       "attempts": [
         {
           "timestamp": "2026-09-05T19:02:00Z",
@@ -53,11 +94,18 @@
           "note": "The sibling PC URL was attempted first because it was the URL actually observed on the official domain. The host-level refusal applies identically to every path on this host, so the SI URL cannot be tried separately with any different result."
         }
       ],
-      "local_path": null,
-      "sha256": null,
-      "document_date": null,
-      "retrieved_on": null,
-      "language": null
+      "local_path": "source_material/official/SI+(Civil+et+al)+2026+Notification+dated+29-07-2026.pdf",
+      "sha256": "955d7779b9528d974e6ab25d3e07f15bd7a28f7bb3b63f0063a65931d1305804",
+      "size_bytes": 711192,
+      "page_count": 57,
+      "document_date": "2026-07-29",
+      "document_date_basis": "Printed on the document: 'Date: 29th July 2026' (page 1), and repeated in every page footer. Not taken from the file name.",
+      "document_number": "Rc. No. 225 / Rect. / Rect.1 / 2026",
+      "issuing_authority": "Telangana State Level Police Recruitment Board (TSLPRB)",
+      "signatory": "(V V SRINIVASA RAO, IPS), Chairman, TSLPRB, Hyderabad",
+      "retrieved_on": "2026-09-06",
+      "language": "English",
+      "extraction_artefact": "research/extractions/official/DOC-OFF-002-si-notification-pages.txt"
     },
     {
       "document_id": "DOC-OFF-003",
@@ -65,12 +113,40 @@
       "publisher": "TGPRB / TSLPRB",
       "url": "https://www.tgprb.in/SI_PC_2026/Supplementary%20Notification%202026%20%20dated%2015-08-2026.pdf",
       "url_status": "OBSERVED_ON_OFFICIAL_DOMAIN",
-      "url_basis": "Returned as a result URL on the official domain by a web search restricted to tgprb.in on 2026-09-06.",
+      "url_basis": "Returned as a result URL on the official domain by a web search restricted to tgprb.in on 2026-09-06. The stored file's name reproduces this URL's basename exactly under a %20-to-plus transform, including the double space before 'dated'.",
       "document_type": "supplementary_notification",
-      "expected_content": ["OFF-F03", "OFF-F04", "OFF-F05", "OFF-F06", "OFF-F25"],
-      "expected_content_note": "Dated after the 29-07-2026 notifications, so it may amend vacancies, post codes or dates. Under SPEC-OFF-001 R5 a later official document does not automatically win; which is controlling must be established from the documents themselves.",
-      "retrieval_status": "BLOCKED",
-      "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include the official domain.",
+      "expected_content": ["OFF-F09", "OFF-F25"],
+      "expected_content_note": "Confirmed by reading: this document amends ONE thing only — the upper age limit — for four named notifications including DOC-OFF-002. It does not touch vacancies, post codes, dates, the examination pattern or the syllabus. The earlier expectation that it might amend vacancies or dates was an expectation, and reading it settled that it does not.",
+      "retrieval_status": "RETRIEVED",
+      "acquisition": {
+        "method": "USER_SUPPLIED_DOWNLOAD",
+        "acquired_by": "the user, in an ordinary browser, from the board's site",
+        "acquired_on": "2026-09-06",
+        "placed_at": "source_material/official/",
+        "url_used": "NOT_OBSERVED_BY_THIS_SESSION",
+        "unblocks": "B-09 for this document only; the blocker itself remains open."
+      },
+      "authenticity": {
+        "status": "CONTENT_SELF_IDENTIFIED",
+        "checks_passed": [
+          "Names its issuer in its own text: 'TELANGANA STATE LEVEL POLICE RECRUITMENT BOARD, DGP OFFICE COMPLEX, LAKDI-KA-PUL, HYDERABAD'.",
+          "Carries its own file number and date: 'Rc No. 189, 225, 234 & 279 / Rect. / Rect.1, 2 & 3 / 2026' and 'Date: 15th August 2026'.",
+          "Footer reads 'Page 1 of 1', consistent with the single page present — nothing was removed.",
+          "Signed off by the same named officer as DOC-OFF-002: '(V V SRINIVASA RAO, IPS) CHAIRMAN TSLPRB HYDERABAD'.",
+          "Cites DOC-OFF-002 by its exact file number and by internal paragraph number ('Para No. 15-B (i)'), which is genuinely the age paragraph in that document — independent mutual corroboration between two separately downloaded files.",
+          "Producer metadata 'Microsoft Word 2024', created 2026-08-15T12:11:18+05:30 — the same day as the printed date."
+        ],
+        "limitations": [
+          "NOT digitally signed. pdfsig reports no signature; zero occurrences of /Sig, /ByteRange, /Perms, /AcroForm.",
+          "Cannot be byte-compared against the publisher's copy while B-09 stands.",
+          "Page size is US Letter (612 x 792 pt) whereas DOC-OFF-002 is A4 (595.44 x 841.68 pt), and the author metadata is 'user' rather than 'Admin'. Recorded as an observed difference, not treated as a defect: a one-page addendum typed on a different machine in the same office explains it, and no content check failed."
+        ]
+      },
+      "prior_status": {
+        "was": "BLOCKED",
+        "reason_then": "Network egress from this environment is restricted to an allowlist that does not include the official domain.",
+        "kept_because": "The attempt below is the evidence trail for B-09 and is retained verbatim."
+      },
       "attempts": [
         {
           "timestamp": "2026-09-05T19:02:00Z",
@@ -80,11 +156,26 @@
           "note": "Host-level refusal; recorded once and applied to every path on this host rather than re-requesting the same blocked host repeatedly."
         }
       ],
-      "local_path": null,
-      "sha256": null,
-      "document_date": "2026-08-15 (per file name only; the document has not been read)",
-      "retrieved_on": null,
-      "language": null
+      "local_path": "source_material/official/Supplementary+Notification+2026++dated+15-08-2026.pdf",
+      "sha256": "29607ee2ec5af20c6d8a647d51773157e5f9a413e59910cf67551495e3d5e51a",
+      "size_bytes": 293726,
+      "page_count": 1,
+      "document_date": "2026-08-15",
+      "document_date_basis": "Printed on the document: 'Date: 15th August 2026'. No longer taken from the file name.",
+      "document_number": "Rc No. 189, 225, 234 & 279 / Rect. / Rect.1, 2 & 3 / 2026",
+      "issuing_authority": "Telangana State Level Police Recruitment Board (TSLPRB)",
+      "signatory": "(V V SRINIVASA RAO, IPS), Chairman, TSLPRB, Hyderabad",
+      "retrieved_on": "2026-09-06",
+      "language": "English",
+      "extraction_artefact": "research/extractions/official/DOC-OFF-003-supplementary-notification-pages.txt",
+      "amends": [
+        {
+          "document_id": "DOC-OFF-002",
+          "target": "Para No. 15-B (i)",
+          "nature": "AMENDS_ONE_PARAGRAPH",
+          "effect": "Raises the upper age limit by a further 2 years on top of the 5-year raise already reflected in DOC-OFF-002."
+        }
+      ]
     },
     {
       "document_id": "DOC-OFF-004",
@@ -170,13 +261,25 @@
   "conflicts": [
     {
       "conflict_id": "CONF-OFF-001",
-      "status": "UNRESOLVED",
+      "status": "RESOLVED",
       "question": "Which host is the currently controlling official domain: tgprb.in or tslprb.in?",
-      "observation": "A search-index snippet attributed to tgprb.in reads 'Candidates are advised to visit only the official website: www.tslprb.in', while the recruitment PDFs enumerated above are served from tgprb.in and their own text refers to 'the TSLPRB Website (www.tgprb.in)'. Telangana's TS-to-TG renaming makes both plausible.",
+      "observation": "A search-index snippet attributed to tgprb.in read 'Candidates are advised to visit only the official website: www.tslprb.in', while the recruitment PDFs are served from tgprb.in. Telangana's TS-to-TG renaming made both plausible. This is now settled from T1_OFFICIAL text rather than from either snippet.",
       "why_it_matters": "Every provenance record cites a URL. Citing a superseded domain would make the provenance chain unverifiable later.",
-      "resolution_rule": "Per SPEC-OFF-001 R5, do not choose silently. Resolve by loading both hosts and reading what each states about itself, then record which document or notice is controlling and on what date.",
-      "resolvable_now": false,
-      "blocked_by": "B-09"
+      "resolution_rule": "Per SPEC-OFF-001 R5, do not choose silently. Resolve from what an official document states about itself, not from search snippets or from which host happened to serve a file.",
+      "resolvable_now": true,
+      "blocked_by": null,
+      "resolution": {
+        "answer": "The board is the Telangana State Level Police Recruitment Board (TSLPRB) and its website, as the board itself states, is www.tgprb.in. The two are not competing domains: TSLPRB is the organisation's name and tgprb.in is its web address.",
+        "resolved_on": "2026-09-06",
+        "method": "SOURCE_DOCUMENT",
+        "document_id": "DOC-OFF-002",
+        "page": 1,
+        "section": "Para 1 — VACANCIES",
+        "quote": "will be made available on the TSLPRB Website (www.tgprb.in), for direct recruitment",
+        "corroboration": "The pairing 'TSLPRB Website' with 'www.tgprb.in' recurs on pages 6, 7, 9 and 20 of the same document (7 occurrences of tgprb.in in total). The string 'tslprb.in' does not occur anywhere in either retrieved document — 0 occurrences across both extraction artefacts.",
+        "consequence_for_this_registry": "DOC-OFF-006 (https://www.tslprb.in/) stays registered and unretrieved, because a redirect or a notice on that host would be a useful cross-check, but it is no longer needed to settle this question and blocks nothing.",
+        "residual_uncertainty": "Whether tslprb.in also resolves to the board, redirects to tgprb.in, or is unrelated is still unknown and unimportant for provenance: official facts cite tgprb.in because that is the address the board prints in its own notification."
+      }
     }
   ],
   "not_registered": [

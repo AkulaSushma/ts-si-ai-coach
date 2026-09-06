@@ -5,46 +5,39 @@ rather than let them hide behind a large-looking folder tree.
 
 ## Current state
 
-**Verified knowledge records: 0.**
+**Verified knowledge records: 51.**
 
-Nothing is known yet. Sessions 001–003 created and tested the structures that will
-hold knowledge; they acquired none, because every official document request was
-refused by this environment's network egress allowlist (`B-09`) and inventing exam
-facts is prohibited.
-
-Session 003 added **25 official fact slots** (`OFF-F01`–`OFF-F25` in
-`knowledge/official/required_facts.json`). Every one carries `value: null`,
-`status: BLOCKED`, and a written reason. A slot is a question the project has
-committed to answering from an official document — it is not an answer, and it is
-never counted as knowledge. The distinction this ledger enforces: the **container**
-for official knowledge is `COMPLETE` and tested; the **content** is `BLOCKED` at
-zero.
+Session 004 acquired the two official notification PDFs (user-supplied downloads
+from the board's site, `B-09` resolved for `DOC-OFF-002` and `DOC-OFF-003` only)
+and read them. All 51 verified records are `T1_OFFICIAL`, cited to a stored,
+hashed document with page, section and a verbatim quote that
+`tests/official/test_official_evidence.py` re-checks mechanically:
 
 | Area                             | Records | Status                                      |
 | -------------------------------- | ------: | ------------------------------------------- |
-| Official facts (25 slots)        |       0 | `BLOCKED` — `B-09`, 0 of 25 `VERIFIED`       |
-| Official syllabus                |       0 | `BLOCKED` — needs official TGPRB document    |
-| Exam pattern, marks, duration    |       0 | `BLOCKED` — needs official TGPRB document    |
-| Eligibility rules                |       0 | `BLOCKED` — needs official TGPRB document    |
-| Physical event standards         |       0 | `BLOCKED` — needs official TGPRB document    |
-| Preparation taxonomy             |       0 | `BLOCKED` — forbids `T1_OFFICIAL` by design  |
+| Official facts (`OFF-F01`–`F25`)  |      24 | `VERIFIED` against DOC-OFF-002 / DOC-OFF-003; OFF-F03 (application dates) stays `BLOCKED` — the notification defers the dates to a future press release |
+| Official syllabus (`OFF-SYL-*`)   |      27 | `VERIFIED` — 27 nodes: 2 PWT sections + 4 FWE papers with the topics the notification itself lists (Annexures II and III, pages 42–44); no subtopic layer because the document prints none |
+| Exam pattern, marks, duration     |       3 | Covered by verified facts OFF-F12–OFF-F14 (paper structure, qualifying thresholds, negative marking) |
+| Eligibility rules                |       4 | Covered by verified facts OFF-F07–OFF-F10 (age, education, local candidate status) |
+| Physical event standards          |       2 | Covered by verified facts OFF-F18, OFF-F19 (height, chest/PMT/PET as printed) |
+| Official notification identity   |       2 | Covered by verified facts OFF-F01, OFF-F02 (Rc. number, issue date) |
+| Preparation taxonomy              |       0 | `BLOCKED` — may now anchor to the verified syllabus; first expert source still not ingested |
 | PYQ papers                       |       0 | `BLOCKED` — no papers acquired               |
-| Question families                |       0 | `BLOCKED` — depends on PYQs                  |
+| Question families                 |       0 | `BLOCKED` — depends on PYQs                  |
 | Recognition cues / decision trees|       0 | `BLOCKED` — depends on question families     |
-| Standard methods                 |       0 | `BLOCKED` — depends on question families     |
-| Fast / mental methods            |       0 | `BLOCKED` — depends on standard methods      |
-| Traps                            |       0 | `BLOCKED` — depends on question families     |
-| Confusion pairs                  |       0 | `BLOCKED` — depends on topics                |
-| Topic weightage (3 categories)   |       0 | `BLOCKED` — official / observed / estimated kept in separate files |
+| Standard methods                  |       0 | `BLOCKED` — depends on question families     |
+| Fast / mental methods             |       0 | `BLOCKED` — depends on standard methods      |
+| Traps                             |       0 | `BLOCKED` — depends on question families     |
+| Confusion pairs                   |       0 | `BLOCKED` — depends on topics                |
+| Topic weightage (3 categories)    |       0 | `BLOCKED` — official marks structure file still empty pending its own read; observed and estimated categories still empty |
 
-Every row is `BLOCKED` on source acquisition, not on engineering. That is the true
-critical path: no amount of code produces exam knowledge.
-
-Mechanically enforced, so this table cannot drift: `scripts/validate_bootstrap.py`
-check 18 recomputes the verified total from the registries and fails if the figure
-above disagrees, and `tests/bootstrap/test_bootstrap.py::TestHonestyOfState`
-reconciles both ledgers against the filesystem with ten fabricated-data cases
-proving the reconciliation can fail.
+Counting basis: 24 facts with `status: VERIFIED` plus 27 syllabus nodes with a
+`verification.method` set — recomputed by `scripts/validate_bootstrap.py`
+check 18, which fails if this figure disagrees, and by
+`tests/bootstrap/test_bootstrap.py::TestHonestyOfState`. No
+social-media-derived, coaching, or model-recalled content appears anywhere in
+the verified total: Instagram acquisition is still blocked (`B-08`) and the
+candidate-knowledge pipeline writes only `UNVERIFIED` records by design.
 
 ## ID format
 

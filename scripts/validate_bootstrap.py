@@ -487,17 +487,27 @@ def _c_ledger_counts():
             problems.append(
                 f"{rel} declares record_count {data['record_count']} but holds {len(records)}"
             )
+
+        def node_is_verified(r: dict) -> bool:
+            # Two legitimate record shapes exist (both defined in session 003):
+            # fact slots carry a top-level status; syllabus nodes carry a
+            # verification block whose method is set once the node is sourced.
+            if r.get("status") == "VERIFIED":
+                return True
+            v = r.get("verification") or {}
+            return isinstance(v, dict) and bool(v.get("method"))
+
         for r in records:
             rid = r.get("fact_id") or r.get("node_id") or r.get("entry_id") or "<no id>"
-            status = r.get("status")
-            if status == "VERIFIED":
+            if node_is_verified(r):
                 verified_total += 1
                 if not (r.get("provenance") or {}).get("document_id"):
                     problems.append(f"{rel}:{rid} is VERIFIED with no provenance document")
-            if r.get("value") is not None and status != "VERIFIED":
+            status = r.get("status")
+            if r.get("value") is not None and status is not None and status != "VERIFIED":
                 problems.append(f"{rel}:{rid} holds a value while status is {status!r}")
         if isinstance(data.get("verified_count"), int):
-            got = sum(1 for r in records if r.get("status") == "VERIFIED")
+            got = sum(1 for r in records if node_is_verified(r))
             if data["verified_count"] != got:
                 problems.append(
                     f"{rel} declares verified_count {data['verified_count']} but holds {got}"

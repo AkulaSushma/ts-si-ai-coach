@@ -1,245 +1,893 @@
 {
-  "registry_version": 1,
+  "registry_version": 2,
   "spec": "SPEC-OFF-001",
   "recruitment": "Telangana Police Recruitment 2026 — SCT SI (Civil) and equivalent posts",
   "provenance_tier": "T1_OFFICIAL",
   "purpose": "The 25 facts Phase 1 must establish from official documents. Each record is a slot with a provenance block, not a fact. A record holds a value only when the document behind it has been retrieved, stored and hashed.",
   "record_count": 25,
-  "verified_count": 0,
-  "status": "BLOCKED",
-  "blocked_reason": "No official TGPRB / TSLPRB document has been retrieved. Network egress from this environment permits one unrelated host, so no official URL can be fetched. See source_material/official/RETRIEVAL_LOG.md and blocker B-09.",
+  "verified_count": 24,
+  "status": "PARTIAL",
+  "partial_reason": "24 of 25 slots are VERIFIED against DOC-OFF-002 and DOC-OFF-003. OFF-F03 (application dates) stays BLOCKED because the notification does not contain the fact: it defers the dates to a future press release. Individual silences inside otherwise-verified facts are recorded in each record's `unresolved` block rather than being filled in.",
+  "populated_on": "2026-09-06",
+  "populated_in_session": "004",
+  "reading_basis": "Every value below was read from the committed page-marked extraction artefacts listed in research/extractions/official/EXTRACTION_MANIFEST.json, which are reproducible from the stored PDFs. Where a fact depends on which column of a table a number sits in, the PDF page itself was rasterised and read; those cases name the check in `column_check`.",
   "rules": [
     "value stays null while status is not VERIFIED. A value without provenance is a fabrication regardless of how plausible it looks.",
     "provenance.document_id must name a document whose retrieval_status is RETRIEVED in config/official_documents.json.",
     "provenance.quote must be verbatim text from the document, so a later reader can re-check the reading without re-downloading.",
     "status is one of BLOCKED, UNVERIFIED, VERIFIED. No fourth value; no 'probably'.",
-    "value_te is the Telugu companion field required from day one by D-0004; it is a translation of a sourced value, never an independent claim."
+    "value_te is the Telugu companion field required from day one by D-0004; it is a translation of a sourced value, never an independent claim.",
+    "A quote must be reproducible from the cited page of the cited document's extraction artefact under whitespace normalisation. tests/official/test_official_evidence.py enforces this mechanically for every quote in this file, including those in `supporting`.",
+    "Where the document is silent on part of a slot, the silence is recorded in `unresolved` with what would settle it. Silence is never converted into 'there is no such rule'.",
+    "Where a number is arithmetic over sourced components rather than printed in the document, it lives in a `derived` block that names the derivation and never in `value` alone."
   ],
   "facts": [
     {
       "fact_id": "OFF-F01", "name": "Notification number",
       "must_capture": "The Rc. / notification number exactly as printed, including its year and issuing section.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": "Rc. No. 225 / Rect. / Rect.1 / 2026. The same number is printed in a slightly different form in the footer of every one of the 57 pages — 'Rc No. 225 / Rect. / Rect-1 / 2026' — with no full stop after 'Rc' and a hyphen rather than a full stop before the '1'. Both forms denote this one notification; the title-page form is treated as canonical because it is the form the masthead uses.",
+      "value_te": "ఆర్‌సి. నం. 225 / రెక్ట్. / రెక్ట్.1 / 2026. ఇదే సంఖ్య మొత్తం 57 పేజీల ఫుటర్‌లో 'Rc No. 225 / Rect. / Rect-1 / 2026' అనే కొద్దిగా భిన్నమైన రూపంలో ముద్రించబడింది. రెండూ ఒకే నోటిఫికేషన్‌ను సూచిస్తాయి; మొదటి పేజీలోని రూపమే ప్రామాణికంగా తీసుకోబడింది.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 1, "section": "Masthead, above Para 1 (VACANCIES)", "quote": "Rc. No. 225 / Rect. / Rect.1 / 2026"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 1, "section": "Page footer", "quote": "Rc No. 225 / Rect. / Rect-1 / 2026 dated 29th July 2026"},
+        {"document_id": "DOC-OFF-003", "page": 1, "section": "Amendment body, item (2)", "quote": "Para No. 15-B (i) of Notification in Rc No. 225 / Rect. / Rect.-1 / 2026 dated 29th July 2026 for the Posts of SCT SIs (Civil) and / or equivalent Posts"}
+      ],
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 page 1; quote re-checked mechanically by tests/official/test_official_evidence.py"}
     },
     {
       "fact_id": "OFF-F02", "name": "Notification date",
       "must_capture": "The date the notification was issued, as printed on the document itself rather than inferred from a file name.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": "29 July 2026, printed on the title page as 'Date: 29th July 2026'. The document also uses this date as its own operative cut-off for eligibility, describing it as 'the date of Notification, i.e., 29th July 2026', so the date is load-bearing and not merely a heading.",
+      "value_te": "29 జూలై 2026. మొదటి పేజీలో 'Date: 29th July 2026' అని ముద్రించబడింది. అర్హతల కటాఫ్ తేదీగా కూడా ఇదే తేదీని పత్రం స్వయంగా ఉపయోగించుకుంటుంది.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 1, "section": "Masthead, above Para 1 (VACANCIES)", "quote": "Date: 29th July 2026"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 17, "section": "Para 15-C (i) — Educational Qualification", "quote": "as on the date of Notification, i.e., 29th July 2026"},
+        {"document_id": "DOC-OFF-003", "page": 1, "section": "Amendment body", "quote": "the following Paras of the 4 (Four) Notifications issued on 29th July 2026 by the Telangana State Level Police Recruitment Board"}
+      ],
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 page 1; corroborated by DOC-OFF-003 page 1, which independently dates the four notifications it amends to 29 July 2026"}
     },
     {
       "fact_id": "OFF-F03", "name": "Application dates",
       "must_capture": "Opening date, closing date, fee-payment window, and any correction window, each with its cut-off time if stated.",
       "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09). A supplementary notification may amend these, so DOC-OFF-003 must be read before any date is treated as final.",
+      "blocked_reason": "The notification does not contain this fact. Para 2 defers it explicitly: the exact dates for submitting the online application form are to be announced later through a press release. Nothing may be written into this slot until that press release is itself retrieved, hashed and registered as an official document. The blocker is the board's own future publication, not network egress (B-09) and not this repository.",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
       "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
+      "unresolved": {
+        "resolution_state": "NOT_YET_PUBLISHED_BY_THE_BOARD",
+        "blocked_by": "A future TSLPRB press release announcing the online application window",
+        "would_settle_it": "Retrieving that press release from www.tgprb.in, hashing it, registering it as a new DOC-OFF-### entry, and citing it here.",
+        "read_from": {"document_id": "DOC-OFF-002", "page": 2, "section": "Para 2 — CANDIDATES TO CHECK THEIR ELIGIBILITY BEFORE APPLYING", "quote": "Exact Dates for submission of Online Application Form will be intimated in due course through a Press Release."},
+        "what_is_known": "Fee is payable online at registration and is not refundable once paid, and a candidate applying for more than one TSLPRB notification within three months of this date gets a per-post rebate. Those are fee rules, not dates, and are recorded under OFF-F25 rather than here."
+      },
       "verification": {"method": null, "verified_on": null, "verified_by": null}
     },
     {
       "fact_id": "OFF-F04", "name": "Number of vacancies",
       "must_capture": "Total vacancies and the per-post breakdown as tabulated, plus whether the figure is stated as provisional or subject to variation.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "total": 275,
+        "by_post_code": {"11": 148, "12": 14, "13": 3, "14": 12, "16": 44, "17": 39, "18": 14, "19": 1},
+        "firmness": "Tentative. The notification states the figures are liable to change without notice and reserves the board's right to modify any aspect of the recruitment during the process.",
+        "arithmetic_check": "The eight per-post figures sum to 275, which equals the printed Total. Checked deterministically by tests/official/test_official_evidence.py.",
+        "zone_distribution": {
+          "post_codes_11_12_17": "Zone-wise, Para 3 (i): Kaleshwaram 15/6/4, Basara 29/2/5, Rajanna 32/0/7, Bhadradri 33/6/3, Yadadri 22/0/2, Charminar 13/0/13, Jogulamba 4/0/5; totals 148/14/39.",
+          "post_codes_14_18_19": "Zone-wise within the Contiguous Zonal Cadre, Para 3 (ii): totals 12/14/1.",
+          "post_codes_13_16": "The notification does not give a zone-wise distribution for Post Codes 13 and 16, consistent with Para 16-E, which states that the Presidential Order zonal provisions do not apply to those two selections."
+        }
+      },
+      "value_te": "మొత్తం 275 ఖాళీలు: పోస్ట్ కోడ్ 11 — 148, 12 — 14, 13 — 3, 14 — 12, 16 — 44, 17 — 39, 18 — 14, 19 — 1. ఈ సంఖ్యలు తాత్కాలికమే; ఎటువంటి నోటీసు లేకుండా మారవచ్చునని నోటిఫికేషన్ స్పష్టంగా చెబుతుంది.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 1, "section": "Para 1 — VACANCIES, vacancy table", "quote": "Total 275 Vacancies"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 2, "section": "Para 1 continuation", "quote": "The number of vacancies indicated above is only tentative and is liable to change without any notice. TSLPRB reserves the right to notify required modifications with regard to any aspect of recruitment during the process of recruitment."},
+        {"document_id": "DOC-OFF-002", "page": 1, "section": "Vacancy table, row 1", "quote": "1 11 SCT* Sub Inspector of Police (Civil) 148"},
+        {"document_id": "DOC-OFF-002", "page": 2, "section": "Para 3 (i) — DISTRIBUTION OF VACANCIES", "quote": "Total 148 14 39"},
+        {"document_id": "DOC-OFF-002", "page": 3, "section": "Para 3 (ii) — DISTRIBUTION OF VACANCIES", "quote": "Total 12 14 1"}
+      ],
+      "column_check": "The page-1 vacancy table has one numeric vacancy column, so no column ambiguity is possible in layout-mode extraction. The zone tables on pages 2 and 3 have three numeric columns each; their column order was confirmed against the printed header rows, and each column's figures sum to the per-post total already established from page 1 (148, 14, 39 and 12, 14, 1), which is an independent arithmetic check on the mapping.",
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 1-3; the sum of the per-post figures is re-checked deterministically by tests/official/test_official_evidence.py"}
     },
     {
       "fact_id": "OFF-F05", "name": "Post codes",
       "must_capture": "Every post code in the recruitment, exactly as the notification numbers them, with the post each code denotes.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "codes_in_this_notification": [11, 12, 13, 14, 16, 17, 18, 19],
+        "count": 8,
+        "code_to_post": {
+          "11": "SCT Sub Inspector of Police (Civil) — Telangana Police Department",
+          "12": "SCT Reserve Sub Inspector of Police (AR) — Telangana Police Department",
+          "13": "SCT Reserve Sub Inspector of Police (SAR CPL) (Men) — Telangana Police Department",
+          "14": "SCT Reserve Sub Inspector of Police (TGSP) (Men) — Telangana Police Department",
+          "16": "SCT Sub Inspector — Telangana Special Protection Force",
+          "17": "Station Fire Officer — Telangana Fire, Disaster Response, Emergency, and Civil Defence Department",
+          "18": "Deputy Jailor (Men) — Telangana Prisons & Correctional Services Department",
+          "19": "Deputy Jailor (Women) — Telangana Prisons & Correctional Services Department"
+        },
+        "gap_at_15": "Post Code 15 does not appear anywhere in this notification. This is an observation about the document, not an inference: the vacancy table runs 11, 12, 13, 14, then 16, and no paragraph, table or annexure mentions a Post Code 15. The notification gives no explanation for the gap, and none is invented here.",
+        "eligibility_by_gender": "Codes 11, 12, 16 and 17 are open to both men and women; codes 13, 14 and 18 to men only; code 19 to women only."
+      },
+      "value_te": "ఈ నోటిఫికేషన్‌లో ఎనిమిది పోస్ట్ కోడ్‌లు ఉన్నాయి: 11, 12, 13, 14, 16, 17, 18, 19. పోస్ట్ కోడ్ 15 ఈ నోటిఫికేషన్‌లో ఎక్కడా లేదు; దానికి కారణం పత్రంలో చెప్పలేదు. కోడ్‌లు 11, 12, 16, 17 — పురుషులు మరియు మహిళలు; 13, 14, 18 — పురుషులు మాత్రమే; 19 — మహిళలు మాత్రమే.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 4, "section": "Para 4 (j) — GENERAL INSTRUCTIONS", "quote": "the preference for Post Code Nos. 11, 12, 16 and 17 (for Men & Women), for Post Code Nos. 13, 14 and 18 (for Men) and for Post Code No. 19 (for Women)"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 1, "section": "Para 1 — VACANCIES, vacancy table", "quote": "1 11 SCT* Sub Inspector of Police (Civil) 148"},
+        {"document_id": "DOC-OFF-002", "page": 16, "section": "Para 15-A — Eligibility by Gender", "quote": "For the Posts Code Nos. 11, 12, 16 & 17, both Men and Women are eligible, for Post Code Nos. 13, 14 & 18, only men are eligible, and for Post Code No. 19, only Women are eligible."}
+      ],
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 1, 4 and 16. Two independent enumerations of the eight codes (Para 4-j and Para 15-A) agree with the vacancy table, so the code list does not rest on reading one table."}
     },
     {
       "fact_id": "OFF-F06", "name": "Post names",
       "must_capture": "Full official post names, including the SCT prefix and any 'or equivalent' wording, in the notification's own words.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "sct_expansion": "SCT is expanded by the notification's own footnote as Stipendiary Cadet Trainee.",
+        "names_as_printed": [
+          "SCT* Sub Inspector of Police (Civil)",
+          "S C T* Reserve Sub Inspector of Police (AR)",
+          "S C T* Reserve Sub Inspector of Police (SAR CPL) (Men)",
+          "S C T* Reserve Sub Inspector of Police (TGSP) (Men)",
+          "S C T* Sub Inspector",
+          "Station Fire Officer",
+          "Deputy Jailor (Men)",
+          "Deputy Jailor (Women)"
+        ],
+        "typography_note": "Rows 2 to 5 of the vacancy table print the prefix with internal spaces as 'S C T*' while row 1 prints 'SCT*'. This is the document's own inconsistent letter-spacing and is preserved above rather than silently tidied, because the quote-checking test compares against the document.",
+        "or_equivalent_wording": "The notification refers to this recruitment collectively as 'the Posts of SCT SIs (Civil) and / or equivalent Posts' when cross-referencing itself, and Para 5 lists the covered posts as 'SCT SI (Civil / AR / SAR CPL / TGSP), SCT SI in Special Protection Force Department, SFO in Telangana Fire, Disaster Response, Emergency & Civil Defence Department, Deputy Jailor (Men) / Deputy Jailor (Women) in Prisons & Correctional Services Department'.",
+        "pay_scales": {"codes_11_to_14_and_16": "42,300 -1,15,270", "codes_17_18_19": "38,890 -1,12,510"}
+      },
+      "value_te": "పోస్టుల పేర్లు నోటిఫికేషన్‌లో ముద్రించిన రూపంలో: SCT సబ్ ఇన్‌స్పెక్టర్ ఆఫ్ పోలీస్ (సివిల్), రిజర్వ్ సబ్ ఇన్‌స్పెక్టర్ (AR), రిజర్వ్ సబ్ ఇన్‌స్పెక్టర్ (SAR CPL) (పురుషులు), రిజర్వ్ సబ్ ఇన్‌స్పెక్టర్ (TGSP) (పురుషులు), SCT సబ్ ఇన్‌స్పెక్టర్ (ప్రత్యేక రక్షణ దళం), స్టేషన్ ఫైర్ ఆఫీసర్, డెప్యూటీ జైలర్ (పురుషులు), డెప్యూటీ జైలర్ (మహిళలు). SCT అనగా 'Stipendiary Cadet Trainee' అని పత్రమే వివరిస్తుంది.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 1, "section": "Para 1 — VACANCIES, footnote below the vacancy table", "quote": "* Stipendiary Cadet Trainee"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 1, "section": "Vacancy table, department heading and rows", "quote": "Telangana Special Protection Force"},
+        {"document_id": "DOC-OFF-002", "page": 1, "section": "Vacancy table, row 2", "quote": "2 12 S C T* Reserve Sub Inspector of Police (AR) 14"},
+        {"document_id": "DOC-OFF-002", "page": 5, "section": "Para 5 — FEE (a)", "quote": "SCT SI (Civil / AR / SAR CPL / TGSP), SCT SI in Special Protection Force Department, SFO in Telangana Fire, Disaster Response, Emergency & Civil Defence Department, Deputy Jailor (Men) / Deputy Jailor (Women) in Prisons & Correctional Services Department"},
+        {"document_id": "DOC-OFF-003", "page": 1, "section": "Amendment body, item (2)", "quote": "for the Posts of SCT SIs (Civil) and / or equivalent Posts"}
+      ],
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 1 and 5, and DOC-OFF-003 page 1"}
     },
     {
       "fact_id": "OFF-F07", "name": "Eligibility requirements",
       "must_capture": "Every eligibility condition: nationality, local-candidate status, marital or dependants clauses if any, disqualifications, and any post-specific condition.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "provisional_at_all_stages": "Admission at every stage is purely provisional and subject to satisfying the prescribed conditions; issue of a hall ticket does not mean candidature has been cleared. Verification against original documents happens only after a candidate has finally qualified, or at an appropriate time chosen by the board.",
+        "gender": "Codes 11, 12, 16, 17 — men and women; codes 13, 14, 18 — men only; code 19 — women only.",
+        "age": "See OFF-F09.",
+        "education": "See OFF-F08.",
+        "post_specific": "Post Code 17 additionally requires a valid Light Motor Vehicle (LMV) driving licence held as on the date of notification, with the licence information to be produced at certificate verification.",
+        "medical_eyesight": "Distant vision 6/6 in each eye and near vision 0/5 (Snellen) in each eye; each eye must have a full field of vision; colour blindness, squint or any morbid condition of the eye or lids of either eye is a disqualification.",
+        "general_health": "The candidate must possess sound health and be free from any bodily defect or infirmity that would render them unfit.",
+        "disqualifying_conditions": "Physically handicapped; knock-knees, pigeon chest, flat foot, varicose veins, hammer toes, fractured limbs, decayed teeth, stammering, hard of hearing, and abnormal psychological behaviour.",
+        "medical_examination_route": "Provisionally selected candidates are referred to the District Headquarter Hospital; expert opinion goes to Osmania or Gandhi Hospitals, and eye cases to Sarojini Devi Eye Hospital, whose opinion is final. A candidate may be referred or examined only once on such a recommendation.",
+        "local_candidate_status": "Local-candidate status under the Presidential Order 2018 is not a condition for applying, but it governs eligibility for every reservation and for age relaxation. Candidates who are not local to Telangana State are not entitled to any kind of reservation.",
+        "honesty_conditions": "Furnishing false, tampered or fabricated particulars, or suppressing material information, attracts punitive action under law; impersonation attracts criminal prosecution besides disqualification. An incomplete or incorrect application form is summarily rejected and later corrections are not entertained.",
+        "attendance": "Appearance in all tests and written examinations is compulsory; absence in any of them automatically renders a candidate disqualified."
+      },
+      "value_te": "అన్ని దశలలో అభ్యర్థిత్వం తాత్కాలికమే; హాల్ టికెట్ జారీ అయినంత మాత్రాన అర్హత ఖరారైనట్టు కాదు. కంటి ప్రమాణాలు: దూర దృష్టి 6/6, సమీప దృష్టి 0/5 (స్నెల్లెన్) — రెండు కళ్లలోనూ; వర్ణ అంధత్వం, మెల్లకన్ను వంటివి అనర్హతలు. మోకాళ్లు కలిసిపోవడం, పిజియన్ ఛెస్ట్, ఫ్లాట్ ఫుట్, వెరికోస్ వెయిన్స్, హామర్ టోస్, విరిగిన అవయవాలు, పుచ్చిన పళ్లు, నత్తి, వినికిడి లోపం మొదలైనవి అనర్హతలు. పోస్ట్ కోడ్ 17కు నోటిఫికేషన్ తేదీ నాటికి చెల్లుబాటు అయ్యే LMV డ్రైవింగ్ లైసెన్స్ అవసరం. రిజర్వేషన్ పొందాలంటే తెలంగాణ స్థానిక అభ్యర్థి హోదా తప్పనిసరి.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 16, "section": "Para 15 — ELIGIBILITY CONDITIONS", "quote": "Candidates applying for the examination should ensure themselves that they fulfill all the eligibility conditions for admission to the examination. Their admission at all the stages of the Examination(s) / Test(s) will be purely provisional and shall be subject to satisfying the prescribed eligibility conditions."},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 16, "section": "Para 15-A — Eligibility by Gender", "quote": "For the Posts Code Nos. 11, 12, 16 & 17, both Men and Women are eligible, for Post Code Nos. 13, 14 & 18, only men are eligible, and for Post Code No. 19, only Women are eligible."},
+        {"document_id": "DOC-OFF-002", "page": 16, "section": "Para 15 — ELIGIBILITY CONDITIONS", "quote": "Mere issue of Hall Ticket to the Candidate will not imply that his / her candidature has been finally cleared by the Board."},
+        {"document_id": "DOC-OFF-002", "page": 18, "section": "Para 15-D — Technical Qualification for Post Code 17", "quote": "Candidates must have possessed a valid Light Motor Vehicle (LMV) driving license as on the date of Notification."},
+        {"document_id": "DOC-OFF-002", "page": 18, "section": "Para 15-E (iii) — Medical Standards", "quote": "Colour blindness, squint, or any morbid condition of the eye or lids of either eye shall be deemed to be a disqualification"},
+        {"document_id": "DOC-OFF-002", "page": 19, "section": "Para 15-E (v) — Medical Standards", "quote": "Knock-knees, pigeon chest, flat foot, Varicose veins, Hammer toes, fractured limbs, decayed teeth, stammering, hard of hearing, and abnormal psychological behavior"},
+        {"document_id": "DOC-OFF-002", "page": 13, "section": "Para 12-B (v) — Community", "quote": "BC, SC, and ST Candidates who are not local to Telangana State, as per the Presidential order 2018, are not entitled to any kind of reservation."},
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 7", "quote": "Appearance in all the Tests and Written Examinations, as per rules, is compulsory. Absence in any of the above Tests / Examination shall automatically render a Candidate disqualified."}
+      ],
+      "unresolved": {
+        "resolution_state": "SILENT_ON_NATIONALITY_AND_MARITAL_STATUS",
+        "blocked_by": null,
+        "detail": "Neither retrieved document states a nationality or citizenship requirement, and neither states any marital-status or dependants condition. The strings 'citizen', 'Citizen' and 'national of' occur zero times across both extraction artefacts. This is recorded as a documented silence. It must not be read as 'there is no nationality requirement' — such a requirement may live in the service rules the notification incorporates by reference (Para 11), which are separate documents that have not been retrieved.",
+        "would_settle_it": "Retrieving the service rules named in Para 11 — for example the Telangana State & Subordinate Service Rules 1996 and the departmental rules cited there — and reading their eligibility provisions."
+      },
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 4, 13, 16, 18, 19 and 24; the nationality silence was established by a zero-occurrence string search over both committed extraction artefacts"}
     },
     {
       "fact_id": "OFF-F08", "name": "Educational qualifications",
       "must_capture": "The required qualification per post code, the cut-off date by which it must be held, and how equivalence is treated.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "requirement": "A Degree awarded by any university in India established or incorporated by or under a Central Act or a Provincial Act of a State, or of any institution recognised by the University Grants Commission, or any other equivalent qualification.",
+        "cut_off_date": "The qualification must be held as on the date of notification, i.e. 29 July 2026.",
+        "proof_required": "A Degree, Provisional Certificate, or Consolidated Marks Memo covering the whole duration of study, issued by the university on or before 29 July 2026, must be produced at certificate verification. Failure to produce it on the designated day means the candidate is deemed not to possess the qualification and is not carried forward. Certificates produced after the last date of certificate verification are not considered.",
+        "distance_education": "Degrees obtained through Open Universities or the distance-education mode require recognition by the UGC, AICTE or Distance Education Council as applicable; unrecognised degrees are not accepted, and the onus of proving recognition rests on the candidate.",
+        "higher_qualification": "A candidate holding a higher qualification than the prescribed one is considered on par with a candidate holding the prescribed one.",
+        "per_post_code": "The notification states this single degree requirement under Para 15-C without differentiating by post code. The only post-specific addition anywhere in Para 15 is Para 15-D, the LMV driving licence for Post Code 17. Recorded as read: one common degree requirement plus one post-specific technical requirement.",
+        "language_qualification_standard": "Not an entry qualification, but relevant: the qualifying English paper and the qualifying Telugu or Urdu paper in the Final Written Examination are of Matriculation or equivalent standard."
+      },
+      "value_te": "అర్హత: భారతదేశంలోని ఏదైనా విశ్వవిద్యాలయం ప్రదానం చేసిన డిగ్రీ, లేదా యూజీసీ గుర్తింపు పొందిన సంస్థ డిగ్రీ, లేదా తత్సమాన అర్హత — నోటిఫికేషన్ తేదీ అనగా 29 జూలై 2026 నాటికి కలిగి ఉండాలి. 29 జూలై 2026 లేదా అంతకు ముందు జారీ అయిన డిగ్రీ / ప్రొవిజనల్ సర్టిఫికేట్ / కన్సాలిడేటెడ్ మార్క్స్ మెమో సర్టిఫికేట్ వెరిఫికేషన్ సమయంలో సమర్పించాలి. దూర విద్య డిగ్రీలకు యూజీసీ / ఏఐసీటీఈ / డీఈసీ గుర్తింపు తప్పనిసరి. ప్రిస్క్రైబ్ చేసిన అర్హత కంటే ఎక్కువ అర్హత ఉన్నవారిని సమానంగా పరిగణిస్తారు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 17, "section": "Para 15-C (i) — Educational Qualification", "quote": "Must possess a Degree awarded by any university in India, established or incorporated by or under a Central Act, Provincial Act of State, or of any Institution recognized by the University Grants Commission or any other equivalent qualification as on the date of Notification, i.e., 29th July 2026."},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 17, "section": "Para 15-C (i) proviso", "quote": "a Degree or Provisional Certificate or Consolidated Marks Memo of the whole duration of study, which proves the qualification, shall be made available by the Candidate at the time of certificate verification to prove his / her qualification issued by the University on or before 29th July 2026"},
+        {"document_id": "DOC-OFF-002", "page": 18, "section": "Para 15-C (ii) — Distance Education", "quote": "Candidates who have obtained a degree through Open Universities / Distance Education mode are required to have recognition by the University Grants Commission / AICTE / Distance Education Council, as the case may be."},
+        {"document_id": "DOC-OFF-002", "page": 18, "section": "Para 15-C Note", "quote": "Candidates who possess a higher qualification than the prescribed one will also be considered on par with the Candidates who possess the prescribed qualification"},
+        {"document_id": "DOC-OFF-002", "page": 43, "section": "Annexure III — Paper I: English", "quote": "Qualifying Paper in English shall be of Matriculation or equivalent standard."}
+      ],
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 17, 18 and 43"}
     },
     {
       "fact_id": "OFF-F09", "name": "Age requirements",
       "must_capture": "Minimum and maximum age, the reference date on which age is computed, and every relaxation with the category it applies to.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09). Age limits differ by post and category, so a single number would be wrong even if the range were remembered correctly.",
+      "value": {
+        "reference_date": "1 July 2026. Age is computed as on that date, not as on the notification date.",
+        "minimum_age": "Must have attained 21 years as on 1 July 2026.",
+        "base_maximum_age": "Must not have attained 25 years as on 1 July 2026.",
+        "general_raise_in_notification": "The notification records that GO Ms No. 87, General Administration (Services-A) Department, dated 18-05-2026 raised the upper age limit for direct recruitment to uniformed services in the Police, Fire Services, Prisons and Special Protection Force Departments by 5 years, and states that this relaxation is in addition to the upper age limit above.",
+        "further_raise_by_supplementary": "The supplementary notification of 15 August 2026 records that GO Ms No. 122, General Administration (Services-A) Department, dated 14-08-2026 raised the upper age limit by a further 2 years in addition to the 5 years of GO Ms No. 87, and names Para No. 15-B (i) of this notification as the paragraph affected.",
+        "category_relaxations": {
+          "telangana_state_government_employees": "Length of regular service subject to a maximum of 5 years. Employees of TS TRANSCO, DISCOMs, TS GENCO, the State Road Transport Corporation, other Telangana State corporations, municipalities, local bodies and public sector undertakings are expressly not entitled to this relaxation.",
+          "ex_servicemen": "3 years in addition to the length of service rendered in the Armed Forces (Army, Navy, Air Force or Territorial Army).",
+          "ncc_instructor": "3 years in addition to the length of service rendered in the NCC, for a person who has rendered a minimum of 6 months' service as a whole-time Cadet Corps Instructor in the NCC.",
+          "sc_st_bc_ews": "5 years."
+        },
+        "closing_rule": "Save as provided above, the age limits prescribed can in no case be relaxed.",
+        "bc_e_caveat": "Relaxation in the upper age limit and reservation for the BC-E group are subject to pending litigation, including final orders in Civil Appeal Nos. 2628-2637 of 2010 in SLP Nos. 7388-97 of 2010 dated 25-03-2010, and to government orders.",
+        "certificate_basis": "The community certificate is what supports a claim to age relaxation; for Backward Classes the community certificate supports age relaxation while a separate Non-Creamy-Layer certificate is what supports reservation.",
+        "proof_of_age": "Name and date of birth are accepted as entered in the Secondary School Certificate, Matriculation or equivalent examination certificate. Horoscopes, affidavits, municipal birth extracts and service records are not accepted.",
+        "no_validation_at_application": "Because relaxations differ across posts, the online application form does not validate age. Responsibility for checking age eligibility rests on the candidate, and an under-aged or over-aged applicant can be rejected at any time with no fee refund."
+      },
+      "value_te": "వయస్సు లెక్కింపు తేదీ: 1 జూలై 2026. కనిష్ఠ వయస్సు 21 సంవత్సరాలు నిండి ఉండాలి; నోటిఫికేషన్‌లోని మూల గరిష్ఠ పరిమితి 25 సంవత్సరాలు నిండకూడదు. దీనికి అదనంగా జీవో ఎంఎస్ నం. 87 (18-05-2026) ద్వారా 5 సంవత్సరాలు, అనుబంధ నోటిఫికేషన్‌లో పేర్కొన్న జీవో ఎంఎస్ నం. 122 (14-08-2026) ద్వారా మరో 2 సంవత్సరాలు గరిష్ఠ పరిమితి పెంచబడింది. వర్గ సడలింపులు: ఎస్‌సీ / ఎస్‌టీ / బీసీ / ఈడబ్ల్యూఎస్ — 5 సంవత్సరాలు; ఎక్స్-సర్వీస్‌మెన్ — సేవా కాలానికి అదనంగా 3 సంవత్సరాలు; ఎన్‌సీసీ ఇన్‌స్ట్రక్టర్ — సేవా కాలానికి అదనంగా 3 సంవత్సరాలు; తెలంగాణ రాష్ట్ర ప్రభుత్వ ఉద్యోగులు — గరిష్ఠంగా 5 సంవత్సరాల వరకు సర్వీసు కాలం. వయస్సు రుజువుగా ఎస్‌ఎస్‌సీ / మెట్రిక్యులేషన్ సర్టిఫికేట్‌లోని పుట్టిన తేదీనే అంగీకరిస్తారు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 16, "section": "Para 15-B (i) — Age Limit (General)", "quote": "Must have attained the age of 21 years and must not have attained the age of 25 years as on 1 st July, 2026."},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 16, "section": "Para 15-B (i) — Age Limit (General)", "quote": "the Government of Telangana vide GO Ms No. 87, General Administration (Services-A) Department dated 18-05-2026 have raised the upper age limit prescribed for direct recruitment by 5 (five) years for uniformed services including Police, Fire Services, Prisons and Special Protection Force Departments. This relaxation is in addition to the upper age limit as mentioned above."},
+        {"document_id": "DOC-OFF-002", "page": 17, "section": "Para 15-B (ii) — Relaxation table, row 4", "quote": "4 SCs, STs, BCs and EWS category 5 (five) Years"},
+        {"document_id": "DOC-OFF-002", "page": 17, "section": "Para 15-B (ii) — Relaxation table, row 2", "quote": "Ex-Servicemen (Served in Army /", "quote_note": "Fragmentary of necessity. The cell wraps to a second line and the layout-mode extraction interleaves the adjacent 'Relaxation of Age' column between the two lines, so the full cell has no contiguous form: normalisation yields 'Ex-Servicemen (Served in Army / 2 the length of Service rendered Navy / Air Force / Territorial Army) in the Armed Forces'. Read line by line, row 2 is 'Ex-Servicemen (Served in Army / Navy / Air Force / Territorial Army)' against '3 (three) Years in addition to the length of Service rendered in the Armed Forces'."},
+        {"document_id": "DOC-OFF-002", "page": 17, "section": "Para 15-B (ii) closing sentence", "quote": "Save as provided above, the age limits prescribed can in no case be relaxed."},
+        {"document_id": "DOC-OFF-002", "page": 17, "section": "Para 15-B Note 2", "quote": "Name and date of birth accepted by the TSLPRB is that entered in the Secondary School Certificate, Matriculation, or an equivalent examination certificate."},
+        {"document_id": "DOC-OFF-003", "page": 1, "section": "AMENDMENT", "quote": "The Government of Telangana vide G O Ms No. 122, General Administration (Services-A) Department dated 14-08-2026 have raised the upper age limit prescribed for the Direct Recruitment by further 2 (two) years in addition to the raise of 5 (five) years issued in G O Ms No. 87, General Administration (Services-A) Department dated 18-05-2026"},
+        {"document_id": "DOC-OFF-003", "page": 1, "section": "AMENDMENT, item (2)", "quote": "Para No. 15-B (i) of Notification in Rc No. 225 / Rect. / Rect.-1 / 2026 dated 29th July 2026"}
+      ],
+      "derived": {
+        "effective_general_upper_limit": "Must not have attained 32 years as on 1 July 2026.",
+        "derivation": "25 (Para 15-B (i)) + 5 (GO Ms No. 87, stated to be in addition to that limit) + 2 (GO Ms No. 122 per DOC-OFF-003, stated to be in addition to the 5) = 32.",
+        "method": "DETERMINISTIC",
+        "caution": "The figure 32 is printed in neither document. It is arithmetic over three explicitly sourced components and is held here, separately from `value`, for exactly that reason. A candidate acting on it should confirm against the board's own eligibility calculator or a subsequent press release.",
+        "further_derived_for_reserved_categories": "For a candidate also entitled to the 5-year SC / ST / BC / EWS relaxation the same arithmetic gives 37 as on 1 July 2026. Same caution applies, and the BC-E caveat above applies to BC-E candidates."
+      },
+      "current_official_resolution": "DOC-OFF-003 does not contradict DOC-OFF-002; it adds to it. The controlling reading is the base limits of Para 15-B (i) as raised by GO Ms No. 87 and then by GO Ms No. 122. Both documents are preserved separately; see the notification-to-supplementary reconciliation in knowledge/official/current_official.json.",
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 5, 12, 13, 16 and 17 and DOC-OFF-003 page 1. The amendment target named by DOC-OFF-003 — Para 15-B (i) — was checked against DOC-OFF-002 and is in fact the age paragraph, which is mutual corroboration rather than assertion."}
     },
     {
       "fact_id": "OFF-F10", "name": "Reservation and category rules",
       "must_capture": "Reservation percentages and rules as the notification states them, including horizontal reservations and the certificate each requires.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09). Reservation rules are legal provisions; paraphrasing them is not acceptable and guessing them is worse.",
+      "value": {
+        "governing_rule": "Special Representation (Reservation) under Rule 22 of the Telangana State and Subordinate Service Rules, 1996 applies to all the posts, covering BC-A, BC-B, BC-C, BC-D, BC-E, SC, ST, Ex-Servicemen, Meritorious Sports Person and Economically Weaker Section. Rule 22-A of the same rules applies only to Post Code Nos. 11, 16 and 17.",
+        "no_percentages_printed_for_communal_categories": "The notification does not print percentage figures for SC, ST or the BC groups. It incorporates Rule 22 by reference. Any specific communal percentage therefore has no basis in either document and is deliberately absent here.",
+        "sc_sub_classification": "SC candidates must submit a community certificate as per Act No. 15 of 2025 dated 14-04-2025, which sub-classifies SC reservation into SC Group I, SC Group II and SC Group III.",
+        "certificate_required_per_claim": {
+          "sc_st": "Latest community certificate from the competent authority of the Government of Telangana, for age relaxation and for reservation.",
+          "bc": "Community certificate (BC-A, BC-B, BC-C, BC-D or BC-E) from the competent authority of the Telangana State Government supports the age-relaxation claim; a separate latest Non-Creamy-Layer certificate issued on or after 01-04-2026 is what supports the reservation claim.",
+          "bc_non_creamy_layer_failure": "A BC candidate who fails to produce the Non-Creamy-Layer certificate on the day of certificate verification is considered under Open Competition if otherwise eligible, and the status cannot be changed later.",
+          "ews": "Income and Asset certificate under GO Ms No. 65, GA (Ser. D) Department dated 19.03.2021 read with GO Ms No. 244 dated 24-08-2021, issued by a District Magistrate, Additional District Magistrate, Collector, Sub-divisional Magistrate, Mandal Revenue Officer, a revenue officer not below the rank of Tahsildar, or the Sub-Divisional Officer of the area of residence.",
+          "meritorious_sports_person": "Certificate from the competent authority certifying that the qualifying participation was prior to the date of this notification."
+        },
+        "locality_precondition": "BC, SC and ST candidates who are not local to Telangana State as per the Presidential Order 2018 are not entitled to any kind of reservation. EWS and Meritorious Sports Person reservation likewise require local-candidate status, and all Special Category reservations are for Telangana local candidates only.",
+        "bc_e_caveat": "Age relaxation and reservation for BC-E are subject to pending litigation including final orders in Civil Appeal No(s). 2628-2637 of 2010 in SLP No. 7388-97 of 2010 dated 25-03-2010 and to government orders.",
+        "meritorious_sports_person_categories": "Category 1 is a sportsperson who won medals or represented India in an international or multinational competition in a game recognised in Annexure I of GO Ms No. 74, YATC (Sports) Department dated 9-8-2012. Category 2 is a sportsperson who won medals or represented a State of India in a national competition in such a game. Category 1 is exhausted before Category 2 is considered; within a category, final-selection marks decide inter-se merit; unfilled MSP vacancies go to Open Competition in the same recruitment.",
+        "women_reservation": "33⅓% of the vacancies in each category including EWS are reserved for women for Post Code Nos. 11, 16 and 17, and 10% of the vacancies in each category including EWS are reserved for women for Post Code No. 12. It is a horizontal reservation on the principle of sufficiency, adjusted proportionately within the woman candidate's own communal category. Unfilled women's vacancies are not carried forward and are filled by men of the same communal category. Post Code Nos. 13, 14 and 18 are men-only and Post Code No. 19 is women-only, so no women's quota is stated for them.",
+        "special_categories_horizontal": "Police Executive (PE), Police Ministerial (PM), Members of Telangana Special Protection Force (MoSPF), National Cadet Corps (NCC), Children of Police Personnel (CPP), Children of Deceased and Incapacitated Police Personnel (CDI), Children of Telangana Special Protection Force (CSPF), Children of Prisons Department Personnel (CJP) and Children of members of Fire Services (CFSP) are adjusted horizontally within the candidate's own communal category, and the percentage is computed for each category on the vacancies notified.",
+        "special_category_percentages_by_post_code": {
+          "11_and_14": "PE 5%, NCC 3%, CPP 2%, CDI 2%, PM 1%",
+          "12_and_13": "PE 7%, NCC 3%, CPP 2%, CDI 2%, PM 1%",
+          "16": "MoSPF 2%, CSPF 5%, NCC 2%",
+          "17": "CFSP 5%",
+          "18_and_19": "CJP 5%"
+        },
+        "pe_pm_service_condition": "A Police Executive or Police Ministerial claimant must have completed three years of service as on the date of the notification.",
+        "local_reservation": "Local reservation is governed by Para (7) of the Telangana Public Employment (Presidential Order), 2018, and the notification's Para 19 sets out how local and non-local candidates are treated in the zone-wise allocation."
+      },
+      "value_te": "రిజర్వేషన్ నియమాలు: 1996 తెలంగాణ రాష్ట్ర మరియు సబార్డినేట్ సర్వీస్ రూల్స్‌లోని రూల్ 22 ప్రకారం బీసీ-ఏ, బీ, సీ, డీ, ఈ, ఎస్‌సీ, ఎస్‌టీ, ఎక్స్-సర్వీస్‌మెన్, క్రీడాకారులు, ఈడబ్ల్యూఎస్ రిజర్వేషన్లు అన్ని పోస్టులకు వర్తిస్తాయి; రూల్ 22-ఏ పోస్ట్ కోడ్ 11, 16, 17లకు మాత్రమే. కమ్యూనల్ శాతాలు నోటిఫికేషన్‌లో ముద్రించలేదు. మహిళలకు పోస్ట్ కోడ్ 11, 16, 17లలో 33⅓%, పోస్ట్ కోడ్ 12లో 10% — ఇది క్షితిజ సమాంతర (హారిజాంటల్) రిజర్వేషన్, తదుపరి నియామకానికి బదిలీ కాదు. ప్రత్యేక వర్గ రిజర్వేషన్లు తెలంగాణ స్థానిక అభ్యర్థులకే. బీసీ అభ్యర్థులు 01-04-2026 తర్వాత జారీ అయిన నాన్-క్రీమీ లేయర్ సర్టిఫికేట్ సమర్పించాలి; సమర్పించలేకపోతే ఓపెన్ కాంపిటీషన్‌గా పరిగణిస్తారు, తర్వాత మార్చడం సాధ్యం కాదు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 12, "section": "Para 12-A — Reservation", "quote": "SC, ST, Ex-Servicemen, Meritorious Sports Person, and Economically Weaker Section category provided in Rule 22 of Telangana State & Subordinate Service Rules, 1996, shall be applicable to all the Posts."},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 12, "section": "Para 12-A — Reservation", "quote": "Rule 22-A of the Telangana State and Subordinate Service Rules 1996 shall be applicable only to the Post Code Nos. 11, 16, and 17."},
+        {"document_id": "DOC-OFF-002", "page": 12, "section": "Para 12-B (i) — Community", "quote": "Community Certificate as per Act No. 15 of 2025, dated 14-04-2025, issued by the Government of Telangana with regard to reservations to SCs by way of sub-classification in the State, i.e., SC Group - I, SC Group - II, and SC Group – III."},
+        {"document_id": "DOC-OFF-002", "page": 13, "section": "Para 12-B (iii) — Community", "quote": "the latest Certificate of Non Creamy Layer issued by the Competent Authorities of Telangana State on or after 01-04-2026 to claim Reservation. In case of failure to produce the Non-Creamy Layer Certificate on the day of Certificates Verification, such Candidates will be considered under “Open Competition”, if otherwise eligible, and the status cannot be changed later."},
+        {"document_id": "DOC-OFF-002", "page": 13, "section": "Para 12-B (v) — Community", "quote": "BC, SC, and ST Candidates who are not local to Telangana State, as per the Presidential order 2018, are not entitled to any kind of reservation."},
+        {"document_id": "DOC-OFF-002", "page": 13, "section": "Para 12-C — Economically Weaker Section (EWS)", "quote": "as per GO Ms No. 65, GA (Ser. D) Department, dated 19.03.2021 r/w GO Ms No. 244, GA (Ser. D) Department, dated 24-08-2021"},
+        {"document_id": "DOC-OFF-002", "page": 15, "section": "Para 12-E — Women Reservation", "quote": "33⅓% of the vacancies in each category, including EWS, are reserved for Women for the Post Code Nos. 11, 16, and 17. Similarly, 10% of the vacancies in each category, including EWS, are reserved for Women for the Post Code No. 12 under Direct Recruitment"},
+        {"document_id": "DOC-OFF-002", "page": 15, "section": "Para 12-E — Women Reservation", "quote": "the vacancies reserved for them shall not be carried forward for the succeeding recruitment and shall be filled up by Men Candidates of the respective Communal Category."},
+        {"document_id": "DOC-OFF-002", "page": 15, "section": "Para 14 — Special Categories Reservations for Telangana Local Candidates Only", "quote": "All Special Category reservations are applicable to the Local Candidates of Telangana State only."}
+      ],
+      "unresolved": {
+        "conflict_id": "OFF-U-F10-A",
+        "question": "What numeric percentage of vacancies is reserved for each communal category (SC, ST, BC-A to BC-E) and for EWS and Ex-Servicemen in this recruitment?",
+        "observation": "Para 12-A incorporates Rule 22 of the Telangana State and Subordinate Service Rules, 1996 by reference and prints no percentage figures for the communal categories. The only reservation percentages printed anywhere in DOC-OFF-002 are the women's figures in Para 12-E and the special-category figures in Para 20. A search of both extraction artefacts finds no SC, ST, BC or EWS percentage.",
+        "why_it_matters": "Communal percentages determine how many vacancies exist in a candidate's own category, which is the number that actually governs their chance of selection. Stating a plausible figure here would be fabricating an examination fact.",
+        "resolution_rule": "Resolve only by reading Rule 22 of the Telangana State and Subordinate Service Rules, 1996 and Act No. 15 of 2025 dated 14-04-2025 as primary documents, or a TSLPRB zone-wise vacancy table that prints the category-wise split. Until then this stays UNRESOLVED and no percentage is stored.",
+        "status": "UNRESOLVED",
+        "blocked_by": "Acquisition of Rule 22 of the Telangana State and Subordinate Service Rules 1996 and Act No. 15 of 2025 as source documents"
+      },
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 12, 13, 14, 15, 30 and 31"}
     },
     {
       "fact_id": "OFF-F11", "name": "Preliminary Written Test structure",
       "must_capture": "Whether the PWT is one paper or several, objective or otherwise, its mode, and whether it is qualifying or counts towards the final merit.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09). Whether the PWT is merely qualifying changes how a candidate should allocate months of preparation, so it must not be assumed.",
+      "value": {
+        "papers": "One paper.",
+        "duration": "Three hours.",
+        "who_appears": "All eligible registered candidates.",
+        "mode": "Objective, answered on an OMR answer sheet using a blue or black ball-point pen only. The hall ticket is issued online.",
+        "role_in_selection": "Screening. The PWT is the gate to the PMT / PET: candidates who qualify in it are called for the PMT / PET by an intimation letter downloaded from www.tgprb.in. Para 16-E, which sets out final selection, computes merit from the Final Written Examination papers (and, for some post codes, PET run marks), and does not include PWT marks. Recorded as read from Para 16-A, Para 16-E and the intimation-letter paragraph; the notification does not use the word 'screening' itself.",
+        "syllabus_location": "Annexure II of the notification.",
+        "language": "Questions are set in English-Telugu and English-Urdu. Where scientific, technological or management terminology is involved, transliteration is used at the expert's discretion. If a Telugu or Urdu translation or transliteration is ambiguous or misspelt, the English version is final and correct.",
+        "deleted_question_treatment": "Where any question is deleted in the final answer key, each candidate is compensated with reference to the deleted questions in proportion to the percentage of marks obtained in the remaining undeleted questions."
+      },
+      "value_te": "ప్రిలిమినరీ రిటెన్ టెస్ట్ (PWT): ఒక పేపర్, మూడు గంటల వ్యవధి, అర్హులైన అందరు దరఖాస్తుదారులు హాజరు కావాలి. ఆబ్జెక్టివ్ విధానం — ఓఎంఆర్ షీట్‌పై నీలం లేదా నలుపు బాల్-పాయింట్ పెన్‌తో మాత్రమే. ఇది తదుపరి దశ (పీఎంటీ / పీఈటీ) కోసం వడపోత; తుది మెరిట్ లెక్కింపులో పీడబ్ల్యూటీ మార్కులు చేర్చలేదు. సిలబస్ అనుబంధం-II లో ఉంది. ప్రశ్నలు ఇంగ్లీష్-తెలుగు, ఇంగ్లీష్-ఉర్దూలో ఉంటాయి; అనువాదంలో సందేహం ఉంటే ఇంగ్లీష్ ప్రతిదే తుది నిర్ణయం.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 19, "section": "Para 16-A — Preliminary Written Test", "quote": "All the eligible registered Candidates shall be required to appear for the Preliminary Written Test in one paper (three hours duration), whose details are given below."},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 19, "section": "Para 16-A — Preliminary Written Test", "quote": "The Hall Ticket will be issued online for this purpose. Syllabus for the PWT is given in Annexure II."},
+        {"document_id": "DOC-OFF-002", "page": 20, "section": "Para 16-A Note 2", "quote": "Questions in the Paper shall be objective in nature. Candidates have to answer the questions on an OMR answer sheet using a Blue / black ball-point pen only."},
+        {"document_id": "DOC-OFF-002", "page": 20, "section": "Para 16-A Note 4", "quote": "In case of any ambiguity or spelling mistake in Translation / Transliteration in any Question in the Telugu or Urdu language, the English version shall be considered as final and the correct version."},
+        {"document_id": "DOC-OFF-002", "page": 20, "section": "Para 16-A Note 5", "quote": "Wherever any question/s are deleted in the final Answer key in Preliminary Written Test, each Candidate will be compensated with reference to the deleted questions in proportion to the percentage of the marks obtained by him / her in the other questions"},
+        {"document_id": "DOC-OFF-002", "page": 20, "section": "Para 16-A — Intimation Letter", "quote": "Candidates who qualify in the Preliminary Written Test will be informed of the dates for downloading the Intimation Letter through the website (www.tgprb.in) for appearing in the PMT / PET"}
+      ],
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 19, 20 and the Para 16-E selection paragraphs on pages 25 to 27"}
     },
     {
       "fact_id": "OFF-F12", "name": "PWT subjects",
       "must_capture": "The subject names as the notification lists them, in its order, with each subject's stated scope. These become the top level of the official syllabus.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "subject_1": {
+          "name_as_printed": "ARITHMETIC & TEST OF REASONING / MENTAL ABILITY",
+          "type": "OBJECTIVE TYPE",
+          "questions": 100,
+          "components": {
+            "Arithmetic": "It will include questions on problems relating to number system, simple interest, compound interest, ratio & proportion, average, percentage, profit & loss, time & work, work & wages, time & distance, clocks & calendars, partnership, mensuration etc",
+            "Test of Reasoning": "It will include questions of both verbal & non-verbal type and questions on analogies, similarities and differences, spatial visualization, spatial orientation, problem solving, analysis, judgment, decision making, visual memory etc"
+          }
+        },
+        "subject_2": {
+          "name_as_printed": "GENERAL STUDIES",
+          "type": "OBJECTIVE TYPE",
+          "questions": 100,
+          "items_in_printed_order": [
+            "General Science - contemporary developments in science and technology and their implications including matters of everyday observation and experience, contemporary issues relating to protection of environment as may be expected of a well educated person who has not made a special study of any scientific discipline",
+            "Current events of national and international importance",
+            "History of India (including Indian National Movement) – emphasis will be on broad and general understanding of the subject in its social, economic, cultural and political aspects",
+            "Principles of Geography and Geography of India",
+            "Indian Polity and Economy – including the Country’s political system, rural development, planning and economic reforms in India",
+            "Telangana Movement and State Formation - The idea of Telangana (1948-1970), Mobilization phase (1971-1990), towards formation of Telangana State (1991-2014)"
+          ]
+        },
+        "open_ended_wording": "Both Arithmetic and Test of Reasoning scopes end with 'etc', so the printed lists are illustrative rather than closed. The syllabus tree stores them as printed and does not extend them.",
+        "textbook_position": "The Board does not prescribe any particular textbook or publication and is not bound by material appearing in any book or publication. Where a question or answer is disputed, the Subject Expert Committee's decision is final.",
+        "difference_from_fwe": "The PWT General Studies list has six items. The Final Written Examination Paper IV General Studies list in Annexure III has seven, inserting a personality-test item and moving Telangana Movement to position seven, and its wording differs in places. The two are stored as separate syllabus trees and are not merged."
+      },
+      "value_te": "పీడబ్ల్యూటీ సబ్జెక్టులు: (ఏ) అర్థమెటిక్ & టెస్ట్ ఆఫ్ రీజనింగ్ / మెంటల్ ఎబిలిటీ (ఆబ్జెక్టివ్) — 100 ప్రశ్నలు; (బీ) జనరల్ స్టడీస్ (ఆబ్జెక్టివ్) — 100 ప్రశ్నలు, ఆరు అంశాలు: జనరల్ సైన్స్; జాతీయ, అంతర్జాతీయ ప్రాముఖ్యత కలిగిన ప్రస్తుత సంఘటనలు; భారతదేశ చరిత్ర (జాతీయోద్యమం సహా); భౌగోళిక సూత్రాలు మరియు భారత భౌగోళికం; భారత రాజ్యాంగ వ్యవస్థ మరియు ఆర్థిక వ్యవస్థ; తెలంగాణ ఉద్యమం మరియు రాష్ట్ర ఆవిర్భావం. బోర్డు ఏ ప్రత్యేక పాఠ్యపుస్తకాన్నీ నిర్దేశించదు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 42, "section": "Annexure II — Syllabus for Preliminary Written Test", "quote": "A) ARITHMETIC & TEST OF REASONING / MENTAL ABILITY (OBJECTIVE TYPE) (100 QUESTIONS)"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 42, "section": "Annexure II — heading", "quote": "SYLLABUS FOR PRELIMINARY WRITTEN TEST (200 QUESTIONS – 200 MARKS)"},
+        {"document_id": "DOC-OFF-002", "page": 42, "section": "Annexure II — B", "quote": "B) GENERAL STUDIES (OBJECTIVE TYPE) (100 QUESTIONS)"},
+        {"document_id": "DOC-OFF-002", "page": 42, "section": "Annexure II — A, Arithmetic", "quote": "Arithmetic: It will include questions on problems relating to number system, simple interest, compound interest, ratio & proportion, average, percentage, profit & loss, time & work, work & wages, time & distance, clocks & calendars, partnership, mensuration etc"},
+        {"document_id": "DOC-OFF-002", "page": 42, "section": "Annexure II — A, Test of Reasoning", "quote": "Test of Reasoning: It will include questions of both verbal & non-verbal type and questions on analogies, similarities and differences, spatial visualization, spatial orientation, problem solving, analysis, judgment, decision making, visual memory etc"},
+        {"document_id": "DOC-OFF-002", "page": 42, "section": "Annexure II — Note", "quote": "The Board does not prescribe any particular textbook or publication and is not bound by the material appearing in any book or publication."}
+      ],
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 page 42 in full, compared item by item against page 44"}
     },
     {
       "fact_id": "OFF-F13", "name": "PWT number of questions",
       "must_capture": "Question count per paper and per subject if broken down.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "total_questions": 200,
+        "per_subject": {"Arithmetic & Test of Reasoning / Mental Ability": 100, "General Studies": 100},
+        "papers": 1,
+        "arithmetic_check": "100 + 100 = 200, which matches the total printed in the Annexure II heading. The two figures are printed independently of the total, so this is a reconciliation of the document against itself rather than a derivation.",
+        "finer_breakdown": "The notification does not split the 100 Arithmetic & Reasoning questions between Arithmetic and Test of Reasoning, and does not split the 100 General Studies questions across its six items. No such split is stored."
+      },
+      "value_te": "పీడబ్ల్యూటీ ప్రశ్నల సంఖ్య: మొత్తం 200 ప్రశ్నలు — అర్థమెటిక్ & టెస్ట్ ఆఫ్ రీజనింగ్ / మెంటల్ ఎబిలిటీ 100, జనరల్ స్టడీస్ 100. అర్థమెటిక్ మరియు రీజనింగ్ మధ్య, లేదా జనరల్ స్టడీస్ ఆరు అంశాల మధ్య ప్రశ్నల విభజన నోటిఫికేషన్‌లో ఇవ్వలేదు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 42, "section": "Annexure II — heading", "quote": "SYLLABUS FOR PRELIMINARY WRITTEN TEST (200 QUESTIONS – 200 MARKS)"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 20, "section": "Para 16-A — PWT table row", "quote": "Ability (100 Questions) and General Studies 200"},
+        {"document_id": "DOC-OFF-002", "page": 42, "section": "Annexure II — A", "quote": "A) ARITHMETIC & TEST OF REASONING / MENTAL ABILITY (OBJECTIVE TYPE) (100 QUESTIONS)"},
+        {"document_id": "DOC-OFF-002", "page": 42, "section": "Annexure II — B", "quote": "B) GENERAL STUDIES (OBJECTIVE TYPE) (100 QUESTIONS)"}
+      ],
+      "column_check": "The Para 16-A table on page 20 has one data row and one numeric column (Max. Marks), so the layout-mode extraction cannot mis-assign the 200. The per-subject 100s are read from Annexure II prose, not from a table.",
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 20 and 42"}
     },
     {
       "fact_id": "OFF-F14", "name": "PWT marks",
       "must_capture": "Maximum marks per paper, marks per question, and how marks map to the final selection if at all.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "max_marks": 200,
+        "marks_per_question": null,
+        "marks_per_question_status": "NOT_STATED. The notification prints 200 questions and 200 marks for the paper but nowhere states a marks-per-question value. Note 3 of Para 16-A speaks of 'full marks, assigned to that question' without giving the figure, and the negative mark is expressed as a percentage of that unstated full mark. One mark per question follows arithmetically from 200 questions and 200 marks, and is recorded in `derived` rather than as a read value.",
+        "contribution_to_final_merit": "None stated. Para 16-E computes final selection from Final Written Examination marks, and additionally from PET run marks for Post Code Nos. 12, 13, 14 and 16. PWT marks do not appear in any final-selection formula in the document.",
+        "qualifying_thresholds": "See OFF-F17. Qualifying is 30% for OCs including EWS, 25% for BCs and 20% for SCs, STs and Ex-Servicemen."
+      },
+      "value_te": "పీడబ్ల్యూటీ మార్కులు: గరిష్ఠ మార్కులు 200. ప్రశ్నకు ఎన్ని మార్కులు అనేది నోటిఫికేషన్‌లో స్పష్టంగా పేర్కొనలేదు (200 ప్రశ్నలు – 200 మార్కుల నుంచి ప్రశ్నకు 1 మార్కు అని లెక్కింపు మాత్రమే). తుది మెరిట్ లెక్కింపులో పీడబ్ల్యూటీ మార్కులు చేర్చబడవు; అర్హత శాతాలు మాత్రమే వర్తిస్తాయి.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 20, "section": "Para 16-A — PWT table, Max. Marks column", "quote": "Ability (100 Questions) and General Studies 200"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 42, "section": "Annexure II — heading", "quote": "SYLLABUS FOR PRELIMINARY WRITTEN TEST (200 QUESTIONS – 200 MARKS)"},
+        {"document_id": "DOC-OFF-002", "page": 20, "section": "Para 16-A Note 3", "quote": "For each question, the Candidate shall be awarded full marks, assigned to that question, if he / she darkened only one bubble that corresponds to the correct answer."}
+      ],
+      "derived": {
+        "marks_per_question": 1,
+        "derivation": "200 marks ÷ 200 questions = 1 mark per question, on the assumption — which the document neither states nor contradicts — that all questions carry equal marks.",
+        "method": "DETERMINISTIC",
+        "caution": "Neither document prints a marks-per-question figure, and neither states that questions carry equal marks. The figure is held here, outside `value`, for that reason. It matters because the negative mark is defined as 20% of the full marks assigned to the question, so 0.2 marks per wrong answer is itself downstream of this assumption."
+      },
+      "unresolved": {
+        "conflict_id": "OFF-U-F14-A",
+        "question": "Are all 200 PWT questions worth the same marks, and what is the absolute negative mark per wrong answer?",
+        "observation": "Para 16-A Note 3 refers to 'full marks, assigned to that question' and to a negative mark of '20% of full marks', both without a figure. The table gives only the paper total of 200. Neither document states equal weighting, and no marks-per-question statement appears anywhere in either extraction artefact.",
+        "why_it_matters": "A candidate deciding whether to guess needs the absolute penalty, not a percentage of an unknown. If any subject or item carried different weighting, the whole attempt-strategy calculation would change.",
+        "resolution_rule": "Resolve from a TSLPRB PWT hall-ticket instruction sheet, an official answer key with a marks statement, or an official press release that prints marks per question. A previous year's paper is T2_HISTORICAL_PYQ evidence of past practice and may not be promoted into this T1_OFFICIAL record.",
+        "status": "UNRESOLVED",
+        "blocked_by": "Publication of the PWT instruction sheet or an official clarification by TSLPRB"
+      },
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 page 20 and page 42, cross-read against the Para 16-E final-selection paragraphs on pages 25 to 27"}
     },
     {
       "fact_id": "OFF-F15", "name": "PWT duration",
       "must_capture": "Time allowed per paper, plus any compensatory time provision.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09). Duration drives every timed-practice setting in this system, so an invented figure would silently mistrain pacing.",
+      "value": {
+        "duration": "Three hours for the single PWT paper.",
+        "stated_twice": "Para 16-A states 'one paper (three hours duration)'; the fee paragraph independently describes the PWT as 'One 3-hour Exam'. The two statements agree.",
+        "compensatory_time": null,
+        "compensatory_time_status": "NOT_ADDRESSED. A word-boundary search of both extraction artefacts finds zero occurrences of 'compensatory', 'scribe', 'scribes' and 'extra time'. Neither document contains any provision for additional time or for a scribe. This is recorded as the document's silence, not as a rule that no such provision exists.",
+        "sectional_time": "None. The paper is a single three-hour paper covering both subjects; no per-subject time limit is stated."
+      },
+      "value_te": "పీడబ్ల్యూటీ వ్యవధి: ఒక పేపర్‌కు మూడు గంటలు (ఫీజు పేరాలో 'ఒక 3-గంటల పరీక్ష' అని కూడా పేర్కొన్నారు). సబ్జెక్టుల మధ్య వేర్వేరు సమయ పరిమితి లేదు. అదనపు సమయం (కాంపెన్సేటరీ టైమ్) లేదా స్క్రైబ్ గురించి ఏ నిబంధనా రెండు పత్రాలలో లేదు — ఇది పత్రాల నిశ్శబ్దం, నిబంధన లేదని అర్థం కాదు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 19, "section": "Para 16-A — Preliminary Written Test", "quote": "the Preliminary Written Test in one paper (three hours duration)"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 6, "section": "Para 5-c (ii) — what the fee covers", "quote": "(ii) Preliminary Written Test for all the Applicants (One 3-hour Exam)"}
+      ],
+      "unresolved": {
+        "conflict_id": "OFF-U-F15-A",
+        "question": "Is any additional time, scribe, or other accommodation available to a candidate who needs one for the Preliminary Written Test?",
+        "observation": "Zero word-boundary occurrences of 'compensatory', 'scribe', 'scribes' or 'extra time' across both extraction artefacts. Para 15 lists 'Physically handicapped' among the conditions for which a candidate 'will not be considered for recruitment to any post specified in this rule', so the notification's stance on disability is exclusionary rather than accommodating, and no accommodation provision follows from it.",
+        "why_it_matters": "A candidate who would need an accommodation cannot plan around a provision the notification does not contain, and an assistant that invented one would mislead them about their eligibility as well as their exam conditions.",
+        "resolution_rule": "Resolve only from TSLPRB hall-ticket instructions, an official clarification, or the service rules incorporated by reference in Para 11. Do not infer from another state's or another board's practice.",
+        "status": "UNRESOLVED",
+        "blocked_by": "Publication of TSLPRB hall-ticket instructions or an official clarification"
+      },
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 6 and 19, plus a word-boundary occurrence count over both artefacts"}
     },
     {
       "fact_id": "OFF-F16", "name": "Negative marking",
       "must_capture": "Whether marks are deducted for a wrong answer, the exact deduction, and the treatment of unattempted or multiply-marked answers.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09). Presence or absence of negative marking inverts the correct guessing strategy, so this must never be assumed in either direction.",
+      "value": {
+        "preliminary_written_test": {
+          "correct_answer": "Full marks assigned to that question, awarded when exactly one bubble corresponding to the correct answer is darkened.",
+          "no_bubble_darkened": "Zero marks for that question. No deduction.",
+          "all_other_cases": "20% of full marks is awarded as a negative mark for that question. 'All other cases' covers a wrong single answer and, on the wording, more than one bubble darkened.",
+          "deduction_rate": "20% of the full marks of the question."
+        },
+        "fwe_papers_I_and_II_part_A": {
+          "correct_answer": "Full marks assigned to that question.",
+          "no_bubble_darkened": "Zero mark for that question. No deduction.",
+          "all_other_cases": "25% of the full marks is awarded as negative mark for that question.",
+          "deduction_rate": "25% of the full marks of the question, described in Annexure III as '1/4th (25%) negative marks for wrong answers'.",
+          "practical_effect": "Papers I and II are qualifying only, so this deduction affects whether a candidate clears the paper, not their rank."
+        },
+        "fwe_papers_III_and_IV": null,
+        "fwe_papers_III_and_IV_status": "NOT_STATED — see the unresolved block. This is the significant gap in the document: Papers III and IV are the papers that decide rank, and no deduction rule is printed for them.",
+        "descriptive_parts": "Part B of Papers I and II is descriptive, so no bubble-based deduction rule applies to it and none is stated.",
+        "occurrence_audit": "The word 'negative' occurs exactly four times in DOC-OFF-002 — page 20 (PWT, 20%), page 24 (Part A of Papers I and II, 25%), and twice on page 43 in Annexure III (Papers I and II, '1/4th (25%)') — and zero times in DOC-OFF-003. There is no fifth occurrence attaching a deduction to Paper III or Paper IV."
+      },
+      "value_te": "నెగెటివ్ మార్కింగ్: ప్రిలిమినరీ రిటెన్ టెస్టులో — సరైన సమాధానానికి పూర్తి మార్కులు; ఏ బబుల్ నింపకపోతే సున్నా (కోత లేదు); మిగిలిన అన్ని సందర్భాల్లో ఆ ప్రశ్న పూర్తి మార్కులలో 20% కోత. తుది రాత పరీక్షలో పేపర్ I మరియు II పార్ట్-ఏ లో — మిగిలిన అన్ని సందర్భాల్లో 25% (అనుబంధం-III లో '1/4వ వంతు (25%)') కోత; ఈ పేపర్లు అర్హత పేపర్లు మాత్రమే. పేపర్ III మరియు IV కు నెగెటివ్ మార్కింగ్ గురించి రెండు పత్రాలలో ఎక్కడా పేర్కొనలేదు — ఇది పరిష్కారం కాని అంశంగా నమోదు చేయబడింది, ఊహించి రాయలేదు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 20, "section": "Para 16-A Note 3", "quote": "In all other cases, 20% of full marks shall be awarded as a negative mark for that question."},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 20, "section": "Para 16-A Note 3", "quote": "In case the Candidate has not darkened any bubble, the Candidate shall be awarded zero marks for that question."},
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 4", "quote": "For each question in Part A of Papers I and II, the Candidate shall be awarded full marks assigned to that question if he / she darkened only one bubble that corresponds to the correct answer."},
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 4", "quote": "In all other cases, 25% of the full marks shall be awarded as negative mark for that question."},
+        {"document_id": "DOC-OFF-002", "page": 43, "section": "Annexure III — Paper I: English, Part A", "quote": "Multiple Choice Questions Format (with 1/4th (25%) negative marks for wrong answers)"}
+      ],
+      "unresolved": {
+        "conflict_id": "OFF-U-F16-A",
+        "question": "Is there negative marking in Final Written Examination Paper III (Arithmetic and Test of Reasoning) and Paper IV (General Studies), and if so at what rate?",
+        "observation": "Para 16-C Note 6 states only that 'Questions in Papers III and IV shall be objective in nature' and that answers go on an OMR sheet; it prescribes no deduction. Note 4, which does prescribe a deduction, is expressly limited to 'Part A of Papers I and II'. Annexure III prints '1/4th (25%) negative marks' under Paper I and Paper II only, and prints no such phrase under Paper III or Paper IV. The word 'negative' occurs four times in DOC-OFF-002 and none of the four attaches to Paper III or Paper IV, and zero times in DOC-OFF-003.",
+        "why_it_matters": "Papers III and IV carry the entire merit weight for every post code, so whether a wrong answer costs nothing or a quarter mark changes optimal attempt strategy on 400 questions. Guessing in either direction would be a fabricated examination fact of the most consequential kind: asserting a penalty would suppress correct attempts, and asserting none would invite reckless guessing.",
+        "resolution_rule": "Resolve only from a TSLPRB source that speaks to Papers III and IV specifically — hall-ticket instructions, the question-paper instruction page, an official press release, or a corrigendum. The 20% PWT rule and the 25% Papers I and II rule may not be extended to Papers III and IV by analogy, and a previous year's practice is T2_HISTORICAL_PYQ and may not be promoted into this record.",
+        "status": "UNRESOLVED",
+        "blocked_by": "Publication of FWE instructions by TSLPRB, or an official corrigendum addressing Papers III and IV"
+      },
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 20, 24, 43 and 44, plus an exhaustive occurrence count of 'negative' over both artefacts"}
     },
     {
       "fact_id": "OFF-F17", "name": "Minimum qualifying requirements",
       "must_capture": "Qualifying marks or percentages per stage and per category, and any separate sectional minimum.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "preliminary_written_test": {"OC_including_EWS": "30%", "BC": "25%", "SC_ST_Ex_Servicemen": "20%", "basis": "Of the paper as a whole. The PWT is one paper of 200 marks, so the thresholds are 60, 50 and 40 marks respectively — arithmetic recorded in `derived`, not printed."},
+        "final_written_examination": {"OC_including_EWS": "40%", "BC": "35%", "SC_ST_Ex_Servicemen": "30%", "basis": "In each paper, not on the aggregate. Failing the minimum in any one paper ends the candidature."},
+        "special_categories": "Candidates of the special categories referred to in Para 21 take the minimum qualifying marks of their own social category.",
+        "sectional_minimum_within_a_paper": "None stated. The PWT covers two subjects in one paper and no per-subject minimum is prescribed; the FWE minimum is per paper, which is the finest granularity the document gives.",
+        "papers_I_and_II_are_qualifying_only": "Papers I and II are qualifying in nature and their marks are not taken into account for final selection, but failing the minimum in them ends the candidature irrespective of performance in Papers III and IV.",
+        "oc_ews_eligibility_rule": "A candidate who secures 40% and above in each of Paper III and Paper IV is eligible to be considered for selection to posts under OC / EWS irrespective of their social category. This is an upward route into the open category, not an additional hurdle.",
+        "physical_stages": "The PMT and PET standards are pass or fail thresholds rather than percentages; they are recorded in OFF-F18 and OFF-F19. For Post Code Nos. 12, 13, 14 and 16 the run additionally carries marks, so for those posts it is both a qualifying threshold and a scored event.",
+        "no_right_from_minimum": "Mere securing of minimum qualifying marks does not vest any right in a candidate to be considered for selection.",
+        "compulsory_appearance": "Appearance in all the tests and written examinations is compulsory; absence in any of them automatically renders a candidate disqualified."
+      },
+      "value_te": "అర్హత మార్కులు: ప్రిలిమినరీ రిటెన్ టెస్టు (ఒక పేపర్, 200 మార్కులు) — ఓసీ (ఈడబ్ల్యూఎస్ సహా) 30%, బీసీ 25%, ఎస్‌సీ / ఎస్‌టీ / ఎక్స్-సర్వీస్‌మెన్ 20%. తుది రాత పరీక్ష — ప్రతి పేపర్‌లో ఓసీ (ఈడబ్ల్యూఎస్ సహా) 40%, బీసీ 35%, ఎస్‌సీ / ఎస్‌టీ / ఎక్స్-సర్వీస్‌మెన్ 30%. పేపర్ I, II అర్హత పేపర్లు మాత్రమే — వాటి మార్కులు తుది ఎంపికకు లెక్కించరు, కానీ అర్హత సాధించకపోతే అభ్యర్థిత్వం ముగుస్తుంది. పేపర్ III మరియు IV లలో ప్రతి పేపర్‌లో 40% పైబడి సాధించిన వారిని సామాజిక వర్గంతో సంబంధం లేకుండా ఓసీ / ఈడబ్ల్యూఎస్ పోస్టులకు పరిగణిస్తారు. కనీస అర్హత మార్కులు సాధించడం ఎంపికకు హక్కు కల్పించదు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 20, "section": "Para 16-A Note 1", "quote": "The minimum marks to be secured by the Candidates in order to qualify in the Preliminary Written Test paper is 30% for OCs, including EWS, 25% for BCs, and 20% for SCs / STs / Ex-Servicemen."},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 1", "quote": "The minimum marks to be secured by the Candidates in order to qualify in the Written Examination in each paper is 40% for OCs, including EWS, 35% for BCs, and 30% for SCs / STs / Ex. Servicemen."},
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 1", "quote": "The same minimum qualifying marks shall apply to the Candidates who belong to special categories referred to in para 21 in the Notification, in respect of their social categories."},
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 2", "quote": "Those Candidates who do not secure the minimum qualifying marks in these papers shall not be considered further in the selection process, irrespective of their performance in Papers III and IV."},
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 6", "quote": "Candidates who secured 40% and above in each Paper, i.e., Paper-III and Paper-IV only, are eligible to be considered for selection for Posts under OC / EWS irrespective of social categories."},
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 8", "quote": "Mere securing of minimum qualifying marks does not vest any right in a Candidate to be considered for selection."},
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 7", "quote": "Appearance in all the Tests and Written Examinations, as per rules, is compulsory. Absence in any of the above Tests / Examination shall automatically render a Candidate disqualified."}
+      ],
+      "derived": {
+        "pwt_marks_thresholds": {"OC_including_EWS": 60, "BC": 50, "SC_ST_Ex_Servicemen": 40},
+        "derivation": "The stated percentages applied to the paper's 200 maximum marks: 30% of 200 = 60, 25% = 50, 20% = 40.",
+        "method": "DETERMINISTIC",
+        "caution": "The notification prints percentages, not mark counts. These absolute figures are arithmetic and are held outside `value` for that reason. Rounding is not an issue at 200 marks, but the same arithmetic on the FWE papers is left undone here because Paper III and Paper IV maximums differ by post code."
+      },
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 20 and 24"}
     },
     {
       "fact_id": "OFF-F18", "name": "Physical Measurement Test requirements",
       "must_capture": "Every measured standard with its unit and the category or gender it applies to, plus how measurement is conducted and whether it is qualifying.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09). Values land in physical/standards/ only from an official document; that folder is enforced empty until then, because wrong physical targets waste months of training and can injure.",
+      "value": {
+        "only_measurement": "Height. It is the sole physical measurement prescribed in this notification.",
+        "height_general": {"men_post_codes_11_to_14_and_16_to_18": "Must not be less than 167.6 cms", "women_post_codes_11_12_16_17_and_19": "Must not be less than 152.5 cms"},
+        "height_st_and_aboriginal_tribes_agency_areas": {"men_post_codes_11_to_14_and_16_to_18": "Must not be less than 160 cms", "women_post_codes_11_12_16_17_and_19": "Must not be less than 150 cms", "districts": ["Adilabad", "Komarambheem-Asifabad", "Mancherial", "Nagarkurnool", "Khammam", "Bhadradri-Kothagudem", "Mulugu", "Mahabubabad", "Warangal"], "condition": "Applies to candidates belonging to Scheduled Tribes and Aboriginal Tribes in the Agency areas of those nine districts."},
+        "qualifying_or_scored": "Purely qualifying. No marks are attached to height.",
+        "position_in_sequence": "After the run event, not before it. Para 16-B (ii) opens 'Candidates who qualify in the above Run event should meet the following requirements', and Para 16-B (iii) then makes the long jump and shot-put conditional on qualifying in the physical measurements.",
+        "measurement_method": "The fee paragraph records that the PMT and PET are conducted with 'Events with RFID Bibs / Wrist Bands, Digital Height, and other equipment', so height is measured digitally. No tolerance, re-measurement or appeal provision is stated.",
+        "conducted_once_across_notifications": "For a candidate who applies to more than one TSLPRB notification issued within three months, the PMT and PET are conducted only once and the same readings and scores are valid for all the posts applied for.",
+        "chest_measurement": null,
+        "chest_measurement_status": "NOT_PRESCRIBED. A word-boundary search of both artefacts finds exactly one occurrence of 'chest' in DOC-OFF-002 — 'pigeon chest' in the Para 15 list of disqualifying defects — and none in DOC-OFF-003. There is no chest girth or expansion standard anywhere in either document.",
+        "weight_measurement": "Not prescribed. No weight or body-mass standard appears in either document."
+      },
+      "value_te": "శారీరక కొలత పరీక్ష (పీఎంటీ): ఈ నోటిఫికేషన్‌లో ఎత్తు మాత్రమే కొలుస్తారు. సాధారణ ప్రమాణం — పురుషులు (పోస్ట్ కోడ్ 11 నుంచి 14 మరియు 16 నుంచి 18) 167.6 సెం.మీ. కంటే తక్కువ ఉండకూడదు; మహిళలు (పోస్ట్ కోడ్ 11, 12, 16, 17, 19) 152.5 సెం.మీ. కంటే తక్కువ ఉండకూడదు. తొమ్మిది జిల్లాల ఏజెన్సీ ప్రాంతాల షెడ్యూల్డ్ తెగలు మరియు ఆదిమ తెగల అభ్యర్థులకు — పురుషులు 160 సెం.మీ., మహిళలు 150 సెం.మీ. ఎత్తుకు మార్కులు లేవు, అర్హత మాత్రమే. ఛాతీ కొలత లేదా బరువు ప్రమాణం రెండు పత్రాలలో ఎక్కడా లేదు. కొలత రన్ ఈవెంట్ తర్వాత జరుగుతుంది.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 22, "section": "Para 16-B (ii)(a) — Physical Measurements", "quote": "For the Post Code Nos. 11 to 14 & 16 to 18 (Men) – Height: Must not be less than 167.6 cms"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 22, "section": "Para 16-B (ii)(b) — Physical Measurements", "quote": "For the Post Code Nos. 11, 12, 16, 17, and 19 (Women) – Height: Must not be less than 152.5 cms"},
+        {"document_id": "DOC-OFF-002", "page": 22, "section": "Para 16-B (ii) proviso", "quote": "Provided that, Candidates belonging to Scheduled Tribes and Aboriginal Tribes in the Agency areas of Adilabad, Komarambheem-Asifabad, Mancherial, Nagarkurnool, Khammam, Bhadradri-Kothagudem, Mulugu, Mahabubabad, and Warangal districts should meet the following requirements:"},
+        {"document_id": "DOC-OFF-002", "page": 22, "section": "Para 16-B (ii)(c) — Physical Measurements", "quote": "For the Post Code Nos. 11 to 14, 16 to 18 (Men) – Height: Must not be less than 160 cms"},
+        {"document_id": "DOC-OFF-002", "page": 22, "section": "Para 16-B (ii)(d) — Physical Measurements", "quote": "For the Post Code Nos. 11, 12, 16, 17, and 19 (Women) – Height: Must not be less than 150 cms"},
+        {"document_id": "DOC-OFF-002", "page": 22, "section": "Para 16-B (ii) — opening sentence", "quote": "Physical Measurements: Candidates who qualify in the above Run event should meet the following requirements:"},
+        {"document_id": "DOC-OFF-002", "page": 6, "section": "Para 5-c (iii) — what the fee covers", "quote": "(Events with RFID Bibs / Wrist Bands, Digital Height, and other equipment)"},
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-B Note", "quote": "Physical Measurement Test / Physical Efficiency Test for all the Posts in the Notification(s) issued by TSLPRB (within a period of 3 months) applied for by a Candidate, will be conducted only once, and the same readings / scores will be valid for all the Posts for which he / she is applying among the Notifications."}
+      ],
+      "column_check": "The height standards are printed as labelled prose lines, one standard per line, not as a multi-column table, so no column ambiguity arises from layout-mode extraction. Post Code No. 15 appears in none of the four height clauses, consistent with OFF-F05.",
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 6, 22 and 23, plus a word-boundary occurrence count of 'chest' and 'weight' over both artefacts"}
     },
     {
       "fact_id": "OFF-F19", "name": "Physical Efficiency Test requirements",
       "must_capture": "Each event, its qualifying standard per category and gender, the number of attempts permitted, and whether events are scored or purely qualifying.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09). Same physical-standards rule as OFF-F18.",
+      "value": {
+        "events_in_order": ["1600 metres run (men) / 800 metres run (women)", "Long Jump", "Shot-put"],
+        "run": {
+          "men": "1600 metres within a maximum of 7 minutes 15 seconds.",
+          "men_ex_servicemen": "1600 metres within a maximum of 9 minutes 30 seconds.",
+          "women": "800 metres within a maximum of 5 minutes 20 seconds.",
+          "qualifying_only_for": "Post Code Nos. 11, 17, 18 and 19.",
+          "scored_for": "Post Code Nos. 12, 13, 14 and 16 — candidates are awarded marks for their performance as shown in Annexure I.",
+          "conduct": "Where RFID-based readings are taken, competitors perform totally independently of each other and start time, finish time and duration are recorded individually. Where required, only the curved-start method is adopted, so competitors may change lanes immediately after the start.",
+          "rounding": "All digitally recorded readings are rounded mathematically to 2 decimal places, and that rounded reading determines qualification or disqualification and also gradation.",
+          "normalisation": "For Post Code Nos. 12 and 16 — SCT RSI (AR) and SCT SI in SPF — the run marks of men and women are normalised using the formula printed on page 21, or any other procedure or formula adopted by TSLPRB as approved by the Government, to ensure fairness. The normalised marks are what is used in drawing the final merit list, and are rounded up to the third decimal place and taken as they are. The formula's terms are defined on pages 21 and 22 as SD (standard deviation), Avg (mean), subscript T (all qualified candidates), subscript S (all qualified candidates of the candidate's gender group), subscript TT (the top 0.1% or top 10, whichever is higher, among all qualified candidates) and subscript ST (the same top group within the candidate's gender group).",
+          "formula_image_note": "The formula itself is a graphic on page 21 and does not appear in the text layer of the extraction artefact. Only its defined terms are text. The formula is therefore recorded as present-but-not-transcribed rather than reconstructed."
+        },
+        "gradation_table": {
+          "applies_to": "Men candidates for Post Code Nos. 12, 13, 14 & 16 (1600 metres) and women candidates for Post Code Nos. 12 & 16 (800 metres).",
+          "rows_as_printed": [
+            {"s_no": 1, "men_1600m": "4 mints.15 sec and less", "women_800m": "3 mints.05 sec and less", "marks": 100},
+            {"s_no": 2, "men_1600m": "4 mints.16 sec - 4 mints.35 sec", "women_800m": "3 mints.06 sec - 3 mints.20 sec", "marks": 95},
+            {"s_no": 3, "men_1600m": "4 mints.36 sec - 4 mints.55 sec", "women_800m": "3 mints.21 sec - 3 mints.35 sec", "marks": 90},
+            {"s_no": 4, "men_1600m": "4 mints.56 sec - 5 mints.15 sec", "women_800m": "3 mints.36 sec - 3 mints.50 sec", "marks": 85},
+            {"s_no": 5, "men_1600m": "5 mints.16 sec - 5 mints.35 sec", "women_800m": "3 mints.51 sec - 4 mints.05 sec", "marks": 80},
+            {"s_no": 6, "men_1600m": "5 mints.36 sec - 5 mints.55 sec", "women_800m": "4 mints.06 sec - 4 mints.20 sec", "marks": 75},
+            {"s_no": 7, "men_1600m": "5 mints.56 sec - 6 mints.15 sec", "women_800m": "4 mints.21 sec - 4 mints.35 sec", "marks": 70},
+            {"s_no": 8, "men_1600m": "6 mints.16 sec - 6 mints.35 sec", "women_800m": "4 mints.36 sec - 4 mints.50 sec", "marks": 65},
+            {"s_no": 9, "men_1600m": "6 mints.36 sec - 6 mints.55 sec", "women_800m": "4 mints.51 sec - 5 mints.05 sec", "marks": 60},
+            {"s_no": 10, "men_1600m": "6 mints.56 sec - 7 mints.15 sec", "women_800m": "5 mints.06 sec - 5 mints.20 sec", "marks": 50},
+            {"s_no": 11, "men_1600m": "7 mints.16 sec - 8 mints 30 sec*", "women_800m": "--", "marks": 40},
+            {"s_no": 12, "men_1600m": "8 mints 31 sec - 9 mints 30 sec*", "women_800m": "--", "marks": 30}
+          ],
+          "footnote": "* Applicable to Ex-Servicemen only",
+          "maximum_marks": 100,
+          "printed_irregularities_preserved": "Two features are printed as recorded and are not smoothed: the marks step is 5 from row 1 to row 9 but drops by 10 from row 9 (60) to row 10 (50); and the spelling 'mints.' for minutes, plus the inconsistent 'mints 30 sec' without a full stop in rows 11 and 12, are the document's own. Rows 11 and 12 have no women's equivalent because the women's bands end at the qualifying limit."
+        },
+        "long_jump": {"men_general": "4 Meters", "men_ex_servicemen": "3.50 Meters", "women": "2.50 Meters", "applies_to_men": "Post Code Nos. 11 to 14 & 16 to 18", "applies_to_women": "Post Code Nos. 11, 12, 16, 17, and 19"},
+        "shot_put": {"implement": "7.26 Kgs for Men / 4 Kgs for Women", "men_general": "6 Meters", "men_ex_servicemen": "6 Meters", "women": "4 Meters", "note": "The men's general and Ex-Servicemen standards are identical at 6 metres, unlike the long jump where they differ."},
+        "long_jump_and_shot_put_status": "Only qualifying in nature. No marks attach to either event for any post code.",
+        "sequence_within_pet": "Run first, then physical measurements, then long jump and shot-put. Para 16-B (iii) makes the last two conditional on being declared qualified in the physical measurements.",
+        "attempts_permitted": null,
+        "attempts_permitted_status": "NOT_STATED. A word-boundary search of both extraction artefacts finds zero occurrences of 'attempt', 'attempts', 'chance' and 'chances'. Neither document states how many trials a candidate gets in the long jump or shot-put, nor whether the run may be re-run. This is the document's silence and is not to be filled from another notification or from coaching material.",
+        "conducted_once_across_notifications": "As with the PMT: for applications to more than one TSLPRB notification within three months, the PET is conducted once and the same scores carry across."
+      },
+      "value_te": "శారీరక సామర్థ్య పరీక్ష (పీఈటీ): పరుగు — పురుషులు 1600 మీటర్లు గరిష్ఠంగా 7 నిమిషాల 15 సెకన్లలో; ఎక్స్-సర్వీస్‌మెన్‌కు 9 నిమిషాల 30 సెకన్లు; మహిళలు 800 మీటర్లు 5 నిమిషాల 20 సెకన్లలో. పోస్ట్ కోడ్ 11, 17, 18, 19 కు పరుగు అర్హత మాత్రమే; పోస్ట్ కోడ్ 12, 13, 14, 16 కు అనుబంధం-I ప్రకారం మార్కులు (గరిష్ఠం 100). పోస్ట్ కోడ్ 12, 16 కు మార్కులు నార్మలైజ్ చేస్తారు. లాంగ్ జంప్ — పురుషులు 4 మీటర్లు (ఎక్స్-సర్వీస్‌మెన్ 3.50), మహిళలు 2.50 మీటర్లు. షాట్-పుట్ (పురుషులు 7.26 కిలోలు / మహిళలు 4 కిలోలు) — పురుషులు 6 మీటర్లు, మహిళలు 4 మీటర్లు. లాంగ్ జంప్, షాట్-పుట్ అర్హత మాత్రమే. ఎన్ని ప్రయత్నాలు ఇస్తారో నోటిఫికేషన్‌లో పేర్కొనలేదు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 21, "section": "Para 16-B (i) — 1600 meters / 800 meters Run event", "quote": "Men Candidates must qualify in the 1600 meters Run within a maximum time of 7 Minutes 15 Seconds. For Ex-Servicemen, the maximum time is 9 minutes and 30 Seconds. Women Candidates must qualify in the 800-meter run within a maximum time of 5 Minutes 20 Seconds."},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 21, "section": "Para 16-B (i)", "quote": "For Post Code Nos. 11, 17, 18, and 19 - the Run event is qualifying in nature. For Post Code Nos. 12, 13, 14, and 16 – Candidates shall be awarded marks for their performance in the Run event, as shown in Annexure - I."},
+        {"document_id": "DOC-OFF-002", "page": 21, "section": "Para 16-B (i)", "quote": "All digitally recorded readings shall be rounded mathematically to 2 decimal places to determine qualification / disqualification and also gradation."},
+        {"document_id": "DOC-OFF-002", "page": 21, "section": "Para 16-B (i)", "quote": "For Post Code Nos. 12 & 16, i.e., SCT RSI (AR) and SCT SI in SPF, the marks secured by Men and Women in the Run event shall be normalized using the following formula"},
+        {"document_id": "DOC-OFF-002", "page": 22, "section": "Para 16-B (i) — normalisation", "quote": "The Normalized marks will be rounded up to the third decimal place, and their value will be considered as it is."},
+        {"document_id": "DOC-OFF-002", "page": 22, "section": "Para 16-B (iii)", "quote": "Long Jump / Shot-put events: Candidates declared qualified in the Physical Measurements as above shall be required to undergo the remaining PET events"},
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-B (iii) — qualifying distance table, row 1", "quote": "1 Long Jump 4 Meters 3.50 Meters 2.50 Meters"},
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-B (iii) — qualifying distance table, row 2", "quote": "2 6 Meters 6 Meters 4 Meters"},
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-B (iii) — qualifying distance table, row 2 label", "quote": "Shot-put (7.26 Kgs for"},
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-B (iii)", "quote": "Long jump and Shot-put Events are only qualifying in nature"},
+        {"document_id": "DOC-OFF-002", "page": 41, "section": "Annexure I — Gradation Table", "quote": "1 4 mints.15 sec and less 3 mints.05 sec and less 100"},
+        {"document_id": "DOC-OFF-002", "page": 41, "section": "Annexure I — Gradation Table", "quote": "10 6 mints.56 sec - 7 mints.15 sec 5 mints.06 sec - 5 mints.20 sec 50"},
+        {"document_id": "DOC-OFF-002", "page": 41, "section": "Annexure I — Gradation Table footnote", "quote": "* Applicable to Ex-Servicemen only"}
+      ],
+      "column_check": "The page 23 qualifying-distance table has three data columns whose headers are split across four lines in layout-mode extraction, so page 23 was rasterised at 130 dpi and read visually. That read confirms the column order as Men General, Men Ex-Servicemen, then Women, under the headers 'Men Candidates for Post Code Nos. 11 to 14 & 16 to 18' (split into General and Ex-Servicemen) and 'Women Candidates for Post Code Nos. 11, 12, 16, 17, and 19'. The row-2 label 'Shot-put (7.26 Kgs for Men / 4 Kgs for Women)' wraps around its own numeric row in the text layer, which is why it is quoted here in the fragment the extraction produced.",
+      "unresolved": {
+        "conflict_id": "OFF-U-F19-A",
+        "question": "How many attempts is a candidate allowed in the Long Jump and the Shot-put, and is a failed run repeatable?",
+        "observation": "Zero word-boundary occurrences of 'attempt', 'attempts', 'chance' or 'chances' in either extraction artefact. Para 16-B (iii) states the qualifying distances and that both events are only qualifying in nature, but is silent on trials. The run paragraph describes RFID individual timing and the curved start but says nothing about a re-run.",
+        "why_it_matters": "Whether a candidate has one trial or three changes both training priorities and race-day tactics; a coaching system that asserted three attempts because that is common practice elsewhere would be inventing an examination fact.",
+        "resolution_rule": "Resolve only from the TSLPRB PMT / PET intimation letter or venue instructions, or an official clarification. Practice at another board or in a previous year is at most T2_HISTORICAL_PYQ or T3_EXPERT and may not be written into this record.",
+        "status": "UNRESOLVED",
+        "blocked_by": "Publication of the PMT / PET intimation letter or venue instructions by TSLPRB"
+      },
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 21, 22, 23 and 41, with page 23 additionally rasterised and read visually for column assignment, plus word-boundary occurrence counts over both artefacts"}
     },
     {
       "fact_id": "OFF-F20", "name": "Final Written Examination structure",
       "must_capture": "Number of papers, their mode, whether descriptive or objective, and how the FWE contributes to final merit.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "papers": 4,
+        "duration_each": "Three hours.",
+        "who_appears": "Candidates who qualify in the Physical Efficiency Test. Hall tickets are issued to them with venue, date and time, and the hall ticket must be brought to the examination.",
+        "paper_I": {"subject": "English", "part_A": "Objective type, MCQs, 50 questions, 25 marks, 45 minutes", "part_B": "Descriptive type, 75 marks, 2 hours 15 minutes", "standard": "Matriculation or equivalent", "role": "Qualifying only"},
+        "paper_II": {"subject": "Telugu / Urdu — the candidate chooses one", "part_A": "Objective type, MCQs, 50 questions, 25 marks, 45 minutes", "part_B": "Descriptive type, 75 marks, 2 hours 15 minutes", "standard": "Matriculation or equivalent", "role": "Qualifying only", "choice_rule": "The choice of Telugu or Urdu must be indicated when asked for; the option once exercised is final and cannot be changed subsequently."},
+        "paper_III": {"subject": "Arithmetic and Test of Reasoning / Mental Ability", "mode": "Objective in nature", "questions": 200, "role": "Counts for final merit"},
+        "paper_IV": {"subject": "General Studies", "mode": "Objective in nature", "questions": 200, "role": "Counts for final merit"},
+        "how_fwe_contributes_to_merit": {
+          "post_codes_11_17_18_19": "Final selection strictly on relative merit from the aggregate score of Paper III and Paper IV. The PET run is qualifying only for these posts, so the written aggregate is the whole of merit.",
+          "post_codes_12_and_16": "Final selection on relative merit from the score of the Final Written Examination (Papers III and IV) together with the Physical Efficiency Test (1600 / 800 metres run), with men's and women's PET marks normalised by the TSLPRB formula; the normalised marks are the basis of the final common merit list.",
+          "post_codes_13_and_14": "Final selection on relative merit from the aggregate score of the Final Written Examination (Papers III and IV) together with the Physical Efficiency Test (1600 metres run). No normalisation clause appears for these two, which are men-only posts.",
+          "papers_I_and_II": "Excluded from merit in every case; they are qualifying only, and their marks are expressly not taken into account for final selection."
+        },
+        "answer_medium": "Part A of Papers I and II and the whole of Papers III and IV are answered on an OMR answer sheet using a blue or black ball-point pen only. Part B of Papers I and II is descriptive.",
+        "language_of_papers_III_and_IV": "Set in English-Telugu and English-Urdu, with transliteration at the expert's discretion for scientific, technological or management terminology. If a Telugu or Urdu translation or transliteration is ambiguous or misspelt, the English version is final and correct.",
+        "deleted_question_treatment": "While evaluating objective-type papers, marks for deleted questions are awarded proportionately and considered up to three decimal places to determine merit; each candidate is compensated in proportion to the percentage of marks obtained in the remaining undeleted questions.",
+        "no_postponement": "Candidates must be fit in all aspects at all stages including the PMT and PET; no postponement or reconsideration of any stage is allowed under any circumstances, and the tests must be undergone on the designated day in the prescribed sequential order.",
+        "tie_break": "Where two or more candidates in a particular category obtain equal marks, preference is given to the candidate who was born earlier."
+      },
+      "value_te": "తుది రాత పరీక్ష (FWE): 4 పేపర్లు, ప్రతి పేపర్‌కు మూడు గంటలు; పీఈటీలో అర్హత సాధించిన వారు మాత్రమే హాజరవుతారు. పేపర్ I ఇంగ్లీష్ మరియు పేపర్ II తెలుగు / ఉర్దూ — పార్ట్-ఏ ఆబ్జెక్టివ్ (50 ప్రశ్నలు, 25 మార్కులు, 45 నిమిషాలు), పార్ట్-బీ డిస్క్రిప్టివ్ (75 మార్కులు, 2 గంటల 15 నిమిషాలు), మెట్రిక్యులేషన్ స్థాయి, అర్హత పేపర్లు మాత్రమే. పేపర్ III అర్థమెటిక్ & రీజనింగ్ మరియు పేపర్ IV జనరల్ స్టడీస్ — ఆబ్జెక్టివ్, ప్రతి పేపర్‌లో 200 ప్రశ్నలు, ఇవే తుది మెరిట్‌ను నిర్ణయిస్తాయి. పేపర్ II లో తెలుగు లేదా ఉర్దూ ఎంపిక ఒకసారి చేసిన తర్వాత మార్చడం సాధ్యం కాదు. సమాన మార్కులు వచ్చినప్పుడు ముందు జన్మించిన అభ్యర్థికి ప్రాధాన్యం.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-C — Final Written Examination (FWE)", "quote": "Candidates who qualify in the above Physical Efficiency Test shall be required to appear for the Final Written Examination in 4 (four) papers (each of three hours duration) as given below. The syllabus for this exam is given in Annexure III."},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 2", "quote": "Papers I and II are qualifying in nature, and the marks secured in these Papers, i.e., I and II, shall not be taken into account for final selection."},
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 3", "quote": "Part A of Papers I and II referred to above shall be objective in nature, and Candidates have to answer the questions using a Blue / Black Ball Point pen only, and Part B of Papers I and II are descriptive in nature."},
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 6", "quote": "Questions in Papers III and IV shall be objective in nature. Candidates have to answer the questions on an OMR answer sheet using Blue / Black Ball Point pen only."},
+        {"document_id": "DOC-OFF-002", "page": 24, "section": "Para 16-C Note 5", "quote": "In Paper II, the Candidates can choose to have either Telugu or Urdu and should indicate their choice as and when asked for. Option once exercised shall be final and Candidate shall not be allowed to change it subsequently."},
+        {"document_id": "DOC-OFF-002", "page": 25, "section": "Para 16-C Note 10", "quote": "the marks for the deleted questions, if any, will be awarded to each Candidate proportionately and the marks would be considered up to 3 (three) decimal places, to determine the merit of the Candidate."},
+        {"document_id": "DOC-OFF-002", "page": 25, "section": "Para 16-E (i) — Final Selection", "quote": "For Post Code No. 11: The final selection of the Candidates will be made strictly on relative merit, as obtained by them based on their aggregate score of Paper III and Paper IV of the Final Written Examination."},
+        {"document_id": "DOC-OFF-002", "page": 25, "section": "Para 16-E (ii) — Final Selection", "quote": "For Post Code No.12: The final selection of the Candidates shall be made strictly on their relative merit, as obtained by them based on their score of the Final Written Examination (Papers III and Paper IV) and Physical Efficiency Test (1600 mtrs / 800 mtrs run)."},
+        {"document_id": "DOC-OFF-002", "page": 25, "section": "Para 16-D — No Postponement / Reconsideration of Tests", "quote": "No Postponement / reconsideration of stages under any circumstances shall be allowed."},
+        {"document_id": "DOC-OFF-002", "page": 27, "section": "Para 16-F — Merit among Candidates who secure same Marks", "quote": "When 2 (two) or more Candidates in a particular category obtain equal marks, preference will be given to the Candidate who was born earlier."}
+      ],
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 23, 24, 25, 26, 27 and Annexure III on pages 43 and 44"}
     },
     {
       "fact_id": "OFF-F21", "name": "FWE subjects",
       "must_capture": "Subject names and their stated scope per paper, in the notification's own order and wording. These become official syllabus subjects for the FWE.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "paper_I_english": {"name_as_printed": "PAPER I: ENGLISH", "standard": "Qualifying Paper in English shall be of Matriculation or equivalent standard. Questions of the standard of SSC / Matriculation seeking to ascertain the Candidate’s knowledge and language skills shall be asked", "part_A_scope": "Usage, Vocabulary, Grammar, Comprehension and other language skills in the Multiple Choice Questions Format (with 1/4th (25%) negative marks for wrong answers)", "part_B_scope": "Descriptive Type Questions covering Writing of Précis, Letters / Reports, Essay, Topical Paragraphs and Reading Comprehension"},
+        "paper_II_telugu_urdu": {"name_as_printed": "PAPER II: TELUGU / URDU", "standard": "Qualifying Paper in Telugu or Urdu shall be of Matriculation or equivalent standard. Questions of the standard of SSC / Matriculation seeking to ascertain the Candidate’s knowledge and language skills shall be asked", "part_A_scope": "Usage, Vocabulary, Grammar, Comprehension and other language skills in the Multiple Choice Questions Format (with 1/4th (25%) negative marks for wrong answers)", "part_B_scope": "Descriptive Type Questions covering Writing of Précis, Letters / Reports, Essay and Reading Comprehension", "difference_from_paper_I": "Part B of Paper II omits 'Topical Paragraphs', which Part B of Paper I includes. The difference is preserved as printed and is not treated as an oversight."},
+        "paper_III": {"name_as_printed": "PAPER III: ARITHMETIC & TEST OF REASONING / MENTAL ABILITY", "type": "OBJECTIVE TYPE", "questions": 200, "components": {"Arithmetic": "It shall include questions on problems relating to number system, simple interest, compound interest, ratio & proportion, average, percentage, profit & loss, time & work, work & wages, time & distance, clocks & calendars, partnership, mensuration etc", "Test of Reasoning": "It shall include questions of both verbal & non-verbal type and include question on analogies, similarities and differences, spatial visualization, spatial orientation, problem solving, analysis, judgment, decision making, visual memory etc"}},
+        "paper_IV": {"name_as_printed": "PAPER IV: GENERAL STUDIES", "type": "OBJECTIVE TYPE", "questions": 200, "items_in_printed_order": [
+          "General Science - contemporary developments in science and technology and their implications including matters of everyday observation and experience, contemporary issues relating to protection of environment as may be expected of a well educated person who has not made a special study of any scientific discipline",
+          "Current events of national and international importance",
+          "History of India – emphasis will be on broad general understanding of the subject in its social, economic, cultural and political aspects. Indian National Movement",
+          "Principles of Geography and Geography of India",
+          "Indian Polity and Economy – including the Country’s political system, rural development, planning and economic reforms in India",
+          "Personality test (the questions will be from Ethics, Sensitivity to Gender and weaker sections, social awareness, Emotional Intelligence)",
+          "Telangana Movement and State Formation - The idea of Telangana (1948-1970), Mobilization phase (1971-1990), towards formation of Telangana State (1991-2014)"
+        ]},
+        "differences_from_the_pwt_syllabus": "Four differences are recorded rather than reconciled. First, Paper IV has seven items where the PWT General Studies has six: the personality-test item is inserted at position six and Telangana Movement moves from six to seven. Second, item 3 reads 'History of India (including Indian National Movement) – emphasis will be on broad and general understanding' in Annexure II but 'History of India – emphasis will be on broad general understanding ... Indian National Movement' in Annexure III, so the Indian National Movement is parenthetical in one and a trailing clause in the other, and the word 'and' is present in one phrase and absent in the other. Third, the Arithmetic and Test of Reasoning paragraphs read 'It will include' in Annexure II and 'It shall include' in Annexure III, and Annexure III has 'include question on analogies' where Annexure II has 'questions on analogies'. Fourth, question counts double from 100 to 200 per subject. Because the wording differs, the two annexures are stored as two separate syllabus trees and neither is used to fill a gap in the other.",
+        "textbook_position": "As in Annexure II: the Board prescribes no particular textbook or publication and is not bound by material appearing in any book or publication, and the Subject Expert Committee's decision on a disputed question or answer is final."
+      },
+      "value_te": "తుది రాత పరీక్ష సబ్జెక్టులు: పేపర్ I ఇంగ్లీష్ — మెట్రిక్యులేషన్ స్థాయి; పార్ట్-ఏ: యూసేజ్, వొకాబులరీ, గ్రామర్, కాంప్రహెన్షన్; పార్ట్-బీ: ప్రెసీ, లేఖలు / రిపోర్టులు, ఎస్సే, టాపికల్ పేరాగ్రాఫ్‌లు, రీడింగ్ కాంప్రహెన్షన్. పేపర్ II తెలుగు / ఉర్దూ — అదే నిర్మాణం, కానీ పార్ట్-బీలో 'టాపికల్ పేరాగ్రాఫ్‌లు' లేవు. పేపర్ III అర్థమెటిక్ & టెస్ట్ ఆఫ్ రీజనింగ్ / మెంటల్ ఎబిలిటీ — 200 ప్రశ్నలు. పేపర్ IV జనరల్ స్టడీస్ — 200 ప్రశ్నలు, ఏడు అంశాలు; పీడబ్ల్యూటీ జాబితాలో లేని 'పర్సనాలిటీ టెస్ట్' (నీతిశాస్త్రం, లింగ సున్నితత్వం, సామాజిక అవగాహన, ఎమోషనల్ ఇంటెలిజెన్స్) ఆరవ అంశంగా చేర్చబడింది; తెలంగాణ ఉద్యమం ఏడవ అంశంగా మారింది.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 43, "section": "Annexure III — heading", "quote": "SYLLABUS FOR FINAL WRITTEN EXAMINATION"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 43, "section": "Annexure III — Paper I: English, Part A", "quote": "PART-A: (OBJECTIVE TYPE) (50 QUESTIONS – 25 MARKS – 45 MINUTES)"},
+        {"document_id": "DOC-OFF-002", "page": 43, "section": "Annexure III — Paper I: English, Part B", "quote": "PART-B: (DESCRIPTIVE TYPE) (75 MARKS – 2 HOURS 15 MINUTES) Descriptive Type Questions covering Writing of Précis, Letters / Reports, Essay, Topical Paragraphs and Reading Comprehension"},
+        {"document_id": "DOC-OFF-002", "page": 43, "section": "Annexure III — Paper II: Telugu / Urdu, Part B", "quote": "Descriptive Type Questions covering Writing of Précis, Letters / Reports, Essay and Reading Comprehension"},
+        {"document_id": "DOC-OFF-002", "page": 43, "section": "Annexure III — Paper III heading", "quote": "PAPER III: ARITHMETIC & TEST OF REASONING / MENTAL ABILITY (OBJECTIVE TYPE) (200 QUESTIONS)"},
+        {"document_id": "DOC-OFF-002", "page": 44, "section": "Annexure III — Paper III, Test of Reasoning", "quote": "Test of Reasoning:It shall include questions of both verbal & non-verbal type and include question on analogies, similarities and differences, spatial visualization, spatial orientation, problem solving, analysis, judgment, decision making, visual memory etc"},
+        {"document_id": "DOC-OFF-002", "page": 44, "section": "Annexure III — Paper IV heading", "quote": "PAPER IV: GENERAL STUDIES (OBJECTIVE TYPE) (200 QUESTIONS)"},
+        {"document_id": "DOC-OFF-002", "page": 44, "section": "Annexure III — Paper IV, item 6", "quote": "Personality test (the questions will be from Ethics, Sensitivity to Gender and weaker sections, social awareness, Emotional Intelligence)"},
+        {"document_id": "DOC-OFF-002", "page": 44, "section": "Annexure III — Paper IV, item 3", "quote": "History of India – emphasis will be on broad general understanding of the subject in its social, economic, cultural and political aspects. Indian National Movement"}
+      ],
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 43 and 44 in full, compared item by item against page 42"}
     },
     {
       "fact_id": "OFF-F22", "name": "FWE marks",
       "must_capture": "Maximum marks per paper, marks per question if stated, and the aggregate used for merit.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "max_marks_by_post_code_group": {
+          "post_code_nos_11_17_18_and_19": {"Paper I English": 100, "Paper II Telugu / Urdu": 100, "Paper III Arithmetic and Test of Reasoning / Mental Ability": 200, "Paper IV General Studies": 200},
+          "post_code_nos_12_to_14_and_16": {"Paper I English": 100, "Paper II Telugu / Urdu": 100, "Paper III Arithmetic and Test of Reasoning / Mental Ability": 100, "Paper IV General Studies": 100}
+        },
+        "papers_I_and_II_internal_split": "Part A objective 25 marks and Part B descriptive 75 marks, totalling 100, identically for both post code groups. Annexure III prints the same 25 and 75 split.",
+        "papers_III_and_IV_question_counts": "200 questions in each paper for both groups, per Annexure III and the Para 16-C table. The question count does not change with the post code; only the maximum marks do.",
+        "marks_per_question": null,
+        "marks_per_question_status": "NOT_STATED for any paper. Annexure III gives 50 questions and 25 marks for Part A of Papers I and II, and 200 questions per paper for Papers III and IV against maximums that differ by post code group, but no per-question figure is printed anywhere.",
+        "aggregate_used_for_merit": {
+          "post_codes_11_17_18_19": "Aggregate of Paper III and Paper IV only.",
+          "post_codes_12_and_16": "Papers III and IV together with the normalised PET run marks; the normalised marks are the basis of the final common merit list.",
+          "post_codes_13_and_14": "Aggregate of Papers III and IV together with the PET 1600 metres run marks.",
+          "papers_I_and_II": "Not counted towards merit in any case, though the minimum in each must be secured."
+        },
+        "structural_consequence_recorded": "The two post code groups are scored on different scales: for Post Code Nos. 11, 17, 18 and 19 the written papers carry the whole of merit at 200 marks each, while for Post Code Nos. 12, 13, 14 and 16 the same two papers carry 100 marks each and the run contributes marks from Annexure I. This is read directly from the table and the Para 16-E clauses; no weighting or conversion between the two schemes is stated, and none is invented here."
+      },
+      "value_te": "తుది రాత పరీక్ష మార్కులు: పోస్ట్ కోడ్ 11, 17, 18, 19 కు — పేపర్ I 100, పేపర్ II 100, పేపర్ III 200, పేపర్ IV 200. పోస్ట్ కోడ్ 12 నుంచి 14 మరియు 16 కు — నాలుగు పేపర్లు ఒక్కొక్కటి 100 మార్కులు. పేపర్ I, II లోపల — పార్ట్-ఏ 25 మార్కులు, పార్ట్-బీ 75 మార్కులు. పేపర్ III, IV లలో ప్రతి పేపర్‌లో 200 ప్రశ్నలు (పోస్ట్ కోడ్‌తో మారవు). మెరిట్ కోసం — పోస్ట్ కోడ్ 11, 17, 18, 19 కు పేపర్ III + IV మొత్తం మాత్రమే; పోస్ట్ కోడ్ 12, 16 కు పేపర్ III + IV తో పాటు నార్మలైజ్ చేసిన పరుగు మార్కులు; పోస్ట్ కోడ్ 13, 14 కు పేపర్ III + IV తో పాటు 1600 మీటర్ల పరుగు మార్కులు. ప్రశ్నకు ఎన్ని మార్కులు అనేది ఎక్కడా పేర్కొనలేదు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-C — FWE marks table, Paper III row", "quote": "Paper III 200 100"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-C — FWE marks table, Paper IV row", "quote": "Paper IV General Studies (Objective in nature) (200 Questions) 200 100"},
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-C — FWE marks table, Paper I row", "quote": "Paper I English 100 100"},
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-C — FWE marks table, Part A", "quote": "Part A-Objective type - MCQs 25 Marks"},
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-C — FWE marks table, Part B", "quote": "Part B-Descriptive type 75 Marks"},
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-C — FWE marks table, column group header", "quote": "Max. Marks for"},
+        {"document_id": "DOC-OFF-002", "page": 43, "section": "Annexure III — Paper I, Part A", "quote": "PART-A: (OBJECTIVE TYPE) (50 QUESTIONS – 25 MARKS – 45 MINUTES)"},
+        {"document_id": "DOC-OFF-002", "page": 27, "section": "Para 16-E (vii) — Final Selection", "quote": "For Post Code Nos. 18 and 19: The final selection of the Candidates will be made strictly on relative merit, as obtained by them based on their aggregate score of Paper III and Paper IV of the Final Written Examination."}
+      ],
+      "column_check": "The Para 16-C marks table has two numeric column groups whose headers — 'Post Code Nos. 11, 17 18 and 19' and 'Post Code Nos. 12 to 14 and 16' — are broken across three lines and interleaved by layout-mode extraction, so the header text cannot be quoted contiguously. Page 23 was therefore rasterised at 130 dpi and read visually. That read confirms the left numeric column belongs to Post Code Nos. 11, 17, 18 and 19 and the right to Post Code Nos. 12 to 14 and 16, which is why Paper III reads 200 for the first group and 100 for the second. The mapping is independently corroborated by Para 16-E, where the posts scored on Papers III and IV alone are 11, 17, 18 and 19 — the group carrying the larger 200-mark papers — while 12, 13, 14 and 16 also draw marks from the run.",
+      "derived": {
+        "merit_aggregate_maximums": {"post_codes_11_17_18_19": 400, "post_codes_12_and_16": 300, "post_codes_13_and_14": 300},
+        "marks_per_question_if_equally_weighted": {"post_codes_11_17_18_19": "1 mark per question in Papers III and IV (200 marks ÷ 200 questions)", "post_codes_12_to_14_and_16": "0.5 marks per question in Papers III and IV (100 marks ÷ 200 questions)", "papers_I_and_II_part_A": "0.5 marks per question (25 marks ÷ 50 questions)"},
+        "derivation": "200 + 200 = 400 for the first group; 100 + 100 = 200 from the written papers plus a maximum of 100 run marks from the Annexure I gradation table = 300 for the others. The per-question figures divide each paper's maximum by its printed question count.",
+        "method": "DETERMINISTIC",
+        "caution": "None of these totals or per-question figures is printed in either document, and neither document states that questions are equally weighted. They are held outside `value` for that reason. The 300 figures in particular combine a written maximum with a physical-event maximum, which the notification never adds together itself, and for Post Code Nos. 12 and 16 the run component is normalised before use so a raw 100 may not be attainable in the merit list as computed."
+      },
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 page 23 in text and as a rasterised image, cross-read against pages 25 to 27 and Annexure I on page 41 and Annexure III on pages 43 and 44"}
     },
     {
       "fact_id": "OFF-F23", "name": "FWE duration",
       "must_capture": "Time allowed per paper.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "per_paper": "Three hours for each of the four papers.",
+        "papers_I_and_II_internal_split": "Part A objective: 45 minutes. Part B descriptive: 2 hours 15 minutes. These sum to the three hours of the paper, and Annexure III prints both figures.",
+        "papers_III_and_IV": "Three hours each, with no internal split stated. At 200 questions in three hours this is 54 seconds per question, which is arithmetic and is recorded in `derived` rather than as a read value.",
+        "corroboration": "The fee paragraph independently describes the FWE as 'Four 3-hour exams, including two Descriptive Papers Exam', which agrees with Para 16-C and identifies Papers I and II as the descriptive ones.",
+        "compensatory_time": null,
+        "compensatory_time_status": "NOT_ADDRESSED, as for the PWT. Zero word-boundary occurrences of 'compensatory', 'scribe' or 'extra time' in either document."
+      },
+      "value_te": "తుది రాత పరీక్ష వ్యవధి: నాలుగు పేపర్లలో ప్రతి పేపర్‌కు మూడు గంటలు. పేపర్ I మరియు II లోపల — పార్ట్-ఏ (ఆబ్జెక్టివ్) 45 నిమిషాలు, పార్ట్-బీ (డిస్క్రిప్టివ్) 2 గంటల 15 నిమిషాలు; ఈ రెండూ కలిపి మూడు గంటలు. పేపర్ III మరియు IV కు లోపలి విభజన లేదు. అదనపు సమయం గురించి ఏ నిబంధనా లేదు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-C — Final Written Examination (FWE)", "quote": "the Final Written Examination in 4 (four) papers (each of three hours duration)"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 43, "section": "Annexure III — Paper I, Part A", "quote": "PART-A: (OBJECTIVE TYPE) (50 QUESTIONS – 25 MARKS – 45 MINUTES)"},
+        {"document_id": "DOC-OFF-002", "page": 43, "section": "Annexure III — Paper I, Part B", "quote": "PART-B: (DESCRIPTIVE TYPE) (75 MARKS – 2 HOURS 15 MINUTES)"},
+        {"document_id": "DOC-OFF-002", "page": 6, "section": "Para 5-c (iv) — what the fee covers", "quote": "(Four 3-hour exams, including two Descriptive Papers Exam)"}
+      ],
+      "derived": {
+        "internal_split_check": "45 minutes + 2 hours 15 minutes = 3 hours, so the Annexure III split reconciles exactly with the Para 16-C paper duration.",
+        "seconds_per_question_papers_III_and_IV": "10800 seconds ÷ 200 questions = 54 seconds per question.",
+        "method": "DETERMINISTIC",
+        "caution": "The reconciliation is arithmetic over two printed figures and is safe. The 54-seconds figure is a planning aid only; neither document prescribes a pace, and it assumes no reading or transfer time is set aside."
+      },
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 6, 23 and 43"}
     },
     {
       "fact_id": "OFF-F24", "name": "Selection sequence",
       "must_capture": "The ordered stages from application to final selection, which stages are eliminating, which contribute marks, and the ratio used to shortlist at each stage.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09). The order of stages determines what to prepare first; an assumed order could waste an entire preparation cycle.",
+      "value": {
+        "stages_in_order": [
+          {"stage": 1, "name": "Online registration and application with fee payment", "who": "All applicants, via www.tgprb.in with the mobile number as user ID", "eliminating": "Yes — an ineligible application can be rejected at any time, and fee once paid is not refunded", "contributes_marks": false},
+          {"stage": 2, "name": "Preliminary Written Test", "who": "All eligible registered candidates", "eliminating": "Yes — 30% OC including EWS, 25% BC, 20% SC / ST / Ex-Servicemen", "contributes_marks": false, "note": "One paper, three hours, 200 questions, 200 marks. Qualifiers download an intimation letter for the PMT / PET."},
+          {"stage": 3, "name": "Physical Efficiency Test — run", "who": "Candidates who qualify in the Preliminary Written Test", "eliminating": "Yes — 1600 m in 7 min 15 sec for men, 9 min 30 sec for Ex-Servicemen, 800 m in 5 min 20 sec for women", "contributes_marks": "Only for Post Code Nos. 12, 13, 14 and 16, per the Annexure I gradation table; qualifying only for Post Code Nos. 11, 17, 18 and 19"},
+          {"stage": 4, "name": "Physical Measurements — height", "who": "Candidates who qualify in the run event", "eliminating": "Yes — 167.6 cm men and 152.5 cm women generally, 160 cm and 150 cm for ST and Aboriginal Tribes candidates of the nine named agency districts", "contributes_marks": false},
+          {"stage": 5, "name": "Physical Efficiency Test — long jump and shot-put", "who": "Candidates declared qualified in the physical measurements", "eliminating": "Yes", "contributes_marks": false, "note": "Expressly 'only qualifying in nature'."},
+          {"stage": 6, "name": "Final Written Examination", "who": "Candidates who qualify in the Physical Efficiency Test", "eliminating": "Yes — 40% OC including EWS, 35% BC, 30% SC / ST / Ex-Servicemen in each paper", "contributes_marks": "Papers III and IV only; Papers I and II are qualifying in nature and their marks are not counted"},
+          {"stage": 7, "name": "Certificates Verification", "who": "Candidates who are qualified in the Final Written Examination", "eliminating": "Yes — failure to produce originals on the day of verification, or a mismatch with the online application, means the candidature is rejected or disqualified without further correspondence", "contributes_marks": false},
+          {"stage": 8, "name": "Final selection on relative merit", "who": "Per post code, per Para 16-E", "eliminating": "n/a", "contributes_marks": "n/a", "note": "95% of the vacancies in the respective Zones or Contiguous Zones are filled from local candidates of those zones for Post Code Nos. 11, 12, 14, 17, 18 and 19; the 2018 Order does not apply to Post Code Nos. 13 and 16, where local status is instead a precondition for any vertical or horizontal reservation. Equal marks are broken in favour of the candidate born earlier."},
+          {"stage": 9, "name": "Antecedents verification and medical examination", "who": "Provisionally selected candidates", "eliminating": "Yes — selection is provisional and subject to verification of original certificates, antecedents, medical fitness and the outcome of any pending disciplinary proceedings", "contributes_marks": false, "note": "Provisionally selected candidates are referred to the District Headquarters Hospital; expert opinion goes to Osmania or Gandhi Hospital, and eye cases to Sarojini Devi Eye Hospital whose opinion is final. A candidate can be referred or examined only once."},
+          {"stage": 10, "name": "Induction training and appointment", "who": "Selected candidates", "eliminating": "Not a selection stage, but a candidate who cannot join the original induction batch for reasons attributable to them must re-pass the Physical Efficiency Test as prescribed on the date of that later test before being considered", "contributes_marks": false, "note": "Stipend is payable during institutional training for Post Code Nos. 11 to 14 and 16; appointment to the regular post follows successful completion."}
+        ],
+        "sequence_is_mandatory": "A candidate must undergo the tests including the PMT and PET on the designated day in the sequential order prescribed, and no postponement or reconsideration of any stage is allowed under any circumstances.",
+        "shortlisting_ratio": null,
+        "shortlisting_ratio_status": "NOT_STATED at any stage. A word-boundary search of both extraction artefacts finds zero occurrences of 'shortlist' or 'shortlisted', and the only three occurrences of 'ratio' are the zonal population ratio under GO Ms No. 46 and the arithmetic syllabus item 'ratio & proportion' in the two annexures. As the document reads, every candidate who meets a stage's threshold proceeds to the next stage; no 1:N multiple of vacancies is prescribed anywhere.",
+        "merit_list_confers_no_right": "Mere admission to any test or inclusion of a name in a merit list confers no right to selection or appointment."
+      },
+      "value_te": "ఎంపిక దశలు (వరుస క్రమంలో): (1) ఆన్‌లైన్ దరఖాస్తు మరియు ఫీజు; (2) ప్రిలిమినరీ రిటెన్ టెస్ట్ — అర్హులైన అందరూ; (3) పరుగు — పీడబ్ల్యూటీలో అర్హత సాధించిన వారు; పోస్ట్ కోడ్ 12, 13, 14, 16 కు మార్కులు; (4) ఎత్తు కొలత — పరుగులో అర్హత సాధించిన వారు; (5) లాంగ్ జంప్ మరియు షాట్-పుట్ — కొలతలో అర్హత సాధించిన వారు, అర్హత మాత్రమే; (6) తుది రాత పరీక్ష — పీఈటీలో అర్హత సాధించిన వారు; పేపర్ III, IV మాత్రమే మెరిట్‌కు; (7) సర్టిఫికెట్ వెరిఫికేషన్ — తుది రాత పరీక్షలో అర్హత సాధించిన వారు; (8) సాపేక్ష మెరిట్ ఆధారంగా తుది ఎంపిక, జోన్లలో 95% స్థానిక అభ్యర్థులకు; (9) పూర్వ చరిత్ర ధృవీకరణ మరియు వైద్య పరీక్ష — తాత్కాలికంగా ఎంపికైన వారికి; (10) ఇండక్షన్ శిక్షణ తర్వాత నియామకం. ప్రతి దశ తప్పనిసరి, వాయిదా వేయడం సాధ్యం కాదు. ఏ దశలోనూ షార్ట్‌లిస్టింగ్ నిష్పత్తి పేర్కొనలేదు.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 21, "section": "Para 16-B — Sequence of Physical Efficiency Test and Physical Measurements", "quote": "Sequence of Physical Efficiency Test and Physical Measurements:- Candidates who qualify in the above Preliminary Written Test shall be required to undergo the following tests and qualify as specified below:"},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 22, "section": "Para 16-B (ii)", "quote": "Physical Measurements: Candidates who qualify in the above Run event should meet the following requirements:"},
+        {"document_id": "DOC-OFF-002", "page": 22, "section": "Para 16-B (iii)", "quote": "Candidates declared qualified in the Physical Measurements as above shall be required to undergo the remaining PET events"},
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-C", "quote": "Candidates who qualify in the above Physical Efficiency Test shall be required to appear for the Final Written Examination"},
+        {"document_id": "DOC-OFF-002", "page": 27, "section": "Para 17 — Certificates Verification", "quote": "Candidates who are qualified in the Final Written Examination will be called for Certificates Verification and they have to produce Original Documents (along with two sets of photocopies) and other particulars on the day of verification itself"},
+        {"document_id": "DOC-OFF-002", "page": 25, "section": "Para 16-D", "quote": "A Candidate has to undergo the tests including PMT / PET on the designated day in the sequential order as prescribed above."},
+        {"document_id": "DOC-OFF-002", "page": 35, "section": "Para 24 — Selection to be Provisional", "quote": "Selection of the Candidates shall be provisional and be subject to verification of the original certificates, antecedents, medical fitness and also outcome of disciplinary proceedings, if any, pending against the serving employees."},
+        {"document_id": "DOC-OFF-002", "page": 19, "section": "Para 15-E (vi) — Medical Examination", "quote": "Candidates provisionally selected shall be referred to the District Headquarter Hospital for Medical Examination / Fitness."},
+        {"document_id": "DOC-OFF-002", "page": 35, "section": "Para 25 — Inclusion in Merit List Does Not Confer Any Rights", "quote": "Mere admission to any test or inclusion of a Candidate’s name in a Merit List shall not confer on him / her any right for Selection / Appointment to such service, class or category."}
+      ],
+      "unresolved": {
+        "conflict_id": "OFF-U-F24-A",
+        "question": "Does Certificates Verification happen before or after the final merit list is drawn, and how many candidates are called for it?",
+        "observation": "The document orders its own paragraphs with final selection (Para 16-E) before Certificates Verification (Para 17), yet Para 17's own words make Certificates Verification follow the Final Written Examination and Para 24 makes selection provisional until certificates are verified. The two readings are not reconciled anywhere in the text, and no number or multiple of vacancies is given for how many FWE qualifiers are called.",
+        "why_it_matters": "It affects when a candidate must have every original document ready, and whether a documentation defect ends the candidature before or after a merit position is known. It does not affect what to study, which is why it is recorded rather than treated as blocking.",
+        "resolution_rule": "Resolve from the TSLPRB certificate-verification call letter or an official press release for this recruitment, which will state who is called and on what basis. Do not infer the practice from another recruitment.",
+        "status": "UNRESOLVED",
+        "blocked_by": "Publication of the certificate-verification schedule or call letter by TSLPRB"
+      },
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 19 to 27 and 35 to 39 in sequence, plus word-boundary occurrence counts for 'shortlist' and 'ratio' over both artefacts"}
     },
     {
       "fact_id": "OFF-F25", "name": "Official instructions affecting preparation",
       "must_capture": "Instructions that change how a candidate should prepare: permitted languages and any language-of-question rule, calculator or device rules, syllabus annexures, translation-discrepancy clauses, tie-breaking rules, and any stated bar on material outside the syllabus.",
-      "value": null, "value_te": null, "status": "BLOCKED",
-      "blocked_reason": "No official document retrieved (B-09).",
+      "value": {
+        "syllabus_location": "Annexure II is the Preliminary Written Test syllabus; Annexure III is the Final Written Examination syllabus. There is no third syllabus annexure and no separate detailed syllabus document referenced.",
+        "language_of_question_papers": "The PWT paper and FWE Papers III and IV are set in English-Telugu and English-Urdu. For terminology of science, technology or management, transliteration is employed at the expert's discretion.",
+        "translation_discrepancy_clause": "In case of any ambiguity or spelling mistake in translation or transliteration in any question in the Telugu or Urdu language, the English version is considered final and the correct version. This is stated separately for the PWT and for Papers III and IV, in near-identical wording.",
+        "second_language_choice": "In Paper II a candidate chooses Telugu or Urdu, must indicate the choice when asked, and cannot change it subsequently.",
+        "answer_medium_rules": "Objective answers go on an OMR answer sheet using a blue or black ball-point pen only — stated for the PWT, for Part A of Papers I and II, and for Papers III and IV.",
+        "textbook_and_dispute_position": "The Board does not prescribe any particular textbook or publication and is not bound by material appearing in any book or publication. Where there is a dispute about any question or answer, the decision of the Subject Expert Committee is final. Both statements appear at the foot of Annexure II and again at the foot of Annexure III.",
+        "no_bar_on_material_outside_the_syllabus": "The notification states no bar on material outside the annexures. What it states instead is that the Board is not bound by any book or publication, and both Arithmetic and Test of Reasoning scopes end with 'etc'. The practical implication recorded here is that the printed lists are illustrative, not exhaustive — an inference about scope, not a stated rule, and marked as such.",
+        "deleted_question_compensation": "PWT: each candidate is compensated for deleted questions in proportion to the percentage of marks obtained in the remaining undeleted questions. FWE objective papers: the same, with marks considered up to three decimal places to determine merit.",
+        "tie_breaking_rule": "Where two or more candidates in a particular category obtain equal marks, preference is given to the candidate born earlier. There is no second tie-break criterion.",
+        "rounding_rules_that_affect_outcomes": "PET digital readings are rounded mathematically to 2 decimal places for qualification and gradation; normalised run marks for Post Code Nos. 12 and 16 are rounded up to the third decimal place; deleted-question compensation in the FWE is carried to three decimal places.",
+        "route_into_the_open_category": "A candidate who secures 40% and above in each of Paper III and Paper IV is eligible to be considered for OC / EWS posts irrespective of social category.",
+        "compulsory_appearance_and_no_postponement": "Appearance in all tests and written examinations is compulsory and absence disqualifies automatically; no postponement or reconsideration of any stage is allowed, and candidates must be fit in all aspects at all stages.",
+        "single_pmt_pet_across_notifications": "For applications to more than one TSLPRB notification issued within three months, the PMT and PET are conducted once and the same readings and scores apply to all posts applied for. The four sibling notifications named in the fee paragraph are Rc. 225 (SCT SI Civil or equivalent), Rc. 279 (SCT ASI FPB), Rc. 189 (SCT PC Civil or equivalent) and Rc. 234 (SCT PC Mechanic and SCT PC Driver). A rebate of Rs.50 per additional post applies to Telangana-local SC and ST candidates and Rs.100 to all others.",
+        "authoritative_channel": "The TSLPRB website is final, legitimate and definitive for correspondence and communication with candidates; no individual correspondence by any other means is entertained. Candidates are advised to visit the website regularly and not to rely on rumours or false propaganda on media or social media platforms. TSLPRB reserves the right to modify and reschedule examinations, and its decisions are final.",
+        "calculator_and_device_rules": null,
+        "calculator_and_device_rules_status": "NOT_ADDRESSED. A word-boundary search of both extraction artefacts finds zero occurrences of 'calculator', 'calculators', 'watch', 'mobile', 'prohibited', 'banned' and 'malpractice'. The single occurrence of 'electronic' and of 'devices' is the note that candidature is processed through computer or electronic devices, which concerns application processing, not the examination hall. No permitted or prohibited item list appears in either document.",
+        "examination_dates": "Not stated. Neither document contains a PWT, PET or FWE date, and the application window itself is deferred to a future press release, so no examination calendar can be built from these two documents. See OFF-F03."
+      },
+      "value_te": "సన్నద్ధతను ప్రభావితం చేసే అధికారిక సూచనలు: సిలబస్ అనుబంధం-II (పీడబ్ల్యూటీ) మరియు అనుబంధం-III (తుది రాత పరీక్ష) లో ఉంది. ప్రశ్నపత్రాలు ఇంగ్లీష్-తెలుగు, ఇంగ్లీష్-ఉర్దూలో; అనువాదంలో సందేహం లేదా అక్షర దోషం ఉంటే ఇంగ్లీష్ ప్రతిదే తుది, సరైనది. పేపర్ II లో తెలుగు లేదా ఉర్దూ ఎంపిక ఒకసారి చేసిన తర్వాత మార్చలేరు. ఓఎంఆర్ షీట్‌పై నీలం లేదా నలుపు బాల్-పాయింట్ పెన్ మాత్రమే. బోర్డు ఏ పాఠ్యపుస్తకాన్నీ నిర్దేశించదు, ఏ పుస్తకానికీ కట్టుబడి ఉండదు; ప్రశ్న లేదా సమాధానంపై వివాదం ఉంటే సబ్జెక్ట్ ఎక్స్‌పర్ట్ కమిటీ నిర్ణయమే తుది. తొలగించిన ప్రశ్నలకు నిష్పత్తి ప్రకారం మార్కులు (తుది పరీక్షలో మూడు దశాంశ స్థానాల వరకు). సమాన మార్కులు వస్తే ముందు జన్మించిన వారికి ప్రాధాన్యం. క్యాలిక్యులేటర్ లేదా ఇతర పరికరాల గురించి ఏ నిబంధనా రెండు పత్రాలలో లేదు. టీఎస్‌ఎల్‌పీఆర్‌బీ వెబ్‌సైట్ సమాచారమే అధికారికం.",
+      "status": "VERIFIED",
       "provenance_tier": "T1_OFFICIAL", "expected_document": "DOC-OFF-002",
-      "provenance": {"document_id": null, "page": null, "section": null, "quote": null},
-      "verification": {"method": null, "verified_on": null, "verified_by": null}
+      "provenance": {"document_id": "DOC-OFF-002", "page": 20, "section": "Para 16-A Note 4", "quote": "Questions in the Written Test shall be set in English-Telugu & English Urdu languages, and in case of terminology of Science, technology / Management, transliteration will be employed at the expert's discretion."},
+      "supporting": [
+        {"document_id": "DOC-OFF-002", "page": 25, "section": "Para 16-C Note 9", "quote": "Questions in the Paper III and Paper IV shall be set in English-Telugu", "quote_note": "Stops at the line break. The printed text continues '& English-\nUrdu languages', which normalises to 'English- Urdu languages' with a space after the hyphen, so a longer quote would not be reproducible."},
+        {"document_id": "DOC-OFF-002", "page": 25, "section": "Para 16-C Note 9", "quote": "In case of any ambiguity or spelling mistake in Translation / Transliteration in any Question in Telugu or Urdu language, English version shall be considered as final and the correct version."},
+        {"document_id": "DOC-OFF-002", "page": 42, "section": "Annexure II — Note", "quote": "In case any dispute about any question or answer, the decision taken by the Subject Expert Committee shall be final."},
+        {"document_id": "DOC-OFF-002", "page": 44, "section": "Annexure III — Note", "quote": "The Board does not prescribe any particular textbook or publication and is not bound by the material appearing in any book or publication."},
+        {"document_id": "DOC-OFF-002", "page": 19, "section": "Para 16-A", "quote": "Syllabus for the PWT is given in Annexure II."},
+        {"document_id": "DOC-OFF-002", "page": 23, "section": "Para 16-C", "quote": "The syllabus for this exam is given in Annexure III."},
+        {"document_id": "DOC-OFF-002", "page": 39, "section": "Para 33 — Decision of TSLPRB to be Final", "quote": "TSLPRB website information is final, legitimate and definitive as far as correspondence / communication with the Candidates is concerned."},
+        {"document_id": "DOC-OFF-002", "page": 39, "section": "Para 33 — Decision of TSLPRB to be Final", "quote": "Candidates are further advised not to rely on rumours and false propaganda resorted to by persons with vested interests through media / social media platforms."},
+        {"document_id": "DOC-OFF-002", "page": 6, "section": "Para 5-b — fee rebate", "quote": "a rebate of Rs.50/- per each additional Post applied for (in excess of 1 Post) on account of the saving incurred due to the conduct of Common Physical Measurement Test and Physical Efficiency Test shall be given"}
+      ],
+      "unresolved": {
+        "conflict_id": "OFF-U-F25-A",
+        "question": "What items may a candidate carry into the examination hall, and is any calculating or electronic device permitted?",
+        "observation": "Zero word-boundary occurrences of 'calculator', 'calculators', 'watch', 'mobile', 'prohibited', 'banned' or 'malpractice' in either extraction artefact. The only instruction about what a candidate brings is the hall ticket or intimation letter, and the only instruction about writing implements is that a blue or black ball-point pen must be used on the OMR sheet.",
+        "why_it_matters": "Arithmetic preparation strategy depends on it: 200 arithmetic questions in three hours implies mental and pen-and-paper computation, and a candidate who assumed otherwise would train the wrong skill. The safe working assumption is no calculating aid, but that is an inference and is not recorded as an official rule.",
+        "resolution_rule": "Resolve from the hall-ticket instruction sheet or an official examination-conduct advisory issued by TSLPRB for this recruitment.",
+        "status": "UNRESOLVED",
+        "blocked_by": "Publication of hall-ticket instructions or an examination-conduct advisory by TSLPRB"
+      },
+      "verification": {"method": "SOURCE_DOCUMENT", "verified_on": "2026-09-06", "verified_by": "session-004 reading of DOC-OFF-002 pages 6, 19, 20, 23, 24, 25, 39, 42, 43 and 44, plus word-boundary occurrence counts over both artefacts"}
     }
   ]
 }

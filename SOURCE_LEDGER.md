@@ -7,19 +7,20 @@ whose origin is unknown cannot be checked, corrected, or defended.
 ## Current state
 
 **Entries: 38 — 32 registered Instagram sources (IG001–IG032) and 6 registered
-official TGPRB / TSLPRB documents (DOC-OFF-001–DOC-OFF-006); harvested items: 0
-— no content has been obtained from any of them.** The Instagram registry lives
+official TGPRB / TSLPRB documents (DOC-OFF-001–DOC-OFF-006); harvested items: 2
+— the two official notification PDFs (DOC-OFF-002, DOC-OFF-003) are stored and
+read; no Instagram content has been obtained.** The Instagram registry lives
 in `config/source_registry.json` and the official-document registry in
 `config/official_documents.json`; this ledger records each registered source and
 every extraction attempt against it.
 
-The single-source live verification run (IG001, 2026-09-05) was refused by
-Instagram (HTTP 429, anonymous access). Every official document request
-(session 003, 2026-09-06) was refused before leaving the environment by a
-network egress allowlist that permits one unrelated host (`B-09`). Their
-checkpoints, error logs, retrieval log, and manifests are the evidence; no
-content was obtained from any source yet. This zero-harvest count is a real,
-verified state, not a placeholder.
+The single-source live Instagram verification run (IG001, 2026-09-05) was refused
+by Instagram (HTTP 429, anonymous access). Every session-003 official document
+fetch was refused by the network egress allowlist (`B-09`); in session 004 the
+user supplied the two notification PDFs by browser download, which are now
+stored, hashed, and the basis of all 24 verified official facts and 27 syllabus
+nodes. Their checkpoints, error logs, retrieval log, and manifests are the
+evidence. This harvested count is a real, verified state, not a placeholder.
 
 
 ## ID format
@@ -115,34 +116,47 @@ was refused by the platform; see `notes`._
 - `IG021`'s registration notes in `config/source_registry.json` record the
   duplicate-in-original-list fact.
 
-### Official documents — session 003 (2026-09-06)
+### Official documents — session 003 (2026-09-06), updated session 004 (2026-09-06)
 
-_Registered as acquisition targets, not acquired. `local_path` is `NOT_STORED`
-and `checksum` is `N/A` for every row, because no official byte has reached this
-repository. `access_status` is `INACCESSIBLE` for all six: the environment's
-network egress allowlist permits exactly one unrelated host (`tabitoken.com`),
-so every board URL is refused before a request leaves the machine (`B-09`).
-Verbatim refusals: `source_material/official/RETRIEVAL_LOG.md`._
+_Session 003 registered all six as acquisition targets and every fetch was refused
+by the environment's egress allowlist (`B-09`); verbatim refusals are in
+`source_material/official/RETRIEVAL_LOG.md`. Session 004: the user downloaded
+DOC-OFF-002 and DOC-OFF-003 by hand from the board's site in an ordinary browser
+and placed them in `source_material/official/`. Both are now stored, hashed and
+read; their ledger rows below record the honest state. The other four remain
+`INACCESSIBLE`. The egress blocker `B-09` itself stays open: this environment
+still cannot fetch a board URL to byte-compare against the user's download._
 
 | id | doc id | title | tier | origin | url_status | access_status | reliability |
 | -- | ------ | ----- | ---- | ------ | ---------- | ------------- | ----------- |
 | SRC-0033 | `DOC-OFF-001` | TGPRB site root — notifications and downloads index | `T1_OFFICIAL` | https://tgprb.in/ | `OBSERVED_ON_OFFICIAL_DOMAIN` | `INACCESSIBLE` (egress allowlist) | `AUTHORITATIVE` |
-| SRC-0034 | `DOC-OFF-002` | SI (Civil et al) 2026 Notification dated 29-07-2026 | `T1_OFFICIAL` | https://www.tgprb.in/SI_PC_2026/SI%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf | `INFERRED_UNVERIFIED` | `INACCESSIBLE` (egress allowlist) | `AUTHORITATIVE` |
-| SRC-0035 | `DOC-OFF-003` | Supplementary Notification 2026 dated 15-08-2026 | `T1_OFFICIAL` | https://www.tgprb.in/SI_PC_2026/Supplementary%20Notification%202026%20%20dated%2015-08-2026.pdf | `OBSERVED_ON_OFFICIAL_DOMAIN` | `INACCESSIBLE` (egress allowlist) | `AUTHORITATIVE` |
+| SRC-0034 | `DOC-OFF-002` | SI (Civil et al) 2026 Notification dated 29-07-2026 | `T1_OFFICIAL` | https://www.tgprb.in/SI_PC_2026/SI%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf | `UNKNOWN` (downgraded from INFERRED_UNVERIFIED — acquisition confirms the document, not the URL) | `AVAILABLE` (stored at `source_material/official/`, SHA-256 in `config/official_documents.json`; acquired by user browser download, not by this session — see acquisition block) | `AUTHORITATIVE` |
+| SRC-0035 | `DOC-OFF-003` | Supplementary Notification 2026 dated 15-08-2026 | `T1_OFFICIAL` | https://www.tgprb.in/SI_PC_2026/Supplementary%20Notification%202026%20%20dated%2015-08-2026.pdf | `OBSERVED_ON_OFFICIAL_DOMAIN` | `AVAILABLE` (stored at `source_material/official/`, SHA-256 in `config/official_documents.json`; user browser download, same caveat) | `AUTHORITATIVE` |
 | SRC-0036 | `DOC-OFF-004` | PC (Civil et al) 2026 Notification dated 29-07-2026 | `T1_OFFICIAL` | https://www.tgprb.in/SI_PC_2026/PC%20(Civil%20et%20al)%202026%20Notification%20dated%2029-07-2026.pdf | `OBSERVED_ON_OFFICIAL_DOMAIN` | `INACCESSIBLE` (egress allowlist) | `AUTHORITATIVE` |
 | SRC-0037 | `DOC-OFF-005` | ASI (FPB) 2026 Notification dated 29-07-2026 | `T1_OFFICIAL` | https://www.tgprb.in/SI_PC_2026/ASI%20FPB%202026%20Notification%20dated%2029-07-2026.pdf | `INFERRED_UNVERIFIED` | `INACCESSIBLE` (egress allowlist) | `AUTHORITATIVE` |
 | SRC-0038 | `DOC-OFF-006` | TSLPRB site root (possibly controlling official domain) | `T1_OFFICIAL` | https://www.tslprb.in/ | `UNKNOWN` | `INACCESSIBLE` (egress allowlist) | `AUTHORITATIVE` |
 
-**Notes (2026-09-06, session 003):**
+**Notes (2026-09-06, sessions 003–004):**
 
-- `tier` records what kind of source these are — board publications — not that
-  their contents are known. Nothing has been read, so no `T1_OFFICIAL` fact
-  exists anywhere in the repository. `reliability: AUTHORITATIVE` likewise
-  describes the publisher, not a verified reading.
-- `SRC-0034` and `SRC-0037` carry `url_status: INFERRED_UNVERIFIED`: their
-  official URLs were constructed by analogy with sibling file names and were
-  never returned from the board's own domain. They must be confirmed by a
-  successful retrieval before any fact cites them.
+- Session 003 note, now superseded for two rows: "`tier` records what kind of
+  source these are — board publications — not that their contents are known."
+  As of session 004, DOC-OFF-002 and DOC-OFF-003 **have been read**: their
+  stored bytes carry the SHA-256 recorded in `config/official_documents.json`,
+  and every `T1_OFFICIAL` fact and syllabus node cites them with page, section
+  and a mechanically re-checked verbatim quote
+  (`tests/official/test_official_evidence.py`). For the four unread rows the
+  original note still applies unchanged.
+- Acquisition route for the two stored documents is `USER_SUPPLIED_DOWNLOAD`:
+  the user downloaded them from the board's site in an ordinary browser. This
+  confirms the documents came from the publisher; it does **not** confirm the
+  exact URL strings, and `B-09` still prevents this environment from
+  re-fetching to byte-compare. `SRC-0034`'s URL is therefore downgraded from
+  `INFERRED_UNVERIFIED` to `UNKNOWN` — acquiring the document confirms the
+  document, not the URL. The registry records the file-name corroboration
+  evidence in `url_corroboration`.
+- `SRC-0037` still carries `url_status: INFERRED_UNVERIFIED`: its official URL
+  was constructed by analogy with sibling file names and never returned from
+  the board's own domain.
 - `SRC-0038` exists only to settle `CONF-OFF-001` (`tgprb.in` versus
   `tslprb.in` as the controlling domain), recorded `UNRESOLVED`.
 - One further official URL was seen and deliberately **not** registered: a

@@ -1,0 +1,68 @@
+{
+  "manifest_id": "EXT-OFF-2026-09-06",
+  "spec": "SPEC-OFF-001",
+  "purpose": "Records how the committed text artefacts in this folder were produced from the official PDFs, so that any later reader can regenerate them and get the same bytes. These artefacts are the bridge between a stored quote and the document it came from: a checker can confirm a quote appears on the cited page without re-reading the PDF.",
+  "not_a_source": "An extraction is a derived convenience, never the authority. If an artefact and its PDF ever disagree, the PDF wins and the artefact is regenerated.",
+  "produced_by": "scripts/extract_official_pdf.py",
+  "produced_on": "2026-09-06",
+  "session": "004",
+  "tool": {
+    "binary": "pdftotext",
+    "version_string": "pdftotext version 22.02.0",
+    "package": "poppler-utils",
+    "command": "pdftotext -layout <source.pdf> <raw.txt>",
+    "post_processing": "The raw output is split on form feed (\\f); a trailing empty final chunk is dropped; each page is prefixed with a line '<<<PAGE n>>>' numbering physically from 1; chunks are rejoined with a blank line between them. UTF-8, errors replaced.",
+    "version_sensitivity": "A different poppler version may lay -layout text out differently. That would change the artefact digest, and `python scripts/extract_official_pdf.py --all --check` reports it as a mismatch rather than hiding it. A mismatch does not mean a fact is wrong; it means the artefact must be regenerated and the quote checks re-run."
+  },
+  "reproduce": "python scripts/extract_official_pdf.py --all        (writes)\npython scripts/extract_official_pdf.py --all --check  (verifies, writes nothing)",
+  "artefacts": [
+    {
+      "document_id": "DOC-OFF-002",
+      "artefact": "research/extractions/official/DOC-OFF-002-si-notification-pages.txt",
+      "artefact_sha256": "b4f694979df1a601a69154db165614762fb54783f44b72ab2a2a3e097ac78f0a",
+      "artefact_bytes": 115448,
+      "source_pdf": "source_material/official/SI+(Civil+et+al)+2026+Notification+dated+29-07-2026.pdf",
+      "source_sha256": "955d7779b9528d974e6ab25d3e07f15bd7a28f7bb3b63f0063a65931d1305804",
+      "pages_in_pdf": 57,
+      "pages_in_artefact": 57,
+      "page_numbering": "Physical page order, 1..57. Confirmed to coincide with the document's own printed numbering: every page footer reads 'Page N of 57' with N equal to the physical position, so a citation to 'page 12' is unambiguous."
+    },
+    {
+      "document_id": "DOC-OFF-003",
+      "artefact": "research/extractions/official/DOC-OFF-003-supplementary-notification-pages.txt",
+      "artefact_sha256": "354371c2e10c8d69ea6e276d8da6081ae4df00cb41b093256d08787e65a02bd6",
+      "artefact_bytes": 2293,
+      "source_pdf": "source_material/official/Supplementary+Notification+2026++dated+15-08-2026.pdf",
+      "source_sha256": "29607ee2ec5af20c6d8a647d51773157e5f9a413e59910cf67551495e3d5e51a",
+      "pages_in_pdf": 1,
+      "pages_in_artefact": 1,
+      "page_numbering": "Single page; footer reads 'Page 1 of 1'."
+    }
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "EXT-GAP-001",
+      "document_id": "DOC-OFF-002",
+      "page": 21,
+      "what": "A mathematical formula for score normalisation is drawn as an image, so pdftotext does not reproduce it. The surrounding prose extracts normally, which is exactly the dangerous case: the text looks complete.",
+      "how_it_was_recovered": "The page was rasterised with `pdftoppm -jpeg -r 110 -f 21 -l 21` and read visually.",
+      "content_recovered": "Normalized Mark = (SD + Avg)_T + { [Raw Mark - (SD + Avg)_S] X [Avg_TT - (SD + Avg)_T] } / [Avg_ST - (SD + Avg)_S]",
+      "consequence": "Recorded as a note on the relevant fact rather than as a verbatim quote, because a quote must be checkable against the artefact and this formula is not present in it. It applies to Post Codes 12 and 16 only, not to Post Code 11.",
+      "status": "RECOVERED_VISUALLY_NOT_IN_ARTEFACT"
+    },
+    {
+      "gap_id": "EXT-GAP-002",
+      "document_id": "DOC-OFF-002",
+      "page": 40,
+      "what": "Page 40 extracts as almost nothing.",
+      "how_it_was_checked": "Rasterised with `pdftoppm -jpeg -r 110 -f 40 -l 40` and read visually.",
+      "finding": "The page is genuinely blank apart from its footer — a section break between the signature page and Annexure I. Nothing is missing.",
+      "status": "CONFIRMED_BLANK_NOT_A_GAP"
+    }
+  ],
+  "gap_search_method": "Every page of the artefact was compared against the PDF's own page count, and pages whose extracted text was short or structurally odd were rasterised and read. `pdfimages -list` was used to locate raster content that text extraction cannot see. This is why EXT-GAP-001 was found; a text-only reading would have silently omitted it.",
+  "limitations": [
+    "Layout mode approximates table structure with spaces. Column alignment in the artefact is indicative; where a fact depends on which column a number sits in, the PDF page was read directly and the reading is recorded in the fact's provenance.",
+    "Whitespace differs from the PDF's visual spacing. Quote checks therefore compare whitespace-normalised text, not raw bytes."
+  ]
+}

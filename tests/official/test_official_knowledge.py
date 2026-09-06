@@ -510,8 +510,11 @@ class TestEveryOfficialFactHasProvenance(unittest.TestCase):
     def test_the_whole_fact_set_declares_its_status(self):
         self.assertIn(self.doc["status"], ("BLOCKED", "PARTIAL", "COMPLETE", "UNVERIFIED"))
         if self.doc["status"] != "COMPLETE":
+            reason = text(
+                self.doc.get("blocked_reason") or self.doc.get("partial_reason")
+            )
             self.assertGreater(
-                len(text(self.doc.get("blocked_reason"))), 20,
+                len(reason), 20,
                 "a fact set that is not COMPLETE must say what is missing",
             )
 
