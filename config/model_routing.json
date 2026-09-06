@@ -33,6 +33,12 @@
       "purpose": "High-volume ingestion of transcripts, pages and papers.",
       "output_trust": "UNVERIFIED"
     },
+    "KNOWLEDGE_EXTRACTION": {
+      "provider": "glm",
+      "fallback": "anthropic",
+      "purpose": "Extract atomic candidate knowledge units from processed source content (SPEC-KNW-001). Output is CANDIDATE knowledge, UNVERIFIED by definition.",
+      "output_trust": "UNVERIFIED"
+    },
     "CLASSIFICATION": {
       "provider": "glm",
       "fallback": "anthropic",
@@ -84,7 +90,8 @@
     { "author_role": "DEEP_REASONING", "verifier_role": "VERIFICATION" },
     { "author_role": "CLASSIFICATION", "verifier_role": "VERIFICATION" },
     { "author_role": "SUMMARIZATION", "verifier_role": "VERIFICATION" },
-    { "author_role": "BULK_RESEARCH", "verifier_role": "VERIFICATION" }
+    { "author_role": "BULK_RESEARCH", "verifier_role": "VERIFICATION" },
+    { "author_role": "KNOWLEDGE_EXTRACTION", "verifier_role": "VERIFICATION" }
   ],
 
   "rules": {

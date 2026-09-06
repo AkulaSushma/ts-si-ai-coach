@@ -1,0 +1,36 @@
+{
+  "source_id": "IGFIX03",
+  "platform": "instagram",
+  "profile_username": "fixture_account",
+  "content_id": "FIX0006",
+  "shortcode": "FIX0006",
+  "content_url": "https://www.instagram.com/p/FIX0006/",
+  "content_type": "post",
+  "published_at": "2026-08-01T10:00:00+00:00",
+  "caption": "Fundamental Duties were added by the 42nd Amendment.",
+  "hashtags": [
+    "si",
+    "ts_si_2026"
+  ],
+  "media": {
+    "images": [],
+    "video": null
+  },
+  "slides": [],
+  "text": {
+    "caption_text": "Fundamental Duties were added by the 42nd Amendment.",
+    "ocr_text": null,
+    "transcript": null,
+    "on_screen_text": null
+  },
+  "engagement": {
+    "likes": null,
+    "comments": null
+  },
+  "platform_data": {},
+  "extraction": {
+    "status": "raw",
+    "extracted_at": "2026-09-06T00:00:00Z"
+  },
+  "test_fixture": true
+}

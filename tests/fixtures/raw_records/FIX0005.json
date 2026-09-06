@@ -1,0 +1,60 @@
+{
+  "source_id": "IGFIX02",
+  "platform": "instagram",
+  "profile_username": "fixture_account",
+  "content_id": "FIX0005",
+  "shortcode": "FIX0005",
+  "content_url": "https://www.instagram.com/p/FIX0005/",
+  "content_type": "carousel",
+  "published_at": "2026-08-01T10:00:00+00:00",
+  "caption": null,
+  "hashtags": [
+    "si",
+    "ts_si_2026"
+  ],
+  "media": {
+    "images": [
+      {
+        "index": 0,
+        "url": "https://cdn.example/fix5a.jpg"
+      },
+      {
+        "index": 1,
+        "url": "https://cdn.example/fix5b.jpg"
+      }
+    ],
+    "video": null
+  },
+  "slides": [
+    {
+      "index": 0,
+      "image_url": "https://cdn.example/fix5a.jpg",
+      "accessibility_caption": null,
+      "ocr_text": "Telangana was formed on 2 June 2014.",
+      "ocr_text_raw": "Telangana was formed on 2 June 2014."
+    },
+    {
+      "index": 1,
+      "image_url": "https://cdn.example/fix5b.jpg",
+      "accessibility_caption": null,
+      "ocr_text": "It is the 29th state of India.",
+      "ocr_text_raw": "It is the 29th state of India."
+    }
+  ],
+  "text": {
+    "caption_text": null,
+    "ocr_text": null,
+    "transcript": null,
+    "on_screen_text": null
+  },
+  "engagement": {
+    "likes": null,
+    "comments": null
+  },
+  "platform_data": {},
+  "extraction": {
+    "status": "raw",
+    "extracted_at": "2026-09-06T00:00:00Z"
+  },
+  "test_fixture": true
+}

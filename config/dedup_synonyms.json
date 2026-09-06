@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "spec": "SPEC-KNW-001 §6",
+  "purpose": "Curated surface-verb synonym table for concept keys. The knowledge pipeline's dedup step canonicalizes each content token through this table before building the concept key, so 'Fundamental Duties were added by the 42nd Amendment.' and 'The 42nd Amendment introduced Fundamental Duties.' collide into one concept. This is deliberately a small, human-reviewed list rather than a similarity threshold: a threshold would also merge genuinely different facts that merely share vocabulary (e.g. 'The President is elected by an electoral college' and 'The Vice President is elected by an electoral college' share most tokens but are different facts). Adding a row is data review, not code change.",
+  "rules": [
+    "Each row maps surface forms to one canonical form.",
+    "Never add rows for nouns, numbers, dates or named entities — only for verbs/connectives whose variation is phrasing, not meaning.",
+    "'not' and negation words must NEVER appear here or be dropped by the pipeline: a fact and its negation are different concepts."
+  ],
+  "synonyms": {
+    "added": "introduced",
+    "incorporated": "introduced",
+    "included": "introduced",
+    "brought": "introduced",
+    "inserted": "introduced",
+    "commenced": "started",
+    "begun": "started",
+    "began": "started",
+    "established": "constituted",
+    "set": "constituted",
+    "formed_up": "constituted"
+  }
+}

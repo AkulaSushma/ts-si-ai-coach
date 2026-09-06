@@ -1,0 +1,36 @@
+{
+  "source_id": "IGFIX01",
+  "platform": "instagram",
+  "profile_username": "fixture_account",
+  "content_id": "FIX0003",
+  "shortcode": "FIX0003",
+  "content_url": "https://www.instagram.com/p/FIX0003/",
+  "content_type": "post",
+  "published_at": "2026-08-01T10:00:00+00:00",
+  "caption": "Practice question: Which article of the Constitution deals with the abolition of untouchability? Comment your answer!",
+  "hashtags": [
+    "si",
+    "ts_si_2026"
+  ],
+  "media": {
+    "images": [],
+    "video": null
+  },
+  "slides": [],
+  "text": {
+    "caption_text": "Practice question: Which article of the Constitution deals with the abolition of untouchability? Comment your answer!",
+    "ocr_text": null,
+    "transcript": null,
+    "on_screen_text": null
+  },
+  "engagement": {
+    "likes": null,
+    "comments": null
+  },
+  "platform_data": {},
+  "extraction": {
+    "status": "raw",
+    "extracted_at": "2026-09-06T00:00:00Z"
+  },
+  "test_fixture": true
+}

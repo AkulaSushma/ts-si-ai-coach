@@ -1,0 +1,144 @@
+{
+  "prompt_version": "knowledge-extraction-v1",
+  "purpose": "Scripted GLM responses for the offline fixture run (SPEC-KNW-001 §11). These are TEST FIXTURE data: deterministic stand-ins for what a correctly-instructed model would return for each fixture record. They are never presented as real model output and the fixture pipeline labels everything test_fixture: true. The pipeline validates each payload through the same strict schema a live response must pass.",
+  "test_fixture": true,
+  "responses": {
+    "FIX0001": {
+      "relevance": "RELEVANT",
+      "items": [
+        {
+          "knowledge_text": "The Constitution of India was adopted on 26 November 1949.",
+          "knowledge_text_te": null,
+          "subject": "Indian Constitution",
+          "topic": "Making of the Constitution",
+          "knowledge_type": "DATE",
+          "confidence": 0.95
+        },
+        {
+          "knowledge_text": "The Constitution of India came into force on 26 January 1950.",
+          "knowledge_text_te": null,
+          "subject": "Indian Constitution",
+          "topic": "Making of the Constitution",
+          "knowledge_type": "DATE",
+          "confidence": 0.95
+        }
+      ],
+      "questions": [],
+      "notes": null
+    },
+    "FIX0002": {
+      "relevance": "RELEVANT",
+      "items": [],
+      "questions": [
+        {
+          "question_text": "Who is known as the Father of the Indian Constitution?",
+          "options": {"A": "Nehru", "B": "Ambedkar", "C": "Patel", "D": "Gandhi"},
+          "answer": "B",
+          "explanation": null,
+          "subject": "Indian Constitution",
+          "topic": null,
+          "question_format": "MCQ",
+          "answer_status": "STATED_BY_SOURCE"
+        }
+      ],
+      "notes": null
+    },
+    "FIX0003": {
+      "relevance": "RELEVANT",
+      "items": [],
+      "questions": [
+        {
+          "question_text": "Which article of the Constitution deals with the abolition of untouchability?",
+          "options": {},
+          "answer": null,
+          "explanation": null,
+          "subject": "Indian Constitution",
+          "topic": null,
+          "question_format": "QUESTION",
+          "answer_status": "NOT_STATED"
+        }
+      ],
+      "notes": null
+    },
+    "FIX0004": {
+      "relevance": "NOT_RELEVANT",
+      "items": [],
+      "questions": [],
+      "notes": "meme content, no exam value"
+    },
+    "FIX0005": {
+      "relevance": "RELEVANT",
+      "items": [
+        {
+          "knowledge_text": "Telangana was formed on 2 June 2014.",
+          "knowledge_text_te": null,
+          "subject": "Telangana History",
+          "topic": "State Formation",
+          "knowledge_type": "DATE",
+          "confidence": 0.9
+        },
+        {
+          "knowledge_text": "Telangana is the 29th state of India.",
+          "knowledge_text_te": null,
+          "subject": "Telangana GK",
+          "topic": "State Formation",
+          "knowledge_type": "FACT",
+          "confidence": 0.9
+        }
+      ],
+      "questions": [],
+      "notes": "extracted from slide OCR text; slide order preserved upstream"
+    },
+    "FIX0006": {
+      "relevance": "RELEVANT",
+      "items": [
+        {
+          "knowledge_text": "Fundamental Duties were added by the 42nd Amendment.",
+          "knowledge_text_te": null,
+          "subject": "Indian Constitution",
+          "topic": "Fundamental Duties",
+          "knowledge_type": "AMENDMENT",
+          "confidence": 0.92
+        }
+      ],
+      "questions": [],
+      "notes": null
+    },
+    "FIX0007": {
+      "relevance": "RELEVANT",
+      "items": [
+        {
+          "knowledge_text": "The 42nd Amendment introduced Fundamental Duties.",
+          "knowledge_text_te": null,
+          "subject": "Indian Constitution",
+          "topic": "Fundamental Duties",
+          "knowledge_type": "AMENDMENT",
+          "confidence": 0.92
+        }
+      ],
+      "questions": [],
+      "notes": null
+    },
+    "FIX0008": {
+      "relevance": "UNCERTAIN",
+      "items": [],
+      "questions": [],
+      "notes": "no text available"
+    },
+    "FIX0009": {
+      "relevance": "UNCERTAIN",
+      "items": [
+        {
+          "knowledge_text": "A scheme was claimed to be important for the exam, with no specifics given.",
+          "knowledge_text_te": null,
+          "subject": "Other SI/Constable-relevant subject",
+          "topic": null,
+          "knowledge_type": "OTHER",
+          "confidence": 0.3
+        }
+      ],
+      "questions": [],
+      "notes": "source is vague; extraction preserves the claim as a claim"
+    }
+  }
+}

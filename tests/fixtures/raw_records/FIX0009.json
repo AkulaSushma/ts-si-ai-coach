@@ -1,0 +1,36 @@
+{
+  "source_id": "IGFIX05",
+  "platform": "instagram",
+  "profile_username": "fixture_account",
+  "content_id": "FIX0009",
+  "shortcode": "FIX0009",
+  "content_url": "https://www.instagram.com/p/FIX0009/",
+  "content_type": "post",
+  "published_at": "2026-08-01T10:00:00+00:00",
+  "caption": "Some say this scheme is important for the exam... check for yourself",
+  "hashtags": [
+    "si",
+    "ts_si_2026"
+  ],
+  "media": {
+    "images": [],
+    "video": null
+  },
+  "slides": [],
+  "text": {
+    "caption_text": "Some say this scheme is important for the exam... check for yourself",
+    "ocr_text": null,
+    "transcript": null,
+    "on_screen_text": null
+  },
+  "engagement": {
+    "likes": null,
+    "comments": null
+  },
+  "platform_data": {},
+  "extraction": {
+    "status": "raw",
+    "extracted_at": "2026-09-06T00:00:00Z"
+  },
+  "test_fixture": true
+}

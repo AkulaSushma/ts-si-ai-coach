@@ -1,0 +1,27 @@
+{
+  "test_fixture": true,
+  "purpose": "Deterministic offline fixture for the knowledge pipeline (SPEC-KNW-001 §11). These records are NOT Instagram content; they follow the SPEC-ING-001 §4.4 raw-record schema with test_fixture: true on every record. Source ids use the reserved IGFIX* range and can never collide with real registry ids.",
+  "never_presented_as": "real Instagram content",
+  "records": [
+    "FIX0001",
+    "FIX0002",
+    "FIX0003",
+    "FIX0004",
+    "FIX0005",
+    "FIX0006",
+    "FIX0007",
+    "FIX0008",
+    "FIX0009"
+  ],
+  "scenarios": {
+    "FIX0001": "two atomic facts (constitution adoption / commencement)",
+    "FIX0002": "MCQ with stated answer",
+    "FIX0003": "question without an answer (NOT_STATED)",
+    "FIX0004": "irrelevant meme (NOT_RELEVANT)",
+    "FIX0005": "OCR-only carousel, slide order",
+    "FIX0006": "42nd Amendment fact, source IGFIX03",
+    "FIX0007": "same fact reworded, source IGFIX04 (cross-source dedup)",
+    "FIX0008": "empty content (all text null)",
+    "FIX0009": "UNCERTAIN relevance"
+  }
+}
