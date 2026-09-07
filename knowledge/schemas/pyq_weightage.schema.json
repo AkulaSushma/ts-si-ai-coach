@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pyq_weightage.schema.json",
+  "title": "Observed previous-year frequency entry",
+  "description": "One observed frequency (weightage) computation. Every entry exposes its numerator, denominator, included papers and years, and classification confidence, so a reader can always see what a number counts. Validated by hand-written checks in tests/pyq/test_pyq_foundation.py (D-0006).",
+  "type": "object",
+  "required": [
+    "entry_id", "subject", "topic", "numerator", "denominator",
+    "papers_included", "years_included", "classification_confidence",
+    "basis", "status", "blocked_reason", "provenance_tier"
+  ],
+  "properties": {
+    "entry_id": {"type": "string", "pattern": "^WGT-PYQ-[0-9]{4}$"},
+    "subject": {"type": "string"},
+    "topic": {"type": ["string", "null"]},
+    "question_type": {"type": ["string", "null"]},
+    "numerator": {"type": ["integer", "null"], "description": "Number of classified questions in this subject/topic/type. null until counted."},
+    "denominator": {"type": ["integer", "null"], "description": "Total classified questions across the included paper set. Must be non-null and > 0 whenever numerator is non-null."},
+    "papers_included": {"type": "array", "items": {"type": "string"}, "description": "Paper ids counted."},
+    "years_included": {"type": "array", "items": {"type": "integer"}},
+    "classification_confidence": {"enum": ["EXACT", "NEAR", "AMBIGUOUS", "UNKNOWN"]},
+    "basis": {"enum": ["OBSERVED"], "description": "Counted from PYQs. Never OFFICIAL; the official figure is a different file (official_marks_structure.json)."},
+    "status": {"enum": ["BLOCKED", "PARTIAL", "COMPLETE"]},
+    "blocked_reason": {"type": "string", "minLength": 5, "description": "Required unless status is COMPLETE."},
+    "provenance_tier": {"const": "T2_HISTORICAL_PYQ"},
+    "partial_coverage": {
+      "type": ["object", "null"],
+      "description": "Required when status is PARTIAL: how many of the intended papers/questions were counted.",
+      "properties": {
+        "papers_counted": {"type": "integer"},
+        "papers_intended": {"type": "integer"},
+        "questions_counted": {"type": "integer"},
+        "questions_intended": {"type": "integer"}
+      }
+    }
+  },
+  "invariants": [
+    "numerator != null  =>  denominator is non-null and > 0",
+    "denominator == 0 or null  =>  numerator must be null (a count over zero is not a count)",
+    "status == COMPLETE  =>  numerator and denominator are non-null and papers_included is non-empty",
+    "status == PARTIAL  =>  partial_coverage is present and states counted/intended",
+    "papers_included non-empty  =>  every listed paper id resolves to a registered paper",
+    "an entry is never relabelled T1_OFFICIAL; observed frequency is not policy"
+  ]
+}

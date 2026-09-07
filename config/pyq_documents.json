@@ -1,0 +1,26 @@
+{
+  "registry_version": 1,
+  "spec": "SPEC-PYQ-001",
+  "purpose": "Target and acquired registry of Telangana Police SI / Constable previous-year question papers. Registration records intent to acquire; it is not a claim that any paper has been read or any question extracted.",
+  "category": "pyq_document_registry",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "status": "BLOCKED",
+  "blocked_reason": "No previous-year paper has been acquired. The environment cannot reach any paper-hosting host (egress allowlist), and no paper identity has been enumerated because no source could be verified. Zero papers means zero observed frequency, not an estimated one.",
+  "paper_requirements": {
+    "note": "What a usable paper must contain, derived from the 2026 official structure. This is not a claim that any specific prior paper exists.",
+    "components_to_cover": [
+      {"component": "Arithmetic & Test of Reasoning / Mental Ability", "note": "Covers what PWT (100 Q) and FWE Paper III (200 Q) test in the current structure."},
+      {"component": "General Studies", "note": "Covers what PWT (100 Q) and FWE Paper IV (200 Q) test in the current structure."}
+    ],
+    "posts": ["Telangana Police SI (Civil et al)", "Telangana Police Constable (Civil et al)"],
+    "eligibility": [
+      "Telangana Police SI or Constable written examination paper",
+      "Complete, or its incompleteness recorded with a numerator/denominator",
+      "Has provenance: a source_type (OFFICIAL_PUBLICATION / COACHING_COPY / CANDIDATE_RECALL), a URL or local_path, and a hash for retrieved bytes",
+      "Every question carries a subject/topic/subtopic assignment with a classification confidence"
+    ]
+  },
+  "retrieved_count": 0,
+  "extracted_question_count": 0,
+  "documents": []
+}

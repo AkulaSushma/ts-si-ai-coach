@@ -362,6 +362,36 @@ scale version is bumped.
 
 ---
 
+## D-0022 — A coaching copy of a paper is T2 evidence of behaviour; a coaching copy of an official document is never T1
+
+**Status:** ACCEPTED · **Date:** 2026-09-07 · **Decided by:** architect, per user instruction session 007 (SPEC-PYQ-001)
+
+**Decision.** Previous-year **papers** are evidence of what was asked, not policy.
+A coaching site's scan or transcription of a paper is recorded as
+`source_type: COACHING_COPY` and is legitimately `T2_HISTORICAL_PYQ` — it is
+evidence of the questions that appeared, subject to its answer being tracked
+separately by `answer_source` (`OFFICIAL_KEY` / `COACHING_KEY` / `UNVERIFIED`).
+This does **not** contradict `D-0015`, which governs a different object: a
+coaching copy of an **official document** (a notification, a physical standard, a
+mark scheme) is never authority for a `T1_OFFICIAL` rule. A paper copy being `T2`
+is not a relabel upward to `T1`.
+
+**Why.** The board does not publish solved papers, so coaching copies are the
+realistic route to a paper set; treating them as `T3_EXPERT` would wrongly equate
+a *paper's contents* (historical evidence) with a *coach's opinion or method*
+(also `T3_EXPERT`). But the two provenance tiers must stay distinct, and the
+distinction must be written down or a future session will read `D-0015` and
+`SPEC-PYQ-001 R2` as a contradiction.
+
+**Consequences.** In the PYQ registries, a paper records both `source_type`
+(how it was obtained) and `provenance_tier` (always `T2_HISTORICAL_PYQ`); a
+question records `answer_source`. An `OFFICIAL_PUBLICATION` paper must point at a
+board host (`tests/pyq` enforces with `board_host()`), and a question labelled
+`OFFICIAL_PUBLICATION` must have a board-host provenance URL. Coaching material as
+*opinion or method* remains `T3_EXPERT`.
+
+---
+
 ## Open decisions
 
 | ID       | Question                                              | Resolve when                                  |

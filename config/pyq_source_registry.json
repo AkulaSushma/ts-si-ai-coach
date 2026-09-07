@@ -1,0 +1,54 @@
+{
+  "registry_version": 1,
+  "spec": "SPEC-PYQ-001",
+  "purpose": "Candidate source registry for Telangana Police SI / Constable previous-year question papers. Registration records intent to pursue a source; it is not a claim that any paper has been acquired or read.",
+  "category": "pyq_source_registry",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "status": "BLOCKED",
+  "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include any paper-hosting host, and web search returned no content. No source URL could be verified from here, so no source is registered. Exact response recorded in attempts[] and in source_material/pyq_raw/RETRIEVAL_LOG.md.",
+  "eligible_source_types": {
+    "OFFICIAL_PUBLICATION": "A paper (or answer key) served by TGPRB / TSLPRB itself, or its official archive. Highest evidence value but, where the board does not publish solved papers, may not exist.",
+    "COACHING_COPY": "A coaching institute's scan or transcription of a paper, or its 'solved papers' compilation. This is the realistic route for most previous years. Recorded as a coaching copy, never relabelled as board-issued.",
+    "CANDIDATE_RECALL": "A paper reconstructed from candidates' memory. Lowest evidence value; must be labelled as reconstruction and cross-checked against at least one other source before any question is classified."
+  },
+  "eligibility_rules": [
+    "A source qualifies only if it can be tied to a specific Telangana Police SI or Constable written examination paper, with a year and phase.",
+    "A paper must be complete or its incompleteness recorded with a numerator/denominator.",
+    "Every question drawn from a source must record an answer_source: OFFICIAL_KEY, COACHING_KEY, or UNVERIFIED.",
+    "A coaching-site copy of an official document is never eligible here as an official document; it may be a legitimate PYQ source, recorded with source_type COACHING_COPY."
+  ],
+  "attempts": [
+    {
+      "timestamp": "2026-09-07T00:00:00Z",
+      "tool": "workspace web_fetch",
+      "url": "https://www.google.com/search?q=Telangana+Police+SI+previous+year+question+paper",
+      "response": "Host \"www.google.com\" is not on the network allowlist (cowork-egress-blocked). Ask your administrator to add this domain to the Cowork egress allowlist (coworkEgressAllowedHosts). Allowed: api.lumosel.vip",
+      "note": "Recorded verbatim per D-0017. The refusal is host-level and applies to every path on any host outside the allowlist, so no individual paper URL can be tried separately with a different result."
+    },
+    {
+      "timestamp": "2026-09-07T00:00:00Z",
+      "tool": "workspace web_fetch",
+      "url": "https://www.tgprb.in/",
+      "response": "Host \"www.tgprb.in\" is not on the network allowlist (cowork-egress-blocked). Ask your administrator to add this domain to the Cowork egress allowlist (coworkEgressAllowedHosts). Allowed: api.lumosel.vip",
+      "note": "The board's own domain is likewise blocked. This reinforces that no official paper source is reachable from here (D-0015)."
+    },
+    {
+      "timestamp": "2026-09-07T00:00:00Z",
+      "tool": "web_search",
+      "url": "Telangana Police SI previous year question papers download",
+      "response": "Web search returned no result content in this environment.",
+      "note": "Reported as an environment capability observation, not as a negative finding about the papers' existence."
+    }
+  ],
+  "accounting": {
+    "expected": 0,
+    "expected_justification": "No source set has been enumerated. expected will become a counted figure with a recorded basis once a source is verified; it is not an estimate.",
+    "processed": 0,
+    "inaccessible": 0,
+    "irrelevant": 0,
+    "duplicate": 0,
+    "failed": 0
+  },
+  "identity_holds": true,
+  "sources": []
+}

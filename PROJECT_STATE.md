@@ -11,13 +11,13 @@
 | Project                | Telangana Police SI 2026 AI Coaching System              |
 | Repository             | `D:\Projects\ts-si-ai-coach`                             |
 | Last updated           | 2026-09-07                                               |
-| Session                | 006 — Phase-1 official completion (marks structure + reconciliation) |
-| Phase                  | 2 of 7 — Source acquisition (official SI half complete; Instagram half blocked) |
-| Overall status         | `PARTIAL` — the Phase-1 official-source scope is now complete: 24 of 25 official facts `VERIFIED`, official syllabus mapped (27 nodes), official marks structure populated (14 entries), supplementary-vs-original reconciliation recorded (5 records). Instagram knowledge still `BLOCKED` by `B-08`; the final UI/tutor are deliberately not begun |
+| Session                | 007 — PYQ acquisition & analysis preparation (container built, content blocked) |
+| Phase                  | 2 of 7 — Source acquisition (official SI half complete; Instagram half blocked; PYQ container built) |
+| Overall status         | `PARTIAL` — the Phase-1 official-source scope is complete: 24 of 25 official facts `VERIFIED`, official syllabus mapped (27 nodes), official marks structure populated (14 entries), supplementary-vs-original reconciliation recorded (5 records). The **PYQ container** (SPEC-PYQ-001) is built and green — 3 schemas, 2 registries, acquisition manifest, retrieval log, 45 tests — but **PYQ content is `BLOCKED` at zero**: no paper acquired, no question extracted, no weightage computed. Instagram knowledge still `BLOCKED` by `B-08`; the final UI/tutor are deliberately not begun. Per `D-0016`, a complete container does not imply complete content, so this session is not reported `COMPLETE` |
 | Git branch             | `main`                                                   |
-| Latest commits         | `afec030` (session-006 marks structure + reconciliation) ← `f8fd72a` (session-005 facts+syllabus+pipeline) ← `7a15b77` (SPEC-KNW-001 pipeline) — run `git log --oneline` for the head |
+| Latest commits         | `feat(pyq): ...` (session-007 PYQ foundation) ← `afec030` (session-006) ← `f8fd72a` (session-005) — run `git log --oneline` for the head |
 | Structural checks      | 21 of 21 passed — `python scripts/validate_bootstrap.py` exit `0` |
-| Unit tests             | 233 of 233 passed — `python -m unittest discover -s tests`, 0 failures, 2 skips that are correct-by-design |
+| Unit tests             | 278 of 278 passed — `python -m unittest discover -s tests`, 0 failures, 2 skips that are correct-by-design. PYQ module alone: 45/45 `OK` |
 | Official facts verified| **24 of 25** (`OFF-F03` honestly BLOCKED — the notification defers application dates to a future press release) |
 | Official syllabus      | 27 nodes, verbatim from Annexures II–III (pages 42–44) |
 | Official marks structure | 14 entries (6 PWT + 8 FWE) — per-paper totals, durations, qualifying %, negative marking; no topic-wise distribution in the notification, so none recorded |
@@ -47,6 +47,11 @@
   knowledge → relevance scoring → dedup/corroboration → verification queue.
   Fully operable offline via the committed fixture; **zero Instagram content
   processed**; nothing marked `VERIFIED` by it.
+- **PYQ half (session 007):** container `COMPLETE` under `SPEC-PYQ-001`, content
+  `BLOCKED` at zero. The container (2 registries, 3 schemas, acquisition
+  manifest, retrieval log, 45 tests over AC-1..AC-8) cannot fabricate a past
+  paper or compute a weightage over an unenumerated set. No paper acquired
+  because no source host is reachable; recorded, not routed around (`D-0017`).
 
 ## The knowledge processing pipeline (new in session 005)
 
@@ -166,7 +171,15 @@ Implements `specs/features/ingestion-subsystem.md` (`SPEC-ING-001`).
 | **Knowledge pipeline tests**      | `COMPLETE` | 59 tests covering all 18 SPEC-KNW-001 criteria; zero network calls |
 | **Fixture GLM test**              | `COMPLETE` | Offline deterministic run: 9 items → 7 candidates, 2 questions, 6 concepts, 7 queued; cross-source merge and idempotency verified |
 | **GLM classification stage**      | `READY`   | Live execution blocked on real raw content (`B-08`) — the schema, prompt and routing are tested; no live call has been made |
-| PYQ database                     | `BLOCKED`  | No papers acquired                                       |
+| **PYQ spec**                     | `COMPLETE` | `specs/features/pyq-questions-foundation.md` (`SPEC-PYQ-001`), `APPROVED`, 8 acceptance criteria, container-vs-content rule in §9 |
+| **PYQ source registry**          | `COMPLETE` | `config/pyq_source_registry.json` — 3 eligible source types, eligibility rules, 3 verbatim retrieval attempts, balanced accounting `0 = 0+0+0+0+0`, status `BLOCKED` |
+| **PYQ document registry**        | `COMPLETE` | `config/pyq_documents.json` — target/acquired paper registry, `retrieved_count: 0`, `documents: []`, `status: BLOCKED` with recorded reason |
+| **PYQ content folders**          | `COMPLETE` | `pyq/{papers,questions,weightage}/` — READMEs and `.gitkeep` only (already tracked), each with its provenance/denominator rules |
+| **PYQ schemas (3)**              | `COMPLETE` | `knowledge/schemas/pyq_paper.schema.json`, `pyq_question.schema.json`, `pyq_weightage.schema.json` — hand-written checks, no third-party validator (`D-0006`) |
+| **PYQ acquisition manifest**     | `COMPLETE` | `research/manifests/pyq/PYQ_ACQUISITION_MANIFEST.json` — `PYQ-ACQ-007`, status `blocked`, identity `0 = 0+0+0+0+0`, reason recorded |
+| **PYQ retrieval log**            | `COMPLETE` | `source_material/pyq_raw/RETRIEVAL_LOG.md` — the 3 refusals verbatim; no bypass, no curl/wget/lynx/Python client, no archived copy (`D-0017`) |
+| **PYQ foundation tests**         | `COMPLETE` | `tests/pyq/test_pyq_foundation.py` — 45 tests over the 8 acceptance criteria (AC-1..AC-8), incl. anti-vacuity `TestPyqCheckersRejectFabrication` (15 poisoned-record cases) + clean-data proof; all pass, no network |
+| PYQ database                     | `BLOCKED`  | No papers acquired — container built, content blocked by `B-02` (egress allowlist) |
 | Question-family taxonomy         | `BLOCKED`  | Depends on PYQs                                          |
 | Recognition training             | `BLOCKED`  | Depends on question families                             |
 | Methods (standard/fast/mental)   | `BLOCKED`  | Depends on question families                             |
@@ -186,7 +199,7 @@ produces exam knowledge.
 | ID     | Blocker                                                        | What unblocks it                                            |
 | ------ | -------------------------------------------------------------- | ------------------------------------------------------------ |
 | `B-01` | ~~No official TGPRB document has been obtained~~ **CLOSED in session 004** for the SI notification and its supplement | Two documents stored and hashed; the other four remain blocked (`B-09`) |
-| `B-02` | No previous-year papers obtained                               | Acquire PYQ papers, ideally with official answer keys          |
+| `B-02` | No previous-year papers obtained — **PYQ container built (session 007), content at zero**. No paper has been acquired because no source host is reachable (egress allowlist); no paper identity has been enumerated | Acquire PYQ papers, ideally with official answer keys. The container (`SPEC-PYQ-001`, registries, schemas, manifest, retrieval log, 45 tests) is finished; what is needed is bytes, which only a reachable host or a manual download into `source_material/pyq_raw/` can supply. Add a paper-hosting host to the egress allowlist (see `B-09`) |
 | `B-03` | Physical event standards — **resolved in substance**: OFF-F18/OFF-F19 verified from the notification; structured `physical/standards/` records still to be written | Data entry from the already-verified facts; no new source needed |
 | `B-04` | Provider model ID strings unpinned/unverified                  | Confirm exact model strings, then record under `D-0009`. The GLM string `glm-5.3` remains `UNVERIFIED_STRING` until a live call is made |
 | `B-05` | First outbound network calls made; Instagram refuses anonymous API access with HTTP 429 | For Instagram see `B-08`; the knowledge pipeline's live GLM call has not been attempted (no key set in this environment) |
@@ -215,7 +228,7 @@ log, and manifest for IG001 are the evidence trail.
 | 1     | Bootstrap                   | `COMPLETE` | Structure, governance, validation, first commit               |
 | 2     | Official source acquisition | `IN PROGRESS` | TGPRB notification and syllabus in `source_material/official/`, ledgered; Instagram access decision resolved |
 | 3     | Data model and schema       | `BLOCKED`  | Approved data-model spec, migration `0001`, L1 tests passing   |
-| 4     | PYQ ingestion               | `BLOCKED`  | Papers normalized with balanced accounting manifests           |
+| 4     | PYQ ingestion               | `BLOCKED`  | Container built (session 007); gate is papers normalized with balanced accounting manifests, which needs acquired bytes |
 | 5     | Knowledge and methods       | `BLOCKED`  | Question families with recognition cues and L2 deterministic tests |
 | 6     | Backend and tutor           | `BLOCKED`  | Tutor answers only from `VERIFIED` records; L5 tests passing    |
 | 7     | Practice, analytics, revision | `BLOCKED` | Timed practice, mocks, error analysis, spaced revision working  |
@@ -226,26 +239,28 @@ invented facts — the exact failure this architecture is designed to prevent.
 
 ## Next Action
 
-**Phase-1 official-source scope is complete — session 006 is a STOP point per the
-standing directive.** No further Phase-1 work remains; the directive explicitly
-forbids auto-starting another phase, so the next move is the user's decision on
-the one blocker that still gates everything, `B-08` (Instagram access). The whole
-chain is built and tested end-to-end on both sides of it:
+**Session 007 built the PYQ container and is a STOP point per the standing
+directive.** The PYQ foundation spec (`SPEC-PYQ-001`) is `APPROVED`, harmless to
+the completed Phase-1 official-source work, and green. It also made no attempt
+at Instagram/YouTube knowledge and no fabrications — but it produced **no
+content**: zero papers acquired, zero questions extracted, zero weightage
+computed, because no paper-hosting host is reachable (egress allowlist) and web
+search returned no content. The acquisition path is `BLOCKED` by `B-02`/`B-09`.
 
-raw Instagram content → ingestion (session 002) → knowledge pipeline
-(session 005) → verification queue → future verification stage. The only
-missing input is real raw content:
+The next move is the user's decision on which blocker to take up. The PYQ
+container is finished, so the work waiting on the other side of `B-02` is
+acquisition, not engineering:
 
-- Option A — authenticated access through an account the user controls, via a
-  mechanism Instagram permits, recorded as a decision in `DECISIONS.md` first.
-- Option B — run `python scripts/ingest.py extract` from a network context
-  where anonymous access is allowed, then
-  `python scripts/process_knowledge.py process --platform instagram`.
-- Option C — defer Instagram; the highest-value alternative work is (1)
-  acquiring PYQ papers (`B-02`), which unlocks observed weightage and
-  `pyq_similarity`, or (2) writing the data-model spec (`D-0010`) now that real
-  record shapes exist, or (3) resolving `CONF-OFF-001` once an official board
-  URL is reachable.
+- Option A — add a paper-hosting host (e.g. `tgprb.in`, or a named coaching
+  host) to the environment's egress allowlist, then re-run retrieval; the
+  registries and log already hold the intent and the attempt history.
+- Option B — download the paper files by hand into `source_material/pyq_raw/`
+  and register them; hashing, validation and question extraction then proceed
+  offline with no code change.
+- Option C — defer PYQs; the other high-value alternatives are (1) writing the
+  data-model spec (`D-0010`) now that real record shapes exist, (2) resolving
+  `CONF-OFF-001` once an official board URL is reachable, or (3) the Instagram
+  access decision (`B-08`).
 
 No code change is required for any option. **Do not begin another phase without
 the user's explicit go-ahead.**
@@ -261,3 +276,4 @@ the user's explicit go-ahead.**
 | 004     | 2026-09-06 | User supplied the two notification PDFs by browser download (`B-09` resolved for those two documents only). Reproducible page-marked extraction artefacts committed with digests; **24 of 25 official facts `VERIFIED`** with document/page/section/verbatim-quote provenance; `OFF-F03` honestly `BLOCKED` (notification defers application dates). **Official syllabus mapped: 27 nodes**, verbatim from Annexures II–III, quotes located in the artefact at write time. New `tests/official/test_official_evidence.py` mechanically re-checks every quote and the stored-PDF hashes; an `--check` digest mismatch was investigated and recorded as a pdftotext version difference (xpdf 4.06 vs poppler 22.02.0), not content drift. Suite 161/161 `OK` |
 | 005     | 2026-09-06 | Knowledge processing pipeline (`SPEC-KNW-001`): raw → processed → GLM extraction schema (`knowledge-extraction-v1` prompt, strict enums, field-path errors) → atomic candidates + questions with full provenance → deterministic documented scoring → concept dedup with cross-source corroboration → UNVERIFIED-only verification queue with provider separation. Batch checkpoint/resume, idempotency and cost controls (empty and duplicate content never reach the model). `KNOWLEDGE_EXTRACTION` role added to routing with enforced independence pair. 59 new tests over all 18 criteria; offline fixture run verified (9 items → 7 candidates, 2 questions, 6 concepts, cross-source merge proven). **Zero Instagram content processed, zero network calls, nothing marked VERIFIED.** Suite 220/220 `OK`, validator 21/21. Evidence in `docs/reports/2026-09-06-session005-knowledge-pipeline.md` |
 | 006     | 2026-09-07 | **Phase-1 official-source completion.** Closed the two remaining official gaps: (a) `knowledge/weightage/official_marks_structure.json` — 14 verified entries (6 PWT + 8 FWE) from DOC-OFF-002 pages 19–24 & 42–44; the notification prints no topic-wise distribution, so `official_topic_weightage_provided_by_notification: false` (T-0037 → `COMPLETE`); (b) `knowledge/official/current_official.json` — 5 reconciliation records settling the supplementary (DOC-OFF-003) against the original (DOC-OFF-002): only the upper age limit is amended (GO Ms No. 122, +2 years on GO Ms No. 87's +5), governing general upper limit derived 32 as on 1 July 2026, no conflict (T-0051). Added 13 tests (6 reconciliation + 7 fabricated-data anti-vacuity) to `test_official_knowledge.py` and extended `test_official_evidence.py` to re-check every quote across all three official registries. Suite 233/233 `OK` (2 skips correct-by-design), validator 21/21. Evidence in `docs/reports/2026-09-07-session006-official-completion.md`. **STOP point per directive — no phase auto-started.** |
+| 007     | 2026-09-07 | **PYQ acquisition & analysis preparation (`SPEC-PYQ-001`).** Built the container that holds `T2_HISTORICAL_PYQ` material and makes fabricated weightage mechanically impossible: source registry (`config/pyq_source_registry.json`), document registry (`config/pyq_documents.json`), 3 schemas (paper/question/weightage), 3 content READMEs, acquisition manifest (`PYQ-ACQ-007`), verbatim retrieval log (3 refusals), and 45 tests over the 8 acceptance criteria — 15 of them anti-vacuity cases proving the checkers reject fabricated papers/questions/weightage. **Content is `BLOCKED` at zero**: 0 papers acquired, 0 discovered, all sources inaccessible (egress allowlist), 0 questions extracted, 0 hashes, no weightage computed. Suite 278/278 `OK` (2 skips correct-by-design), validator 21/21; PYQ module alone 45/45. Did **not** modify or redo the completed official-source work, did **not** start the final UI, did **not** invent topic-wise weightage, did **not** extract Instagram/YouTube knowledge, did **not** treat coaching-site copies as official. Evidence in `docs/reports/2026-09-07-session007-pyq-foundation.md`. **STOP point per directive.** |

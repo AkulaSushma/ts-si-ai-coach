@@ -1,0 +1,23 @@
+{
+  "manifest_id": "PYQ-ACQ-007",
+  "spec": "SPEC-PYQ-001",
+  "scope": "Acquisition of previous-year Telangana Police SI / Constable question papers and their answers.",
+  "status": "blocked",
+  "expected": 0,
+  "expected_justification": "No source or paper set has been enumerated, because this environment could reach no paper-hosting host (egress allowlist) and web search returned no content. expected will become a counted figure with a recorded basis once a source is verified; it is not an estimate.",
+  "accounting": {
+    "processed": 0,
+    "inaccessible": 0,
+    "irrelevant": 0,
+    "duplicate": 0,
+    "failed": 0
+  },
+  "identity_holds": true,
+  "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include any paper-hosting host (see source_material/pyq_raw/RETRIEVAL_LOG.md). Per D-0017 the refusal is recorded verbatim and not routed around.",
+  "retrieved_on": null,
+  "local_paths": [],
+  "notes": [
+    "A coaching-site copy of a paper is a legitimate T2_HISTORICAL_PYQ source, but is recorded with source_type COACHING_COPY and is never relabelled as a board document.",
+    "A paper reconstructed from candidate recall must be labelled CANDIDATE_RECALL and cross-checked against at least one other source before any question is classified."
+  ]
+}

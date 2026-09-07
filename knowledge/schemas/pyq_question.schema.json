@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pyq_question.schema.json",
+  "title": "Previous-year question record",
+  "description": "One normalized question from a previous-year Telangana Police SI / Constable paper. Every field the preparation system may eventually need is present; fields that are not yet known are null. Validated by hand-written checks in tests/pyq/test_pyq_foundation.py (D-0006).",
+  "type": "object",
+  "required": [
+    "question_id", "paper_id", "question_number", "page_number", "stem", "stem_te",
+    "options", "correct_answer", "answer_source", "subject", "topic", "subtopic",
+    "question_type", "concept_tested", "difficulty", "paper_year", "post_code",
+    "source_type", "solving_method", "estimated_normal_time_s",
+    "verified_fast_method", "fast_method_source", "identification_clues",
+    "confusion_pairs", "extraction_confidence", "extraction_issues",
+    "provenance_tier", "provenance", "verification"
+  ],
+  "properties": {
+    "question_id": {"type": "string", "pattern": "^Q-PYQ-[0-9]{6}$"},
+    "paper_id": {"type": "string", "pattern": "^PAPER-PYQ-[0-9]{4}$", "description": "Must resolve to a registered paper."},
+    "question_number": {"type": ["integer", "null"], "description": "Position in the printed paper. Missing is allowed only when the paper's numbering is unreadable; the extraction issue must be recorded."},
+    "page_number": {"type": ["integer", "null"]},
+    "stem": {"type": "string", "minLength": 1, "description": "The question text, verbatim from the source."},
+    "stem_te": {"type": ["string", "null"], "description": "Telugu companion field (D-0004). A translation, never an independent claim."},
+    "options": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "A": {"type": ["string", "null"]},
+        "B": {"type": ["string", "null"]},
+        "C": {"type": ["string", "null"]},
+        "D": {"type": ["string", "null"]}
+      }
+    },
+    "correct_answer": {"type": ["string", "null"], "description": "The keyed answer, if a key exists. null (with answer_source UNVERIFIED) means no key was seen."},
+    "answer_source": {"enum": ["OFFICIAL_KEY", "COACHING_KEY", "UNVERIFIED"],
+      "description": "Where the correct answer, if recorded, came from. Required on every question, even a null correct_answer, so a question without a key is visibly unverified rather than silently assumed."},
+    "subject": {"type": ["string", "null"], "description": "Arithmetic & Test of Reasoning / Mental Ability, or General Studies, etc."},
+    "topic": {"type": ["string", "null"]},
+    "subtopic": {"type": ["string", "null"]},
+    "question_type": {"type": ["string", "null"], "description": "e.g. FACTUAL, APPLICATION, COMPUTATION, INFERENCE."},
+    "concept_tested": {"type": ["string", "null"]},
+    "difficulty": {"enum": ["UNCLASSIFIED", "EASY", "MEDIUM", "HARD"]},
+    "paper_year": {"type": ["integer", "null"]},
+    "post_code": {"type": ["string", "null"], "description": "Which post the paper was for, if the paper defines post codes."},
+    "source_type": {"enum": ["OFFICIAL_PUBLICATION", "COACHING_COPY", "CANDIDATE_RECALL"]},
+    "solving_method": {"type": ["object", "null"], "description": "The standard method, with its source."},
+    "estimated_normal_time_s": {"type": ["integer", "null"]},
+    "verified_fast_method": {"type": ["object", "null"], "description": "The fast method, if independently verified. Never a model guess."},
+    "fast_method_source": {"type": ["string", "null"], "description": "Where the fast method came from, including its provenance tier."},
+    "identification_clues": {"type": "array", "items": {"type": "string"}},
+    "confusion_pairs": {"type": "array", "items": {"type": "string"}, "description": "Concepts this question is commonly confused with."},
+    "extraction_confidence": {"enum": ["EXACT", "NEAR", "AMBIGUOUS", "UNKNOWN"]},
+    "extraction_issues": {"type": "array", "items": {"type": "string"}, "description": "Anything unresolved about extracting this question (unreadable number, crop, etc.)."},
+    "provenance_tier": {"const": "T2_HISTORICAL_PYQ"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_type", "source_document_id"],
+      "properties": {
+        "source_type": {"type": "string"},
+        "source_document_id": {"type": "string", "description": "Paper id in config/pyq_documents.json or the paper record id this question came from."},
+        "url": {"type": ["string", "null"]},
+        "page": {"type": ["integer", "null"]},
+        "question_number": {"type": ["integer", "null"]}
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": ["method", "verified_on", "verified_by"],
+      "properties": {
+        "method": {"enum": ["SOURCE_DOCUMENT", "CROSS_SOURCE", "INDEPENDENT_MODEL", "DETERMINISTIC", "DB_CONSISTENCY", null]},
+        "verified_on": {"type": ["string", "null"]},
+        "verified_by": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "invariants": [
+    "provenance.paper_id (or provenance.source_document_id) must resolve to a registered paper — a question with no paper is unsourced",
+    "answer_source is present on every question, including those without a key",
+    "correct_answer != null  =>  answer_source != UNVERIFIED (a keyed answer must name where the key came from)",
+    "source_type == OFFICIAL_PUBLICATION  =>  provenance.url is on a board host, else the tier is not OFFICIAL_PUBLICATION",
+    "provenance_tier is T2_HISTORICAL_PYQ and is never relabelled T1_OFFICIAL",
+    "a retrieved paper with normalized_questions_status == NONE cannot be the source of any question"
+  ]
+}

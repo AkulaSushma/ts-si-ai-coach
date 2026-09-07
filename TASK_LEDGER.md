@@ -12,7 +12,7 @@ ID format: `T-####`, sequential, never reused.
 | `T-0010` | Acquire official TGPRB SI notification + syllabus  | `PARTIAL` | Main notification + supplement RETRIEVED and read (session 004); 4 of 6 registered documents still blocked (`B-09`) |
 | `T-0011` | Extract official syllabus into `knowledge/official/syllabus.json` | `COMPLETE` | 27 nodes verified against DOC-OFF-002 pages 42–44; quotes mechanically re-checked |
 | `T-0012` | Write the data-model specification                | `BLOCKED` | `T-0011` complete — unblocked; knowledge-pipeline record shapes are ready inputs |
-| `T-0013` | Acquire previous-year papers with keys             | `BLOCKED` | `B-02`      |
+| `T-0013` | Acquire previous-year papers with keys             | `BLOCKED` | `B-02` — container built (session 007, `SPEC-PYQ-001`); no paper acquired because no source host is reachable. Coalesced with `T-0013`'s sibling `T-0018` (weightage) — both wait on acquired bytes |
 | `T-0014` | Confirm and pin provider model ID strings          | `BLOCKED` | `B-04`; `glm-5.3` still `UNVERIFIED_STRING` — no live call yet |
 | `T-0019` | Decide Instagram access path (auth / network / defer) | `BLOCKED` | `B-08` — user decision |
 | `T-0020` | Bulk-extract remaining 31 IG sources               | `BLOCKED` | `T-0019` — live access refused |
@@ -77,6 +77,26 @@ concerns the *container* is satisfied and tested. Every criterion that concerns
 *content* — retrieved documents, extracted facts, mapped syllabus nodes — is
 `BLOCKED` at zero by `B-09`. `SPEC-OFF-001` §9 states in writing that passing the
 container tests does not license calling the phase `COMPLETE`.
+
+## Session 007 — PYQ acquisition & analysis preparation
+
+| ID       | Task                                                          | Status     | Verified by |
+| -------- | ------------------------------------------------------------- | ---------- | ----------- |
+| `T-0052` | Write `SPEC-PYQ-001` before any structure                      | `COMPLETE` | `specs/features/pyq-questions-foundation.md`, status `APPROVED`, 8 acceptance criteria (AC-1..AC-8) in §9, container-vs-content rule in §9 |
+| `T-0053` | Identify the required paper set and the eligibility rule       | `COMPLETE` | `SPEC-PYQ-001` §4 — the set of concrete years/papers is honestly `UNVERIFIED`; the eligibility rule over components/posts/provenance is recorded, not a claim that any paper exists |
+| `T-0054` | Probe paper sources and record the blocker verbatim            | `COMPLETE` | `config/pyq_source_registry.json` `attempts[]` + `source_material/pyq_raw/RETRIEVAL_LOG.md` — 3 refusals verbatim (google.com, tgprb.in, web search no-content); `B-02`/egress; no bypass (`D-0017`) |
+| `T-0055` | Build the PYQ source + document registries and retrieval log   | `COMPLETE` | `config/pyq_source_registry.json` + `config/pyq_documents.json` + `RETRIEVAL_LOG.md`; balanced accounting `0 = 0+0+0+0+0`; `tests/pyq` assert fields, blocked state, and verbatim-log cross-reference |
+| `T-0056` | Create the PYQ storage + extraction structure (content folders) | `COMPLETE` | `pyq/{papers,questions,weightage}/README.md` + `.gitkeep` (already tracked); each README states its provenance/denominator rules |
+| `T-0057` | Write the three PYQ schemas (paper / question / weightage)     | `COMPLETE` | `knowledge/schemas/pyq_paper.schema.json`, `pyq_question.schema.json`, `pyq_weightage.schema.json`; hand-written checks (`D-0006`) |
+| `T-0058` | Record the balanced acquisition manifest                       | `COMPLETE` | `research/manifests/pyq/PYQ_ACQUISITION_MANIFEST.json` (`PYQ-ACQ-007`) — status `blocked`, identity `0 = 0+0+0+0+0`, reason recorded, coaches/candidate-recall notes |
+| `T-0059` | Add PYQ provenance + anti-vacuity tests                        | `COMPLETE` | `tests/pyq/test_pyq_foundation.py` — 45 tests over AC-1..AC-8; `TestPyqCheckersRejectFabrication` has 15 poisoned-record cases + `test_a_clean_record_set_is_accepted` proving the checkers are not always-failing |
+
+Acceptance criteria are in `SPEC-PYQ-001` §9. Every **container** criterion
+(`AC-1`..`AC-8`) is satisfied and tested, and the anti-vacuity tests prove the
+checkers can fail. Every **content** criterion — acquired papers, hashed bytes,
+extracted questions, computed weightage — is `BLOCKED` at zero by `B-02` (egress
+allowlist). `SPEC-PYQ-001` §9 states in writing that passing the container tests
+does not license calling the phase `COMPLETE` (`D-0016`).
 
 ## Completed Tasks
 

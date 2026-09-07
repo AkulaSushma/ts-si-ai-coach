@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pyq_paper.schema.json",
+  "title": "Previous-year paper record",
+  "description": "One normalized Telangana Police SI / Constable previous-year paper. Registration records intent to acquire; it is not a claim the paper was read. Validated by hand-written checks in tests/pyq/test_pyq_foundation.py (D-0006).",
+  "type": "object",
+  "required": [
+    "paper_id", "exam", "post", "phase", "year", "language", "marks_total",
+    "questions_total", "source_type", "source_url", "source_url_status",
+    "source_url_basis", "local_path", "sha256", "retrieval_status",
+    "attempts", "retrieved_on", "normalized_questions",
+    "normalized_questions_status", "provenance_tier", "provenance", "verification"
+  ],
+  "properties": {
+    "paper_id": {"type": "string", "pattern": "^PAPER-PYQ-[0-9]{4}$"},
+    "exam": {"enum": ["TELANGANA_POLICE_SI", "TELANGANA_POLICE_CONSTABLE"]},
+    "post": {"type": "string", "minLength": 3, "description": "Which post the paper was for, e.g. 'SI (Civil et al)'. Not an official fact; taken from the source."},
+    "phase": {"enum": ["PRELIMINARY", "FINAL", "UNKNOWN"]},
+    "paper_number": {"type": ["integer", "null"], "description": "Which paper within the phase, e.g. 3 for FWE Paper III."},
+    "year": {"type": ["integer", "null"], "description": "Recruitment year for which the paper was set. null if unknown."},
+    "language": {"type": ["string", "null"]},
+    "marks_total": {"type": ["integer", "null"]},
+    "questions_total": {"type": ["integer", "null"], "description": "Number of questions in the printed paper, if known."},
+    "source_type": {"enum": ["OFFICIAL_PUBLICATION", "COACHING_COPY", "CANDIDATE_RECALL"]},
+    "source_url": {"type": ["string", "null"]},
+    "source_url_status": {"enum": ["OBSERVED_ON_HOST", "INFERRED_UNVERIFIED", "UNKNOWN"]},
+    "source_url_basis": {"type": "string", "minLength": 1, "description": "How the source URL or copy was obtained. Required, because an inferred URL is not a fact."},
+    "local_path": {"type": ["string", "null"], "description": "Path under source_material/pyq_raw/, else null."},
+    "sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "retrieval_status": {"enum": ["RETRIEVED", "BLOCKED", "NOT_ATTEMPTED", "PARTIAL"]},
+    "blocked_reason": {"type": "string", "minLength": 5, "description": "Required unless retrieval_status is RETRIEVED or NOT_ATTEMPTED."},
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "tool", "url", "response"],
+        "properties": {
+          "timestamp": {"type": "string"},
+          "tool": {"type": "string"},
+          "url": {"type": "string"},
+          "response": {"type": "string", "minLength": 5, "description": "Verbatim. Paraphrasing a failure loses the diagnostic detail that made it worth recording."}
+        }
+      }
+    },
+    "retrieved_on": {"type": ["string", "null"]},
+    "normalized_questions": {"type": "integer", "description": "Count of questions extracted into pyq/questions/ for this paper."},
+    "normalized_questions_status": {"enum": ["NONE", "PARTIAL", "COMPLETE"],
+      "description": "COMPLETE only when every question in the paper is extracted; PARTIAL with a denominator; NONE when nothing extracted."},
+    "provenance_tier": {"const": "T2_HISTORICAL_PYQ"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_type"],
+      "properties": {"source_type": {"type": "string"}}
+    },
+    "verification": {
+      "type": "object",
+      "required": ["method", "verified_on", "verified_by"],
+      "properties": {
+        "method": {"enum": ["SOURCE_DOCUMENT", "CROSS_SOURCE", "INDEPENDENT_MODEL", "DETERMINISTIC", "DB_CONSISTENCY", null]},
+        "verified_on": {"type": ["string", "null"]},
+        "verified_by": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "invariants": [
+    "source_type == OFFICIAL_PUBLICATION  =>  the source must be a board host; otherwise it is a relocation of provenance and is rejected",
+    "retrieval_status == RETRIEVED  =>  local_path, sha256 and retrieved_on are all non-null",
+    "retrieval_status not in (RETRIEVED, NOT_ATTEMPTED)  =>  blocked_reason is non-empty AND at least one attempt is recorded",
+    "retrieval_status != RETRIEVED  =>  local_path and sha256 must be null",
+    "retrieval_status == RETRIEVED  =>  normalized_questions_status != NONE is NOT required; a retrieved paper may legitimately have no questions extracted yet",
+    "a previous-year paper is never T1_OFFICIAL; a pattern in it is evidence of behaviour, not policy"
+  ]
+}
