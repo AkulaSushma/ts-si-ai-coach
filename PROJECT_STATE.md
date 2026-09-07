@@ -15,7 +15,7 @@
 | Phase                  | 2 of 7 — Source acquisition (official SI half complete; Instagram half blocked) |
 | Overall status         | `PARTIAL` — the Phase-1 official-source scope is now complete: 24 of 25 official facts `VERIFIED`, official syllabus mapped (27 nodes), official marks structure populated (14 entries), supplementary-vs-original reconciliation recorded (5 records). Instagram knowledge still `BLOCKED` by `B-08`; the final UI/tutor are deliberately not begun |
 | Git branch             | `main`                                                   |
-| Latest commits         | `f2674ac` (session-004 official facts) → `b91820f` (version-mismatch note) → `7a15b77` (SPEC-KNW-001 pipeline) — run `git log --oneline` for the head |
+| Latest commits         | `afec030` (session-006 marks structure + reconciliation) ← `f8fd72a` (session-005 facts+syllabus+pipeline) ← `7a15b77` (SPEC-KNW-001 pipeline) — run `git log --oneline` for the head |
 | Structural checks      | 21 of 21 passed — `python scripts/validate_bootstrap.py` exit `0` |
 | Unit tests             | 233 of 233 passed — `python -m unittest discover -s tests`, 0 failures, 2 skips that are correct-by-design |
 | Official facts verified| **24 of 25** (`OFF-F03` honestly BLOCKED — the notification defers application dates to a future press release) |
