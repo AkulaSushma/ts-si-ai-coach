@@ -5,18 +5,22 @@ rather than let them hide behind a large-looking folder tree.
 
 ## Current state
 
-**Verified knowledge records: 51.**
+**Verified knowledge records: 70.**
 
 Session 004 acquired the two official notification PDFs (user-supplied downloads
 from the board's site, `B-09` resolved for `DOC-OFF-002` and `DOC-OFF-003` only)
-and read them. All 51 verified records are `T1_OFFICIAL`, cited to a stored,
-hashed document with page, section and a verbatim quote that
-`tests/official/test_official_evidence.py` re-checks mechanically:
+and read them. Session 005 populated the exam marks structure and the
+notification-to-supplementary reconciliation from those same two documents. All 70
+verified records are `T1_OFFICIAL`, cited to a stored, hashed document with page,
+section and a verbatim quote that `tests/official/test_official_evidence.py`
+re-checks mechanically:
 
 | Area                             | Records | Status                                      |
 | -------------------------------- | ------: | ------------------------------------------- |
 | Official facts (`OFF-F01`–`F25`)  |      24 | `VERIFIED` against DOC-OFF-002 / DOC-OFF-003; OFF-F03 (application dates) stays `BLOCKED` — the notification defers the dates to a future press release |
 | Official syllabus (`OFF-SYL-*`)   |      27 | `VERIFIED` — 27 nodes: 2 PWT sections + 4 FWE papers with the topics the notification itself lists (Annexures II and III, pages 42–44); no subtopic layer because the document prints none |
+| Official marks structure (`MS-*`) |      14 | `VERIFIED` — per-paper totals, durations, qualifying percentages and negative-marking rules from DOC-OFF-002 pages 19–24 and Annexure III pages 42–44; the notification prints no topic-wise distribution, so none is recorded |
+| Notification-to-supplementary reconciliation (`REC-*`) | 5 | `VERIFIED` — DOC-OFF-003 amends only the upper age limit (GO Ms No. 122, +2 years on top of GO Ms No. 87, +5); no conflict; governing general upper age limit derived as 32 years as on 1 July 2026 |
 | Exam pattern, marks, duration     |       3 | Covered by verified facts OFF-F12–OFF-F14 (paper structure, qualifying thresholds, negative marking) |
 | Eligibility rules                |       4 | Covered by verified facts OFF-F07–OFF-F10 (age, education, local candidate status) |
 | Physical event standards          |       2 | Covered by verified facts OFF-F18, OFF-F19 (height, chest/PMT/PET as printed) |
@@ -29,12 +33,13 @@ hashed document with page, section and a verbatim quote that
 | Fast / mental methods             |       0 | `BLOCKED` — depends on standard methods      |
 | Traps                             |       0 | `BLOCKED` — depends on question families     |
 | Confusion pairs                   |       0 | `BLOCKED` — depends on topics                |
-| Topic weightage (3 categories)    |       0 | `BLOCKED` — official marks structure file still empty pending its own read; observed and estimated categories still empty |
+| Topic weightage — historical observed |  0 | `BLOCKED` — no past paper acquired, so nothing can be counted |
+| Topic weightage — estimated priority  |  0 | `BLOCKED` — a judgement over official + historical inputs; producing it now would be invention |
 
-Counting basis: 24 facts with `status: VERIFIED` plus 27 syllabus nodes with a
-`verification.method` set — recomputed by `scripts/validate_bootstrap.py`
-check 18, which fails if this figure disagrees, and by
-`tests/bootstrap/test_bootstrap.py::TestHonestyOfState`. No
+Counting basis: 24 facts with `status: VERIFIED`, plus 27 syllabus nodes, 14 marks
+entries and 5 current-official records each with a `verification.method` set —
+recomputed by `scripts/validate_bootstrap.py` check 18, which fails if this figure
+disagrees, and by `tests/bootstrap/test_bootstrap.py::TestHonestyOfState`. No
 social-media-derived, coaching, or model-recalled content appears anywhere in
 the verified total: Instagram acquisition is still blocked (`B-08`) and the
 candidate-knowledge pipeline writes only `UNVERIFIED` records by design.

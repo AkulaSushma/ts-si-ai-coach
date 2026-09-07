@@ -1,17 +1,13 @@
-"""Mechanical evidence test for official facts (SPEC-OFF-001, session 004).
+"""Mechanical evidence test for official records (SPEC-OFF-001, sessions 004-005).
 
-Every quote in knowledge/official/required_facts.json — in `provenance` and in
-each `supporting` entry — must be reproducible from the cited page of the cited
-document's committed page-marked artefact under whitespace normalisation. This is
-the mechanical re-check that the facts file's own rules promise:
-
-    "A quote must be reproducible from the cited page of the cited document's
-     extraction artefact under whitespace normalisation.
-     tests/official/test_official_evidence.py enforces this mechanically for
-     every quote in this file, including those in `supporting`."
+Every quote in the official registries — `provenance` and each `supporting` entry —
+must be reproducible from the cited page of the cited document's committed
+page-marked artefact under whitespace normalisation. This is the mechanical
+re-check that the citation rules promise for `required_facts.json`,
+`official_marks_structure.json` and `current_official.json`.
 
 The test also re-derives the extraction-artefact digests from the stored PDFs
-when pdftotext is available, and rejects a fact whose cited document is not
+when pdftotext is available, and rejects a record whose cited document is not
 RETRIEVED in the registry. Standard library only (D-0006).
 """
 
@@ -24,6 +20,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 FACTS = ROOT / "knowledge" / "official" / "required_facts.json"
+MARKS = ROOT / "knowledge" / "weightage" / "official_marks_structure.json"
+CURRENT = ROOT / "knowledge" / "official" / "current_official.json"
 REGISTRY = ROOT / "config" / "official_documents.json"
 MANIFEST = ROOT / "research" / "extractions" / "official" / "EXTRACTION_MANIFEST.json"
 
@@ -54,6 +52,8 @@ class TestOfficialEvidence(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.doc = json.loads(FACTS.read_text(encoding="utf-8"))
+        cls.marks = json.loads(MARKS.read_text(encoding="utf-8"))
+        cls.current = json.loads(CURRENT.read_text(encoding="utf-8"))
         cls.registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
         cls.manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
 
@@ -72,19 +72,41 @@ class TestOfficialEvidence(unittest.TestCase):
             cls.artefact_paths[art["document_id"]] = p
             cls.pages[art["document_id"]] = load_pages(p)
 
-    def _check_quote(self, fact_id: str, label: str, document_id, page, quote):
+    def _all_quote_blocks(self):
+        """Yield (source, record_id, block_label, block) for every quote in the
+        three official registries. Blocked facts are skipped because they hold no
+        value and no provenance by design (enforced elsewhere)."""
+        for fact in self.doc["facts"]:
+            if fact.get("status") == "BLOCKED":
+                continue
+            fid = fact.get("fact_id")
+            yield ("required_facts", fid, "provenance", fact.get("provenance") or {})
+            for i, s in enumerate(fact.get("supporting") or []):
+                yield ("required_facts", fid, f"supporting[{i}]", s)
+        for e in self.marks["entries"]:
+            eid = e.get("entry_id")
+            yield ("official_marks_structure", eid, "provenance", e.get("provenance") or {})
+            for i, s in enumerate(e.get("supporting") or []):
+                yield ("official_marks_structure", eid, f"supporting[{i}]", s)
+        for r in self.current["records"]:
+            rid = r.get("record_id")
+            yield ("current_official", rid, "provenance", r.get("provenance") or {})
+            for i, s in enumerate(r.get("supporting") or []):
+                yield ("current_official", rid, f"supporting[{i}]", s)
+
+    def _check_quote(self, record_id: str, label: str, document_id, page, quote):
         problems = []
         if document_id is None:
-            return [f"{fact_id} {label}: no document_id"]
+            return [f"{record_id} {label}: no document_id"]
         if document_id not in self.retrieved:
             problems.append(
-                f"{fact_id} {label}: cites {document_id} which is not RETRIEVED"
+                f"{record_id} {label}: cites {document_id} which is not RETRIEVED"
             )
             return problems
         pages = self.pages.get(document_id)
         if pages is None:
             problems.append(
-                f"{fact_id} {label}: no committed artefact for {document_id}"
+                f"{record_id} {label}: no committed artefact for {document_id}"
             )
             return problems
         if not isinstance(page, int):
@@ -93,46 +115,33 @@ class TestOfficialEvidence(unittest.TestCase):
             m = re.search(r"\d+", str(page)) if page is not None else None
             if not m or int(m.group(0)) not in pages:
                 problems.append(
-                    f"{fact_id} {label}: unresolvable page reference {page!r}"
+                    f"{record_id} {label}: unresolvable page reference {page!r}"
                 )
                 return problems
             page = int(m.group(0))
         if page not in pages:
             problems.append(
-                f"{fact_id} {label}: artefact for {document_id} has no page {page}"
+                f"{record_id} {label}: artefact for {document_id} has no page {page}"
             )
             return problems
         if not quote:
-            problems.append(f"{fact_id} {label}: empty quote")
+            problems.append(f"{record_id} {label}: empty quote")
             return problems
         if _norm(quote) not in _norm(pages[page]):
             problems.append(
-                f"{fact_id} {label}: quote not found on {document_id} page {page}"
+                f"{record_id} {label}: quote not found on {document_id} page {page}"
             )
         return problems
 
     def test_every_quote_is_reproducible_from_its_cited_page(self):
         problems = []
         checked = 0
-        for fact in self.doc["facts"]:
-            fid = fact.get("fact_id")
-            if fact.get("status") == "BLOCKED":
-                # A blocked fact holds no value and no provenance by design;
-                # the null-provenance case is enforced by
-                # TestEveryOfficialFactHasProvenance, not by this test.
-                continue
-            prov = fact.get("provenance") or {}
+        for source, rid, label, block in self._all_quote_blocks():
             problems += self._check_quote(
-                fid, "provenance",
-                prov.get("document_id"), prov.get("page"), prov.get("quote"),
+                f"{source}:{rid}", label,
+                block.get("document_id"), block.get("page"), block.get("quote"),
             )
             checked += 1
-            for i, sup in enumerate(fact.get("supporting") or []):
-                problems += self._check_quote(
-                    fid, f"supporting[{i}]",
-                    sup.get("document_id"), sup.get("page"), sup.get("quote"),
-                )
-                checked += 1
         self.assertEqual(
             [], problems[:MAX_PRINTED_MISMATCHES],
             "\n".join(problems[:MAX_PRINTED_MISMATCHES]) or "no problems",
@@ -142,27 +151,20 @@ class TestOfficialEvidence(unittest.TestCase):
     def test_verbatim_quotes_are_strictly_verbatim(self):
         """Beyond normalised containment, a quote whose *exact* form exists on
         the page must not contain ellipses or editorial insertions."""
-        for fact in self.doc["facts"]:
-            for label, block in [
-                ("provenance", fact.get("provenance") or {}),
-                *[
-                    (f"supporting[{i}]", s)
-                    for i, s in enumerate(fact.get("supporting") or [])
-                ],
-            ]:
-                quote = block.get("quote")
-                if not quote:
-                    continue
-                self.assertNotIn(
-                    "...", quote,
-                    f"{fact['fact_id']} {label}: quote contains an ellipsis — "
-                    f"a partial quote must be marked, not silently elided",
-                )
-                self.assertNotIn(
-                    "[", quote,
-                    f"{fact['fact_id']} {label}: quote contains an editorial "
-                    f"bracket — record clarifications outside the quote",
-                )
+        for source, rid, label, block in self._all_quote_blocks():
+            quote = block.get("quote")
+            if not quote:
+                continue
+            self.assertNotIn(
+                "...", quote,
+                f"{source}:{rid} {label}: quote contains an ellipsis — "
+                f"a partial quote must be marked, not silently elided",
+            )
+            self.assertNotIn(
+                "[", quote,
+                f"{source}:{rid} {label}: quote contains an editorial "
+                f"bracket — record clarifications outside the quote",
+            )
 
     def test_artefact_digests_match_the_manifest(self):
         for art in self.manifest["artefacts"]:

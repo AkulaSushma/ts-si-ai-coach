@@ -10,19 +10,31 @@ written here, at any time, for any reason.
 | ---- | ----- |
 | `required_facts.json` | The 25 facts Phase 1 must establish (`OFF-F01`…`OFF-F25`), each a slot with a provenance block |
 | `syllabus.json` | The official syllabus as Subject → Topic → Subtopic nodes |
+| `current_official.json` | The reconciliation of the base notification (DOC-OFF-002) with the supplementary one (DOC-OFF-003) — the answer to OFF-F09's `current_official_resolution` |
 
 Specification: `specs/features/official-knowledge-foundation.md` (`SPEC-OFF-001`).
 
-## Current state — 2026-09-06
+## Current state — 2026-09-07
 
-**`BLOCKED`. Zero facts verified, zero syllabus nodes.** No official document has been
-retrieved: this environment's network egress permits exactly one host, which is
-unrelated to this project, so no official URL can be fetched from here at all. The
-verbatim refusals are recorded in `source_material/official/RETRIEVAL_LOG.md` and in
-`config/official_documents.json`, and the blocker is `B-09` in `PROJECT_STATE.md`.
+**Two of the six registered documents retrieved and read.** DOC-OFF-002 (the SI
+2026 notification, Rc No. 225 dated 29-07-2026) and DOC-OFF-003 (the supplementary
+notification dated 15-08-2026) were supplied by the user as browser downloads,
+stored under `source_material/official/`, and hashed. From them:
 
-An empty folder here is the correct state, not an unfinished one. The structures, the
-provenance slots and the tests exist; the content requires the document.
+- **24 of 25 facts** are `VERIFIED` with page/section/verbatim-quote provenance
+  (`OFF-F01`…`OFF-F25`, minus `OFF-F03` which is honestly `BLOCKED` — the
+  notification defers application dates to a future press release).
+- **27 syllabus nodes** from Annexures II–III (pages 42–44), verbatim wording, no
+  invented layer.
+- **5 reconciliation records** (`current_official.json`) settling the
+  supplementary against the original: DOC-OFF-003 amends only the upper age limit
+  (GO Ms No. 122, +2 years on top of GO Ms No. 87's +5). The governing general
+  upper limit is derived as 32 years as on 1 July 2026.
+
+Every quote in these records is mechanically re-checked by
+`tests/official/test_official_evidence.py` and `tests/official/test_official_knowledge.py`.
+The other four documents (DOC-OFF-001, DOC-OFF-004, DOC-OFF-005, DOC-OFF-006)
+remain `INACCESSIBLE` under blocker `B-09`.
 
 ## What must never happen here
 

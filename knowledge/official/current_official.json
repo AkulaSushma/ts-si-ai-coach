@@ -1,0 +1,154 @@
+{
+  "registry_version": 1,
+  "spec": "SPEC-OFF-001",
+  "document_type": "current_official",
+  "question_answered": "How do the original notification (DOC-OFF-002) and the supplementary notification (DOC-OFF-003) reconcile, and which is the controlling reading?",
+  "provenance_tier": "T1_OFFICIAL",
+  "only_valid_source": "The official TGPRB / TSLPRB notifications for this recruitment (DOC-OFF-002 and DOC-OFF-003)",
+  "record_count": 5,
+  "verified_count": 5,
+  "status": "COMPLETE",
+  "status_meaning": "All five reconciliation records are VERIFIED from the two retrieved notifications. The supplementary notification is an age-only amendment; it does not contradict the base notification.",
+  "populated_on": "2026-09-07",
+  "populated_in_session": "005",
+  "reading_basis": "WHITESPACE_NORMALISED_VERBATIM from the committed page-marked extraction artefacts for DOC-OFF-002 (page 16) and DOC-OFF-003 (page 1); each quote re-checked for whitespace-normalised containment. Both cited documents are RETRIEVED.",
+  "base_document": "DOC-OFF-002 — Rc No. 225 / Rect. / Rect-1 / 2026 dated 29-07-2026",
+  "supplementary_document": "DOC-OFF-003 — Rc No. 189, 225, 234 & 279 / Rect. / Rect.1, 2 & 3 / 2026 dated 15-08-2026",
+  "reconciliation_summary": "The supplementary notification amends nothing but the upper age limit for the posts named in four notifications issued on 29-07-2026. For this SI recruitment it amends Para No. 15-B (i). The amendment is purely additive: GO Ms No. 122 (14-08-2026) adds a further 2 years in addition to the 5 years already raised by GO Ms No. 87 (18-05-2026). The two documents therefore do not conflict. The controlling reading combines the base 25-year upper limit from DOC-OFF-002 with both raises, giving an effective general upper limit of 32 years as on 1 July 2026; the minimum age of 21 years is unchanged. Every other aspect of the recruitment (vacancies and post codes, marks structure, syllabus, exam pattern, phases, dates, physical standards) is governed by DOC-OFF-002 alone. Referenced by OFF-F09 'current_official_resolution'.",
+  "rules": [
+    "A supplementary notification may amend the base notification; where the two touch the same subject, the amended reading controls.",
+    "An additive amendment (a relaxation added to an existing reading) is not a conflict. Only a contradiction would require one document to be set aside.",
+    "The effective reading after an additive amendment is arithmetic over the sourced components and must be labelled as derived, never as a freshly stated official figure.",
+    "Do not silently merge this reading into historical_observed.json or estimated_priority.json; the derived upper-age reading stays here under T1_OFFICIAL."
+  ],
+  "current_reading": {
+    "age": {
+      "minimum_age": "Must have attained 21 years as on 1 July 2026.",
+      "general_upper_limit": "Must not have attained 32 years as on 1 July 2026.",
+      "basis": "base 25 (DOC-OFF-002) + 5 (GO Ms No. 87, as recorded in DOC-OFF-002) + 2 (GO Ms No. 122, as recorded in DOC-OFF-003). Derived by deterministic arithmetic; see record REC-005.",
+      "relaxations": "Category relaxations (TS govt employees, ex-servicemen, NCC instructor, SC/ST/BC/EWS) in DOC-OFF-002 apply in addition to the raised general upper limit."
+    },
+    "everything_else": "Governed by DOC-OFF-002; DOC-OFF-003 makes no change."
+  },
+  "records": [
+    {
+      "record_id": "REC-001",
+      "kind": "base_document",
+      "title": "Base notification prescribes the general age limits of 21 and 25 as on 1 July 2026",
+      "value": {
+        "minimum_age": "21 years",
+        "base_maximum_age": "25 years",
+        "reference_date": "1 July 2026"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 16,
+        "section": "Para 15-B (i) — Age Limit (General)",
+        "quote": "Must have attained the age of 21 years and must not have attained the age of 25 years as on 1 st July, 2026."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 16; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "record_id": "REC-002",
+      "kind": "supplementary_document",
+      "title": "Supplementary notification raises the upper age limit by a further 2 years via GO Ms No. 122",
+      "value": {
+        "authority": "GO Ms No. 122, General Administration (Services-A) Department, dated 14-08-2026",
+        "increment_years": 2,
+        "in_addition_to": "GO Ms No. 87, General Administration (Services-A) Department, dated 18-05-2026 (5 years)",
+        "scope": "Direct recruitment to various services / categories of Posts of uniformed services in Police, Fire Services, Prisons and Special Protection Force Departments"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-003",
+        "page": 1,
+        "section": "AMENDMENT",
+        "quote": "The Government of Telangana vide G O Ms No. 122, General Administration (Services-A) Department dated 14-08-2026 have raised the upper age limit prescribed for the Direct Recruitment by further 2 (two) years in addition to the raise of 5 (five) years issued in G O Ms No. 87, General Administration (Services-A) Department dated 18-05-2026 in respect of various services / categories of Posts of uniformed services in Police, Fire Services, Prisons and Special Protection Force Departments."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-003 page 1; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "record_id": "REC-003",
+      "kind": "amendment_scope",
+      "title": "The amendment applies to Para No. 15-B (i) of this SI notification",
+      "value": {
+        "affected_paragraph": "Para No. 15-B (i)",
+        "notification": "Rc No. 225 / Rect. / Rect.-1 / 2026 dated 29th July 2026",
+        "posts": "SCT SIs (Civil) and / or equivalent Posts",
+        "other_notifications_affected": "Rc Nos. 189 (SCT PCs Civil), 234 (SCT PC Mechanic / Driver) and 279 (SCT ASI FPB)"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-003",
+        "page": 1,
+        "section": "AMENDMENT",
+        "quote": "(2) Para No. 15-B (i) of Notification in Rc No. 225 / Rect. / Rect.-1 / 2026 dated 29th July 2026 for the Posts of SCT SIs (Civil) and / or equivalent Posts"
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-003 page 1; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "record_id": "REC-004",
+      "kind": "reconciliation",
+      "title": "The supplementary amendment is additive, not contradictory",
+      "value": {
+        "conflict": "none",
+        "nature": "additive relaxation on top of the upper age limit already mentioned in the notification",
+        "result": "Both documents hold; the amended reading controls for the age paragraph they both touch."
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-003",
+        "page": 1,
+        "section": "AMENDMENT",
+        "quote": "Therefore, this relaxation is in addition to the upper age limit mentioned in the Notifications."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-003 page 1; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "record_id": "REC-005",
+      "kind": "derived",
+      "title": "Controlling general upper limit, derived by deterministic arithmetic over sourced components",
+      "value": {
+        "formula": "25 + 5 + 2",
+        "base_maximum_age_years": 25,
+        "raise_go87_years": 5,
+        "raise_go122_years": 2,
+        "effective_general_upper_limit_years": 32,
+        "reference_date": "1 July 2026",
+        "reading": "Must not have attained 32 years as on 1 July 2026.",
+        "derivation": "DETERMINISTIC arithmetic over T1_OFFICIAL components; not a figure stated verbatim in either document.",
+        "base_source": "DOC-OFF-002 page 16 (base 25)",
+        "supplementary_source": "DOC-OFF-003 page 1 (further 2 years, in addition to the 5 of GO Ms No. 87)"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-003",
+        "page": 1,
+        "section": "AMENDMENT",
+        "quote": "have raised the upper age limit prescribed for the Direct Recruitment by further 2 (two) years in addition to the raise of 5 (five) years issued in G O Ms No. 87"
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "DERIVED_ARITHMETIC",
+        "verified_by": "session-005; components verified against DOC-OFF-002 page 16 and DOC-OFF-003 page 1; arithmetic independently recomputed in this session",
+        "verified_on": "2026-09-07"
+      }
+    }
+  ]
+}

@@ -46,6 +46,11 @@ WEIGHTAGE = {
 }
 MANIFEST_DIR = "research/manifests/official"
 RETRIEVAL_LOG = "source_material/official/RETRIEVAL_LOG.md"
+CURRENT = "knowledge/official/current_official.json"
+
+# A derived reading is arithmetic over sourced components, so DERIVED_ARITHMETIC
+# is a legitimate independent method for the reconciliation registry.
+CURRENT_ACCEPTED_METHODS = ACCEPTED_METHODS + ("DERIVED_ARITHMETIC",)
 
 
 def load(rel: str):
@@ -315,6 +320,94 @@ def check_stored_bytes(doc: dict, root: Path) -> list[str]:
             f"the bytes at {rel} hash to {actual}"
         ]
     return []
+
+
+def check_current_record(record: dict, retrieved_ids: set[str]) -> list[str]:
+    """Return every problem with one record in the current_official registry.
+
+    This is the database row behind OFF-F09's resolution: the reconciliation of
+    the base notification (DOC-OFF-002) with the supplementary one (DOC-OFF-003).
+    A record here, like a fact, must be sourced, cited to a retrieved document,
+    carry a verbatim quote, and — if it is a derived reading — label itself as
+    derived rather than as a freshly stated official figure.
+    """
+    rid = record.get("record_id", "<missing record_id>")
+    required = (
+        "record_id", "kind", "title", "value",
+        "provenance", "provenance_tier", "verification",
+    )
+    missing = [k for k in required if k not in record]
+    if missing:
+        return [f"{rid}: missing field(s) {', '.join(missing)}"]
+
+    p = []
+    if record["provenance_tier"] != "T1_OFFICIAL":
+        p.append(f"{rid}: provenance_tier is {record['provenance_tier']!r}, must be T1_OFFICIAL")
+    if record.get("value") is None:
+        p.append(f"{rid}: record holds no value")
+    prov = record["provenance"] or {}
+    doc_id = prov.get("document_id")
+    if not doc_id:
+        p.append(f"{rid}: no provenance document — an unsupported claim")
+    elif doc_id not in retrieved_ids:
+        p.append(f"{rid}: provenance cites {doc_id}, which is not a retrieved document")
+    if not text(prov.get("quote")):
+        p.append(f"{rid}: holds a value with no verbatim quote")
+
+    if record["kind"] == "derived":
+        value = record["value"] or {}
+        if not text(value.get("derivation")):
+            p.append(f"{rid}: derived record carries no derivation label")
+        if not text(value.get("reading")):
+            p.append(f"{rid}: derived record carries no reading")
+
+    method = (record["verification"] or {}).get("method")
+    if method not in CURRENT_ACCEPTED_METHODS:
+        p.append(
+            f"{rid}: verification method {method!r} is not an accepted independent method"
+        )
+    return p
+
+
+def check_current_reconciliation(rec: dict) -> list[str]:
+    """Return every problem with the notification-to-supplementary reconciliation.
+
+    Two invariants matter here. First, an *additive* amendment (a relaxation added
+    on top of an existing reading) is not a conflict — recording it as a
+    contradiction would mislabel the relationship. Second, a governing figure that
+    exists only after adding sourced components must be presented as derived, never
+    as a verbatim official number.
+    """
+    p = []
+    for k in ("question_answered", "base_document", "supplementary_document",
+              "reconciliation_summary"):
+        if not text(rec.get(k)):
+            p.append(f"reconciliation missing field {k}")
+    if not rec.get("current_reading"):
+        p.append("reconciliation missing field current_reading")
+
+    records = rec.get("records") or []
+    if not records:
+        p.append("reconciliation has no records")
+
+    derived = [r for r in records if r.get("kind") == "derived"]
+    if not derived:
+        p.append("no derived record states the governing reading")
+    for r in derived:
+        value = r.get("value") or {}
+        if not text(value.get("derivation")):
+            p.append(f"{r.get('record_id')}: derived record has no derivation label")
+        if not text(value.get("reading")):
+            p.append(f"{r.get('record_id')}: derived record has no reading")
+
+    for r in records:
+        if r.get("kind") == "reconciliation":
+            conflict = text((r.get("value") or {}).get("conflict"))
+            if conflict in ("contradiction", "conflict"):
+                p.append(
+                    f"{r.get('record_id')}: additive amendment recorded as a contradiction"
+                )
+    return p
 
 
 def official_host(url: str) -> bool:
@@ -1000,6 +1093,150 @@ class TestCheckersRejectFabrication(unittest.TestCase):
         self.assertFalse(official_host("https://tgprb.in.example.com/notification.pdf"))
         self.assertTrue(official_host("https://www.tgprb.in/SI_PC_2026/x.pdf"))
         self.assertTrue(official_host("https://tslprb.in/"))
+
+
+def good_current_record(kind="base_document", **overrides) -> dict:
+    record = {
+        "record_id": "REC-900",
+        "kind": kind,
+        "title": "A reconciliation record",
+        "value": {"note": "something"},
+        "provenance": {
+            "document_id": "DOC-OFF-002", "page": 16,
+            "section": "Para 15-B (i)", "quote": "a verbatim quote from that page",
+        },
+        "provenance_tier": "T1_OFFICIAL",
+        "verification": {"method": "SOURCE_DOCUMENT"},
+    }
+    record.update(overrides)
+    return record
+
+
+def good_reconciliation(records) -> dict:
+    return {
+        "question_answered": "How do the two notifications reconcile?",
+        "base_document": "DOC-OFF-002 — base notification",
+        "supplementary_document": "DOC-OFF-003 — supplementary notification",
+        "reconciliation_summary": "The supplementary amends only the age paragraph; it does not contradict the base.",
+        "current_reading": {"age": {"x": 1}, "everything_else": "governed by the base"},
+        "records": records,
+    }
+
+
+class TestCurrentOfficialReconciliation(unittest.TestCase):
+    """Requirement 3 (reconcile the supplementary against the original) — the
+    registry that answers OFF-F09's `current_official_resolution`."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.rec = load(CURRENT)
+        cls.retrieved = retrieved_document_ids(load(DOC_REGISTRY))
+
+    def test_every_record_is_well_formed_and_sourced(self):
+        problems = [
+            p for r in self.rec["records"]
+            for p in check_current_record(r, self.retrieved)
+        ]
+        self.assertEqual([], problems, "\n".join(problems))
+
+    def test_reconciliation_metadata_is_complete(self):
+        self.assertEqual([], check_current_reconciliation(self.rec))
+
+    def test_both_documents_are_retrieved(self):
+        for doc in (self.rec["base_document"], self.rec["supplementary_document"]):
+            did = doc.split(" — ")[0].strip()
+            self.assertIn(did, self.retrieved, f"{did} is not a retrieved document")
+
+    def test_record_counts_are_consistent(self):
+        records = self.rec["records"]
+        verified = [r for r in records if (r.get("verification") or {}).get("method")]
+        self.assertEqual(self.rec["record_count"], len(records), "record_count mismatch")
+        self.assertEqual(self.rec["verified_count"], len(verified), "verified_count mismatch")
+
+    def test_derived_upper_limit_is_arithmetic_over_sourced_components(self):
+        derived = [r for r in self.rec["records"] if r.get("kind") == "derived"]
+        self.assertTrue(derived, "no derived record found")
+        value = derived[0]["value"]
+        total = (
+            value["base_maximum_age_years"]
+            + value["raise_go87_years"]
+            + value["raise_go122_years"]
+        )
+        self.assertEqual(
+            total, value["effective_general_upper_limit_years"],
+            "derived arithmetic does not recompute",
+        )
+        self.assertIn(str(total), value["reading"],
+                      "the derived reading does not state the computed figure")
+
+    def test_the_supplementary_only_amends_age(self):
+        age = self.rec["current_reading"]["age"]
+        self.assertIn("21", age["minimum_age"])
+        self.assertIn("32", age["general_upper_limit"])
+        everything_else = self.rec["current_reading"]["everything_else"]
+        self.assertIn("DOC-OFF-002", everything_else,
+                      "the base document is expected to govern everything else")
+
+
+class TestCurrentOfficialRejectsFabrication(unittest.TestCase):
+    """Anti-vacuity: the reconciliation checkers must reject poisoned records."""
+
+    def assertRejected(self, problems, needle):
+        self.assertTrue(problems, "checker accepted a fabricated record")
+        self.assertTrue(
+            any(needle in p for p in problems),
+            f"expected {needle!r} in problems, got: {problems}",
+        )
+
+    def setUp(self):
+        self.RETRIEVED = {"DOC-OFF-002", "DOC-OFF-003"}
+
+    def test_an_unsourced_current_record_is_rejected(self):
+        self.assertRejected(
+            check_current_record(
+                good_current_record(provenance={"document_id": None}), self.RETRIEVED),
+            "no provenance document",
+        )
+
+    def test_a_current_record_citing_an_unretrieved_document_is_rejected(self):
+        self.assertRejected(
+            check_current_record(
+                good_current_record(provenance={"document_id": "DOC-OFF-999"}),
+                self.RETRIEVED),
+            "not a retrieved document",
+        )
+
+    def test_a_current_record_with_a_non_official_tier_is_rejected(self):
+        self.assertRejected(
+            check_current_record(
+                good_current_record(provenance_tier="T3_EXPERT"), self.RETRIEVED),
+            "must be T1_OFFICIAL",
+        )
+
+    def test_a_derived_record_with_no_derivation_label_is_rejected(self):
+        rec = good_current_record(kind="derived", value={"reading": "32 years"})
+        self.assertRejected(check_current_record(rec, self.RETRIEVED), "derivation label")
+
+    def test_a_derived_record_verified_by_an_invalid_method_is_rejected(self):
+        rec = good_current_record(
+            kind="derived",
+            value={"reading": "32", "derivation": "DETERMINISTIC"},
+            verification={"method": "self-review"},
+        )
+        self.assertRejected(check_current_record(rec, self.RETRIEVED), "not an accepted")
+
+    def test_an_additive_amendment_recorded_as_a_conflict_is_rejected(self):
+        rec = good_reconciliation([
+            {"record_id": "R-1", "kind": "reconciliation",
+             "value": {"conflict": "contradiction", "nature": "additive relaxation"}},
+        ])
+        self.assertRejected(check_current_reconciliation(rec), "contradiction")
+
+    def test_a_reconciliation_with_no_derived_reading_is_rejected(self):
+        rec = good_reconciliation([
+            {"record_id": "R-1", "kind": "base_document", "value": {"x": 1}},
+        ])
+        self.assertRejected(check_current_reconciliation(rec), "no derived record")
 
 
 if __name__ == "__main__":

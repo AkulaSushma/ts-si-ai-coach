@@ -5,16 +5,373 @@
   "question_answered": "What marks and duration does the official notification prescribe?",
   "provenance_tier": "T1_OFFICIAL",
   "only_valid_source": "The official TGPRB / TSLPRB notification for this recruitment",
-  "record_count": 0,
-  "verified_count": 0,
-  "status": "BLOCKED",
-  "blocked_reason": "No official notification retrieved. Network egress from this environment permits one unrelated host; see source_material/official/RETRIEVAL_LOG.md and blocker B-09.",
+  "record_count": 14,
+  "verified_count": 14,
+  "status": "COMPLETE",
+  "status_meaning": "Every entry is VERIFIED from the retrieved notification (DOC-OFF-002, pages 19/20/23/24/42/43/44). The notification sets per-paper totals and subject question counts, but publishes no per-topic marks distribution, so no topic weightage exists to record.",
+  "blocked_reason": null,
+  "base_document": "DOC-OFF-002 (Rc No. 225 / Rect. / Rect-1 / 2026 dated 29-07-2026). The supplementary notification (DOC-OFF-003) amends age only; it does not alter marks, duration, paper structure, or syllabus.",
+  "populated_on": "2026-09-07",
+  "populated_in_session": "005",
+  "reading_basis": "WHITESPACE_NORMALISED_VERBATIM from the committed page-marked extraction artefact research/extractions/official/DOC-OFF-002-si-notification-pages.txt, pages 19, 20, 23, 24, 42, 43, 44; each quote re-checked for whitespace-normalised containment. Every entry cites a RETRIEVED document.",
   "rules": [
     "Only what the notification itself states. Per-paper totals if that is all it gives.",
     "Topic-wise marks are T1_OFFICIAL only if the notification prints a topic-wise distribution. Otherwise no official topic weightage exists, and this file records that absence rather than filling it.",
     "Never merge a figure from this file with a figure from historical_observed.json or estimated_priority.json into a single displayed number."
   ],
-  "official_topic_weightage_provided_by_notification": null,
-  "official_topic_weightage_note": "Unknown until the notification is read. null means unknown; it does not mean 'no'.",
-  "entries": []
+  "official_topic_weightage_provided_by_notification": false,
+  "official_topic_weightage_note": "The notification prints only per-paper totals and per-subject question counts. For the Preliminary Written Test the two subjects are single lines and the General Studies list of six items carries no per-item marks; for the Final Written Examination Paper IV the General Studies list of seven items likewise carries no per-item marks. The finest official granularity is the per-subject question count, not a topic-wise marks distribution. There is therefore no official topic-wise weightage to record; null has been replaced by a definite false because the documents have now been read.",
+  "entries": [
+    {
+      "entry_id": "MS-PWT-001",
+      "category": "PWT",
+      "title": "Preliminary Written Test is one paper of three hours",
+      "value": {
+        "paper_count": 1,
+        "duration_hours": 3,
+        "mode": "objective",
+        "answer_surface": "OMR, Blue / black ball-point pen only",
+        "role": "qualifying / screening entry to PMT-PET"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 19,
+        "section": "Para 16-A",
+        "quote": "A) Preliminary Written Test: All the eligible registered Candidates shall be required to appear for the Preliminary Written Test in one paper (three hours duration), whose details are given below. The Hall Ticket will be issued online for this purpose. Syllabus for the PWT is given in Annexure II."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 19; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-PWT-002",
+      "category": "PWT",
+      "title": "PWT totals: 200 questions, 200 marks",
+      "value": {
+        "total_questions": 200,
+        "total_marks": 200,
+        "marks_per_question": "NOT_STATED (the notification gives a total of 200 marks for 200 questions but does not print a per-question mark value)"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 42,
+        "section": "ANNEXURE – II header",
+        "quote": "SYLLABUS FOR PRELIMINARY WRITTEN TEST (200 QUESTIONS – 200 MARKS)"
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 20 / page 42; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-PWT-003",
+      "category": "PWT",
+      "title": "PWT subject-wise question counts",
+      "value": {
+        "subjects": [
+          {"name": "Arithmetic & Test of Reasoning / Mental Ability", "questions": 100, "mode": "objective"},
+          {"name": "General Studies", "questions": 100, "mode": "objective"}
+        ],
+        "notes": "The notification lists six items under PWT General Studies but assigns no marks to any individual item."
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 42,
+        "section": "ANNEXURE – II, section A heading",
+        "quote": "ARITHMETIC & TEST OF REASONING / MENTAL ABILITY (OBJECTIVE TYPE) (100 QUESTIONS)"
+      },
+      "supporting": [
+        {
+          "document_id": "DOC-OFF-002",
+          "page": 42,
+          "section": "ANNEXURE – II, section B heading",
+          "quote": "B) GENERAL STUDIES (OBJECTIVE TYPE) (100 QUESTIONS)"
+        }
+      ],
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 20; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-PWT-004",
+      "category": "PWT",
+      "title": "PWT qualifying marks, expressed as percentages",
+      "value": {
+        "expressed_as": "percentage of marks in the paper",
+        "OC_including_EWS_pct": 30,
+        "BC_pct": 25,
+        "SC_ST_ExServicemen_pct": 20,
+        "qualifying_is_per_paper": true
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 20,
+        "section": "Note 1 below the PWT marks table",
+        "quote": "The minimum marks to be secured by the Candidates in order to qualify in the Preliminary Written Test paper is 30% for OCs, including EWS, 25% for BCs, and 20% for SCs / STs / Ex-Servicemen."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 20; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-PWT-005",
+      "category": "PWT",
+      "title": "PWT negative marking",
+      "value": {
+        "negative_marking_pct_of_full_marks": 20,
+        "applies_to": "each question where the candidate has not darkened exactly the one correct bubble",
+        "zero_marks_if_no_bubble": true
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 20,
+        "section": "Note 3 below the PWT marks table",
+        "quote": "For each question, the Candidate shall be awarded full marks, assigned to that question, if he / she darkened only one bubble that corresponds to the correct answer. In case the Candidate has not darkened any bubble, the Candidate shall be awarded zero marks for that question. In all other cases, 20% of full marks shall be awarded as a negative mark for that question."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 20; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-PWT-006",
+      "category": "PWT",
+      "title": "PWT answer-key language and deleted-question compensation",
+      "value": {
+        "language_setup": "English-Telugu and English-Urdu; English version is final on ambiguity or spelling mistake in translation / transliteration",
+        "deleted_question_compensation": "proportionate to the candidate's percentage of marks in the remaining undeleted questions"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 20,
+        "section": "Notes 4 and 5 below the PWT marks table",
+        "quote": "Questions in the Written Test shall be set in English-Telugu & English Urdu languages, and in case of terminology of Science, technology / Management, transliteration will be employed at the expert's discretion. In case of any ambiguity or spelling mistake in Translation / Transliteration in any Question in the Telugu or Urdu language, the English version shall be considered as final and the correct version."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 20; quotes re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-FWE-001",
+      "category": "FWE",
+      "title": "Final Written Examination is four papers, three hours each",
+      "value": {
+        "paper_count": 4,
+        "duration_hours_each": 3,
+        "syllabus_reference": "ANNEXURE-III"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 23,
+        "section": "Para 16-C",
+        "quote": "C) Final Written Examination (FWE): Candidates who qualify in the above Physical Efficiency Test shall be required to appear for the Final Written Examination in 4 (four) papers (each of three hours duration) as given below. The syllabus for this exam is given in Annexure III."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 23; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-FWE-002",
+      "category": "FWE",
+      "title": "FWE per-paper maximum marks for the two registration groups",
+      "value": {
+        "registration_groups": ["Post Code Nos. 11, 17, 18 and 19", "Post Code Nos. 12 to 14 and 16"],
+        "group_1": {"Paper I": 100, "Paper II": 100, "Paper III": 200, "Paper IV": 200},
+        "group_2": {"Paper I": 100, "Paper II": 100, "Paper III": 100, "Paper IV": 100},
+        "paper_split_note": "Papers I and II are each split internally into Part A (25 marks, objective MCQ) and Part B (75 marks, descriptive)."
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 23,
+        "section": "FWE marks table",
+        "quote": "Paper I English 100 100"
+      },
+      "supporting": [
+        {
+          "document_id": "DOC-OFF-002",
+          "page": 23,
+          "section": "FWE marks table",
+          "quote": "Paper II Urdu 100 100"
+        },
+        {
+          "document_id": "DOC-OFF-002",
+          "page": 23,
+          "section": "FWE marks table",
+          "quote": "Paper III 200 100 (Objective in nature) (200 Questions)"
+        },
+        {
+          "document_id": "DOC-OFF-002",
+          "page": 23,
+          "section": "FWE marks table",
+          "quote": "Paper IV General Studies (Objective in nature) (200 Questions) 200 100"
+        }
+      ],
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 23; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-FWE-003",
+      "category": "FWE",
+      "title": "FWE Papers I and II are qualifying-only (marks not counted in final selection)",
+      "value": {
+        "counted_in_final_selection": false,
+        "effect_of_failing_qualifying": "not considered further, irrespective of performance in Papers III and IV"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 24,
+        "section": "Note 2",
+        "quote": "Papers I and II are qualifying in nature, and the marks secured in these Papers, i.e., I and II, shall not be taken into account for final selection. Those Candidates who do not secure the minimum qualifying marks in these papers shall not be considered further in the selection process, irrespective of their performance in Papers III and IV."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 24; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-FWE-004",
+      "category": "FWE",
+      "title": "FWE qualifying marks per paper, expressed as percentages",
+      "value": {
+        "expressed_as": "percentage of marks in each paper",
+        "OC_including_EWS_pct": 40,
+        "BC_pct": 35,
+        "SC_ST_ExServicemen_pct": 30,
+        "qualifying_is_per_paper": true,
+        "applies_to_special_categories": "the same minimum qualifying marks apply to special categories referred to in para 21, in respect of their social categories"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 24,
+        "section": "Note 1",
+        "quote": "The minimum marks to be secured by the Candidates in order to qualify in the Written Examination in each paper is 40% for OCs, including EWS, 35% for BCs, and 30% for SCs / STs / Ex. Servicemen. The same minimum qualifying marks shall apply to the Candidates who belong to special categories referred to in para 21 in the Notification, in respect of their social categories."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 24; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-FWE-005",
+      "category": "FWE",
+      "title": "FWE Papers I and II internal split and negative marking",
+      "value": {
+        "part_A": {"type": "objective MCQ", "marks": 25, "questions": 50, "duration": "45 minutes", "negative_marking_pct": 25},
+        "part_B": {"type": "descriptive", "marks": 75, "duration": "2 hours 15 minutes"}
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 43,
+        "section": "ANNEXURE-III, PAPER I (identical pattern given for PAPER II)",
+        "quote": "PART-A: (OBJECTIVE TYPE) (50 QUESTIONS – 25 MARKS – 45 MINUTES) Usage, Vocabulary, Grammar, Comprehension and other language skills in the Multiple Choice Questions Format (with 1/4th (25%) negative marks for wrong answers) PART-B: (DESCRIPTIVE TYPE) (75 MARKS – 2 HOURS 15 MINUTES)"
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 43; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-FWE-006",
+      "category": "FWE",
+      "title": "FWE Paper II language choice",
+      "value": {
+        "choice": "Telugu or Urdu",
+        "once_exercised": "final; cannot be changed subsequently"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 24,
+        "section": "Note 5",
+        "quote": "In Paper II, the Candidates can choose to have either Telugu or Urdu and should indicate their choice as and when asked for. Option once exercised shall be final and Candidate shall not be allowed to change it subsequently."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 24; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-FWE-007",
+      "category": "FWE",
+      "title": "FWE Papers III and IV are objective on OMR; OC/EWS upward route; no stated negative marking",
+      "value": {
+        "mode": "objective",
+        "answer_surface": "OMR, Blue / Black Ball Point pen only",
+        "oc_ews_route": "candidates who secure 40% and above in each of Paper III and Paper IV are eligible for consideration under OC / EWS irrespective of social categories",
+        "negative_marking_for_papers_III_IV": "NOT_STATED (the notification states negative marking for Part A of Papers I and II, and for the PWT, but prints no negative-marking rule for Papers III and IV)"
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 24,
+        "section": "Notes 6 and 4",
+        "quote": "Questions in Papers III and IV shall be objective in nature. Candidates have to answer the questions on an OMR answer sheet using Blue / Black Ball Point pen only. Candidates who secured 40% and above in each Paper, i.e., Paper-III and Paper-IV only, are eligible to be considered for selection for Posts under OC / EWS irrespective of social categories."
+      },
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 24; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    },
+    {
+      "entry_id": "MS-FWE-008",
+      "category": "FWE",
+      "title": "FWE Papers III and IV subject question counts",
+      "value": {
+        "paper_III": {"subject": "Arithmetic and Test of Reasoning / Mental Ability", "questions": 200, "mode": "objective"},
+        "paper_IV": {"subject": "General Studies", "questions": 200, "mode": "objective"},
+        "notes": "The notification lists seven items under Paper IV General Studies but assigns no marks to any individual item."
+      },
+      "provenance": {
+        "document_id": "DOC-OFF-002",
+        "page": 43,
+        "section": "ANNEXURE – III, PAPER III heading",
+        "quote": "PAPER III: ARITHMETIC & TEST OF REASONING / MENTAL ABILITY (OBJECTIVE TYPE) (200 QUESTIONS)"
+      },
+      "supporting": [
+        {
+          "document_id": "DOC-OFF-002",
+          "page": 44,
+          "section": "ANNEXURE – III, PAPER IV heading",
+          "quote": "PAPER IV: GENERAL STUDIES (OBJECTIVE TYPE) (200 QUESTIONS)"
+        }
+      ],
+      "provenance_tier": "T1_OFFICIAL",
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_by": "session-005 reading of DOC-OFF-002 page 23; quote re-checked mechanically by tests/official/test_official_evidence.py",
+        "verified_on": "2026-09-07"
+      }
+    }
+  ]
 }

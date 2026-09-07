@@ -18,9 +18,13 @@ The single-source live Instagram verification run (IG001, 2026-09-05) was refuse
 by Instagram (HTTP 429, anonymous access). Every session-003 official document
 fetch was refused by the network egress allowlist (`B-09`); in session 004 the
 user supplied the two notification PDFs by browser download, which are now
-stored, hashed, and the basis of all 24 verified official facts and 27 syllabus
-nodes. Their checkpoints, error logs, retrieval log, and manifests are the
-evidence. This harvested count is a real, verified state, not a placeholder.
+stored, hashed, and the basis of all 24 verified official facts, 27 syllabus
+nodes, 14 official marks-structure entries and 5 notification-to-supplementary
+reconciliation records. Their checkpoints, error logs, retrieval log, and
+manifests are the evidence. This harvested count is a real, verified state, not
+a placeholder. Session 006 (2026-09-07) added no new source — the marks
+structure and reconciliation are records over the two already-stored
+documents, cited to the same hashed bytes.
 
 
 ## ID format

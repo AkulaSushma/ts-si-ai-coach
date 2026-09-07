@@ -31,11 +31,18 @@ Specification: `specs/features/official-knowledge-foundation.md` (`SPEC-OFF-001`
   looks official is worse than no ordering, because the learner cannot tell it is a
   guess.
 
-## Current state — 2026-09-06
+## Current state — 2026-09-07
 
-All three are empty and `BLOCKED`:
-
-- official marks structure — no notification retrieved (`B-09`)
-- historical observed — no past paper acquired (`B-02`)
-- estimated priority — depends on both of the above; producing it now would be a
-  judgement over no data, which is indistinguishable from invention
+- **official marks structure — `COMPLETE`.** `official_marks_structure.json`
+  holds 14 verified entries (6 for the Preliminary Written Test, 8 for the
+  Final Written Examination) built from DOC-OFF-002 pages 19–24 and 42–44. The
+  notification prints per-paper totals, durations, qualifying thresholds and the
+  negative-marking rule, but **no topic-wise marks distribution** — so
+  `official_topic_weightage_provided_by_notification` is `false`, and no
+  per-topic weightage is recorded. Each entry carries a mechanically re-checked
+  verbatim quote.
+- **historical observed — still `BLOCKED`.** No past paper acquired (`B-02`), so
+  nothing can be counted.
+- **estimated priority — still `BLOCKED`.** It depends on both of the above;
+  producing a priority ordering over no counted data would be a judgement
+  indistinguishable from invention.
