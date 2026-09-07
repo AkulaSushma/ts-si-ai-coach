@@ -2,21 +2,33 @@
   "manifest_id": "PYQ-ACQ-007",
   "spec": "SPEC-PYQ-001",
   "scope": "Acquisition of previous-year Telangana Police SI / Constable question papers and their answers.",
-  "status": "blocked",
-  "expected": 0,
-  "expected_justification": "No source or paper set has been enumerated, because this environment could reach no paper-hosting host (egress allowlist) and web search returned no content. expected will become a counted figure with a recorded basis once a source is verified; it is not an estimate.",
+  "status": "partial",
+  "expected": 9,
+  "expected_justification": "Nine PDF files were supplied by the user under source_material/pyq_raw/ and enumerated and SHA-256 hashed on 2026-09-07. All nine are local coaching copies; no board or coaching host was reachable to verify or expand the set, so expected here is the counted in-hand set of nine files, not an estimate of the whole universe of relevant papers (which remains unenumerable from this environment).",
   "accounting": {
-    "processed": 0,
+    "processed": 9,
     "inaccessible": 0,
     "irrelevant": 0,
     "duplicate": 0,
     "failed": 0
   },
   "identity_holds": true,
-  "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include any paper-hosting host (see source_material/pyq_raw/RETRIEVAL_LOG.md). Per D-0017 the refusal is recorded verbatim and not routed around.",
-  "retrieved_on": null,
-  "local_paths": [],
+  "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include any paper-hosting host, and web search returned no content. The broader universe of Telangana Police SI previous-year papers beyond these nine supplied files cannot be enumerated or retrieved from here. Per D-0017 the refusal is recorded verbatim and not routed around.",
+  "retrieved_on": "2026-09-07",
+  "local_paths": [
+    "source_material/pyq_raw/TS-SI-Exam-2016-Preliminary-Question-Paper-with-Official-Key.pdf",
+    "source_material/pyq_raw/TS-SI-Exam-2018-Preliminary-Question-Paper-with-Official-KeySolutions-Held-on-26.08.2018.pdf",
+    "source_material/pyq_raw/TS-SI-Final-Exam-English-Question-Paper-With-Preliminary-Key-2023.pdf",
+    "source_material/pyq_raw/TS-SI-Final-Exam-Question-Paper-With-Key-2023-Arithmetic-and-Reasoning-Exam-QP-With-Key-2023.pdf",
+    "source_material/pyq_raw/TS-SI-Final-Exam-Telugu-Question-Paper-With-Preliminary-Key-2023.pdf",
+    "source_material/pyq_raw/TS-SI-General-Studies-Paper-CodeA-QuestionPaper-key-2023.pdf",
+    "source_material/pyq_raw/TS-SI-Mains-Exam-2018-GS-Question-Paper-with-Final-key-Held-on-21.04.2019.pdf",
+    "source_material/pyq_raw/TS-SI-Mains-Exam-2018-Telugu-Question-Paper-with-Final-key.pdf",
+    "source_material/pyq_raw/TSLPRB-SI-Final-Exam-2016-Question-Paper-General-Studies-with-Final-Key.pdf"
+  ],
   "notes": [
+    "Nine local coaching-copy PDFs are now registered in config/pyq_documents.json and pyq/papers/. Two (2016 Preliminary, 2016 General Studies) have a usable text layer and were fully extracted (400 questions). The other seven are scanned image-only or watermark-only and are registered as retrieved but not extracted.",
+    "Status is partial because the in-hand set of nine is fully accounted (acquired, hashed, registered) but the full universe of relevant papers is unenumerable from this environment; no claim of complete coverage is made.",
     "A coaching-site copy of a paper is a legitimate T2_HISTORICAL_PYQ source, but is recorded with source_type COACHING_COPY and is never relabelled as a board document.",
     "A paper reconstructed from candidate recall must be labelled CANDIDATE_RECALL and cross-checked against at least one other source before any question is classified."
   ]

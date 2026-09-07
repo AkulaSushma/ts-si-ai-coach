@@ -1,0 +1,53 @@
+{
+  "question_id": "Q-PYQ-010045",
+  "paper_id": "PAPER-PYQ-1601",
+  "question_number": 45,
+  "page_number": 12,
+  "stem": "Ram and Shyam enter into a partnership. Ram supplies whole of the capital amounting to Rs. 60,000 with the condition that the profits are to be equally divided and that Shyam pays Ram interest on half of the capital at 10% per annum, but receives Rs. 150 per month for carrying on the concern. Find their total yearly profit when Shyam’s income is half of Ram’s income.",
+  "stem_te": null,
+  "options": {
+    "A": "Rs. 10,800",
+    "B": "Rs. 8,400",
+    "C": "Rs. 14,200",
+    "D": "Rs. 12,600"
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "EXACT",
+  "extraction_issues": [],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1601",
+    "url": null,
+    "page": 12,
+    "question_number": 45
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "NEAR",
+    "subject_basis": "Paper section header: Arithmetic & Test of Reasoning / Mental Ability (Q1-100)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": false
+  }
+}

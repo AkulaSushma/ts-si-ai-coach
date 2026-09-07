@@ -4,9 +4,10 @@ Historical topic-weightage analysis outputs, with the inputs used to compute the
 output is `T2_HISTORICAL_PYQ` — a count over real past papers, not a rule about future
 papers and not an official figure.
 
-**This folder holds no computed weightage yet.** No previous-year paper has been
-acquired, so there is nothing to count. An empty folder is the correct, honest state,
-not a gap.
+As of 2026-09-07 this folder holds **13 entries** (`WGT-PYQ-0001` … `WGT-PYQ-0013`),
+all over the **400** questions counted from the two 2016 papers. They are **PARTIAL**:
+only 2 of the 9 registered papers could be extracted, and every entry states its
+counted/intended coverage. No entry claims a share of the whole 9-paper corpus.
 
 ## The expose fields every entry must show
 

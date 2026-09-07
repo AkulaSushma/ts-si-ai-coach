@@ -4,15 +4,28 @@
   "purpose": "Target and acquired registry of Telangana Police SI / Constable previous-year question papers. Registration records intent to acquire; it is not a claim that any paper has been read or any question extracted.",
   "category": "pyq_document_registry",
   "provenance_tier": "T2_HISTORICAL_PYQ",
-  "status": "BLOCKED",
-  "blocked_reason": "No previous-year paper has been acquired. The environment cannot reach any paper-hosting host (egress allowlist), and no paper identity has been enumerated because no source could be verified. Zero papers means zero observed frequency, not an estimated one.",
+  "status": "COMPLETE",
+  "blocked_reason": null,
+  "notes": [
+    "Acquisition is complete for the nine local files enumerated under source_material/pyq_raw/. Each is verified by SHA-256 and recorded here as a COACHING_COPY (no board-host source was reachable from this environment).",
+    "Extraction is NOT complete: only the 2016 Preliminary and 2016 General Studies papers have a usable text layer and were fully extracted (200 questions each). The other seven are image-only scans or watermark-only; with the available English-only OCR they cannot be reliably extracted, so they are registered as retrieved with normalized_questions_status NONE and an extraction_caveat."
+  ],
   "paper_requirements": {
     "note": "What a usable paper must contain, derived from the 2026 official structure. This is not a claim that any specific prior paper exists.",
     "components_to_cover": [
-      {"component": "Arithmetic & Test of Reasoning / Mental Ability", "note": "Covers what PWT (100 Q) and FWE Paper III (200 Q) test in the current structure."},
-      {"component": "General Studies", "note": "Covers what PWT (100 Q) and FWE Paper IV (200 Q) test in the current structure."}
+      {
+        "component": "Arithmetic & Test of Reasoning / Mental Ability",
+        "note": "Covers what PWT (100 Q) and FWE Paper III (200 Q) test in the current structure."
+      },
+      {
+        "component": "General Studies",
+        "note": "Covers what PWT (100 Q) and FWE Paper IV (200 Q) test in the current structure."
+      }
     ],
-    "posts": ["Telangana Police SI (Civil et al)", "Telangana Police Constable (Civil et al)"],
+    "posts": [
+      "Telangana Police SI (Civil et al)",
+      "Telangana Police Constable (Civil et al)"
+    ],
     "eligibility": [
       "Telangana Police SI or Constable written examination paper",
       "Complete, or its incompleteness recorded with a numerator/denominator",
@@ -20,7 +33,294 @@
       "Every question carries a subject/topic/subtopic assignment with a classification confidence"
     ]
   },
-  "retrieved_count": 0,
-  "extracted_question_count": 0,
-  "documents": []
+  "retrieved_count": 9,
+  "extracted_question_count": 400,
+  "documents": [
+    {
+      "paper_id": "PAPER-PYQ-1601",
+      "exam": "TELANGANA_POLICE_SI",
+      "post": "SI (Civil et al)",
+      "phase": "PRELIMINARY",
+      "paper_number": null,
+      "year": 2016,
+      "language": "English",
+      "marks_total": 200,
+      "questions_total": 200,
+      "source_type": "COACHING_COPY",
+      "source_url": null,
+      "source_url_status": "UNKNOWN",
+      "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+      "local_path": "source_material/pyq_raw/TS-SI-Exam-2016-Preliminary-Question-Paper-with-Official-Key.pdf",
+      "sha256": "68cd460803b7b591a691c4f4be4206705a500f1fd0cecda1eeb97d4200efeff0",
+      "retrieval_status": "RETRIEVED",
+      "attempts": [],
+      "retrieved_on": "2026-09-07",
+      "normalized_questions": 200,
+      "normalized_questions_status": "COMPLETE",
+      "provenance_tier": "T2_HISTORICAL_PYQ",
+      "provenance": {
+        "source_type": "COACHING_COPY"
+      },
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_on": "2026-09-07",
+        "verified_by": "session 008"
+      }
+    },
+    {
+      "paper_id": "PAPER-PYQ-1801",
+      "exam": "TELANGANA_POLICE_SI",
+      "post": "SI (Civil et al)",
+      "phase": "PRELIMINARY",
+      "paper_number": null,
+      "year": 2018,
+      "language": "English",
+      "marks_total": null,
+      "questions_total": null,
+      "source_type": "COACHING_COPY",
+      "source_url": null,
+      "source_url_status": "UNKNOWN",
+      "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+      "local_path": "source_material/pyq_raw/TS-SI-Exam-2018-Preliminary-Question-Paper-with-Official-KeySolutions-Held-on-26.08.2018.pdf",
+      "sha256": "687b41dc9b8eb353817884f77bcf5977bc1c684a5babb086d9aac6bd3fc09895",
+      "retrieval_status": "RETRIEVED",
+      "attempts": [],
+      "retrieved_on": "2026-09-07",
+      "normalized_questions": 0,
+      "normalized_questions_status": "NONE",
+      "provenance_tier": "T2_HISTORICAL_PYQ",
+      "provenance": {
+        "source_type": "COACHING_COPY"
+      },
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_on": "2026-09-07",
+        "verified_by": "session 008"
+      },
+      "extraction_caveat": "Scanned image-only PDF; no text layer. English-only OCR garbles option markers and cannot read Telugu, so no question was reliably extracted. Registered as retrieved but not extracted."
+    },
+    {
+      "paper_id": "PAPER-PYQ-2301",
+      "exam": "TELANGANA_POLICE_SI",
+      "post": "SI (Civil et al)",
+      "phase": "FINAL",
+      "paper_number": null,
+      "year": 2023,
+      "language": "English",
+      "marks_total": null,
+      "questions_total": null,
+      "source_type": "COACHING_COPY",
+      "source_url": null,
+      "source_url_status": "UNKNOWN",
+      "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+      "local_path": "source_material/pyq_raw/TS-SI-Final-Exam-English-Question-Paper-With-Preliminary-Key-2023.pdf",
+      "sha256": "3603a7cfb5273c6d4c3baf18124cb497a585c86cdcadd4d906c6a66698be25a3",
+      "retrieval_status": "RETRIEVED",
+      "attempts": [],
+      "retrieved_on": "2026-09-07",
+      "normalized_questions": 0,
+      "normalized_questions_status": "NONE",
+      "provenance_tier": "T2_HISTORICAL_PYQ",
+      "provenance": {
+        "source_type": "COACHING_COPY"
+      },
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_on": "2026-09-07",
+        "verified_by": "session 008"
+      },
+      "extraction_caveat": "Scanned image-only PDF; no usable text layer. English-only OCR garbles the options; no question reliably extracted."
+    },
+    {
+      "paper_id": "PAPER-PYQ-2302",
+      "exam": "TELANGANA_POLICE_SI",
+      "post": "SI (Civil et al)",
+      "phase": "FINAL",
+      "paper_number": null,
+      "year": 2023,
+      "language": "English",
+      "marks_total": null,
+      "questions_total": null,
+      "source_type": "COACHING_COPY",
+      "source_url": null,
+      "source_url_status": "UNKNOWN",
+      "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+      "local_path": "source_material/pyq_raw/TS-SI-Final-Exam-Question-Paper-With-Key-2023-Arithmetic-and-Reasoning-Exam-QP-With-Key-2023.pdf",
+      "sha256": "9b9b31b38eb1b66553f77add50701fd2c31fe1b52077e7b83908a6a0d4c4e8bc",
+      "retrieval_status": "RETRIEVED",
+      "attempts": [],
+      "retrieved_on": "2026-09-07",
+      "normalized_questions": 0,
+      "normalized_questions_status": "NONE",
+      "provenance_tier": "T2_HISTORICAL_PYQ",
+      "provenance": {
+        "source_type": "COACHING_COPY"
+      },
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_on": "2026-09-07",
+        "verified_by": "session 008"
+      },
+      "extraction_caveat": "Scanned image-only PDF; no usable text layer. Arduino/Reasoning options and Telugu garbled by English-only OCR."
+    },
+    {
+      "paper_id": "PAPER-PYQ-2303",
+      "exam": "TELANGANA_POLICE_SI",
+      "post": "SI (Civil et al)",
+      "phase": "FINAL",
+      "paper_number": null,
+      "year": 2023,
+      "language": "Telugu",
+      "marks_total": null,
+      "questions_total": null,
+      "source_type": "COACHING_COPY",
+      "source_url": null,
+      "source_url_status": "UNKNOWN",
+      "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+      "local_path": "source_material/pyq_raw/TS-SI-Final-Exam-Telugu-Question-Paper-With-Preliminary-Key-2023.pdf",
+      "sha256": "a43253e462d47cbfe21c7e1117fbc15281569ce352d45a6a4dd276bfc3040c0b",
+      "retrieval_status": "RETRIEVED",
+      "attempts": [],
+      "retrieved_on": "2026-09-07",
+      "normalized_questions": 0,
+      "normalized_questions_status": "NONE",
+      "provenance_tier": "T2_HISTORICAL_PYQ",
+      "provenance": {
+        "source_type": "COACHING_COPY"
+      },
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_on": "2026-09-07",
+        "verified_by": "session 008"
+      },
+      "extraction_caveat": "Scanned image-only PDF; no usable text layer. Content is largely Telugu; no Telugu OCR language pack available."
+    },
+    {
+      "paper_id": "PAPER-PYQ-2304",
+      "exam": "TELANGANA_POLICE_SI",
+      "post": "SI (Civil et al)",
+      "phase": "FINAL",
+      "paper_number": null,
+      "year": 2023,
+      "language": "English",
+      "marks_total": null,
+      "questions_total": null,
+      "source_type": "COACHING_COPY",
+      "source_url": null,
+      "source_url_status": "UNKNOWN",
+      "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+      "local_path": "source_material/pyq_raw/TS-SI-General-Studies-Paper-CodeA-QuestionPaper-key-2023.pdf",
+      "sha256": "349456b493e3ac82e6ce2840dec5df1dc075139e360e5c4544c503fe096dea6d",
+      "retrieval_status": "RETRIEVED",
+      "attempts": [],
+      "retrieved_on": "2026-09-07",
+      "normalized_questions": 0,
+      "normalized_questions_status": "NONE",
+      "provenance_tier": "T2_HISTORICAL_PYQ",
+      "provenance": {
+        "source_type": "COACHING_COPY"
+      },
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_on": "2026-09-07",
+        "verified_by": "session 008"
+      },
+      "extraction_caveat": "Scanned image-only PDF; no usable text layer; English-only OCR garbles options."
+    },
+    {
+      "paper_id": "PAPER-PYQ-1802",
+      "exam": "TELANGANA_POLICE_SI",
+      "post": "SI (Civil et al)",
+      "phase": "FINAL",
+      "paper_number": null,
+      "year": 2018,
+      "language": "English",
+      "marks_total": null,
+      "questions_total": null,
+      "source_type": "COACHING_COPY",
+      "source_url": null,
+      "source_url_status": "UNKNOWN",
+      "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+      "local_path": "source_material/pyq_raw/TS-SI-Mains-Exam-2018-GS-Question-Paper-with-Final-key-Held-on-21.04.2019.pdf",
+      "sha256": "721bf5d4ad66e6457cbba8cf6e20d3143680af041c10d1a9556cd45e5ffbdfb2",
+      "retrieval_status": "RETRIEVED",
+      "attempts": [],
+      "retrieved_on": "2026-09-07",
+      "normalized_questions": 0,
+      "normalized_questions_status": "NONE",
+      "provenance_tier": "T2_HISTORICAL_PYQ",
+      "provenance": {
+        "source_type": "COACHING_COPY"
+      },
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_on": "2026-09-07",
+        "verified_by": "session 008"
+      },
+      "extraction_caveat": "Watermark-only text layer (no real question text). Scanned image-only; no reliable extraction with available OCR."
+    },
+    {
+      "paper_id": "PAPER-PYQ-1803",
+      "exam": "TELANGANA_POLICE_SI",
+      "post": "SI (Civil et al)",
+      "phase": "FINAL",
+      "paper_number": null,
+      "year": 2018,
+      "language": "Telugu",
+      "marks_total": null,
+      "questions_total": null,
+      "source_type": "COACHING_COPY",
+      "source_url": null,
+      "source_url_status": "UNKNOWN",
+      "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+      "local_path": "source_material/pyq_raw/TS-SI-Mains-Exam-2018-Telugu-Question-Paper-with-Final-key.pdf",
+      "sha256": "16f59bebe27fe658ecc260e368ce0a4760ad035a0911e90b2c3cc26f379b20a6",
+      "retrieval_status": "RETRIEVED",
+      "attempts": [],
+      "retrieved_on": "2026-09-07",
+      "normalized_questions": 0,
+      "normalized_questions_status": "NONE",
+      "provenance_tier": "T2_HISTORICAL_PYQ",
+      "provenance": {
+        "source_type": "COACHING_COPY"
+      },
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_on": "2026-09-07",
+        "verified_by": "session 008"
+      },
+      "extraction_caveat": "Watermark-only text layer. Largely Telugu content; no Telugu OCR available."
+    },
+    {
+      "paper_id": "PAPER-PYQ-1602",
+      "exam": "TELANGANA_POLICE_SI",
+      "post": "SI (Civil et al)",
+      "phase": "FINAL",
+      "paper_number": null,
+      "year": 2016,
+      "language": "English",
+      "marks_total": 200,
+      "questions_total": 200,
+      "source_type": "COACHING_COPY",
+      "source_url": null,
+      "source_url_status": "UNKNOWN",
+      "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+      "local_path": "source_material/pyq_raw/TSLPRB-SI-Final-Exam-2016-Question-Paper-General-Studies-with-Final-Key.pdf",
+      "sha256": "c16b7bd317ad40207192202b1c895bfec0937e7b2336567e6fed6f3767416862",
+      "retrieval_status": "RETRIEVED",
+      "attempts": [],
+      "retrieved_on": "2026-09-07",
+      "normalized_questions": 200,
+      "normalized_questions_status": "COMPLETE",
+      "provenance_tier": "T2_HISTORICAL_PYQ",
+      "provenance": {
+        "source_type": "COACHING_COPY"
+      },
+      "verification": {
+        "method": "SOURCE_DOCUMENT",
+        "verified_on": "2026-09-07",
+        "verified_by": "session 008"
+      }
+    }
+  ]
 }

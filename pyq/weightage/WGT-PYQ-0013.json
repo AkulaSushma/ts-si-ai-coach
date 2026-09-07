@@ -1,0 +1,31 @@
+{
+  "entry_id": "WGT-PYQ-0013",
+  "spec": "SPEC-PYQ-001",
+  "subject": "General Studies",
+  "topic": null,
+  "question_type": null,
+  "numerator": 122,
+  "denominator": 400,
+  "papers_included": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+  ],
+  "years_included": [
+    2016
+  ],
+  "classification_confidence": "AMBIGUOUS",
+  "basis": "OBSERVED",
+  "status": "PARTIAL",
+  "blocked_reason": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "partial_coverage": {
+    "papers_counted": 2,
+    "papers_intended": 9,
+    "questions_counted": 400,
+    "questions_intended": 400
+  },
+  "notes": [
+    "Observed over an incomplete corpus: only 2 of 9 registered papers have a usable text layer and were fully extracted (PAPER-PYQ-1601 Preliminary 200 Q and PAPER-PYQ-1602 General Studies 200 Q; 400 questions total). The other 7 registered papers are scanned/image-only or watermark-only and were not extracted with the available English-only OCR. This percentage is over the 400 counted questions only and is PARTIAL, never a claim about the whole 9-paper corpus.",
+    "Numerator distribution across papers: {'PAPER-PYQ-1601': 41, 'PAPER-PYQ-1602': 81}. Denominator (400) is the full extracted set of the two counted papers, so every entry shares the same frame."
+  ]
+}

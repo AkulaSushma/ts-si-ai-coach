@@ -6,12 +6,15 @@ whose origin is unknown cannot be checked, corrected, or defended.
 
 ## Current state
 
-**Entries: 38 — 32 registered Instagram sources (IG001–IG032) and 6 registered
-official TGPRB / TSLPRB documents (DOC-OFF-001–DOC-OFF-006); harvested items: 2
-— the two official notification PDFs (DOC-OFF-002, DOC-OFF-003) are stored and
-read; no Instagram content has been obtained.** The Instagram registry lives
-in `config/source_registry.json` and the official-document registry in
-`config/official_documents.json`; this ledger records each registered source and
+**Entries: 47 — 32 registered Instagram sources (IG001–IG032), 6 registered
+official TGPRB / TSLPRB documents (DOC-OFF-001–DOC-OFF-006), and 9 registered
+Telangana SI previous-year papers (SRC-0039–SRC-0047, coaching copies);
+harvested items: 11 — the two official notification PDFs (DOC-OFF-002,
+DOC-OFF-003) and nine TS SI previous-year PDFs (SRC-0039–SRC-0047) are stored
+and hashed; no Instagram content has been obtained.** The Instagram registry
+lives in `config/source_registry.json`, the official-document registry in
+`config/official_documents.json`, and the previous-year papers in
+`config/pyq_documents.json`; this ledger records each registered source and
 every extraction attempt against it.
 
 The single-source live Instagram verification run (IG001, 2026-09-05) was refused
@@ -170,3 +173,18 @@ still cannot fetch a board URL to byte-compare against the user's download._
   registered. A mirror cannot be hashed against the publisher; such material may
   later enter this ledger as `T3_EXPERT`, never as `T1_OFFICIAL`.
 
+### Telangana SI previous-year papers — session 008 (2026-09-07)
+
+_Nine coaching-site copies of previous Telangana Police SI papers were supplied locally under `source_material/pyq_raw/`. They are registered here as `T2_HISTORICAL_PYQ` / `COACHING_COPY`, never as board-issued. Only two — the 2016 Preliminary and the 2016 General Studies final — have a usable text layer and were fully extracted (400 questions). The other seven are scanned image-only or watermark-only and are registered as retrieved but not extracted._
+
+| id | title | tier | origin | publisher | acquired_on | local_path / access_status | reliability |
+| -- | ----- | ---- | ------ | --------- | ----------- | ------------------------- | ----------- |
+| SRC-0039 | PAPER-PYQ-1601 — 2016 Preliminary (English) PYQ | `T2_HISTORICAL_PYQ` | local file (coaching copy) | coaching site copy / user-supplied | 2026-09-07 | `AVAILABLE` (stored at `source_material/pyq_raw/TS-SI-Exam-2016-Preliminary-Question-Paper-with-Official-Key.pdf`, SHA-256 in `config/pyq_documents.json`) | `GENERALLY_RELIABLE` |
+| SRC-0040 | PAPER-PYQ-1602 — 2016 Final (English) PYQ | `T2_HISTORICAL_PYQ` | local file (coaching copy) | coaching site copy / user-supplied | 2026-09-07 | `AVAILABLE` (stored at `source_material/pyq_raw/TSLPRB-SI-Final-Exam-2016-Question-Paper-General-Studies-with-Final-Key.pdf`, SHA-256 in `config/pyq_documents.json`) | `GENERALLY_RELIABLE` |
+| SRC-0041 | PAPER-PYQ-1801 — 2018 Preliminary (English) PYQ | `T2_HISTORICAL_PYQ` | local file (coaching copy) | coaching site copy / user-supplied | 2026-09-07 | `AVAILABLE` (stored at `source_material/pyq_raw/TS-SI-Exam-2018-Preliminary-Question-Paper-with-Official-KeySolutions-Held-on-26.08.2018.pdf`, SHA-256 in `config/pyq_documents.json`) | `GENERALLY_RELIABLE` |
+| SRC-0042 | PAPER-PYQ-1802 — 2018 Final (English) PYQ | `T2_HISTORICAL_PYQ` | local file (coaching copy) | coaching site copy / user-supplied | 2026-09-07 | `AVAILABLE` (stored at `source_material/pyq_raw/TS-SI-Mains-Exam-2018-GS-Question-Paper-with-Final-key-Held-on-21.04.2019.pdf`, SHA-256 in `config/pyq_documents.json`) | `GENERALLY_RELIABLE` |
+| SRC-0043 | PAPER-PYQ-1803 — 2018 Final (Telugu) PYQ | `T2_HISTORICAL_PYQ` | local file (coaching copy) | coaching site copy / user-supplied | 2026-09-07 | `AVAILABLE` (stored at `source_material/pyq_raw/TS-SI-Mains-Exam-2018-Telugu-Question-Paper-with-Final-key.pdf`, SHA-256 in `config/pyq_documents.json`) | `GENERALLY_RELIABLE` |
+| SRC-0044 | PAPER-PYQ-2301 — 2023 Final (English) PYQ | `T2_HISTORICAL_PYQ` | local file (coaching copy) | coaching site copy / user-supplied | 2026-09-07 | `AVAILABLE` (stored at `source_material/pyq_raw/TS-SI-Final-Exam-English-Question-Paper-With-Preliminary-Key-2023.pdf`, SHA-256 in `config/pyq_documents.json`) | `GENERALLY_RELIABLE` |
+| SRC-0045 | PAPER-PYQ-2302 — 2023 Final (English) PYQ | `T2_HISTORICAL_PYQ` | local file (coaching copy) | coaching site copy / user-supplied | 2026-09-07 | `AVAILABLE` (stored at `source_material/pyq_raw/TS-SI-Final-Exam-Question-Paper-With-Key-2023-Arithmetic-and-Reasoning-Exam-QP-With-Key-2023.pdf`, SHA-256 in `config/pyq_documents.json`) | `GENERALLY_RELIABLE` |
+| SRC-0046 | PAPER-PYQ-2303 — 2023 Final (Telugu) PYQ | `T2_HISTORICAL_PYQ` | local file (coaching copy) | coaching site copy / user-supplied | 2026-09-07 | `AVAILABLE` (stored at `source_material/pyq_raw/TS-SI-Final-Exam-Telugu-Question-Paper-With-Preliminary-Key-2023.pdf`, SHA-256 in `config/pyq_documents.json`) | `GENERALLY_RELIABLE` |
+| SRC-0047 | PAPER-PYQ-2304 — 2023 Final (English) PYQ | `T2_HISTORICAL_PYQ` | local file (coaching copy) | coaching site copy / user-supplied | 2026-09-07 | `AVAILABLE` (stored at `source_material/pyq_raw/TS-SI-General-Studies-Paper-CodeA-QuestionPaper-key-2023.pdf`, SHA-256 in `config/pyq_documents.json`) | `GENERALLY_RELIABLE` |

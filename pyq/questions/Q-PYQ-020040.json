@@ -1,0 +1,53 @@
+{
+  "question_id": "Q-PYQ-020040",
+  "paper_id": "PAPER-PYQ-1602",
+  "question_number": 40,
+  "page_number": 12,
+  "stem": "Read the following statements: A) B) C)  India’s ‘Valley of Flowers’ is a part of Nanda Devi Biosphere Reserve. It is India’s second biosphere reserve established in 1986. It is located in Tamil Nadu, Kerala and Karnataka.  (valley of flowers). Choose the correct statements / dü¬s’q yê´K´\\qT ‘Ó\\T|ü+&ç:",
+  "stem_te": null,
+  "options": {
+    "A": "A & B",
+    "B": "B & C",
+    "C": "A, B & C",
+    "D": "C & A ________________________________________________________________________"
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "General Studies",
+  "topic": null,
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "EXACT",
+  "extraction_issues": [],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1602",
+    "url": null,
+    "page": 12,
+    "question_number": 40
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "AMBIGUOUS",
+    "subject_basis": "GS-1 paper (General Studies)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": true
+  }
+}

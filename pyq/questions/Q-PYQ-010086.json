@@ -1,0 +1,55 @@
+{
+  "question_id": "Q-PYQ-010086",
+  "paper_id": "PAPER-PYQ-1601",
+  "question_number": 86,
+  "page_number": 21,
+  "stem": "A person walks in the given directions as follows (i) 60 m to East ; (ii) then 80 m to South; (iii) then 120 m to West; (iv) then 30 m to North and (v) then 60 m to East. The distance between the starting point and the last point is (in meters)",
+  "stem_te": null,
+  "options": {
+    "A": "0",
+    "B": "60",
+    "C": null,
+    "D": null
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "AMBIGUOUS",
+  "extraction_issues": [
+    "fewer than 4 option values captured"
+  ],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1601",
+    "url": null,
+    "page": 21,
+    "question_number": 86
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "AMBIGUOUS",
+    "subject_basis": "Paper section header: Arithmetic & Test of Reasoning / Mental Ability (Q1-100)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": false
+  }
+}

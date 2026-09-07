@@ -11,19 +11,22 @@
 | Project                | Telangana Police SI 2026 AI Coaching System              |
 | Repository             | `D:\Projects\ts-si-ai-coach`                             |
 | Last updated           | 2026-09-07                                               |
-| Session                | 007 — PYQ acquisition & analysis preparation (container built, content blocked) |
-| Phase                  | 2 of 7 — Source acquisition (official SI half complete; Instagram half blocked; PYQ container built) |
-| Overall status         | `PARTIAL` — the Phase-1 official-source scope is complete: 24 of 25 official facts `VERIFIED`, official syllabus mapped (27 nodes), official marks structure populated (14 entries), supplementary-vs-original reconciliation recorded (5 records). The **PYQ container** (SPEC-PYQ-001) is built and green — 3 schemas, 2 registries, acquisition manifest, retrieval log, 45 tests — but **PYQ content is `BLOCKED` at zero**: no paper acquired, no question extracted, no weightage computed. Instagram knowledge still `BLOCKED` by `B-08`; the final UI/tutor are deliberately not begun. Per `D-0016`, a complete container does not imply complete content, so this session is not reported `COMPLETE` |
+| Session                | 008 — real-data PYQ processing (2 papers extracted, 400 questions, 13 observed-frequency entries; 7 registered papers scanned/not extracted) |
+| Phase                  | 2 of 7 — Source acquisition (official SI half complete; Instagram half blocked; PYQ content partial) |
+| Overall status         | `PARTIAL` — the Phase-1 official-source scope is complete: 24 of 25 official facts `VERIFIED`, official syllabus mapped (27 nodes), official marks structure populated (14 entries), supplementary-vs-original reconciliation recorded (5 records). **PYQ content is now `PARTIAL`, not zero**: 9 coaching-copy papers are registered and hashed; 2 (the 2016 Preliminary and 2016 General Studies final) have a usable text layer and were extracted into **400 question records**; the other 7 are scanned image-only/watermark-only and registered as retrieved but not extracted. **13 observed-frequency (weightage) entries** were computed over the 400 extracted questions, each explicitly marked `PARTIAL` with counted/intended coverage (2 of 9 papers, 400 questions) — no entry claims a share of the whole 9-paper corpus. Instagram knowledge still `BLOCKED` by `B-08`; the final UI/tutor are deliberately not begun. Per `D-0016`, this is honest `PARTIAL`, never `COMPLETE` |
 | Git branch             | `main`                                                   |
 | Latest commits         | `feat(pyq): ...` (session-007 PYQ foundation) ← `afec030` (session-006) ← `f8fd72a` (session-005) — run `git log --oneline` for the head |
 | Structural checks      | 21 of 21 passed — `python scripts/validate_bootstrap.py` exit `0` |
-| Unit tests             | 278 of 278 passed — `python -m unittest discover -s tests`, 0 failures, 2 skips that are correct-by-design. PYQ module alone: 45/45 `OK` |
+| Unit tests             | 278 passed, 0 failures, 3 skips that are correct-by-design — `python -m unittest discover -s tests`. PYQ module alone green over the real 400-record corpus |
+| PYQ papers registered  | 9 coaching-copy papers (`PAPER-PYQ-1601/1602/1801/1802/1803/2301/2302/2303/2304`) in `pyq/papers/` + `config/pyq_documents.json`, each `T2_HISTORICAL_PYQ`/`COACHING_COPY`, SHA-256 hashed, registered in `SOURCE_LEDGER` (SRC-0039–SRC-0047) |
+| PYQ questions extracted | **400** (`Q-PYQ-010001`..) from the 2016 Preliminary (Q1–200) and 2016 General Studies final (Q1–200) — the only two of nine papers with a usable text layer. `pyq/questions/` is `PARTIAL` relative to the registered corpus (400 of a set whose full size is unknown) |
+| PYQ observed frequency  | **13 entries** (`WGT-PYQ-0001`..`WGT-PYQ-0013`) over the 400 questions, all `PARTIAL` (2/9 papers, 400 questions), `basis OBSERVED`, `T2_HISTORICAL_PYQ`; no entry claims a share of the whole corpus. Subject sums: General Studies 299, Arithmetic/Reasoning 101 |
 | Official facts verified| **24 of 25** (`OFF-F03` honestly BLOCKED — the notification defers application dates to a future press release) |
 | Official syllabus      | 27 nodes, verbatim from Annexures II–III (pages 42–44) |
 | Official marks structure | 14 entries (6 PWT + 8 FWE) — per-paper totals, durations, qualifying %, negative marking; no topic-wise distribution in the notification, so none recorded |
 | Supplementary reconciliation | 5 records — DOC-OFF-003 amends only the upper age limit; governing general limit derived 32 as on 1 July 2026 |
 | Instagram knowledge    | **0 items processed.** No Instagram raw content exists; the fixture run is explicitly marked `test_fixture: true` and no real source was touched |
-| Evidence               | `docs/reports/2026-09-07-session006-official-completion.md` |
+| Evidence               | `docs/reports/2026-09-07-session008-pyq-realdata.md` |
 
 ## Current Phase
 
@@ -47,11 +50,19 @@
   knowledge → relevance scoring → dedup/corroboration → verification queue.
   Fully operable offline via the committed fixture; **zero Instagram content
   processed**; nothing marked `VERIFIED` by it.
-- **PYQ half (session 007):** container `COMPLETE` under `SPEC-PYQ-001`, content
-  `BLOCKED` at zero. The container (2 registries, 3 schemas, acquisition
-  manifest, retrieval log, 45 tests over AC-1..AC-8) cannot fabricate a past
-  paper or compute a weightage over an unenumerated set. No paper acquired
-  because no source host is reachable; recorded, not routed around (`D-0017`).
+- **PYQ half (session 007 container, session 008 content):** container
+  `COMPLETE` under `SPEC-PYQ-001`; content now `PARTIAL`, not zero. In session
+  008 the nine real coaching-copy papers supplied under
+  `source_material/pyq_raw/` were registered (`pyq/papers/`, `SOURCE_LEDGER`
+  SRC-0039–SRC-0047, SHA-256 hashed). Two of the nine have a usable text layer
+  — the 2016 Preliminary and the 2016 General Studies final — and were fully
+  extracted into **400 question records** (`pyq/questions/`). The other seven
+  are scanned image-only/watermark-only, registered as retrieved but not
+  extracted, so `pyq/questions/` is honest `PARTIAL`. **13 observed-frequency
+  entries** (`WGT-PYQ-0001`..`WGT-PYQ-0013`) were computed over the 400
+  questions, each explicitly `PARTIAL` with counted/intended coverage; no entry
+  claims a share of the whole 9-paper corpus. The source-host registry stays
+  `BLOCKED` (egress allowlist); recorded, not routed around (`D-0017`).
 
 ## The knowledge processing pipeline (new in session 005)
 

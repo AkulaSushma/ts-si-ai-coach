@@ -3,8 +3,17 @@
 One JSON record per question, linked to its paper and eventually to a `question_family`.
 Each record is `T2_HISTORICAL_PYQ`: it tells you what was asked, not what the rule is.
 
-This folder is **empty until a paper is extracted**. An empty folder is the correct,
-honest state, not a gap.
+As of 2026-09-07 this folder holds **400 records** — the 2016 Preliminary
+(`PAPER-PYQ-1601`, Q1–200) and the 2016 General Studies final (`PAPER-PYQ-1602`,
+Q1–200), the only two of the nine registered papers with a usable text layer. The other
+seven registered papers are scanned/image-only and are not extracted, so this folder is
+**PARTIAL relative to the registered corpus** — 400 of a set whose full size is unknown.
+
+Each record carries a `classification` block recording how the subject/topic was
+assigned (keyword/pattern match over the stem, i.e. `T2_HISTORICAL_PYQ` evidence, not an
+official rule), its confidence (`NEAR` / `AMBIGUOUS`), and whether the topic is
+unresolved. Where the topic could not be resolved the record keeps `topic: null` with
+`unresolved: true` rather than guessing a topic.
 
 ## Record shape
 

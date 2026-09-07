@@ -1,0 +1,32 @@
+{
+  "paper_id": "PAPER-PYQ-1802",
+  "exam": "TELANGANA_POLICE_SI",
+  "post": "SI (Civil et al)",
+  "phase": "FINAL",
+  "paper_number": null,
+  "year": 2018,
+  "language": "English",
+  "marks_total": null,
+  "questions_total": null,
+  "source_type": "COACHING_COPY",
+  "source_url": null,
+  "source_url_status": "UNKNOWN",
+  "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+  "local_path": "source_material/pyq_raw/TS-SI-Mains-Exam-2018-GS-Question-Paper-with-Final-key-Held-on-21.04.2019.pdf",
+  "sha256": "721bf5d4ad66e6457cbba8cf6e20d3143680af041c10d1a9556cd45e5ffbdfb2",
+  "retrieval_status": "RETRIEVED",
+  "attempts": [],
+  "retrieved_on": "2026-09-07",
+  "normalized_questions": 0,
+  "normalized_questions_status": "NONE",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY"
+  },
+  "verification": {
+    "method": "SOURCE_DOCUMENT",
+    "verified_on": "2026-09-07",
+    "verified_by": "session 008"
+  },
+  "extraction_caveat": "Watermark-only text layer (no real question text). Scanned image-only; no reliable extraction with available OCR."
+}

@@ -1,0 +1,53 @@
+{
+  "question_id": "Q-PYQ-010035",
+  "paper_id": "PAPER-PYQ-1601",
+  "question_number": 35,
+  "page_number": 10,
+  "stem": "A cricket game is played between two teams with 50 overs. In the first ten overs of the game the run rate was only 3.2. In the next ten overs it is increased to 4.6. If the captain decides that the teams’ total should be 303 runs, what should be the run rate for the remaining 30 overs ?  xqsLSxqsLji 3.2 ªRΩLRiV™yºΩ 10 J™´sL˝RiÕ‹[ @µj∂ 4.6 NTP |msLjigjiLiµj∂. «¡»Ì¡V ©y∏R∂VNRPV≤R∂V Æ™sVVªRΩÚLi xmsLRiVgRiVÃ¡V 303 ¬ø¡∏R∂W˘Ã¡¨s ¨sLÒRiLiVV}qsÚ ≠sVgji÷¡©´s 30 J™´sL˝RiÕ‹[ xmsLRiVgRiVÃ¡ xqsLSxqsLji FsLiªRΩ DLi≤y÷¡?",
+  "stem_te": null,
+  "options": {
+    "A": "6.25",
+    "B": "6.5",
+    "C": "7.0",
+    "D": "7.5"
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": null,
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "EXACT",
+  "extraction_issues": [],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1601",
+    "url": null,
+    "page": 10,
+    "question_number": 35
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "AMBIGUOUS",
+    "subject_basis": "Paper section header: Arithmetic & Test of Reasoning / Mental Ability (Q1-100)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": true
+  }
+}

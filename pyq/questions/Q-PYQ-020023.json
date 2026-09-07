@@ -1,0 +1,53 @@
+{
+  "question_id": "Q-PYQ-020023",
+  "paper_id": "PAPER-PYQ-1602",
+  "question_number": 23,
+  "page_number": 7,
+  "stem": "Consider the following: A) The average irradiance on the Earth Surface is around 1000 watt per square meter B) On a bright summer day, the day light has a flux of around 10,000 lumens per square foot C) Nuclear Fission is the main reason for the Sun’s hot surface The correct statements are",
+  "stem_te": null,
+  "options": {
+    "A": "A, B and C",
+    "B": "A and B",
+    "C": "A and C",
+    "D": "B and C"
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "General Studies",
+  "topic": "Physics",
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "EXACT",
+  "extraction_issues": [],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1602",
+    "url": null,
+    "page": 7,
+    "question_number": 23
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "NEAR",
+    "subject_basis": "GS-1 paper (General Studies)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "paper_id": "PAPER-PYQ-2302",
+  "exam": "TELANGANA_POLICE_SI",
+  "post": "SI (Civil et al)",
+  "phase": "FINAL",
+  "paper_number": null,
+  "year": 2023,
+  "language": "English",
+  "marks_total": null,
+  "questions_total": null,
+  "source_type": "COACHING_COPY",
+  "source_url": null,
+  "source_url_status": "UNKNOWN",
+  "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+  "local_path": "source_material/pyq_raw/TS-SI-Final-Exam-Question-Paper-With-Key-2023-Arithmetic-and-Reasoning-Exam-QP-With-Key-2023.pdf",
+  "sha256": "9b9b31b38eb1b66553f77add50701fd2c31fe1b52077e7b83908a6a0d4c4e8bc",
+  "retrieval_status": "RETRIEVED",
+  "attempts": [],
+  "retrieved_on": "2026-09-07",
+  "normalized_questions": 0,
+  "normalized_questions_status": "NONE",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY"
+  },
+  "verification": {
+    "method": "SOURCE_DOCUMENT",
+    "verified_on": "2026-09-07",
+    "verified_by": "session 008"
+  },
+  "extraction_caveat": "Scanned image-only PDF; no usable text layer. Arduino/Reasoning options and Telugu garbled by English-only OCR."
+}

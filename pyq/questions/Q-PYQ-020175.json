@@ -1,0 +1,56 @@
+{
+  "question_id": "Q-PYQ-020175",
+  "paper_id": "PAPER-PYQ-1602",
+  "question_number": 175,
+  "page_number": 57,
+  "stem": "As part of the agitation for separate Telangana State17th June,1969 was observed as",
+  "stem_te": null,
+  "options": {
+    "A": "Youth Day",
+    "B": "Senior Citizen’s Day",
+    "C": null,
+    "D": null
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "General Studies",
+  "topic": "Telangana GK & Culture",
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "AMBIGUOUS",
+  "extraction_issues": [
+    "options contain non-English (Telugu) recovered text",
+    "fewer than 4 option values captured"
+  ],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1602",
+    "url": null,
+    "page": 57,
+    "question_number": 175
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "AMBIGUOUS",
+    "subject_basis": "GS-1 paper (General Studies)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": false
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "paper_id": "PAPER-PYQ-1601",
+  "exam": "TELANGANA_POLICE_SI",
+  "post": "SI (Civil et al)",
+  "phase": "PRELIMINARY",
+  "paper_number": null,
+  "year": 2016,
+  "language": "English",
+  "marks_total": 200,
+  "questions_total": 200,
+  "source_type": "COACHING_COPY",
+  "source_url": null,
+  "source_url_status": "UNKNOWN",
+  "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+  "local_path": "source_material/pyq_raw/TS-SI-Exam-2016-Preliminary-Question-Paper-with-Official-Key.pdf",
+  "sha256": "68cd460803b7b591a691c4f4be4206705a500f1fd0cecda1eeb97d4200efeff0",
+  "retrieval_status": "RETRIEVED",
+  "attempts": [],
+  "retrieved_on": "2026-09-07",
+  "normalized_questions": 200,
+  "normalized_questions_status": "COMPLETE",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY"
+  },
+  "verification": {
+    "method": "SOURCE_DOCUMENT",
+    "verified_on": "2026-09-07",
+    "verified_by": "session 008"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "question_id": "Q-PYQ-010157",
+  "paper_id": "PAPER-PYQ-1601",
+  "question_number": 157,
+  "page_number": 43,
+  "stem": "Which of the following are the chief sources of hard wood timber ? (a) Broad leaved evergreen forests (b) Broad leaved deciduous forests (c) Evergreen coniferous forests (d) Needle leaf deciduous forests Answer is",
+  "stem_te": null,
+  "options": {
+    "A": "(a) and (c)",
+    "B": "(a), (b) and (c)",
+    "C": "(a) and (b)",
+    "D": "(a), (b), (c) and (d)"
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "General Studies",
+  "topic": null,
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "EXACT",
+  "extraction_issues": [],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1601",
+    "url": null,
+    "page": 43,
+    "question_number": 157
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "AMBIGUOUS",
+    "subject_basis": "Paper section header: General Studies (Q101-200)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "question_id": "Q-PYQ-020076",
+  "paper_id": "PAPER-PYQ-1602",
+  "question_number": 76,
+  "page_number": 25,
+  "stem": "Read the following statements a) The total geographical area of India is 3.2 million sq.km. b) The southern most point of India lies in Nicobar islands which was formerly called as Pygmallion point and now Indira point. c) The North-South extent of India is about 2100 kms.  Which of the above statements is/are correct ",
+  "stem_te": null,
+  "options": {
+    "A": "a & c",
+    "B": "b & c",
+    "C": "a & b",
+    "D": "a, b & c ________________________________________________________________________"
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "General Studies",
+  "topic": null,
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "EXACT",
+  "extraction_issues": [],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1602",
+    "url": null,
+    "page": 25,
+    "question_number": 76
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "AMBIGUOUS",
+    "subject_basis": "GS-1 paper (General Studies)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": true
+  }
+}

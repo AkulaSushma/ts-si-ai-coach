@@ -1,0 +1,32 @@
+{
+  "paper_id": "PAPER-PYQ-2303",
+  "exam": "TELANGANA_POLICE_SI",
+  "post": "SI (Civil et al)",
+  "phase": "FINAL",
+  "paper_number": null,
+  "year": 2023,
+  "language": "Telugu",
+  "marks_total": null,
+  "questions_total": null,
+  "source_type": "COACHING_COPY",
+  "source_url": null,
+  "source_url_status": "UNKNOWN",
+  "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+  "local_path": "source_material/pyq_raw/TS-SI-Final-Exam-Telugu-Question-Paper-With-Preliminary-Key-2023.pdf",
+  "sha256": "a43253e462d47cbfe21c7e1117fbc15281569ce352d45a6a4dd276bfc3040c0b",
+  "retrieval_status": "RETRIEVED",
+  "attempts": [],
+  "retrieved_on": "2026-09-07",
+  "normalized_questions": 0,
+  "normalized_questions_status": "NONE",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY"
+  },
+  "verification": {
+    "method": "SOURCE_DOCUMENT",
+    "verified_on": "2026-09-07",
+    "verified_by": "session 008"
+  },
+  "extraction_caveat": "Scanned image-only PDF; no usable text layer. Content is largely Telugu; no Telugu OCR language pack available."
+}

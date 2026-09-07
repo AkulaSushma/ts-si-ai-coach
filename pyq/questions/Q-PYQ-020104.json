@@ -1,0 +1,53 @@
+{
+  "question_id": "Q-PYQ-020104",
+  "paper_id": "PAPER-PYQ-1602",
+  "question_number": 104,
+  "page_number": 33,
+  "stem": "Read the following statements : a) ‘Operation Flood’ was started by the National Dairy Development Board in 1981. b) It was the largest integrated dairy development programme of the world. c) The father of ‘Operation Flood’ was Dr. Verghese Kurien. d) India is the second largest milk producing countries in the world.  Which of the above statements are incorrect?   P12 ",
+  "stem_te": null,
+  "options": {
+    "A": "a, b, c & d",
+    "B": "b, c & d",
+    "C": "b & c",
+    "D": "a & d 33-A  \f GS-1  Booklet Code  A"
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "General Studies",
+  "topic": null,
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "EXACT",
+  "extraction_issues": [],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1602",
+    "url": null,
+    "page": 33,
+    "question_number": 104
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "AMBIGUOUS",
+    "subject_basis": "GS-1 paper (General Studies)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": true
+  }
+}

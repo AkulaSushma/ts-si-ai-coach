@@ -1,0 +1,55 @@
+{
+  "question_id": "Q-PYQ-010117",
+  "paper_id": "PAPER-PYQ-1601",
+  "question_number": 117,
+  "page_number": 31,
+  "stem": "Which of the following is/are not correct ? (a) First Five Year Plan — 1951-1956 (b) Third Five Year Plan — 1966-1971 (c) Sixth Five Year Plan — 1980-1985 (d) Tenth Five Year Plan — 2002-2007 Correct answer is",
+  "stem_te": null,
+  "options": {
+    "A": "(a) and (c)",
+    "B": "(b) only",
+    "C": "(c) only",
+    "D": null
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "General Studies",
+  "topic": "Indian Economy",
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "AMBIGUOUS",
+  "extraction_issues": [
+    "fewer than 4 option values captured"
+  ],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1601",
+    "url": null,
+    "page": 31,
+    "question_number": 117
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "AMBIGUOUS",
+    "subject_basis": "Paper section header: General Studies (Q101-200)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": false
+  }
+}

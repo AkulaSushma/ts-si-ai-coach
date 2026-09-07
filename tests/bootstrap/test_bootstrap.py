@@ -341,9 +341,14 @@ class TestHonestyOfState(unittest.TestCase):
 
     @staticmethod
     def stored_and_raw() -> tuple[int, int]:
+        # "harvested items" in SOURCE_LEDGER.md is a count of acquired SOURCE
+        # BYTES, which live under source_material/ (plus data/raw ingestion
+        # records, the other documented home of acquired content). Derived
+        # records under pyq/ and expert_methods/ are outputs of processing those
+        # sources, not harvested sources, so they are not counted here. This
+        # matches scripts/validate_bootstrap.py::stored_source_files().
         stored = [
-            p for a in ("source_material", "pyq", "expert_methods")
-            for p in (ROOT / a).rglob("*")
+            p for p in (ROOT / "source_material").rglob("*")
             if p.is_file() and p.name not in BOOKKEEPING
         ]
         raw = ROOT / "data" / "raw"

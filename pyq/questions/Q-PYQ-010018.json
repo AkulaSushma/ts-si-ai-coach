@@ -1,0 +1,53 @@
+{
+  "question_id": "Q-PYQ-010018",
+  "paper_id": "PAPER-PYQ-1601",
+  "question_number": 18,
+  "page_number": 5,
+  "stem": "6 labourers can build a wall in 10 days. How many labourers of double the efficiency are needed to build 3 such walls in 5 days ? ",
+  "stem_te": null,
+  "options": {
+    "A": "36",
+    "B": "18",
+    "C": "20",
+    "D": "16"
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "EXACT",
+  "extraction_issues": [],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1601",
+    "url": null,
+    "page": 5,
+    "question_number": 18
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "NEAR",
+    "subject_basis": "Paper section header: Arithmetic & Test of Reasoning / Mental Ability (Q1-100)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": false
+  }
+}

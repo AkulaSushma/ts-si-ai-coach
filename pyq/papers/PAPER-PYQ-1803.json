@@ -1,0 +1,32 @@
+{
+  "paper_id": "PAPER-PYQ-1803",
+  "exam": "TELANGANA_POLICE_SI",
+  "post": "SI (Civil et al)",
+  "phase": "FINAL",
+  "paper_number": null,
+  "year": 2018,
+  "language": "Telugu",
+  "marks_total": null,
+  "questions_total": null,
+  "source_type": "COACHING_COPY",
+  "source_url": null,
+  "source_url_status": "UNKNOWN",
+  "source_url_basis": "Local file supplied under source_material/pyq_raw; no board-host source was reachable from this environment, so this coaching/local copy is the only evidence.",
+  "local_path": "source_material/pyq_raw/TS-SI-Mains-Exam-2018-Telugu-Question-Paper-with-Final-key.pdf",
+  "sha256": "16f59bebe27fe658ecc260e368ce0a4760ad035a0911e90b2c3cc26f379b20a6",
+  "retrieval_status": "RETRIEVED",
+  "attempts": [],
+  "retrieved_on": "2026-09-07",
+  "normalized_questions": 0,
+  "normalized_questions_status": "NONE",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY"
+  },
+  "verification": {
+    "method": "SOURCE_DOCUMENT",
+    "verified_on": "2026-09-07",
+    "verified_by": "session 008"
+  },
+  "extraction_caveat": "Watermark-only text layer. Largely Telugu content; no Telugu OCR available."
+}

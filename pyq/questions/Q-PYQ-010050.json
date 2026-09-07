@@ -1,0 +1,53 @@
+{
+  "question_id": "Q-PYQ-010050",
+  "paper_id": "PAPER-PYQ-1601",
+  "question_number": 50,
+  "page_number": 14,
+  "stem": "Two metallic cones of heights 4.1 cm and 4.3 cm and each radius of base radius as 2.1 cm are melted together and recast into a sphere. The diameter of the sphere in cm is  4.1 |qsLi.≠dsV ™´sVLji∏R∂VV 4.3 |qsLi.≠dsV FsªRΩVÚÃ¡V, IN]‰NRP‰µy¨sNTP 2.1 |qsLi.≠dsV À≥œ¡W™y˘ryLÛRiLi NRP÷¡gji D©´sı lLiLi≤R∂V Õ‹[x§¶¶¶xmso aRPLiNRPV™´soÃ¡©´sV NRPLjigjiLi¿¡ INRP g][Œœ¡LigS ™´sV÷¡øyLRiV. A g][Œœ¡xmso ™y˘xqs™´sVV |qsLi.≠dsVÃ¡Õ‹[",
+  "stem_te": null,
+  "options": {
+    "A": "4.2",
+    "B": "4.5",
+    "C": "4.8",
+    "D": "5"
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "EXACT",
+  "extraction_issues": [],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1601",
+    "url": null,
+    "page": 14,
+    "question_number": 50
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "NEAR",
+    "subject_basis": "Paper section header: Arithmetic & Test of Reasoning / Mental Ability (Q1-100)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": false
+  }
+}

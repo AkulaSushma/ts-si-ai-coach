@@ -5,7 +5,7 @@
   "category": "pyq_source_registry",
   "provenance_tier": "T2_HISTORICAL_PYQ",
   "status": "BLOCKED",
-  "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include any paper-hosting host, and web search returned no content. No source URL could be verified from here, so no source is registered. Exact response recorded in attempts[] and in source_material/pyq_raw/RETRIEVAL_LOG.md.",
+  "blocked_reason": "Network egress from this environment is restricted to an allowlist that does not include any paper-hosting host, and web search returned no content. No source URL could be verified from here, so no candidate source host is registered. Exact response recorded in attempts[] and in source_material/pyq_raw/RETRIEVAL_LOG.md. This registry tracks the source hosts we could pursue; the nine coaching-copy PDFs that were supplied locally are a separate matter and are registered in config/pyq_documents.json and pyq/papers/ (see that registry, not this one).",
   "eligible_source_types": {
     "OFFICIAL_PUBLICATION": "A paper (or answer key) served by TGPRB / TSLPRB itself, or its official archive. Highest evidence value but, where the board does not publish solved papers, may not exist.",
     "COACHING_COPY": "A coaching institute's scan or transcription of a paper, or its 'solved papers' compilation. This is the realistic route for most previous years. Recorded as a coaching copy, never relabelled as board-issued.",

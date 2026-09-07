@@ -12,7 +12,7 @@ ID format: `T-####`, sequential, never reused.
 | `T-0010` | Acquire official TGPRB SI notification + syllabus  | `PARTIAL` | Main notification + supplement RETRIEVED and read (session 004); 4 of 6 registered documents still blocked (`B-09`) |
 | `T-0011` | Extract official syllabus into `knowledge/official/syllabus.json` | `COMPLETE` | 27 nodes verified against DOC-OFF-002 pages 42–44; quotes mechanically re-checked |
 | `T-0012` | Write the data-model specification                | `BLOCKED` | `T-0011` complete — unblocked; knowledge-pipeline record shapes are ready inputs |
-| `T-0013` | Acquire previous-year papers with keys             | `BLOCKED` | `B-02` — container built (session 007, `SPEC-PYQ-001`); no paper acquired because no source host is reachable. Coalesced with `T-0013`'s sibling `T-0018` (weightage) — both wait on acquired bytes |
+| `T-0013` | Acquire previous-year papers with keys             | `PARTIAL` | 9 coaching-copy papers supplied by the user under `source_material/pyq_raw/`, enumerated, SHA-256 hashed and registered (session 008). 2 of 9 extracted (400 questions); 7 scanned/not extracted. Source-host set still `BLOCKED` (`B-02` egress) — no board/coaching host reachable, so the broader universe is unenumerable. Coalesced with sibling `T-0018` (weightage) |
 | `T-0014` | Confirm and pin provider model ID strings          | `BLOCKED` | `B-04`; `glm-5.3` still `UNVERIFIED_STRING` — no live call yet |
 | `T-0019` | Decide Instagram access path (auth / network / defer) | `BLOCKED` | `B-08` — user decision |
 | `T-0020` | Bulk-extract remaining 31 IG sources               | `BLOCKED` | `T-0019` — live access refused |
@@ -97,6 +97,24 @@ checkers can fail. Every **content** criterion — acquired papers, hashed bytes
 extracted questions, computed weightage — is `BLOCKED` at zero by `B-02` (egress
 allowlist). `SPEC-PYQ-001` §9 states in writing that passing the container tests
 does not license calling the phase `COMPLETE` (`D-0016`).
+
+## Session 008 — real-data PYQ processing
+
+| ID       | Task                                                          | Status     | Verified by |
+| -------- | ------------------------------------------------------------- | ---------- | ----------- |
+| `T-0060` | Register the nine real paper PDFs in the PYQ registries        | `COMPLETE` | `config/pyq_documents.json` COMPLETE (9 documents, SHA-256); `pyq/papers/PAPER-PYQ-*.json`; `SOURCE_LEDGER` SRC-0039–SRC-0047 (`T2_HISTORICAL_PYQ`/`COACHING_COPY`); acquisition manifest `partial`, identity `9 = 9+0+0+0+0` |
+| `T-0061` | Extract questions with provenance from the extractable papers  | `COMPLETE` | The two papers with a usable text layer (2016 Preliminary, 2016 GS final) → **400 records** in `pyq/questions/` (`Q-PYQ-010001`..), each `T2_HISTORICAL_PYQ`, sourced, `answer_source` present. The other 7 registered papers are scanned image-only/watermark-only and are registered as retrieved but not extracted — documented, not silently skipped |
+| `T-0062` | Classify extracted questions with confidence                  | `COMPLETE` | Every record carries a `classification` block (subject/topic, keyword/pattern basis, `NEAR`/`AMBIGUOUS`, `unresolved: true` where a topic could not be resolved). No silent guessing: unresolved topic → `topic: null` |
+| `T-0063` | Compute observed subject/topic frequency with explicit coverage | `COMPLETE` | 13 entries `WGT-PYQ-0001`..`WGT-PYQ-0013` over the 400 questions, each `PARTIAL` with counted/intended coverage (2/9 papers, 400 questions), `basis OBSERVED`, `T2_HISTORICAL_PYQ`. Subject sums: General Studies 299, Arithmetic/Reasoning 101. No entry claims a share of the whole corpus |
+| `T-0064` | Run all checks green and add real-data validation            | `COMPLETE` | Validator 21/21 exit `0`; full suite 278 tests, 0 failures, 3 skips correct-by-design. Fixed at root cause the bootstrap ledger-reconciliation accounting bug (`stored_and_raw()` was counting derived `pyq/` records as harvested sources; now counts acquired source bytes, matching `validate_bootstrap.py`) |
+
+Acceptance criteria are in `SPEC-PYQ-001` §9. The **content** criteria — acquired
+and hashed papers, extracted questions, computed weightage — are no longer at
+zero: 9 papers registered, 2 extracted (400 questions), 13 observed-frequency
+entries over an explicitly partial (2/9) set. The set is honest `PARTIAL`, never
+`COMPLETE`: 7 of 9 registered papers are scanned and not extracted, the source-host
+universe is unenumerable from this environment (`B-02`), and every weightage entry
+states its counted/intended coverage.
 
 ## Completed Tasks
 

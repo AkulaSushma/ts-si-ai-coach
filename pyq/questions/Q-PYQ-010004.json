@@ -1,0 +1,53 @@
+{
+  "question_id": "Q-PYQ-010004",
+  "paper_id": "PAPER-PYQ-1601",
+  "question_number": 4,
+  "page_number": 1,
+  "stem": "Five bells begin to toll together and they toll at intervals of 6, 5, 7, 10 and 12 seconds respectively. How many times they toll together in one hour excluding the one at the start ?  5 gRiLi»¡Ã¡V IZNP[ryLji ˙Æ™sWgRi≤R∂Li Æ™sVVµR∂Ã¡V |ms…ÌÿLiVV. C gRiLi»¡Ã¡V ™´sLRiVxqsgS 6, 5, 7, 10 ™´sVLji∏R∂VV",
+  "stem_te": null,
+  "options": {
+    "A": "7",
+    "B": "8",
+    "C": "9",
+    "D": "10"
+  },
+  "correct_answer": null,
+  "answer_source": "UNVERIFIED",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": null,
+  "question_type": null,
+  "concept_tested": null,
+  "difficulty": "UNCLASSIFIED",
+  "paper_year": 2016,
+  "post_code": null,
+  "source_type": "COACHING_COPY",
+  "solving_method": null,
+  "estimated_normal_time_s": null,
+  "verified_fast_method": null,
+  "fast_method_source": null,
+  "identification_clues": [],
+  "confusion_pairs": [],
+  "extraction_confidence": "EXACT",
+  "extraction_issues": [],
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+    "source_type": "COACHING_COPY",
+    "source_document_id": "PAPER-PYQ-1601",
+    "url": null,
+    "page": 1,
+    "question_number": 4
+  },
+  "verification": {
+    "method": null,
+    "verified_on": null,
+    "verified_by": null
+  },
+  "classification": {
+    "method": "STRUCTURAL",
+    "confidence": "NEAR",
+    "subject_basis": "Paper section header: Arithmetic & Test of Reasoning / Mental Ability (Q1-100)",
+    "topic_basis": "Heuristic keyword/pattern match on stem (T2 evidence, not official rule)",
+    "unresolved": false
+  }
+}
