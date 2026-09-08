@@ -815,7 +815,7 @@
   "method_id": "MET-PYQ-0030",
   "name": "CI-SI 2-year shortcut",
   "kind": "FAST",
-  "state": "UNVERIFIED_FAST_METHOD",
+  "state": "VERIFIED_FAST_METHOD",
   "description": "For 2 years at rate r%, CI - SI = P * (r/100)^2, read off P directly.",
   "when_usable": "When the gap between CI and SI over exactly two years is given and P is wanted.",
   "when_not_to_use": "Only valid for two years at the same rate; fails otherwise.",
@@ -827,7 +827,7 @@
   ],
   "derived_from": "MODEL_ANALYSIS",
   "time_advantage": "15",
-  "verification_id": null,
+  "verification_id": "VER-PYQ-0001",
   "expert_source_ref": null,
   "analysis_origin": "MODEL_DERIVED",
   "evidence_tier": "T2_HISTORICAL_PYQ",
@@ -837,13 +837,13 @@
    ],
    "generated_at": "2026-09-07"
   },
-  "verification_status": "UNVERIFIED"
+  "verification_status": "VERIFIED"
  },
  {
   "method_id": "MET-PYQ-0031",
   "name": "Equal-percent net loss shortcut",
   "kind": "FAST",
-  "state": "UNVERIFIED_FAST_METHOD",
+  "state": "VERIFIED_FAST_METHOD",
   "description": "When two items are sold at the same price with equal gain and loss percentages p, the net result is a loss of (p^2)/100 percent.",
   "when_usable": "Two items sold at the same SP with equal +p and -p.",
   "when_not_to_use": "Not valid if the gain and loss percentages differ, or if the prices differ.",
@@ -855,7 +855,7 @@
   ],
   "derived_from": "MODEL_ANALYSIS",
   "time_advantage": null,
-  "verification_id": null,
+  "verification_id": "VER-PYQ-0002",
   "expert_source_ref": null,
   "analysis_origin": "MODEL_DERIVED",
   "evidence_tier": "T2_HISTORICAL_PYQ",
@@ -865,13 +865,13 @@
    ],
    "generated_at": "2026-09-07"
   },
-  "verification_status": "UNVERIFIED"
+  "verification_status": "VERIFIED"
  },
  {
   "method_id": "MET-PYQ-0032",
   "name": "Successive-discount factor",
   "kind": "FAST",
-  "state": "UNVERIFIED_FAST_METHOD",
+  "state": "VERIFIED_FAST_METHOD",
   "description": "Successive discounts of d1 then d2 give a single factor (1 - d1/100)(1 - d2/100) on the marked price.",
   "when_usable": "Two (or more) successive discounts on one price.",
   "when_not_to_use": "Only for successive discounts, not for discounts applied to different bases.",
@@ -883,7 +883,7 @@
   ],
   "derived_from": "MODEL_ANALYSIS",
   "time_advantage": null,
-  "verification_id": null,
+  "verification_id": "VER-PYQ-0003",
   "expert_source_ref": null,
   "analysis_origin": "MODEL_DERIVED",
   "evidence_tier": "T2_HISTORICAL_PYQ",
@@ -893,13 +893,13 @@
    ],
    "generated_at": "2026-09-07"
   },
-  "verification_status": "UNVERIFIED"
+  "verification_status": "VERIFIED"
  },
  {
   "method_id": "MET-PYQ-0033",
   "name": "Ratio-cubes shortcut",
   "kind": "FAST",
-  "state": "UNVERIFIED_FAST_METHOD",
+  "state": "VERIFIED_FAST_METHOD",
   "description": "For numbers in ratio a:b:c whose cubes sum to S, k = (S/(a^3+b^3+c^3))^(1/3); the cube of the middle is (k*b)^3.",
   "when_usable": "Ratio of numbers given along with a power/sum relation.",
   "when_not_to_use": "Only when the ratio terms and the power relation are both present.",
@@ -911,7 +911,7 @@
   ],
   "derived_from": "MODEL_ANALYSIS",
   "time_advantage": null,
-  "verification_id": null,
+  "verification_id": "VER-PYQ-0004",
   "expert_source_ref": null,
   "analysis_origin": "MODEL_DERIVED",
   "evidence_tier": "T2_HISTORICAL_PYQ",
@@ -921,13 +921,13 @@
    ],
    "generated_at": "2026-09-07"
   },
-  "verification_status": "UNVERIFIED"
+  "verification_status": "VERIFIED"
  },
  {
   "method_id": "MET-PYQ-0034",
   "name": "Still-water mean shortcut",
   "kind": "FAST",
-  "state": "UNVERIFIED_FAST_METHOD",
+  "state": "VERIFIED_FAST_METHOD",
   "description": "Still-water speed equals the mean of the downstream and upstream speeds; skip the algebra.",
   "when_usable": "Downstream and upstream speeds both given.",
   "when_not_to_use": "Cannot find the current speed from the mean alone.",
@@ -939,7 +939,7 @@
   ],
   "derived_from": "MODEL_ANALYSIS",
   "time_advantage": null,
-  "verification_id": null,
+  "verification_id": "VER-PYQ-0005",
   "expert_source_ref": null,
   "analysis_origin": "MODEL_DERIVED",
   "evidence_tier": "T2_HISTORICAL_PYQ",
@@ -949,6 +949,6 @@
    ],
    "generated_at": "2026-09-07"
   },
-  "verification_status": "UNVERIFIED"
+  "verification_status": "VERIFIED"
  }
 ]

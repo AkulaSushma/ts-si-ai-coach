@@ -1,1 +1,246 @@
-[]
+[
+ {
+  "verification_id": "VER-PYQ-0001",
+  "method_id": "MET-PYQ-0030",
+  "approach": "DETERMINISTIC",
+  "procedure": "Compared fast formula P*(r/100)^2 against standard (CI - SI) over 20 integer input combinations",
+  "standard_vs_fast_equivalence": {
+   "fast_matches_standard": true,
+   "mismatches": 0,
+   "note": null
+  },
+  "variants_tested": [
+   "(1000, 2)",
+   "(1000, 5)",
+   "(1000, 8)",
+   "(1000, 10)",
+   "(1000, 12)",
+   "(5000, 2)",
+   "(5000, 5)",
+   "(5000, 8)",
+   "(5000, 10)",
+   "(5000, 12)",
+   "(10000, 2)",
+   "(10000, 5)",
+   "(10000, 8)",
+   "(10000, 10)",
+   "(10000, 12)",
+   "(50000, 2)",
+   "(50000, 5)",
+   "(50000, 8)",
+   "(50000, 10)",
+   "(50000, 12)"
+  ],
+  "edge_cases_tested": [
+   "(0, 10)",
+   "(1000, 0)",
+   "(1000, 100)"
+  ],
+  "result": "PASS",
+  "verified_on": "2026-09-09T00:03:09.425441",
+  "verified_by": "scripts/verify_fast_methods.py",
+  "evidence": "outputs/verify_fast_methods.py",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "generated_at": null
+  }
+ },
+ {
+  "verification_id": "VER-PYQ-0002",
+  "method_id": "MET-PYQ-0031",
+  "approach": "DETERMINISTIC",
+  "procedure": "Compared fast formula (p^2/100)% loss over 20 integer input combinations and 3 valid edge cases",
+  "standard_vs_fast_equivalence": {
+   "fast_matches_standard": true,
+   "mismatches": 0,
+   "note": null
+  },
+  "variants_tested": [
+   "(100, 2)",
+   "(100, 5)",
+   "(100, 10)",
+   "(100, 15)",
+   "(100, 20)",
+   "(500, 2)",
+   "(500, 5)",
+   "(500, 10)",
+   "(500, 15)",
+   "(500, 20)",
+   "(1000, 2)",
+   "(1000, 5)",
+   "(1000, 10)",
+   "(1000, 15)",
+   "(1000, 20)",
+   "(5000, 2)",
+   "(5000, 5)",
+   "(5000, 10)",
+   "(5000, 15)",
+   "(5000, 20)"
+  ],
+  "edge_cases_tested": [
+   "(100, 0)",
+   "(100, 50)",
+   "(50, 25)"
+  ],
+  "result": "PASS",
+  "verified_on": "2026-09-09T00:03:09.425441",
+  "verified_by": "scripts/verify_fast_methods.py",
+  "evidence": "outputs/verify_fast_methods.py",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "generated_at": null
+  }
+ },
+ {
+  "verification_id": "VER-PYQ-0003",
+  "method_id": "MET-PYQ-0032",
+  "approach": "DETERMINISTIC",
+  "procedure": "Compared fast factor (1-d1/100)*(1-d2/100) against standard over 27 integer input combinations",
+  "standard_vs_fast_equivalence": {
+   "fast_matches_standard": true,
+   "mismatches": 0,
+   "note": null
+  },
+  "variants_tested": [
+   "(1000, 10, 5)",
+   "(1000, 10, 10)",
+   "(1000, 10, 15)",
+   "(1000, 20, 5)",
+   "(1000, 20, 10)",
+   "(1000, 20, 15)",
+   "(1000, 30, 5)",
+   "(1000, 30, 10)",
+   "(1000, 30, 15)",
+   "(5000, 10, 5)",
+   "(5000, 10, 10)",
+   "(5000, 10, 15)",
+   "(5000, 20, 5)",
+   "(5000, 20, 10)",
+   "(5000, 20, 15)",
+   "(5000, 30, 5)",
+   "(5000, 30, 10)",
+   "(5000, 30, 15)",
+   "(16000, 10, 5)",
+   "(16000, 10, 10)",
+   "(16000, 10, 15)",
+   "(16000, 20, 5)",
+   "(16000, 20, 10)",
+   "(16000, 20, 15)",
+   "(16000, 30, 5)",
+   "(16000, 30, 10)",
+   "(16000, 30, 15)"
+  ],
+  "edge_cases_tested": [
+   "(0, 10, 10)",
+   "(1000, 100, 100)",
+   "(1000, 0, 0)"
+  ],
+  "result": "PASS",
+  "verified_on": "2026-09-09T00:03:09.425441",
+  "verified_by": "scripts/verify_fast_methods.py",
+  "evidence": "outputs/verify_fast_methods.py",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "generated_at": null
+  }
+ },
+ {
+  "verification_id": "VER-PYQ-0004",
+  "method_id": "MET-PYQ-0033",
+  "approach": "DETERMINISTIC",
+  "procedure": "Compared fast k formula against standard over 12 integer input combinations",
+  "standard_vs_fast_equivalence": {
+   "fast_matches_standard": true,
+   "mismatches": 0,
+   "note": null
+  },
+  "variants_tested": [
+   "(27, 3, 4, 5)",
+   "(27, 1, 2, 3)",
+   "(27, 2, 3, 4)",
+   "(64, 3, 4, 5)",
+   "(64, 1, 2, 3)",
+   "(64, 2, 3, 4)",
+   "(1728, 3, 4, 5)",
+   "(1728, 1, 2, 3)",
+   "(1728, 2, 3, 4)",
+   "(1000, 3, 4, 5)",
+   "(1000, 1, 2, 3)",
+   "(1000, 2, 3, 4)"
+  ],
+  "edge_cases_tested": [
+   "(0, 1, 2, 3)",
+   "(1728, 0, 4, 5)"
+  ],
+  "result": "PASS",
+  "verified_on": "2026-09-09T00:03:09.426296",
+  "verified_by": "scripts/verify_fast_methods.py",
+  "evidence": "outputs/verify_fast_methods.py",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "generated_at": null
+  }
+ },
+ {
+  "verification_id": "VER-PYQ-0005",
+  "method_id": "MET-PYQ-0034",
+  "approach": "DETERMINISTIC",
+  "procedure": "Compared fast mean (down+up)/2 against standard over 16 integer input combinations",
+  "standard_vs_fast_equivalence": {
+   "fast_matches_standard": true,
+   "mismatches": 0,
+   "note": null
+  },
+  "variants_tested": [
+   "(10, 6)",
+   "(10, 8)",
+   "(10, 10)",
+   "(10, 15)",
+   "(14, 6)",
+   "(14, 8)",
+   "(14, 10)",
+   "(14, 15)",
+   "(20, 6)",
+   "(20, 8)",
+   "(20, 10)",
+   "(20, 15)",
+   "(30, 6)",
+   "(30, 8)",
+   "(30, 10)",
+   "(30, 15)"
+  ],
+  "edge_cases_tested": [
+   "(0, 0)",
+   "(5, 5)",
+   "(10, -5)"
+  ],
+  "result": "PASS",
+  "verified_on": "2026-09-09T00:03:09.426296",
+  "verified_by": "scripts/verify_fast_methods.py",
+  "evidence": "outputs/verify_fast_methods.py",
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "generated_at": null
+  }
+ }
+]

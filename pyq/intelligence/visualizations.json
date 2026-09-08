@@ -1,1 +1,1101 @@
-[]
+[
+ {
+  "visual_id": "VIS-PYQ-0001",
+  "family_id": "FAM-PYQ-0001",
+  "metaphor": "A row of equally long planks (multiples of 19) with one plank shorter than the row end.",
+  "diagram_type": "NUMBER_LINE",
+  "numbers_relationships": {
+   "divisor": 19,
+   "dividend": 2000,
+   "remainder": 5,
+   "to_add": 14
+  },
+  "must_appear": [
+   "The number line of multiples of 19",
+   "2000 marked just past a multiple",
+   "the gap to the next multiple shaded"
+  ],
+  "step_sequence": [
+   "Draw multiples of 19 on the line",
+   "Mark 2000",
+   "Shade the gap to the next multiple"
+  ],
+  "recognition_clue": "The phrase 'least number to be added' with the gap-to-next-multiple picture.",
+  "common_confusion": "FAM-PYQ-0002 counting problems \u2014 this is a remainder gap, not a count.",
+  "memory_anchor": "The next multiple is the top of the ladder.",
+  "must_not_appear": [
+   "Subtracting the remainder as if it were the answer",
+   "A 'smallest number to subtract' reading"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0002",
+  "family_id": "FAM-PYQ-0002",
+  "metaphor": "A strip of consecutive integers with the perfect squares punched out like windows.",
+  "diagram_type": "NUMBER_LINE",
+  "numbers_relationships": {
+   "range_low": 1985,
+   "range_high": 2005,
+   "square_low": 44,
+   "square_high": 45
+  },
+  "must_appear": [
+   "The full integer range as a strip",
+   "the square positions punched out",
+   "the count of non-squares labelled"
+  ],
+  "step_sequence": [
+   "Draw the range",
+   "Mark every perfect square inside",
+   "Count what remains"
+  ],
+  "recognition_clue": "'Between x and y, how many are NOT perfect squares' with the punched-strip picture.",
+  "common_confusion": "FAM-PYQ-0001 remainder problems \u2014 here nothing is added; a count is asked.",
+  "memory_anchor": "Punch out the squares; count the holes left behind.",
+  "must_not_appear": [
+   "Counting the squares instead of the non-squares",
+   "Including an endpoint square outside the range"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0003",
+  "family_id": "FAM-PYQ-0003",
+  "metaphor": "Three bells or traffic lights flashing together; the next common flash is the LCM.",
+  "diagram_type": "SEQUENCE",
+  "numbers_relationships": {
+   "interval_a": null,
+   "interval_b": null,
+   "lcm": "LCM of the intervals"
+  },
+  "must_appear": [
+   "Each interval drawn as its own flash-timeline",
+   "the first common flash marked",
+   "the answer as the number of coincidences in the time given"
+  ],
+  "step_sequence": [
+   "Draw each event's timeline",
+   "Find the first common flash (LCM)",
+   "Count coincidences in the window"
+  ],
+  "recognition_clue": "Several things happening every n units and the question 'after how long / how many times together'.",
+  "common_confusion": "FAM-PYQ-0004 ratio problems \u2014 coincidence is a period, not a share.",
+  "memory_anchor": "Together again at the LCM.",
+  "must_not_appear": [
+   "Adding the intervals instead of taking the LCM",
+   "Forgetting to count the coincidence at time zero"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0004",
+  "family_id": "FAM-PYQ-0004",
+  "metaphor": "A cake cut into parts whose sizes are k times the ratio terms.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "ratio": "a : b : c",
+   "scale": "k",
+   "sum_or_difference": "given whole or gap"
+  },
+  "must_appear": [
+   "The ratio bars",
+   "k marked as the unknown scale",
+   "the given whole mapped onto the bars"
+  ],
+  "step_sequence": [
+   "Write the parts as k times each ratio term",
+   "Use the whole or gap to solve for k",
+   "Compute the asked part"
+  ],
+  "recognition_clue": "Two or three quantities 'in the ratio' plus a whole, a sum, or a difference.",
+  "common_confusion": "FAM-PYQ-0006 percentage problems \u2014 a ratio splits a whole, it is not a percent of one base.",
+  "memory_anchor": "Ratio bars; k is the key.",
+  "must_not_appear": [
+   "Adding ratio terms to the given whole directly without k",
+   "Treating ratio terms as actual quantities"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0005",
+  "family_id": "FAM-PYQ-0005",
+  "metaphor": "Three horizontal time lines (past, now, future) per person, with the same age differences on each.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "now": null,
+   "past_offset": null,
+   "future_offset": null,
+   "ratio": null
+  },
+  "must_appear": [
+   "Now-line with each age",
+   "the past and future shifted by the stated years",
+   "the ratio equation the solver must set"
+  ],
+  "step_sequence": [
+   "Draw the now ages",
+   "Shift to the stated time",
+   "Write the ratio equation",
+   "Solve"
+  ],
+  "recognition_clue": "Ages related by a ratio at two different times.",
+  "common_confusion": "FAM-PYQ-0004 \u2014 here time shifts, not a static split.",
+  "memory_anchor": "Both ages shift together; the difference never ages.",
+  "must_not_appear": [
+   "Shifting only one person's age",
+   "Treating the present ratio as the past ratio"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0006",
+  "family_id": "FAM-PYQ-0006",
+  "metaphor": "A bar of 100 equal cells; percentage is how many cells of the whole.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "whole": null,
+   "percent": null,
+   "part": null
+  },
+  "must_appear": [
+   "The whole bar as 100 cells",
+   "the part shaded",
+   "the percent written at the shaded edge"
+  ],
+  "step_sequence": [
+   "Draw the 100-cell bar",
+   "Shade the part",
+   "Read or write the percent"
+  ],
+  "recognition_clue": "'What percent / what part' of a named whole.",
+  "common_confusion": "FAM-PYQ-0004 \u2014 one base times a rate, not a split of a ratio sum.",
+  "memory_anchor": "Percent is per hundred cells.",
+  "must_not_appear": [
+   "Adding percentages of different wholes as if one base",
+   "Shading more than the whole bar"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0007",
+  "family_id": "FAM-PYQ-0007",
+  "metaphor": "Money lying flat, earning the same wedge of interest each year, side by side.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "principal": "P",
+   "rate": "r%",
+   "time": "t",
+   "interest": "P*r*t/100"
+  },
+  "must_appear": [
+   "P as the base bar",
+   "equal yearly interest wedges stacked",
+   "total interest = wedges x years"
+  ],
+  "step_sequence": [
+   "Draw P",
+   "Stack equal wedges per year",
+   "Read total interest"
+  ],
+  "recognition_clue": "Interest 'on the principal only' / flat wedges.",
+  "common_confusion": "FAM-PYQ-0008 compound interest \u2014 the wedges must stay equal here.",
+  "memory_anchor": "Flat wedges: same interest every year.",
+  "must_not_appear": [
+   "Interest on interest",
+   "Wedges that grow each year"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0008",
+  "family_id": "FAM-PYQ-0008",
+  "metaphor": "A snowball: each year's interest joins the ball and earns next year.",
+  "diagram_type": "SEQUENCE",
+  "numbers_relationships": {
+   "principal": "P",
+   "rate": "r%",
+   "time": "t",
+   "amount": "P(1+r/100)^t"
+  },
+  "must_appear": [
+   "The amount after each year labelled",
+   "the new interest computed on the grown amount",
+   "CI = amount - P"
+  ],
+  "step_sequence": [
+   "Start with P",
+   "Grow by r% each step",
+   "Subtract P at the end"
+  ],
+  "recognition_clue": "Interest 'compounded' \u2014 the snowball wording.",
+  "common_confusion": "FAM-PYQ-0007 \u2014 here the base grows; there it is flat.",
+  "memory_anchor": "Snowball: the ball grows every year.",
+  "must_not_appear": [
+   "A flat base",
+   "Treating compound as simple interest"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0009",
+  "family_id": "FAM-PYQ-0009",
+  "metaphor": "Two side-by-side piles: the flat SI pile and the snowball CI pile, with the gap at the top highlighted.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "principal": "P",
+   "rate": "r%",
+   "time": 2,
+   "difference": "P*(r/100)^2 (2 years)"
+  },
+  "must_appear": [
+   "Both piles after the term",
+   "the difference labelled",
+   "the question word 'difference' tied to the gap"
+  ],
+  "step_sequence": [
+   "Grow both piles",
+   "Measure the gap",
+   "Answer with the gap only"
+  ],
+  "recognition_clue": "The words 'difference between CI and SI'.",
+  "common_confusion": "FAM-PYQ-0007 / FAM-PYQ-0008 \u2014 they ask for an amount; this asks only for the gap.",
+  "memory_anchor": "The question is the gap; stop at the gap.",
+  "must_not_appear": [
+   "Returning a total amount instead of the gap",
+   "The 2-year shortcut implied for other terms"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0010",
+  "family_id": "FAM-PYQ-0010",
+  "metaphor": "A price walking down a staircase of discounts, and a gain/loss signpost after each sale.",
+  "diagram_type": "FLOW",
+  "numbers_relationships": {
+   "cp": "CP",
+   "sp": "SP",
+   "gain_or_loss": "percentage",
+   "discounts": "d1, d2"
+  },
+  "must_appear": [
+   "CP and SP clearly labelled",
+   "the percentage applied to the correct base",
+   "successive discounts as sequential steps"
+  ],
+  "step_sequence": [
+   "Mark CP",
+   "Apply the gain or loss",
+   "For discounts, step down the marked price"
+  ],
+  "recognition_clue": "Bought/sold at a percent; successive discounts; equal-SP pairs.",
+  "common_confusion": "FAM-PYQ-0011 partnership \u2014 profit split there is by capital, not by sale margins.",
+  "memory_anchor": "Discounts chain downward; the base changes each step.",
+  "must_not_appear": [
+   "Discounts subtracted from each other on the original price",
+   "Gain% written on SP instead of CP"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0011",
+  "family_id": "FAM-PYQ-0011",
+  "metaphor": "Each partner's capital as a tray of coins, each tray weighed by how long it sat in the business.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "capital": "C",
+   "time": "t",
+   "share": "C*t per partner"
+  },
+  "must_appear": [
+   "Each partner's capital",
+   "each capital's duration",
+   "the C x t product bars",
+   "the profit split across the bars"
+  ],
+  "step_sequence": [
+   "List capital and time per partner",
+   "Form C x t for each",
+   "Split the profit in that ratio"
+  ],
+  "recognition_clue": "Two or more people investing, profit shared 'in proportion to capital'.",
+  "common_confusion": "FAM-PYQ-0010 \u2014 no sale margins here; profit is split by investment.",
+  "memory_anchor": "Money x months earns the share.",
+  "must_not_appear": [
+   "Splitting by capital alone when entry times differ",
+   "Mixing rupees and months without weighting"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0012",
+  "family_id": "FAM-PYQ-0012",
+  "metaphor": "Pipes filling one tank; each worker is a pipe with a flow rate (work per day).",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "work": "1 unit",
+   "rate_a": "1/a",
+   "rate_b": "1/b",
+   "combined": "1/a + 1/b"
+  },
+  "must_appear": [
+   "Each worker's rate as a pipe flow",
+   "the combined flow",
+   "time = 1 / combined flow"
+  ],
+  "step_sequence": [
+   "Turn each worker into a rate",
+   "Add the rates",
+   "Invert for the combined time"
+  ],
+  "recognition_clue": "'A does it in a days, B in b days; together?' or efficiency ratios.",
+  "common_confusion": "FAM-PYQ-0013 speed-distance \u2014 the additive-inverse structure looks alike but the units differ.",
+  "memory_anchor": "Add the flows, then invert.",
+  "must_not_appear": [
+   "Averaging the times directly",
+   "Subtracting a slower worker's rate"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0013",
+  "family_id": "FAM-PYQ-0013",
+  "metaphor": "Two runners on a track: distance = speed x time as the area of a speed-by-time rectangle.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "distance": "D",
+   "speed": "S",
+   "time": "T",
+   "relation": "D = S x T"
+  },
+  "must_appear": [
+   "The D = S x T rectangle",
+   "which corner is asked",
+   "trains drawn nose-to-tail for crossing length sums"
+  ],
+  "step_sequence": [
+   "Fix the rectangle corners",
+   "Find the missing corner",
+   "For trains, add the lengths for crossing"
+  ],
+  "recognition_clue": "Speed, time, distance with a missing corner; train/pole crossing.",
+  "common_confusion": "FAM-PYQ-0014 boats \u2014 here no current is added or subtracted.",
+  "memory_anchor": "The rectangle; trains stretch the distance.",
+  "must_not_appear": [
+   "Adding speeds when moving in the same direction",
+   "Forgetting train length in crossing problems"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0014",
+  "family_id": "FAM-PYQ-0014",
+  "metaphor": "A boat on a moving walkway: the walkway (current) adds going down and subtracts going up.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "still": "s",
+   "current": "c",
+   "downstream": "s+c",
+   "upstream": "s-c"
+  },
+  "must_appear": [
+   "The current as the moving walkway",
+   "downstream = still + current",
+   "upstream = still - current"
+  ],
+  "step_sequence": [
+   "Split each given speed into still + current",
+   "Add or subtract the pair",
+   "Solve for the asked one"
+  ],
+  "recognition_clue": "A river, current, downstream/upstream wording.",
+  "common_confusion": "FAM-PYQ-0013 \u2014 no current there; the mean shortcut here is only the still-water speed.",
+  "memory_anchor": "Down plus up over two is still-water.",
+  "must_not_appear": [
+   "Adding downstream and upstream speeds for a distance",
+   "Claiming the mean gives the current speed"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0015",
+  "family_id": "FAM-PYQ-0015",
+  "metaphor": "Identical buckets lined up, each holding the same amount, total poured evenly.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "total": "T",
+   "count": "n",
+   "average": "T/n"
+  },
+  "must_appear": [
+   "Total and count labelled",
+   "the even pour into buckets",
+   "the target average as bucket size"
+  ],
+  "step_sequence": [
+   "Total = average x count",
+   "Find the missing total or count",
+   "For a target, back out the required extra"
+  ],
+  "recognition_clue": "Average over a group, target average needing one member.",
+  "common_confusion": "FAM-PYQ-0016 linear quantities \u2014 a fixed-plus-variable structure is not an average.",
+  "memory_anchor": "Buckets: total over count.",
+  "must_not_appear": [
+   "Averaging averages without weights",
+   "Ignoring a member that is excluded from the count"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0016",
+  "family_id": "FAM-PYQ-0016",
+  "metaphor": "A metered bill: a fixed standing charge block plus a per-unit block that stretches.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "fixed": "F",
+   "per_unit": "p",
+   "units": "u",
+   "total": "F + p*u"
+  },
+  "must_appear": [
+   "The fixed block drawn once",
+   "the variable block stretching with u",
+   "the equation F + p*u = total"
+  ],
+  "step_sequence": [
+   "Draw the fixed block",
+   "Draw the variable block",
+   "Solve the linear relation"
+  ],
+  "recognition_clue": "A charge or quantity with a fixed part and a per-unit part.",
+  "common_confusion": "FAM-PYQ-0015 \u2014 not an average; a linear model.",
+  "memory_anchor": "Standing charge plus per-unit stretch.",
+  "must_not_appear": [
+   "Averaging the fixed charge into the per-unit rate",
+   "A constant total when the variable part changes"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0017",
+  "family_id": "FAM-PYQ-0017",
+  "metaphor": "Clay being remoulded: melt one solid and cast it into another \u2014 volume is conserved.",
+  "diagram_type": "SHAPE",
+  "numbers_relationships": {
+   "volume_before": "V1",
+   "volume_after": "V2",
+   "relation": "V1 = V2"
+  },
+  "must_appear": [
+   "The solid labelled with its dimensions",
+   "the recast solid",
+   "volume equality when melting/coining"
+  ],
+  "step_sequence": [
+   "Write the volume formula for the given solid",
+   "Write it for the target solid",
+   "Equate and solve"
+  ],
+  "recognition_clue": "A 3D solid, a recast/melt/coin phrase, or a volume formula.",
+  "common_confusion": "FAM-PYQ-0018 plane figures \u2014 a depth makes it a solid.",
+  "memory_anchor": "Melting conserves volume.",
+  "must_not_appear": [
+   "Equating surface areas when volumes are conserved",
+   "Mixing radius and diameter without halving"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0018",
+  "family_id": "FAM-PYQ-0018",
+  "metaphor": "A field mapped onto graph paper, area counted by full and partial squares.",
+  "diagram_type": "SHAPE",
+  "numbers_relationships": {
+   "shape": null,
+   "area_formula": null
+  },
+  "must_appear": [
+   "The figure with its dimensions",
+   "the relevant 2D formula",
+   "coordinates or grid used explicitly"
+  ],
+  "step_sequence": [
+   "Identify the figure",
+   "Pick the 2D formula",
+   "Substitute and compute"
+  ],
+  "recognition_clue": "A flat figure's area or perimeter, possibly on coordinates.",
+  "common_confusion": "FAM-PYQ-0017 \u2014 no depth, no volume here.",
+  "memory_anchor": "2D: length x breadth and friends.",
+  "must_not_appear": [
+   "A volume formula on a flat figure",
+   "Counting grid squares when the figure is not on a grid"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0019",
+  "family_id": "FAM-PYQ-0019",
+  "metaphor": "A deck of flash cards: figure on one side, its formula or cross-section on the other.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "figure_formula_pairs": "recalled, not computed"
+  },
+  "must_appear": [
+   "The figure and the formula or cross-section side by side",
+   "the match the solver must draw"
+  ],
+  "step_sequence": [
+   "Name the figure",
+   "Recall its formula or section",
+   "Match"
+  ],
+  "recognition_clue": "'Match the following' figure-to-formula/section \u2014 no number to compute.",
+  "common_confusion": "FAM-PYQ-0017/0018 computation \u2014 here recall, not calculation.",
+  "memory_anchor": "Flash cards: match, don't compute.",
+  "must_not_appear": [
+   "Invented formulas",
+   "Treating a lateral face as a base section"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0020",
+  "family_id": "FAM-PYQ-0020",
+  "metaphor": "Photo enlargements: same shape at different scales; equal photos are a special same-size case.",
+  "diagram_type": "SHAPE",
+  "numbers_relationships": {
+   "similar": "same shape, proportional sides",
+   "equal": "same size too"
+  },
+  "must_appear": [
+   "A pair of same-shape figures",
+   "the proportional sides marked",
+   "the words similar vs equal placed apart"
+  ],
+  "step_sequence": [
+   "Compare the shapes",
+   "Check proportionality of sides",
+   "Decide similar, and only then whether also equal"
+  ],
+  "recognition_clue": "'Which are similar' \u2014 the property asked is shape, not size.",
+  "common_confusion": "FAM-PYQ-0017/0018 \u2014 measurement families; this one asks a definition.",
+  "memory_anchor": "Similar is shape; equal is shape and size.",
+  "must_not_appear": [
+   "Treating 'similar' as 'congruent'",
+   "Deciding by eye without side ratios"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0021",
+  "family_id": "FAM-PYQ-0021",
+  "metaphor": "A staircase of terms where each step's height is the difference (or the rule) to the next.",
+  "diagram_type": "SEQUENCE",
+  "numbers_relationships": {
+   "terms": "listed",
+   "rule": "differences or ratios between consecutive terms"
+  },
+  "must_appear": [
+   "The term list",
+   "the step heights (differences/ratios)",
+   "the asked next/missing term"
+  ],
+  "step_sequence": [
+   "Write the differences between consecutive terms",
+   "Find the rule of the differences",
+   "Extend one step"
+  ],
+  "recognition_clue": "A list with a definite gap; find the next or the missing term.",
+  "common_confusion": "FAM-PYQ-0022 odd-one-out \u2014 that asks for the non-member, not a continuation.",
+  "memory_anchor": "Step heights reveal the rule.",
+  "must_not_appear": [
+   "Fitting a rule to only the first two differences",
+   "A rule that contradicts a listed term"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0022",
+  "family_id": "FAM-PYQ-0022",
+  "metaphor": "A basket of fruit with one vegetable smuggled in \u2014 find the non-member.",
+  "diagram_type": "SET",
+  "numbers_relationships": {
+   "shared_property": "held by all but one"
+  },
+  "must_appear": [
+   "Each number labelled with its property",
+   "the property shared by the majority",
+   "the odd one circled"
+  ],
+  "step_sequence": [
+   "State a candidate property",
+   "Test every term against it",
+   "The one that fails is the answer"
+  ],
+  "recognition_clue": "'Which does not belong / odd one out'.",
+  "common_confusion": "FAM-PYQ-0021 \u2014 read the verb: continuation vs exclusion.",
+  "memory_anchor": "Odd one out: test all, then exclude.",
+  "must_not_appear": [
+   "A property that fits only one term and calling everything else odd",
+   "Choosing by look without a shared property"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0023",
+  "family_id": "FAM-PYQ-0023",
+  "metaphor": "Two padlocks sharing one key: the pair relationship is the key; apply it to the new term.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "pair_rule": "maps first term to second"
+  },
+  "must_appear": [
+   "The completed pair",
+   "the rule arrow drawn between them",
+   "the new term under the same arrow"
+  ],
+  "step_sequence": [
+   "Find the rule in the complete pair",
+   "Check it is well-defined",
+   "Apply it to the new term"
+  ],
+  "recognition_clue": "A : B :: C : ? with a consistent relation.",
+  "common_confusion": "FAM-PYQ-0024 coding \u2014 there the rule is a substitution table, not a semantic pair.",
+  "memory_anchor": "One key opens both locks.",
+  "must_not_appear": [
+   "Two different rules that both fit with no way to choose",
+   "Applying the rule backwards to the wrong side"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0024",
+  "family_id": "FAM-PYQ-0024",
+  "metaphor": "A substitution cipher wheel: each letter lands on its coded partner; decode by turning the wheel back.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "cipher": "letter -> code (position shift or symbol)"
+  },
+  "must_appear": [
+   "The given word-code pair",
+   "the inferred substitution",
+   "the new word decoded with the same rule"
+  ],
+  "step_sequence": [
+   "Infer the letter mapping from the example",
+   "Confirm it on a second letter if present",
+   "Decode the target"
+  ],
+  "recognition_clue": "A word and its code, and a new word to encode/decode.",
+  "common_confusion": "FAM-PYQ-0023 \u2014 an explicit mapping to apply vs a relation to extend.",
+  "memory_anchor": "Turn the wheel; apply the same shift.",
+  "must_not_appear": [
+   "A shift that changes between letters without evidence",
+   "Decoding with a different rule than the example"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0025",
+  "family_id": "FAM-PYQ-0025",
+  "metaphor": "A bench of labelled chairs; each clue nails one person to a chair or a side of another.",
+  "diagram_type": "RELATION",
+  "numbers_relationships": {
+   "order": "built from relative positions"
+  },
+  "must_appear": [
+   "The line of chairs",
+   "each clue placed",
+   "the fixed order emerging"
+  ],
+  "step_sequence": [
+   "Place the anchor person",
+   "Add each relative clue",
+   "Re-check all clues against the final order"
+  ],
+  "recognition_clue": "People on a bench/row with left-right relations.",
+  "common_confusion": "FAM-PYQ-0027 \u2014 that tracks compass moves, not seating order.",
+  "memory_anchor": "Chairs first, clues second.",
+  "must_not_appear": [
+   "A circular layout for a linear bench",
+   "Clues that contradict the drawn order left uncaught"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0026",
+  "family_id": "FAM-PYQ-0026",
+  "metaphor": "A clock face with the minute hand chasing the hour hand, and a century calendar as a repeating 400-year tape.",
+  "diagram_type": "OTHER",
+  "numbers_relationships": {
+   "hands": "relative speed 5.5 deg/min",
+   "century": "400-year day cycle"
+  },
+  "must_appear": [
+   "The hand positions",
+   "the gain/loss rate of a watch",
+   "the day-count rule applied to the given dates"
+  ],
+  "step_sequence": [
+   "Place the hands or set the watch rate",
+   "Apply the relative-speed or day-count fact",
+   "Compute the asked time or day"
+  ],
+  "recognition_clue": "Clock hands, gaining/losing watch, last day of a century.",
+  "common_confusion": "FAM-PYQ-0027 direction \u2014 angle vs compass; keep the picture separate.",
+  "memory_anchor": "The minute hand gains 5.5 degrees a minute.",
+  "must_not_appear": [
+   "Forgetting the hour hand also moves",
+   "Treating every century as having the same leap pattern"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0027",
+  "family_id": "FAM-PYQ-0027",
+  "metaphor": "An ant walking a grid of streets, each move drawn as an arrow; the straight-line home is the diagonal.",
+  "diagram_type": "GRID",
+  "numbers_relationships": {
+   "moves": "each a vector",
+   "net": "sum of east/north components"
+  },
+  "must_appear": [
+   "Each displacement as an arrow",
+   "east-west and north-south components",
+   "the resultant drawn from start to end"
+  ],
+  "step_sequence": [
+   "Draw each move in order",
+   "Combine same-axis components",
+   "Read the final distance/direction"
+  ],
+  "recognition_clue": "Walks 5 km north, 3 km east, ... how far/which direction from the start.",
+  "common_confusion": "FAM-PYQ-0025 seating \u2014 that is one-dimensional ordering.",
+  "memory_anchor": "Arrows on a grid; home is the diagonal.",
+  "must_not_appear": [
+   "Adding distances as if collinear",
+   "Dropping the final turn direction"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0028",
+  "family_id": "FAM-PYQ-0028",
+  "metaphor": "Two overlapping circles: the overlap counted twice if you add the circles, so subtract it once.",
+  "diagram_type": "VENN",
+  "numbers_relationships": {
+   "a": "set A",
+   "b": "set B",
+   "both": "|A\u2229B|",
+   "either": "|A|+|B|-|A\u2229B|"
+  },
+  "must_appear": [
+   "The two circles",
+   "the overlap",
+   "inclusion-exclusion written as add-both-subtract-overlap"
+  ],
+  "step_sequence": [
+   "Draw the circles",
+   "Label the overlap",
+   "Apply inclusion-exclusion"
+  ],
+  "recognition_clue": "Two or more overlapping categories and a count that must not double-count.",
+  "common_confusion": "FAM-PYQ-0004 ratio \u2014 a Venn overlap is a count relation, not a share.",
+  "memory_anchor": "Overlap once, subtract once.",
+  "must_not_appear": [
+   "Counting the overlap twice",
+   "A three-set sum without the pairwise subtractions"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ },
+ {
+  "visual_id": "VIS-PYQ-0029",
+  "family_id": "FAM-PYQ-0029",
+  "metaphor": "A mobile hanging from strings: each dangling number balances the one above; the missing number is whatever restores the balance.",
+  "diagram_type": "OTHER",
+  "numbers_relationships": {
+   "figure": "a labelled diagram with one missing number"
+  },
+  "must_appear": [
+   "The figure with its numbers",
+   "the missing slot marked",
+   "the relation that produces it"
+  ],
+  "step_sequence": [
+   "List the given numbers",
+   "Propose the relation in the figure",
+   "Check it reproduces every given number",
+   "Solve the missing slot"
+  ],
+  "recognition_clue": "Numbers arranged in a figure (triangle, circle, table) with one slot blank.",
+  "common_confusion": "FAM-PYQ-0021 \u2014 a list is read left to right; a figure has a spatial rule.",
+  "memory_anchor": "Balance the mobile: one rule fits every arm.",
+  "must_not_appear": [
+   "A rule that only explains one arm",
+   "Ignoring a given number that the rule must also produce"
+  ],
+  "color_roles": null,
+  "provenance_tier": "T2_HISTORICAL_PYQ",
+  "analysis_origin": "MODEL_DERIVED",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  }
+ }
+]
