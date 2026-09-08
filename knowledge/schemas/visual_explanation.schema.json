@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "visual_explanation.schema.json",
+  "title": "Visual-explanation spec",
+  "description": "A structured description of a visual that would teach one question family (SESSION 009 / SPEC-PYQ-002). This is a SPEC, not a final image: it describes what a diagram would show, its metaphor, and the relationships and steps that MUST appear, plus what MUST NOT appear so the visual does not mislead. Rendering these into actual images is a later session. A visual is an analysis over a family's T2 evidence and is never T1_OFFICIAL. Validated by hand-written checks in tests/pyq/test_pyq_intelligence.py (D-0006).",
+  "type": "object",
+  "required": [
+    "visual_id", "family_id", "metaphor", "diagram_type", "must_appear",
+    "step_sequence", "recognition_clue", "common_confusion", "memory_anchor",
+    "must_not_appear", "provenance_tier", "analysis_origin", "provenance"
+  ],
+  "properties": {
+    "visual_id": {"type": "string", "pattern": "^VIS-PYQ-[0-9]{4}$"},
+    "family_id": {"type": "string", "pattern": "^FAM-PYQ-[0-9]{4}$", "description": "The family this visual teaches. Must resolve to a real family record."},
+
+    "metaphor": {"type": "string", "minLength": 1, "description": "The everyday picture the diagram evokes (e.g. 'a set being a box; a subset a box inside it')."},
+    "diagram_type": {"enum": ["SET", "RELATION", "SEQUENCE", "VENN", "NUMBER_LINE", "TABLE", "TREE", "FLOW", "GRID", "SHAPE", "OTHER"]},
+    "numbers_relationships": {"type": ["object", "null"], "description": "Key numbers and the relationships between them the visual must make legible."},
+
+    "must_appear": {"type": "array", "items": {"type": "string"}, "description": "Elements that MUST be in the visual. A visual missing any of these fails its spec."},
+    "step_sequence": {"type": "array", "items": {"type": "string"}, "description": "The ordered steps the visual walks a solver through."},
+
+    "recognition_clue": {"type": "string", "minLength": 1, "description": "What in the visual a solver should associate with this family, so it becomes instantly recognisable."},
+    "common_confusion": {"type": ["string", "null"], "description": "The nearby family a learner might mistake this for, and what the visual must make visually distinct."},
+    "memory_anchor": {"type": ["string", "null"], "description": "A memorable hook (phrase, colour, shape) tied to the concept."},
+
+    "must_not_appear": {"type": "array", "items": {"type": "string"}, "description": "What the visual MUST NOT show or imply, to avoid teaching a wrong relationship. Required — a positive spec alone is insufficient."},
+    "color_roles": {"type": "object", "description": "If colours are used, which meaning each colour carries. Optional; null if the spec is monochrome."},
+
+    "provenance_tier": {"const": "T2_HISTORICAL_PYQ"},
+    "analysis_origin": {"enum": ["MODEL_DERIVED", "EXPERT_SOURCED"]},
+    "provenance": {
+      "type": "object",
+      "required": ["source_document_ids"],
+      "properties": {
+        "source_document_ids": {"type": "array", "items": {"type": "string"}, "description": "Paper IDs whose questions this visual explains."},
+        "expert_source_ref": {"type": ["string", "null"], "description": "Required iff analysis_origin == EXPERT_SOURCED; not Instagram or YouTube."},
+        "generated_at": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "invariants": [
+    "family_id must resolve to a real family record",
+    "must_appear is non-empty; a visual with nothing required to appear has no spec",
+    "analysis_origin == EXPERT_SOURCED  =>  provenance.expert_source_ref is non-null and is not an Instagram or YouTube URL",
+    "a visual is never T1_OFFICIAL and never represents a pattern across questions as official policy",
+    "must_not_appear covers the misleading over-generalisation and the common wrong relationship, not merely styling"
+  ]
+}

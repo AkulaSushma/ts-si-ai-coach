@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "method.schema.json",
+  "title": "Method record (standard or fast)",
+  "description": "One solving method for a question family (SESSION 009 / SPEC-PYQ-002). A method carries a state that says exactly how it was obtained and, if it is a fast method, whether it has been mathematically verified. The six states are exclusive: OBSERVED_STANDARD, MODEL_DERIVED, EXPERT_SOURCED, VERIFIED_FAST_METHOD, UNVERIFIED_FAST_METHOD, NO_FAST_METHOD_FOUND. A method never silently becomes a higher state; promotion requires the matching evidence. Validated by hand-written checks in tests/pyq/test_pyq_intelligence.py (D-0006).",
+  "type": "object",
+  "required": [
+    "method_id", "name", "kind", "state", "description", "when_usable",
+    "when_not_to_use", "family_ids", "concept_ids", "derived_from",
+    "time_advantage", "verification_id", "expert_source_ref",
+    "analysis_origin", "evidence_tier", "provenance", "verification_status"
+  ],
+  "properties": {
+    "method_id": {"type": "string", "pattern": "^MET-PYQ-[0-9]{4}$"},
+    "name": {"type": "string", "minLength": 3},
+    "kind": {"enum": ["STANDARD", "FAST", "MENTAL", "ALTERNATIVE"]},
+    "state": {"enum": ["OBSERVED_STANDARD", "MODEL_DERIVED", "EXPERT_SOURCED", "VERIFIED_FAST_METHOD", "UNVERIFIED_FAST_METHOD", "NO_FAST_METHOD_FOUND"],
+      "description": "How this method was obtained and whether it is verified. NO_FAST_METHOD_FOUND is a truthful negative — it means no fast method was identified, not that none exists."},
+    "description": {"type": "string", "minLength": 1, "description": "The method, step by step, in plain language."},
+
+    "when_usable": {"type": ["string", "null"], "description": "Conditions under which this method applies (for a fast method, the conditions that make it valid)."},
+    "when_not_to_use": {"type": ["string", "null"], "description": "Cases where the method fails or is unsafe. Must be explicit for any fast method."},
+
+    "family_ids": {"type": "array", "items": {"type": "string", "pattern": "^FAM-PYQ-[0-9]{4}$"}},
+    "concept_ids": {"type": "array", "items": {"type": "string", "pattern": "^CON-PYQ-[0-9]{4}$"}},
+
+    "derived_from": {"enum": ["OBSERVED_STANDARD", "MODEL_ANALYSIS", "EXPERT_SOURCE", "EXISTING_METHOD"], "description": "Where the method itself came from."},
+    "time_advantage": {"type": ["integer", "null"], "description": "Estimated time saved, in seconds, vs the standard. Only ever present when a fair comparison is justified; null otherwise."},
+    "verification_id": {"type": ["string", "null"], "pattern": "^VER-PYQ-[0-9]{4}$", "description": "Required iff state == VERIFIED_FAST_METHOD."},
+    "expert_source_ref": {"type": ["string", "null"], "description": "Required iff state == EXPERT_SOURCED. Not Instagram or YouTube."},
+
+    "analysis_origin": {"enum": ["OBSERVED_STANDARD", "MODEL_DERIVED", "EXPERT_SOURCED"]},
+    "evidence_tier": {"const": "T2_HISTORICAL_PYQ"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_document_ids"],
+      "properties": {
+        "source_document_ids": {"type": "array", "items": {"type": "string"}, "description": "Paper IDs whose questions this method is observed on."},
+        "generated_at": {"type": ["string", "null"]}
+      }
+    },
+    "verification_status": {"enum": ["VERIFIED", "UNVERIFIED", "DISPUTED", "REJECTED"]}
+  },
+  "invariants": [
+    "state == VERIFIED_FAST_METHOD  =>  verification_id is non-null and resolves to a verification record whose result is PASS",
+    "state == EXPERT_SOURCED  =>  expert_source_ref is non-null and is not an Instagram or YouTube URL",
+    "state == UNVERIFIED_FAST_METHOD  =>  verification_id is null; a fast method not yet checked is explicitly unverified",
+    "state == NO_FAST_METHOD_FOUND  =>  this is a recorded negative, not a claim that no method exists",
+    "a MODEL_DERIVED or UNVERIFIED method is never presented as EXPERT_SOURCED or VERIFIED without the matching evidence",
+    "a method is never T1_OFFICIAL; it is an analysis over T2 evidence"
+  ]
+}

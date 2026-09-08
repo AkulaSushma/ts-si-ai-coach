@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "verification.schema.json",
+  "title": "Fast-method verification evidence",
+  "description": "Evidence that a fast method was checked (SESSION 009 / SPEC-PYQ-002). A VERIFIED_FAST_METHOD may only exist if such a record is present with result PASS AND the check was real — deterministic computation over many inputs and edge cases, or a different provider, or a source document. A model's own confidence is not verification. Validated by hand-written checks in tests/pyq/test_pyq_intelligence.py (D-0006).",
+  "type": "object",
+  "required": [
+    "verification_id", "method_id", "approach", "procedure",
+    "standard_vs_fast_equivalence", "variants_tested", "edge_cases_tested",
+    "result", "verified_on", "verified_by", "evidence", "provenance_tier",
+    "provenance"
+  ],
+  "properties": {
+    "verification_id": {"type": "string", "pattern": "^VER-PYQ-[0-9]{4}$"},
+    "method_id": {"type": "string", "pattern": "^MET-PYQ-[0-9]{4}$", "description": "The fast method being verified. Must resolve to a method whose state is VERIFIED_FAST_METHOD."},
+    "approach": {"enum": ["DETERMINISTIC", "INDEPENDENT_MODEL", "SOURCE_DOCUMENT", "CROSS_SOURCE"],
+      "description": "How the check was done. INDEPENDENT_MODEL requires a verifier provider different from the analyser (no self-verification)."},
+    "procedure": {"type": "string", "minLength": 1, "description": "What was checked, in exact terms."},
+
+    "standard_vs_fast_equivalence": {"type": "object",
+      "required": ["fast_matches_standard", "mismatches", "note"],
+      "properties": {
+        "fast_matches_standard": {"type": "boolean"},
+        "mismatches": {"type": "integer", "description": "Count of inputs where the fast result differed from the standard result. Must be 0 for PASS."},
+        "note": {"type": ["string", "null"]}
+      }
+    },
+    "variants_tested": {"type": "array", "items": {"type": "string"}, "description": "The input families the fast method was run against (e.g. 'integer percentages', 'fractional ratios'). Not a single example."},
+    "edge_cases_tested": {"type": "array", "items": {"type": "string"}, "description": "The edge cases where a shortcut is expected to break (zero, negatives, boundary, degenerate). These are required, not optional."},
+
+    "result": {"enum": ["PASS", "FAIL", "INCONCLUSIVE"]},
+    "verified_on": {"type": "string", "minLength": 8},
+    "verified_by": {"type": "string", "minLength": 1, "description": "Who ran the check. For DETERMINISTIC, the script identity; for INDEPENDENT_MODEL, a verifier provider that differs from the analyser."},
+    "evidence": {"type": "string", "minLength": 1, "description": "Path to or description of the runnable/run output that produced the result."},
+
+    "provenance_tier": {"const": "T2_HISTORICAL_PYQ"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_document_ids"],
+      "properties": {
+        "source_document_ids": {"type": "array", "items": {"type": "string"}},
+        "generated_at": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "invariants": [
+    "result == PASS  =>  standard_vs_fast_equivalence.fast_matches_standard is true AND mismatches == 0",
+    "approach == INDEPENDENT_MODEL  =>  verified_by names a provider different from the analyser (a model may not verify its own output)",
+    "variants_tested and edge_cases_tested must each contain at least one entry; a claim of verification against a single input is not verification",
+    "a verification record never upgrades the underlying question's T2 tier"
+  ]
+}

@@ -1,0 +1,4283 @@
+[
+ {
+  "intelligence_id": "INT-PYQ-010001",
+  "question_id": "Q-PYQ-010001",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 1,
+  "source_page_number": 1,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Number system",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0001",
+  "identification_clues": [
+   {
+    "clue": "Least number to add so a value is divisible by a given divisor.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0001",
+  "standard_method_id": "MET-PYQ-0001",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010002",
+  "question_id": "Q-PYQ-010002",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 2,
+  "source_page_number": 1,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Mensuration",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0017",
+  "identification_clues": [
+   {
+    "clue": "Volume of cuboid/cone/cylinder/sphere and conversion between shapes (melting/coining).",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0013",
+  "standard_method_id": "MET-PYQ-0017",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0018",
+   "FAM-PYQ-0019"
+  ],
+  "how_to_distinguish": "Solids use volume and surface area; plane figures use area and perimeter. If there is a depth/height and three dimensions considered, it is a solid.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010003",
+  "question_id": "Q-PYQ-010003",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 3,
+  "source_page_number": 1,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": null,
+  "subtopic": null,
+  "question_type": "UNCLASSIFIED",
+  "question_family_id": null,
+  "identification_clues": [],
+  "required_concept_id": null,
+  "standard_method_id": null,
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NOT_SET",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "AMBIGUOUS",
+  "unresolved": true,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010004",
+  "question_id": "Q-PYQ-010004",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 4,
+  "source_page_number": 1,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Number system",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0003",
+  "identification_clues": [
+   {
+    "clue": "Events repeating at intervals coincide at the LCM of the intervals.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0001",
+  "standard_method_id": "MET-PYQ-0003",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010005",
+  "question_id": "Q-PYQ-010005",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 5,
+  "source_page_number": 2,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Percentage",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0006",
+  "identification_clues": [
+   {
+    "clue": "Percent of a quantity, successive percentage change, and percentage-part relations.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0004",
+  "standard_method_id": "MET-PYQ-0006",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010006",
+  "question_id": "Q-PYQ-010006",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 6,
+  "source_page_number": 2,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Number system",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0002",
+  "identification_clues": [
+   {
+    "clue": "Counting integers that are not perfect squares in a range.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0001",
+  "standard_method_id": "MET-PYQ-0002",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010007",
+  "question_id": "Q-PYQ-010007",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 7,
+  "source_page_number": 2,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Compound interest",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0009",
+  "identification_clues": [
+   {
+    "clue": "The gap between CI and SI over the same term.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0006",
+  "standard_method_id": "MET-PYQ-0009",
+  "candidate_fast_method_id": "MET-PYQ-0030",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0007",
+   "FAM-PYQ-0008"
+  ],
+  "how_to_distinguish": "This family asks for the difference (CI - SI) explicitly. If the question wants the difference, stop after computing the gap; do not produce a total amount.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010008",
+  "question_id": "Q-PYQ-010008",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 8,
+  "source_page_number": 2,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Compound interest",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0008",
+  "identification_clues": [
+   {
+    "clue": "Amount = P(1+r/100)^t; finding sum, time, or CI.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0006",
+  "standard_method_id": "MET-PYQ-0008",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0007",
+   "FAM-PYQ-0009"
+  ],
+  "how_to_distinguish": "Compound interest is the amount P(1+r/100)^t minus P. Distinguish it from the SI gap family by whether the question asks for the total interest/amount or specifically for the difference between the two kinds.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010009",
+  "question_id": "Q-PYQ-010009",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 9,
+  "source_page_number": 2,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Compound interest",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0009",
+  "identification_clues": [
+   {
+    "clue": "The gap between CI and SI over the same term.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0006",
+  "standard_method_id": "MET-PYQ-0009",
+  "candidate_fast_method_id": "MET-PYQ-0030",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0007",
+   "FAM-PYQ-0008"
+  ],
+  "how_to_distinguish": "This family asks for the difference (CI - SI) explicitly. If the question wants the difference, stop after computing the gap; do not produce a total amount.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010010",
+  "question_id": "Q-PYQ-010010",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 10,
+  "source_page_number": 3,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Simple interest",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0007",
+  "identification_clues": [
+   {
+    "clue": "SI = P*r*t/100; finding time/rate/sum.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0005",
+  "standard_method_id": "MET-PYQ-0007",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0008",
+   "FAM-PYQ-0009"
+  ],
+  "how_to_distinguish": "Simple interest grows linearly on the principal alone; compound interest grows on principal plus accumulated interest. Ask which growth the question wants before choosing a formula.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010011",
+  "question_id": "Q-PYQ-010011",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 11,
+  "source_page_number": 3,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Simple interest",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0007",
+  "identification_clues": [
+   {
+    "clue": "SI = P*r*t/100; finding time/rate/sum.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0005",
+  "standard_method_id": "MET-PYQ-0007",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0008",
+   "FAM-PYQ-0009"
+  ],
+  "how_to_distinguish": "Simple interest grows linearly on the principal alone; compound interest grows on principal plus accumulated interest. Ask which growth the question wants before choosing a formula.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010012",
+  "question_id": "Q-PYQ-010012",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 12,
+  "source_page_number": 3,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Compound interest",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0008",
+  "identification_clues": [
+   {
+    "clue": "Amount = P(1+r/100)^t; finding sum, time, or CI.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0006",
+  "standard_method_id": "MET-PYQ-0008",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0007",
+   "FAM-PYQ-0009"
+  ],
+  "how_to_distinguish": "Compound interest is the amount P(1+r/100)^t minus P. Distinguish it from the SI gap family by whether the question asks for the total interest/amount or specifically for the difference between the two kinds.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010013",
+  "question_id": "Q-PYQ-010013",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 13,
+  "source_page_number": 4,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Compound interest",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0008",
+  "identification_clues": [
+   {
+    "clue": "Amount = P(1+r/100)^t; finding sum, time, or CI.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0006",
+  "standard_method_id": "MET-PYQ-0008",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0007",
+   "FAM-PYQ-0009"
+  ],
+  "how_to_distinguish": "Compound interest is the amount P(1+r/100)^t minus P. Distinguish it from the SI gap family by whether the question asks for the total interest/amount or specifically for the difference between the two kinds.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010014",
+  "question_id": "Q-PYQ-010014",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 14,
+  "source_page_number": 4,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Ages",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0005",
+  "identification_clues": [
+   {
+    "clue": "Relating ages now, past and future via ratios.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0003",
+  "standard_method_id": "MET-PYQ-0005",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010015",
+  "question_id": "Q-PYQ-010015",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 15,
+  "source_page_number": 4,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Ratio & proportion",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0004",
+  "identification_clues": [
+   {
+    "clue": "Sharing a whole, or relating quantities, by a given ratio; includes ratio-of-cubes scaling.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0002",
+  "standard_method_id": "MET-PYQ-0004",
+  "candidate_fast_method_id": "MET-PYQ-0033",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0006"
+  ],
+  "how_to_distinguish": "A ratio is a multiplicative scale applied to parts of a whole; a percentage is a base times a rate. The question tells you which by whether it names a ratio (parts) or a percentage of a quantity.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010016",
+  "question_id": "Q-PYQ-010016",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 16,
+  "source_page_number": 4,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Ratio & proportion",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0004",
+  "identification_clues": [
+   {
+    "clue": "Sharing a whole, or relating quantities, by a given ratio; includes ratio-of-cubes scaling.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0002",
+  "standard_method_id": "MET-PYQ-0004",
+  "candidate_fast_method_id": "MET-PYQ-0033",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0006"
+  ],
+  "how_to_distinguish": "A ratio is a multiplicative scale applied to parts of a whole; a percentage is a base times a rate. The question tells you which by whether it names a ratio (parts) or a percentage of a quantity.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010017",
+  "question_id": "Q-PYQ-010017",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 17,
+  "source_page_number": 5,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Linear equations",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0016",
+  "identification_clues": [
+   {
+    "clue": "A fixed part plus a variable part (bill) or repeated halving (pieces).",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0012",
+  "standard_method_id": "MET-PYQ-0016",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010018",
+  "question_id": "Q-PYQ-010018",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 18,
+  "source_page_number": 5,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Work & time",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0012",
+  "identification_clues": [
+   {
+    "clue": "Rates, efficiency, combined work, wage share.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0009",
+  "standard_method_id": "MET-PYQ-0012",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010019",
+  "question_id": "Q-PYQ-010019",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 19,
+  "source_page_number": 5,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Ratio & proportion",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0004",
+  "identification_clues": [
+   {
+    "clue": "Sharing a whole, or relating quantities, by a given ratio; includes ratio-of-cubes scaling.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0002",
+  "standard_method_id": "MET-PYQ-0004",
+  "candidate_fast_method_id": "MET-PYQ-0033",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0006"
+  ],
+  "how_to_distinguish": "A ratio is a multiplicative scale applied to parts of a whole; a percentage is a base times a rate. The question tells you which by whether it names a ratio (parts) or a percentage of a quantity.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010020",
+  "question_id": "Q-PYQ-010020",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 20,
+  "source_page_number": 5,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Average",
+  "question_type": "REASONING",
+  "question_family_id": "FAM-PYQ-0015",
+  "identification_clues": [
+   {
+    "clue": "Weighted average, average over a day count, assertion-reason on averages, target run rate.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0011",
+  "standard_method_id": "MET-PYQ-0015",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010021",
+  "question_id": "Q-PYQ-010021",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 21,
+  "source_page_number": 6,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Average",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0015",
+  "identification_clues": [
+   {
+    "clue": "Weighted average, average over a day count, assertion-reason on averages, target run rate.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0011",
+  "standard_method_id": "MET-PYQ-0015",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010022",
+  "question_id": "Q-PYQ-010022",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 22,
+  "source_page_number": 6,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Average",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0015",
+  "identification_clues": [
+   {
+    "clue": "Weighted average, average over a day count, assertion-reason on averages, target run rate.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0011",
+  "standard_method_id": "MET-PYQ-0015",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010023",
+  "question_id": "Q-PYQ-010023",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 23,
+  "source_page_number": 6,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Average",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0015",
+  "identification_clues": [
+   {
+    "clue": "Weighted average, average over a day count, assertion-reason on averages, target run rate.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0011",
+  "standard_method_id": "MET-PYQ-0015",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010024",
+  "question_id": "Q-PYQ-010024",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 24,
+  "source_page_number": 6,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Percentage",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0006",
+  "identification_clues": [
+   {
+    "clue": "Percent of a quantity, successive percentage change, and percentage-part relations.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0004",
+  "standard_method_id": "MET-PYQ-0006",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010025",
+  "question_id": "Q-PYQ-010025",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 25,
+  "source_page_number": 7,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Profit & loss",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0010",
+  "identification_clues": [
+   {
+    "clue": "Cost/selling price, gain/loss percentage, successive discounts, equal-SP net change.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0007",
+  "standard_method_id": "MET-PYQ-0010",
+  "candidate_fast_method_id": "MET-PYQ-0031",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010026",
+  "question_id": "Q-PYQ-010026",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 26,
+  "source_page_number": 7,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Profit & loss",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0010",
+  "identification_clues": [
+   {
+    "clue": "Cost/selling price, gain/loss percentage, successive discounts, equal-SP net change.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0007",
+  "standard_method_id": "MET-PYQ-0010",
+  "candidate_fast_method_id": "MET-PYQ-0031",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010027",
+  "question_id": "Q-PYQ-010027",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 27,
+  "source_page_number": 7,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Percentage",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0006",
+  "identification_clues": [
+   {
+    "clue": "Percent of a quantity, successive percentage change, and percentage-part relations.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0004",
+  "standard_method_id": "MET-PYQ-0006",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010028",
+  "question_id": "Q-PYQ-010028",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 28,
+  "source_page_number": 7,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Percentage",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0006",
+  "identification_clues": [
+   {
+    "clue": "Percent of a quantity, successive percentage change, and percentage-part relations.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0004",
+  "standard_method_id": "MET-PYQ-0006",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010029",
+  "question_id": "Q-PYQ-010029",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 29,
+  "source_page_number": 8,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Profit & loss",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0010",
+  "identification_clues": [
+   {
+    "clue": "Cost/selling price, gain/loss percentage, successive discounts, equal-SP net change.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0007",
+  "standard_method_id": "MET-PYQ-0010",
+  "candidate_fast_method_id": "MET-PYQ-0031",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010030",
+  "question_id": "Q-PYQ-010030",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 30,
+  "source_page_number": 8,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Profit & loss",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0010",
+  "identification_clues": [
+   {
+    "clue": "Cost/selling price, gain/loss percentage, successive discounts, equal-SP net change.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0007",
+  "standard_method_id": "MET-PYQ-0010",
+  "candidate_fast_method_id": "MET-PYQ-0031",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010031",
+  "question_id": "Q-PYQ-010031",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 31,
+  "source_page_number": 8,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Profit & loss",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0010",
+  "identification_clues": [
+   {
+    "clue": "Cost/selling price, gain/loss percentage, successive discounts, equal-SP net change.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0007",
+  "standard_method_id": "MET-PYQ-0010",
+  "candidate_fast_method_id": "MET-PYQ-0031",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010032",
+  "question_id": "Q-PYQ-010032",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 32,
+  "source_page_number": 9,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Partnership",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0011",
+  "identification_clues": [
+   {
+    "clue": "Profit split in the ratio of capital-weighted investment.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0008",
+  "standard_method_id": "MET-PYQ-0011",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010033",
+  "question_id": "Q-PYQ-010033",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 33,
+  "source_page_number": 9,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Work & time",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0012",
+  "identification_clues": [
+   {
+    "clue": "Rates, efficiency, combined work, wage share.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0009",
+  "standard_method_id": "MET-PYQ-0012",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010034",
+  "question_id": "Q-PYQ-010034",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 34,
+  "source_page_number": 10,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Work & time",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0012",
+  "identification_clues": [
+   {
+    "clue": "Rates, efficiency, combined work, wage share.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0009",
+  "standard_method_id": "MET-PYQ-0012",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010035",
+  "question_id": "Q-PYQ-010035",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 35,
+  "source_page_number": 10,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Average",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0015",
+  "identification_clues": [
+   {
+    "clue": "Weighted average, average over a day count, assertion-reason on averages, target run rate.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0011",
+  "standard_method_id": "MET-PYQ-0015",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010036",
+  "question_id": "Q-PYQ-010036",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 36,
+  "source_page_number": 10,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Ratio & proportion",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0004",
+  "identification_clues": [
+   {
+    "clue": "Sharing a whole, or relating quantities, by a given ratio; includes ratio-of-cubes scaling.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0002",
+  "standard_method_id": "MET-PYQ-0004",
+  "candidate_fast_method_id": "MET-PYQ-0033",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0006"
+  ],
+  "how_to_distinguish": "A ratio is a multiplicative scale applied to parts of a whole; a percentage is a base times a rate. The question tells you which by whether it names a ratio (parts) or a percentage of a quantity.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010037",
+  "question_id": "Q-PYQ-010037",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 37,
+  "source_page_number": 11,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Time-speed-distance",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0013",
+  "identification_clues": [
+   {
+    "clue": "Distance = speed x time; trains crossing; relative speed; catch-up.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0010",
+  "standard_method_id": "MET-PYQ-0013",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0014"
+  ],
+  "how_to_distinguish": "Boats and streams is a special case of time-speed-distance where one speed is added and the other subtracted to get the current. If the question mentions a river/current, it belongs to the boats family, not plain speed-distance.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010038",
+  "question_id": "Q-PYQ-010038",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 38,
+  "source_page_number": 11,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Time-speed-distance",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0013",
+  "identification_clues": [
+   {
+    "clue": "Distance = speed x time; trains crossing; relative speed; catch-up.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0010",
+  "standard_method_id": "MET-PYQ-0013",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0014"
+  ],
+  "how_to_distinguish": "Boats and streams is a special case of time-speed-distance where one speed is added and the other subtracted to get the current. If the question mentions a river/current, it belongs to the boats family, not plain speed-distance.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010039",
+  "question_id": "Q-PYQ-010039",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 39,
+  "source_page_number": 11,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Time-speed-distance",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0013",
+  "identification_clues": [
+   {
+    "clue": "Distance = speed x time; trains crossing; relative speed; catch-up.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0010",
+  "standard_method_id": "MET-PYQ-0013",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0014"
+  ],
+  "how_to_distinguish": "Boats and streams is a special case of time-speed-distance where one speed is added and the other subtracted to get the current. If the question mentions a river/current, it belongs to the boats family, not plain speed-distance.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010040",
+  "question_id": "Q-PYQ-010040",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 40,
+  "source_page_number": 11,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Time-speed-distance",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0013",
+  "identification_clues": [
+   {
+    "clue": "Distance = speed x time; trains crossing; relative speed; catch-up.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0010",
+  "standard_method_id": "MET-PYQ-0013",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0014"
+  ],
+  "how_to_distinguish": "Boats and streams is a special case of time-speed-distance where one speed is added and the other subtracted to get the current. If the question mentions a river/current, it belongs to the boats family, not plain speed-distance.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010041",
+  "question_id": "Q-PYQ-010041",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 41,
+  "source_page_number": 12,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Clock & calendar",
+  "question_type": "REASONING",
+  "question_family_id": "FAM-PYQ-0026",
+  "identification_clues": [
+   {
+    "clue": "Hand positions, a gaining/losing watch, and the last day of a century.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0017",
+  "standard_method_id": "MET-PYQ-0026",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010042",
+  "question_id": "Q-PYQ-010042",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 42,
+  "source_page_number": 12,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Clock & calendar",
+  "question_type": "REASONING",
+  "question_family_id": "FAM-PYQ-0026",
+  "identification_clues": [
+   {
+    "clue": "Hand positions, a gaining/losing watch, and the last day of a century.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0017",
+  "standard_method_id": "MET-PYQ-0026",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010043",
+  "question_id": "Q-PYQ-010043",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 43,
+  "source_page_number": 12,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Clock & calendar",
+  "question_type": "REASONING",
+  "question_family_id": "FAM-PYQ-0026",
+  "identification_clues": [
+   {
+    "clue": "Hand positions, a gaining/losing watch, and the last day of a century.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0017",
+  "standard_method_id": "MET-PYQ-0026",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010044",
+  "question_id": "Q-PYQ-010044",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 44,
+  "source_page_number": 12,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Partnership",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0011",
+  "identification_clues": [
+   {
+    "clue": "Profit split in the ratio of capital-weighted investment.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0008",
+  "standard_method_id": "MET-PYQ-0011",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010045",
+  "question_id": "Q-PYQ-010045",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 45,
+  "source_page_number": 12,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Partnership",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0011",
+  "identification_clues": [
+   {
+    "clue": "Profit split in the ratio of capital-weighted investment.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0008",
+  "standard_method_id": "MET-PYQ-0011",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010046",
+  "question_id": "Q-PYQ-010046",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 46,
+  "source_page_number": 13,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Mensuration",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0019",
+  "identification_clues": [
+   {
+    "clue": "Matching a solid or figure to its area/volume or to its cross-section shape.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0013",
+  "standard_method_id": "MET-PYQ-0019",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0017",
+   "FAM-PYQ-0018"
+  ],
+  "how_to_distinguish": "Formula-matching asks you to recall or match a formula or a cross-section, not to compute an area. If the task is to identify the formula, it is this family.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010047",
+  "question_id": "Q-PYQ-010047",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 47,
+  "source_page_number": 13,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Mensuration",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0019",
+  "identification_clues": [
+   {
+    "clue": "Matching a solid or figure to its area/volume or to its cross-section shape.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0013",
+  "standard_method_id": "MET-PYQ-0019",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0017",
+   "FAM-PYQ-0018"
+  ],
+  "how_to_distinguish": "Formula-matching asks you to recall or match a formula or a cross-section, not to compute an area. If the task is to identify the formula, it is this family.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010048",
+  "question_id": "Q-PYQ-010048",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 48,
+  "source_page_number": 14,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Mensuration",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0018",
+  "identification_clues": [
+   {
+    "clue": "Rectangle/square area and perimeter, polygon area via coordinates, path-generated area.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0013",
+  "standard_method_id": "MET-PYQ-0018",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0017",
+   "FAM-PYQ-0019"
+  ],
+  "how_to_distinguish": "Plane figures are two-dimensional; if no depth is involved, use 2D area/perimeter formulas.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010049",
+  "question_id": "Q-PYQ-010049",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 49,
+  "source_page_number": 14,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Linear equations",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0016",
+  "identification_clues": [
+   {
+    "clue": "A fixed part plus a variable part (bill) or repeated halving (pieces).",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0012",
+  "standard_method_id": "MET-PYQ-0016",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010050",
+  "question_id": "Q-PYQ-010050",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 50,
+  "source_page_number": 14,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Mensuration",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0017",
+  "identification_clues": [
+   {
+    "clue": "Volume of cuboid/cone/cylinder/sphere and conversion between shapes (melting/coining).",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0013",
+  "standard_method_id": "MET-PYQ-0017",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0018",
+   "FAM-PYQ-0019"
+  ],
+  "how_to_distinguish": "Solids use volume and surface area; plane figures use area and perimeter. If there is a depth/height and three dimensions considered, it is a solid.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010051",
+  "question_id": "Q-PYQ-010051",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 51,
+  "source_page_number": 15,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Mensuration",
+  "question_type": "INFERENCE",
+  "question_family_id": "FAM-PYQ-0020",
+  "identification_clues": [
+   {
+    "clue": "Which figures are similar; equal vs similar distinction.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0013",
+  "standard_method_id": "MET-PYQ-0020",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0017",
+   "FAM-PYQ-0018"
+  ],
+  "how_to_distinguish": "Similarity is about same shape, not same size. 'Similar' is weaker than 'equal'; do not treat similar figures as congruent.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010052",
+  "question_id": "Q-PYQ-010052",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 52,
+  "source_page_number": 15,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": null,
+  "subtopic": null,
+  "question_type": "UNCLASSIFIED",
+  "question_family_id": null,
+  "identification_clues": [],
+  "required_concept_id": null,
+  "standard_method_id": null,
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NOT_SET",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "AMBIGUOUS",
+  "unresolved": true,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010053",
+  "question_id": "Q-PYQ-010053",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 53,
+  "source_page_number": 16,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": null,
+  "subtopic": null,
+  "question_type": "UNCLASSIFIED",
+  "question_family_id": null,
+  "identification_clues": [],
+  "required_concept_id": null,
+  "standard_method_id": null,
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NOT_SET",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "AMBIGUOUS",
+  "unresolved": true,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010054",
+  "question_id": "Q-PYQ-010054",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 54,
+  "source_page_number": 16,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Mensuration",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0018",
+  "identification_clues": [
+   {
+    "clue": "Rectangle/square area and perimeter, polygon area via coordinates, path-generated area.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0013",
+  "standard_method_id": "MET-PYQ-0018",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0017",
+   "FAM-PYQ-0019"
+  ],
+  "how_to_distinguish": "Plane figures are two-dimensional; if no depth is involved, use 2D area/perimeter formulas.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010055",
+  "question_id": "Q-PYQ-010055",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 55,
+  "source_page_number": 16,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": null,
+  "subtopic": null,
+  "question_type": "UNCLASSIFIED",
+  "question_family_id": null,
+  "identification_clues": [],
+  "required_concept_id": null,
+  "standard_method_id": null,
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NOT_SET",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "AMBIGUOUS",
+  "unresolved": true,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010056",
+  "question_id": "Q-PYQ-010056",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 56,
+  "source_page_number": 17,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Mensuration",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0018",
+  "identification_clues": [
+   {
+    "clue": "Rectangle/square area and perimeter, polygon area via coordinates, path-generated area.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0013",
+  "standard_method_id": "MET-PYQ-0018",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0017",
+   "FAM-PYQ-0019"
+  ],
+  "how_to_distinguish": "Plane figures are two-dimensional; if no depth is involved, use 2D area/perimeter formulas.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010057",
+  "question_id": "Q-PYQ-010057",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 57,
+  "source_page_number": 17,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Mensuration",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0017",
+  "identification_clues": [
+   {
+    "clue": "Volume of cuboid/cone/cylinder/sphere and conversion between shapes (melting/coining).",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0013",
+  "standard_method_id": "MET-PYQ-0017",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0018",
+   "FAM-PYQ-0019"
+  ],
+  "how_to_distinguish": "Solids use volume and surface area; plane figures use area and perimeter. If there is a depth/height and three dimensions considered, it is a solid.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010058",
+  "question_id": "Q-PYQ-010058",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 58,
+  "source_page_number": 17,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Number series",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0021",
+  "identification_clues": [
+   {
+    "clue": "Find the next/missing term of a sequence following a definite rule.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0021",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0029",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Number series gives a list and asks for the next/missing term. Figure-based pattern puts one number in a figure derived from the rest. Odd-one-out asks which term does not belong.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010059",
+  "question_id": "Q-PYQ-010059",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 59,
+  "source_page_number": 17,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Arrangement",
+  "question_type": "REASONING",
+  "question_family_id": "FAM-PYQ-0025",
+  "identification_clues": [
+   {
+    "clue": "Order a set of people on a bench from relative left/right clues.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0016",
+  "standard_method_id": "MET-PYQ-0025",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0027"
+  ],
+  "how_to_distinguish": "Seating arrangement orders items on a line or circle; direction sense tracks displacements in a plane. A question that only asks left/right position is seating; one that asks distance/direction from origin is direction.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010060",
+  "question_id": "Q-PYQ-010060",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 60,
+  "source_page_number": 17,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Analogy",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0023",
+  "identification_clues": [
+   {
+    "clue": "A pair relates by a rule; apply the same rule to a new term.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0015",
+  "standard_method_id": "MET-PYQ-0023",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0024"
+  ],
+  "how_to_distinguish": "Analogy gives a complete pair and a new term; find the pair rule. Coding-decoding gives a word and its code, or a rule table, and asks you to decode.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010061",
+  "question_id": "Q-PYQ-010061",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 61,
+  "source_page_number": 17,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Classification",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0022",
+  "identification_clues": [
+   {
+    "clue": "Which number does not share the property the others share.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0022",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0021",
+   "FAM-PYQ-0029"
+  ],
+  "how_to_distinguish": "Odd-one-out asks for the non-member, not for the continuation. Read the verb: 'which does not belong' versus 'find the next term'.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010062",
+  "question_id": "Q-PYQ-010062",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 62,
+  "source_page_number": 17,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Classification",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0022",
+  "identification_clues": [
+   {
+    "clue": "Which number does not share the property the others share.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0022",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0021",
+   "FAM-PYQ-0029"
+  ],
+  "how_to_distinguish": "Odd-one-out asks for the non-member, not for the continuation. Read the verb: 'which does not belong' versus 'find the next term'.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010063",
+  "question_id": "Q-PYQ-010063",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 63,
+  "source_page_number": 17,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Classification",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0022",
+  "identification_clues": [
+   {
+    "clue": "Which number does not share the property the others share.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0022",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0021",
+   "FAM-PYQ-0029"
+  ],
+  "how_to_distinguish": "Odd-one-out asks for the non-member, not for the continuation. Read the verb: 'which does not belong' versus 'find the next term'.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010064",
+  "question_id": "Q-PYQ-010064",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 64,
+  "source_page_number": 17,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Classification",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0022",
+  "identification_clues": [
+   {
+    "clue": "Which number does not share the property the others share.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0022",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0021",
+   "FAM-PYQ-0029"
+  ],
+  "how_to_distinguish": "Odd-one-out asks for the non-member, not for the continuation. Read the verb: 'which does not belong' versus 'find the next term'.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010065",
+  "question_id": "Q-PYQ-010065",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 65,
+  "source_page_number": 17,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Classification",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0022",
+  "identification_clues": [
+   {
+    "clue": "Which number does not share the property the others share.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0022",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0021",
+   "FAM-PYQ-0029"
+  ],
+  "how_to_distinguish": "Odd-one-out asks for the non-member, not for the continuation. Read the verb: 'which does not belong' versus 'find the next term'.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010066",
+  "question_id": "Q-PYQ-010066",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 66,
+  "source_page_number": 17,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Classification",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0022",
+  "identification_clues": [
+   {
+    "clue": "Which number does not share the property the others share.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0022",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0021",
+   "FAM-PYQ-0029"
+  ],
+  "how_to_distinguish": "Odd-one-out asks for the non-member, not for the continuation. Read the verb: 'which does not belong' versus 'find the next term'.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010067",
+  "question_id": "Q-PYQ-010067",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 67,
+  "source_page_number": 18,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Number series",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0021",
+  "identification_clues": [
+   {
+    "clue": "Find the next/missing term of a sequence following a definite rule.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0021",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0029",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Number series gives a list and asks for the next/missing term. Figure-based pattern puts one number in a figure derived from the rest. Odd-one-out asks which term does not belong.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010068",
+  "question_id": "Q-PYQ-010068",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 68,
+  "source_page_number": 18,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Number series",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0021",
+  "identification_clues": [
+   {
+    "clue": "Find the next/missing term of a sequence following a definite rule.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0021",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0029",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Number series gives a list and asks for the next/missing term. Figure-based pattern puts one number in a figure derived from the rest. Odd-one-out asks which term does not belong.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010069",
+  "question_id": "Q-PYQ-010069",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 69,
+  "source_page_number": 18,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Number series",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0021",
+  "identification_clues": [
+   {
+    "clue": "Find the next/missing term of a sequence following a definite rule.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0021",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0029",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Number series gives a list and asks for the next/missing term. Figure-based pattern puts one number in a figure derived from the rest. Odd-one-out asks which term does not belong.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010070",
+  "question_id": "Q-PYQ-010070",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 70,
+  "source_page_number": 18,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Number series",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0021",
+  "identification_clues": [
+   {
+    "clue": "Find the next/missing term of a sequence following a definite rule.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0021",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0029",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Number series gives a list and asks for the next/missing term. Figure-based pattern puts one number in a figure derived from the rest. Odd-one-out asks which term does not belong.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010071",
+  "question_id": "Q-PYQ-010071",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 71,
+  "source_page_number": 18,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Number series",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0021",
+  "identification_clues": [
+   {
+    "clue": "Find the next/missing term of a sequence following a definite rule.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0021",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0029",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Number series gives a list and asks for the next/missing term. Figure-based pattern puts one number in a figure derived from the rest. Odd-one-out asks which term does not belong.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010072",
+  "question_id": "Q-PYQ-010072",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 72,
+  "source_page_number": 18,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Number series",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0021",
+  "identification_clues": [
+   {
+    "clue": "Find the next/missing term of a sequence following a definite rule.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0021",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0029",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Number series gives a list and asks for the next/missing term. Figure-based pattern puts one number in a figure derived from the rest. Odd-one-out asks which term does not belong.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010073",
+  "question_id": "Q-PYQ-010073",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 73,
+  "source_page_number": 18,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Coding-decoding",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0024",
+  "identification_clues": [
+   {
+    "clue": "A word maps to a code by a letter-to-symbol/number rule; decode a new word.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0015",
+  "standard_method_id": "MET-PYQ-0024",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0023"
+  ],
+  "how_to_distinguish": "Coding-decoding presents a mapping (word-to-code or a set of letter substitutions) to apply. Analogy presents a relationship between two terms to extend.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010074",
+  "question_id": "Q-PYQ-010074",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 74,
+  "source_page_number": 19,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Analogy",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0023",
+  "identification_clues": [
+   {
+    "clue": "A pair relates by a rule; apply the same rule to a new term.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0015",
+  "standard_method_id": "MET-PYQ-0023",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0024"
+  ],
+  "how_to_distinguish": "Analogy gives a complete pair and a new term; find the pair rule. Coding-decoding gives a word and its code, or a rule table, and asks you to decode.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010075",
+  "question_id": "Q-PYQ-010075",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 75,
+  "source_page_number": 19,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Analogy",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0023",
+  "identification_clues": [
+   {
+    "clue": "A pair relates by a rule; apply the same rule to a new term.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0015",
+  "standard_method_id": "MET-PYQ-0023",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0024"
+  ],
+  "how_to_distinguish": "Analogy gives a complete pair and a new term; find the pair rule. Coding-decoding gives a word and its code, or a rule table, and asks you to decode.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010076",
+  "question_id": "Q-PYQ-010076",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 76,
+  "source_page_number": 19,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Analogy",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0023",
+  "identification_clues": [
+   {
+    "clue": "A pair relates by a rule; apply the same rule to a new term.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0015",
+  "standard_method_id": "MET-PYQ-0023",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0024"
+  ],
+  "how_to_distinguish": "Analogy gives a complete pair and a new term; find the pair rule. Coding-decoding gives a word and its code, or a rule table, and asks you to decode.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010077",
+  "question_id": "Q-PYQ-010077",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 77,
+  "source_page_number": 19,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Analogy",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0023",
+  "identification_clues": [
+   {
+    "clue": "A pair relates by a rule; apply the same rule to a new term.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0015",
+  "standard_method_id": "MET-PYQ-0023",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0024"
+  ],
+  "how_to_distinguish": "Analogy gives a complete pair and a new term; find the pair rule. Coding-decoding gives a word and its code, or a rule table, and asks you to decode.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010078",
+  "question_id": "Q-PYQ-010078",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 78,
+  "source_page_number": 19,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Coding-decoding",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0024",
+  "identification_clues": [
+   {
+    "clue": "A word maps to a code by a letter-to-symbol/number rule; decode a new word.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0015",
+  "standard_method_id": "MET-PYQ-0024",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0023"
+  ],
+  "how_to_distinguish": "Coding-decoding presents a mapping (word-to-code or a set of letter substitutions) to apply. Analogy presents a relationship between two terms to extend.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010079",
+  "question_id": "Q-PYQ-010079",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 79,
+  "source_page_number": 20,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Coding-decoding",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0024",
+  "identification_clues": [
+   {
+    "clue": "A word maps to a code by a letter-to-symbol/number rule; decode a new word.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0015",
+  "standard_method_id": "MET-PYQ-0024",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0023"
+  ],
+  "how_to_distinguish": "Coding-decoding presents a mapping (word-to-code or a set of letter substitutions) to apply. Analogy presents a relationship between two terms to extend.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010080",
+  "question_id": "Q-PYQ-010080",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 80,
+  "source_page_number": 20,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Coding-decoding",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0024",
+  "identification_clues": [
+   {
+    "clue": "A word maps to a code by a letter-to-symbol/number rule; decode a new word.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0015",
+  "standard_method_id": "MET-PYQ-0024",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0023"
+  ],
+  "how_to_distinguish": "Coding-decoding presents a mapping (word-to-code or a set of letter substitutions) to apply. Analogy presents a relationship between two terms to extend.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010081",
+  "question_id": "Q-PYQ-010081",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 81,
+  "source_page_number": 20,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Coding-decoding",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0024",
+  "identification_clues": [
+   {
+    "clue": "A word maps to a code by a letter-to-symbol/number rule; decode a new word.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0015",
+  "standard_method_id": "MET-PYQ-0024",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0023"
+  ],
+  "how_to_distinguish": "Coding-decoding presents a mapping (word-to-code or a set of letter substitutions) to apply. Analogy presents a relationship between two terms to extend.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010082",
+  "question_id": "Q-PYQ-010082",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 82,
+  "source_page_number": 20,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Coding-decoding",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0024",
+  "identification_clues": [
+   {
+    "clue": "A word maps to a code by a letter-to-symbol/number rule; decode a new word.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0015",
+  "standard_method_id": "MET-PYQ-0024",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0023"
+  ],
+  "how_to_distinguish": "Coding-decoding presents a mapping (word-to-code or a set of letter substitutions) to apply. Analogy presents a relationship between two terms to extend.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010083",
+  "question_id": "Q-PYQ-010083",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 83,
+  "source_page_number": 20,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Time-speed-distance",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0013",
+  "identification_clues": [
+   {
+    "clue": "Distance = speed x time; trains crossing; relative speed; catch-up.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0010",
+  "standard_method_id": "MET-PYQ-0013",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0014"
+  ],
+  "how_to_distinguish": "Boats and streams is a special case of time-speed-distance where one speed is added and the other subtracted to get the current. If the question mentions a river/current, it belongs to the boats family, not plain speed-distance.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010084",
+  "question_id": "Q-PYQ-010084",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 84,
+  "source_page_number": 20,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Mensuration",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0018",
+  "identification_clues": [
+   {
+    "clue": "Rectangle/square area and perimeter, polygon area via coordinates, path-generated area.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0013",
+  "standard_method_id": "MET-PYQ-0018",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0017",
+   "FAM-PYQ-0019"
+  ],
+  "how_to_distinguish": "Plane figures are two-dimensional; if no depth is involved, use 2D area/perimeter formulas.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010085",
+  "question_id": "Q-PYQ-010085",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 85,
+  "source_page_number": 21,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Direction sense",
+  "question_type": "REASONING",
+  "question_family_id": "FAM-PYQ-0027",
+  "identification_clues": [
+   {
+    "clue": "Track a set of displacements and find distance/direction from the start.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0016",
+  "standard_method_id": "MET-PYQ-0027",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0025"
+  ],
+  "how_to_distinguish": "Direction sense resolves moves into components and finds a resultant; seating arrangement places things at relative positions.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010086",
+  "question_id": "Q-PYQ-010086",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 86,
+  "source_page_number": 21,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Direction sense",
+  "question_type": "REASONING",
+  "question_family_id": "FAM-PYQ-0027",
+  "identification_clues": [
+   {
+    "clue": "Track a set of displacements and find distance/direction from the start.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0016",
+  "standard_method_id": "MET-PYQ-0027",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0025"
+  ],
+  "how_to_distinguish": "Direction sense resolves moves into components and finds a resultant; seating arrangement places things at relative positions.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010087",
+  "question_id": "Q-PYQ-010087",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 87,
+  "source_page_number": 21,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Direction sense",
+  "question_type": "REASONING",
+  "question_family_id": "FAM-PYQ-0027",
+  "identification_clues": [
+   {
+    "clue": "Track a set of displacements and find distance/direction from the start.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0016",
+  "standard_method_id": "MET-PYQ-0027",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0025"
+  ],
+  "how_to_distinguish": "Direction sense resolves moves into components and finds a resultant; seating arrangement places things at relative positions.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010088",
+  "question_id": "Q-PYQ-010088",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 88,
+  "source_page_number": 21,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Direction sense",
+  "question_type": "REASONING",
+  "question_family_id": "FAM-PYQ-0027",
+  "identification_clues": [
+   {
+    "clue": "Track a set of displacements and find distance/direction from the start.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0016",
+  "standard_method_id": "MET-PYQ-0027",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0025"
+  ],
+  "how_to_distinguish": "Direction sense resolves moves into components and finds a resultant; seating arrangement places things at relative positions.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010089",
+  "question_id": "Q-PYQ-010089",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 89,
+  "source_page_number": 22,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Number series",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0021",
+  "identification_clues": [
+   {
+    "clue": "Find the next/missing term of a sequence following a definite rule.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0021",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0029",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Number series gives a list and asks for the next/missing term. Figure-based pattern puts one number in a figure derived from the rest. Odd-one-out asks which term does not belong.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010090",
+  "question_id": "Q-PYQ-010090",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 90,
+  "source_page_number": 22,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Number series",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0021",
+  "identification_clues": [
+   {
+    "clue": "Find the next/missing term of a sequence following a definite rule.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0021",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0029",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Number series gives a list and asks for the next/missing term. Figure-based pattern puts one number in a figure derived from the rest. Odd-one-out asks which term does not belong.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010091",
+  "question_id": "Q-PYQ-010091",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 91,
+  "source_page_number": 22,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Set theory",
+  "question_type": "INFERENCE",
+  "question_family_id": "FAM-PYQ-0028",
+  "identification_clues": [
+   {
+    "clue": "Inclusion-exclusion over overlapping language preferences.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0018",
+  "standard_method_id": "MET-PYQ-0028",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010092",
+  "question_id": "Q-PYQ-010092",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 92,
+  "source_page_number": 23,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Set theory",
+  "question_type": "INFERENCE",
+  "question_family_id": "FAM-PYQ-0028",
+  "identification_clues": [
+   {
+    "clue": "Inclusion-exclusion over overlapping language preferences.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0018",
+  "standard_method_id": "MET-PYQ-0028",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010093",
+  "question_id": "Q-PYQ-010093",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 93,
+  "source_page_number": 23,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Set theory",
+  "question_type": "INFERENCE",
+  "question_family_id": "FAM-PYQ-0028",
+  "identification_clues": [
+   {
+    "clue": "Inclusion-exclusion over overlapping language preferences.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0018",
+  "standard_method_id": "MET-PYQ-0028",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010094",
+  "question_id": "Q-PYQ-010094",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 94,
+  "source_page_number": 24,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Figure pattern",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0029",
+  "identification_clues": [
+   {
+    "clue": "A number positioned in a figure is derived from the others by a rule; find the missing one.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0029",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0021",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Figure-based pattern presents the numbers in a diagram with a rule linking them; number series presents them as a list.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010095",
+  "question_id": "Q-PYQ-010095",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 95,
+  "source_page_number": 24,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Figure pattern",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0029",
+  "identification_clues": [
+   {
+    "clue": "A number positioned in a figure is derived from the others by a rule; find the missing one.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0029",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0021",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Figure-based pattern presents the numbers in a diagram with a rule linking them; number series presents them as a list.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010096",
+  "question_id": "Q-PYQ-010096",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 96,
+  "source_page_number": 24,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Mensuration",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0017",
+  "identification_clues": [
+   {
+    "clue": "Volume of cuboid/cone/cylinder/sphere and conversion between shapes (melting/coining).",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0013",
+  "standard_method_id": "MET-PYQ-0017",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0018",
+   "FAM-PYQ-0019"
+  ],
+  "how_to_distinguish": "Solids use volume and surface area; plane figures use area and perimeter. If there is a depth/height and three dimensions considered, it is a solid.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010097",
+  "question_id": "Q-PYQ-010097",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 97,
+  "source_page_number": 24,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Ratio & proportion",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0004",
+  "identification_clues": [
+   {
+    "clue": "Sharing a whole, or relating quantities, by a given ratio; includes ratio-of-cubes scaling.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0002",
+  "standard_method_id": "MET-PYQ-0004",
+  "candidate_fast_method_id": "MET-PYQ-0033",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0006"
+  ],
+  "how_to_distinguish": "A ratio is a multiplicative scale applied to parts of a whole; a percentage is a base times a rate. The question tells you which by whether it names a ratio (parts) or a percentage of a quantity.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010098",
+  "question_id": "Q-PYQ-010098",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 98,
+  "source_page_number": 24,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": null,
+  "subtopic": null,
+  "question_type": "UNCLASSIFIED",
+  "question_family_id": null,
+  "identification_clues": [],
+  "required_concept_id": null,
+  "standard_method_id": null,
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NOT_SET",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [],
+  "how_to_distinguish": null,
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "AMBIGUOUS",
+  "unresolved": true,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010099",
+  "question_id": "Q-PYQ-010099",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 99,
+  "source_page_number": 25,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Figure pattern",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0029",
+  "identification_clues": [
+   {
+    "clue": "A number positioned in a figure is derived from the others by a rule; find the missing one.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0029",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0021",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Figure-based pattern presents the numbers in a diagram with a rule linking them; number series presents them as a list.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-010100",
+  "question_id": "Q-PYQ-010100",
+  "paper_id": "PAPER-PYQ-1601",
+  "source_question_number": 100,
+  "source_page_number": 25,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Test of Reasoning",
+  "subtopic": "Figure pattern",
+  "question_type": "PATTERN",
+  "question_family_id": "FAM-PYQ-0029",
+  "identification_clues": [
+   {
+    "clue": "A number positioned in a figure is derived from the others by a rule; find the missing one.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0014",
+  "standard_method_id": "MET-PYQ-0029",
+  "candidate_fast_method_id": null,
+  "fast_method_state": "NO_FAST_METHOD_FOUND",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0021",
+   "FAM-PYQ-0022"
+  ],
+  "how_to_distinguish": "Figure-based pattern presents the numbers in a diagram with a rule linking them; number series presents them as a list.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1601",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ },
+ {
+  "intelligence_id": "INT-PYQ-020028",
+  "question_id": "Q-PYQ-020028",
+  "paper_id": "PAPER-PYQ-1602",
+  "source_question_number": 28,
+  "source_page_number": 8,
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "topic": "Arithmetic",
+  "subtopic": "Boats & streams",
+  "question_type": "COMPUTATION",
+  "question_family_id": "FAM-PYQ-0014",
+  "identification_clues": [
+   {
+    "clue": "Downstream and upstream speed; still-water speed = average of the two.",
+    "kind": "STRUCTURAL"
+   }
+  ],
+  "required_concept_id": "CON-PYQ-0010",
+  "standard_method_id": "MET-PYQ-0014",
+  "candidate_fast_method_id": "MET-PYQ-0034",
+  "fast_method_state": "UNVERIFIED_FAST_METHOD",
+  "fast_method_verified_id": null,
+  "common_trap_ids": [],
+  "confusing_family_ids": [
+   "FAM-PYQ-0013"
+  ],
+  "how_to_distinguish": "Downstream speed = still + current and upstream = still - current. If there is no current, it is ordinary distance-speed, not boats-and-streams.",
+  "expected_solving_complexity": "MEDIUM",
+  "classification_confidence": "NEAR",
+  "unresolved": false,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_id": "PAPER-PYQ-1602",
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification": {
+   "method": null,
+   "verified_on": null,
+   "verified_by": null
+  }
+ }
+]

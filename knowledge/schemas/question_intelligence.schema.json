@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "question_intelligence.schema.json",
+  "title": "Per-question intelligence record",
+  "description": "One analytical record over a single real previous-year question (SESSION 009 / SPEC-PYQ-002). It is an ANALYSIS of a T2_HISTORICAL_PYQ question, not new evidence: the underlying question stays authoritative, and this record only classifies it and attaches methods, traps and confusions. Every claim carries an analysis_origin so a model-derived claim can never be mistaken for a sourced one. Validated by hand-written checks in tests/pyq/test_pyq_intelligence.py (D-0006).",
+  "type": "object",
+  "required": [
+    "intelligence_id", "question_id", "paper_id", "source_question_number",
+    "source_page_number", "subject", "topic", "subtopic", "question_type",
+    "question_family_id", "identification_clues", "required_concept_id",
+    "standard_method_id", "candidate_fast_method_id", "fast_method_state",
+    "fast_method_verified_id", "common_trap_ids", "confusing_family_ids",
+    "how_to_distinguish", "expected_solving_complexity",
+    "classification_confidence", "unresolved", "analysis_origin",
+    "evidence_tier", "provenance", "verification"
+  ],
+  "properties": {
+    "intelligence_id": {"type": "string", "pattern": "^INT-PYQ-[0-9]{6}$"},
+    "question_id": {"type": "string", "pattern": "^Q-PYQ-[0-9]{6}$", "description": "Must resolve to a real record in pyq/questions/. An intelligence record with no real question is unsourced."},
+    "paper_id": {"type": "string", "pattern": "^PAPER-PYQ-[0-9]{4}$", "description": "Must match the referenced question record's paper_id and resolve to a registered paper."},
+    "source_question_number": {"type": ["integer", "null"], "description": "Position in the printed paper, copied from the question record."},
+    "source_page_number": {"type": ["integer", "null"], "description": "Page copied from the question record."},
+
+    "subject": {"type": "string", "description": "The subject the question sits in, from the question record (e.g. 'Arithmetic & Test of Reasoning / Mental Ability')."},
+    "topic": {"type": ["string", "null"], "description": "Fine-grained topic assigned by this analysis. null only when genuinely unresolved."},
+    "subtopic": {"type": ["string", "null"]},
+    "question_type": {"enum": ["FACTUAL", "APPLICATION", "COMPUTATION", "INFERENCE", "PATTERN", "REASONING", "UNCLASSIFIED"], "description": "The cognitive kind of the question."},
+    "question_family_id": {"type": ["string", "null"], "pattern": "^FAM-PYQ-[0-9]{4}$", "description": "The family this question belongs to. null when unresolved."},
+
+    "identification_clues": {
+      "type": "array",
+      "items": {"type": "object",
+        "required": ["clue", "kind"],
+        "properties": {
+          "clue": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["STRUCTURAL", "KEYWORD"], "description": "STRUCTURAL = a structural property of the question (set form, relationship, arrangement); KEYWORD = a surface word. STRUCTURAL clues are first-class and preferred."}
+        }
+      },
+      "description": "How this question's family is recognised. Structural clues first; a junk keyword list is not identification."
+    },
+
+    "required_concept_id": {"type": ["string", "null"], "pattern": "^CON-PYQ-[0-9]{4}$", "description": "The concept this question tests. null when unresolved."},
+    "standard_method_id": {"type": ["string", "null"], "pattern": "^MET-PYQ-[0-9]{4}$", "description": "The canonical standard method. If present it must exist in the method register and be OBSERVED_STANDARD or MODEL_DERIVED."},
+    "candidate_fast_method_id": {"type": ["string", "null"], "pattern": "^MET-PYQ-[0-9]{4}$", "description": "A candidate fast method, if one was identified. Always present-or-null alongside fast_method_state."},
+    "fast_method_state": {"enum": ["VERIFIED_FAST_METHOD", "UNVERIFIED_FAST_METHOD", "NO_FAST_METHOD_FOUND", "NOT_SET"]},
+    "fast_method_verified_id": {"type": ["string", "null"], "pattern": "^VER-PYQ-[0-9]{4}$", "description": "The verification evidence, required iff fast_method_state == VERIFIED_FAST_METHOD."},
+
+    "common_trap_ids": {"type": "array", "items": {"type": "string", "pattern": "^TRAP-PYQ-[0-9]{4}$"}, "description": "Traps this question family sets. May be empty."},
+    "confusing_family_ids": {"type": "array", "items": {"type": "string", "pattern": "^FAM-PYQ-[0-9]{4}$"}, "description": "Families this is commonly confused with. May be empty."},
+    "how_to_distinguish": {"type": ["string", "null"], "description": "How to tell this from each confusing family."},
+
+    "expected_solving_complexity": {"enum": ["VERY_LOW", "LOW", "MEDIUM", "HIGH", "VERY_HIGH"]},
+    "classification_confidence": {"enum": ["EXACT", "NEAR", "AMBIGUOUS", "UNKNOWN"]},
+    "unresolved": {"type": "boolean", "description": "true only when this analysis could not confidently assign a family. An unresolved record keeps topic/family null rather than guessing."},
+
+    "analysis_origin": {"enum": ["OBSERVED_STANDARD", "MODEL_DERIVED", "EXPERT_SOURCED"], "description": "How the classification was produced. MODEL_DERIVED is this model's analysis of T2 evidence and is not independently verified. EXPERT_SOURCED requires a non-Instagram/YouTube source recorded in provenance."},
+    "evidence_tier": {"const": "T2_HISTORICAL_PYQ", "description": "The underlying question is T2. The analysis is a claim over that evidence, not new evidence."},
+
+    "provenance": {
+      "type": "object",
+      "required": ["source_document_id"],
+      "properties": {
+        "source_document_id": {"type": "string", "description": "The paper id (PAPER-PYQ-XXXX) this question came from."},
+        "expert_source_ref": {"type": ["string", "null"], "description": "Required iff analysis_origin == EXPERT_SOURCED. A source reference that is not Instagram or YouTube."},
+        "generated_at": {"type": ["string", "null"]}
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": ["method", "verified_on", "verified_by"],
+      "properties": {
+        "method": {"enum": ["DETERMINISTIC", "INDEPENDENT_MODEL", "SOURCE_DOCUMENT", "CROSS_SOURCE", null]},
+        "verified_on": {"type": ["string", "null"]},
+        "verified_by": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "invariants": [
+    "question_id must resolve to a real record in pyq/questions/; an intelligence record with no question is unsourced",
+    "paper_id must match the referenced question record's paper_id AND resolve to a registered paper",
+    "fast_method_state == VERIFIED_FAST_METHOD  =>  fast_method_verified_id is non-null and resolves to a verification record whose result is PASS",
+    "fast_method_state in (UNVERIFIED_FAST_METHOD, VERIFIED_FAST_METHOD)  =>  candidate_fast_method_id is non-null; NO_FAST_METHOD_FOUND => it is null",
+    "unresolved == true  =>  question_family_id, topic, required_concept_id and standard_method_id are all null",
+    "analysis_origin == EXPERT_SOURCED  =>  provenance.expert_source_ref is non-null and is not an Instagram or YouTube URL",
+    "analysis_origin == MODEL_DERIVED  =>  the classification is not labelled verified by the model's own confidence (see verification)",
+    "a question-intelligence record never relabels the underlying T2 question as T1_OFFICIAL"
+  ]
+}

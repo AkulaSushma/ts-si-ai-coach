@@ -1,0 +1,954 @@
+[
+ {
+  "method_id": "MET-PYQ-0001",
+  "name": "Divisibility remainder test",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Divide 2000 by 19; the remainder tells how far short, so add (19 - remainder).",
+  "when_usable": "When asked for the least number to add to reach a multiple of a divisor.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0001"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0001"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0002",
+  "name": "Count-then-subtract perfect squares",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Count the integers in the range, then subtract the count of perfect squares inside it.",
+  "when_usable": "Counting integers that are or are not perfect squares in a bounded range.",
+  "when_not_to_use": "Ambiguity over whether the endpoints are included must be resolved before counting.",
+  "family_ids": [
+   "FAM-PYQ-0002"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0001"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0003",
+  "name": "LCM coincidence",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Take the LCM of the intervals; the number of coincident events is the total time divided by the LCM.",
+  "when_usable": "Events repeating at fixed intervals that coincide.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0003"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0001"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0004",
+  "name": "Ratio by scale factor",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Express the quantities as k times the ratio terms, then use the given sum or difference to find k.",
+  "when_usable": "Sharing a whole or relating quantities in a given ratio.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0004"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0002"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0005",
+  "name": "Age equations",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Set up ages now and at the two given times using the ratios, and solve the two equations.",
+  "when_usable": "Ages linked by ratios at two different times.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0005"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0003"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0006",
+  "name": "Percent relation",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Apply the percent relation directly; for successive change multiply the factors (1 + p/100).",
+  "when_usable": "Percent of a quantity or percent-parts of a whole.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0006"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0004"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0007",
+  "name": "Simple interest formula",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Use SI = P*r*t/100 and rearrange for the unknown.",
+  "when_usable": "Any simple-interest question.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0007"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0005"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0008",
+  "name": "Compound interest formula",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Use Amount = P(1 + r/100)^t and subtract P for the interest.",
+  "when_usable": "Any compound-interest question.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0008"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0006"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0009",
+  "name": "CI minus SI by full computation",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Compute both the compound and the simple interest and subtract.",
+  "when_usable": "Finding the gap between CI and SI over the same term.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0009"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0006"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0010",
+  "name": "Profit-loss relations",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Use CP, SP and percentage relations; for discounts multiply successive (1 - d/100) factors.",
+  "when_usable": "Any profit/loss/discount question.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0010"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0007"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0011",
+  "name": "Capital-weighted profit split",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Weight each investment by the time it was in, then split the profit by that ratio.",
+  "when_usable": "Partnership with differing capitals or entry times.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0011"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0008"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0012",
+  "name": "Work rate",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Use rates per day; combined rate is the sum, and time = work / combined rate.",
+  "when_usable": "Work-and-time with one or more workers, including efficiency ratios.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0012"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0009"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0013",
+  "name": "Speed-distance relation",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Use distance = speed x time; for crossing trains use the sum of lengths and relative speed.",
+  "when_usable": "Any time-speed-distance or train-crossing question.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0013"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0010"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0014",
+  "name": "Still-water average",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Still-water speed = (downstream + upstream)/2; current = (downstream - upstream)/2.",
+  "when_usable": "Boats and streams.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0014"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0010"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1602"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0015",
+  "name": "Average by total/count",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Average = total / count; for a target, set the required total and solve for the unknown part.",
+  "when_usable": "Averages, weighted averages, and target rates.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0015"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0011"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0016",
+  "name": "Linear cost model",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Model the fixed part and the variable part as a linear relation, then solve for the unknown.",
+  "when_usable": "A bill with a fixed charge plus a per-unit charge, or repeated halving of a whole.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0016"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0012"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0017",
+  "name": "Solid volume conservation",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Apply the volume formula of each solid and equate volumes when a shape is recast.",
+  "when_usable": "Volume of cuboid, cone, cylinder, sphere; conversion between shapes.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0017"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0013"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0018",
+  "name": "Plane figure formulas",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Use area and perimeter formulas; for a polygon on a grid use the shoelace or split into known shapes.",
+  "when_usable": "Plane-figure area and perimeter, including coordinate-based polygons.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0018"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0013"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0019",
+  "name": "Formula matching",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Recall the standard area/volume formula for each figure and match it, or match a solid to its base shape.",
+  "when_usable": "Matching a figure to its formula or cross-section.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0019"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0013"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0020",
+  "name": "Similarity definition",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Apply the similarity definition: same shape, corresponding sides proportional. Equal is a stronger condition than similar.",
+  "when_usable": "Deciding whether figures are similar or equal.",
+  "when_not_to_use": "Do not treat 'similar' as 'equal'.",
+  "family_ids": [
+   "FAM-PYQ-0020"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0013"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0021",
+  "name": "Sequence rule",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Find the rule relating consecutive terms (differences, ratios, or a mix) and extend it.",
+  "when_usable": "A sequence with a definite rule.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0021"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0014"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0022",
+  "name": "Shared-property classification",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Identify a property all but one number share and pick the exception.",
+  "when_usable": "A set of numbers with one non-member.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0022"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0014"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0023",
+  "name": "Analogy rule",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Find the rule mapping the first pair and apply it to the new term.",
+  "when_usable": "Letter or number analogy.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0023"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0015"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0024",
+  "name": "Substitution rule",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Infer the substitution rule from the given word-code pair, then apply it to the new word.",
+  "when_usable": "Coding-decoding with a consistent rule.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0024"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0015"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0025",
+  "name": "Relative placement",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Place each person relative to the others using left/right clues until the order is fixed.",
+  "when_usable": "Ordering a small set of people on a line.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0025"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0016"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0026",
+  "name": "Clock and century facts",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Use the standard hand-position and gain/loss rate facts, plus the day-of-a-century rule.",
+  "when_usable": "Clock hands, a gaining/losing watch, and century day rules.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0026"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0017"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0027",
+  "name": "Displacement components",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Resolve each displacement into east/north components (or draw a vector path), then combine.",
+  "when_usable": "A sequence of straight moves given by direction and distance.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0027"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0016"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0028",
+  "name": "Inclusion-exclusion",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Use inclusion-exclusion and the given overlaps to count category sizes.",
+  "when_usable": "Overlapping categories (languages, sets).",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0028"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0018"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0029",
+  "name": "Figure number rule",
+  "kind": "STANDARD",
+  "state": "OBSERVED_STANDARD",
+  "description": "Find the relation linking the number to the other numbers in the figure, then solve for the missing one.",
+  "when_usable": "A number placed in a figure derived from the rest.",
+  "when_not_to_use": null,
+  "family_ids": [
+   "FAM-PYQ-0029"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0014"
+  ],
+  "derived_from": "OBSERVED_STANDARD",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "OBSERVED_STANDARD",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0030",
+  "name": "CI-SI 2-year shortcut",
+  "kind": "FAST",
+  "state": "UNVERIFIED_FAST_METHOD",
+  "description": "For 2 years at rate r%, CI - SI = P * (r/100)^2, read off P directly.",
+  "when_usable": "When the gap between CI and SI over exactly two years is given and P is wanted.",
+  "when_not_to_use": "Only valid for two years at the same rate; fails otherwise.",
+  "family_ids": [
+   "FAM-PYQ-0009"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0006"
+  ],
+  "derived_from": "MODEL_ANALYSIS",
+  "time_advantage": "15",
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0031",
+  "name": "Equal-percent net loss shortcut",
+  "kind": "FAST",
+  "state": "UNVERIFIED_FAST_METHOD",
+  "description": "When two items are sold at the same price with equal gain and loss percentages p, the net result is a loss of (p^2)/100 percent.",
+  "when_usable": "Two items sold at the same SP with equal +p and -p.",
+  "when_not_to_use": "Not valid if the gain and loss percentages differ, or if the prices differ.",
+  "family_ids": [
+   "FAM-PYQ-0010"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0007"
+  ],
+  "derived_from": "MODEL_ANALYSIS",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0032",
+  "name": "Successive-discount factor",
+  "kind": "FAST",
+  "state": "UNVERIFIED_FAST_METHOD",
+  "description": "Successive discounts of d1 then d2 give a single factor (1 - d1/100)(1 - d2/100) on the marked price.",
+  "when_usable": "Two (or more) successive discounts on one price.",
+  "when_not_to_use": "Only for successive discounts, not for discounts applied to different bases.",
+  "family_ids": [
+   "FAM-PYQ-0010"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0007"
+  ],
+  "derived_from": "MODEL_ANALYSIS",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0033",
+  "name": "Ratio-cubes shortcut",
+  "kind": "FAST",
+  "state": "UNVERIFIED_FAST_METHOD",
+  "description": "For numbers in ratio a:b:c whose cubes sum to S, k = (S/(a^3+b^3+c^3))^(1/3); the cube of the middle is (k*b)^3.",
+  "when_usable": "Ratio of numbers given along with a power/sum relation.",
+  "when_not_to_use": "Only when the ratio terms and the power relation are both present.",
+  "family_ids": [
+   "FAM-PYQ-0004"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0002"
+  ],
+  "derived_from": "MODEL_ANALYSIS",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "method_id": "MET-PYQ-0034",
+  "name": "Still-water mean shortcut",
+  "kind": "FAST",
+  "state": "UNVERIFIED_FAST_METHOD",
+  "description": "Still-water speed equals the mean of the downstream and upstream speeds; skip the algebra.",
+  "when_usable": "Downstream and upstream speeds both given.",
+  "when_not_to_use": "Cannot find the current speed from the mean alone.",
+  "family_ids": [
+   "FAM-PYQ-0014"
+  ],
+  "concept_ids": [
+   "CON-PYQ-0010"
+  ],
+  "derived_from": "MODEL_ANALYSIS",
+  "time_advantage": null,
+  "verification_id": null,
+  "expert_source_ref": null,
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1602"
+   ],
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ }
+]

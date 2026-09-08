@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "question_family.schema.json",
+  "title": "Question-family record (teaching unit)",
+  "description": "One corpus-evidenced question family — the core teaching unit (SESSION 009 / SPEC-PYQ-002). A family is a set of questions that share a recognition structure, a required concept, and a method. A family may only be created from corpus evidence (at least one real question assigned to it) or marked as an UNOBSERVED curriculum candidate. It is an analysis of T2 evidence, not new evidence, and is never T1_OFFICIAL. Validated by hand-written checks in tests/pyq/test_pyq_intelligence.py (D-0006).",
+  "type": "object",
+  "required": [
+    "family_id", "name", "subject", "topic", "subtopic", "question_type",
+    "recognition_cues", "required_concept_ids", "standard_method_id",
+    "candidate_fast_method_ids", "question_ids", "basis", "common_mistakes",
+    "confusing_family_ids", "how_to_distinguish", "expected_complexity",
+    "confidence", "analysis_origin", "evidence_tier", "provenance",
+    "verification_status"
+  ],
+  "properties": {
+    "family_id": {"type": "string", "pattern": "^FAM-PYQ-[0-9]{4}$"},
+    "name": {"type": "string", "minLength": 3},
+    "subject": {"type": "string"},
+    "topic": {"type": ["string", "null"]},
+    "subtopic": {"type": ["string", "null"]},
+    "question_type": {"enum": ["FACTUAL", "APPLICATION", "COMPUTATION", "INFERENCE", "PATTERN", "REASONING", "UNCLASSIFIED"]},
+
+    "recognition_cues": {
+      "type": "array",
+      "items": {"type": "object",
+        "required": ["clue", "kind"],
+        "properties": {
+          "clue": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["STRUCTURAL", "KEYWORD"]}
+        }
+      },
+      "description": "How a solver recognises this family. STRUCTURAL clues (set form, relationship, arrangement) are first-class; KEYWORD is a surface signal only."
+    },
+
+    "required_concept_ids": {"type": "array", "items": {"type": "string", "pattern": "^CON-PYQ-[0-9]{4}$"}, "description": "At least one, unless the family is unresolved."},
+    "standard_method_id": {"type": ["string", "null"], "pattern": "^MET-PYQ-[0-9]{4}$"},
+    "candidate_fast_method_ids": {"type": "array", "items": {"type": "string", "pattern": "^MET-PYQ-[0-9]{4}$"}, "description": "Candidate fast methods. Each must be recorded as UNVERIFIED_FAST_METHOD unless a verification record proves it VERIFIED_FAST_METHOD."},
+
+    "question_ids": {"type": "array", "items": {"type": "string", "pattern": "^Q-PYQ-[0-9]{6}$"}, "description": "Every real question assigned to this family. Must be non-empty when basis is OBSERVED_FROM_CORPUS."},
+    "basis": {"enum": ["OBSERVED_FROM_CORPUS", "UNOBSERVED_CURRICULUM_CANDIDATE"], "description": "OBSERVED_FROM_CORPUS means at least one real question is a member. UNOBSERVED_CURRICULUM_CANDIDATE is a candidate node not yet evidenced in the corpus — it must be labelled and never presented as observed."},
+
+    "common_mistakes": {"type": "array", "items": {"type": "string"}},
+    "confusing_family_ids": {"type": "array", "items": {"type": "string", "pattern": "^FAM-PYQ-[0-9]{4}$"}},
+    "how_to_distinguish": {"type": ["string", "null"]},
+    "expected_complexity": {"enum": ["VERY_LOW", "LOW", "MEDIUM", "HIGH", "VERY_HIGH"]},
+
+    "confidence": {"enum": ["EXACT", "NEAR", "AMBIGUOUS", "UNKNOWN"]},
+    "analysis_origin": {"enum": ["OBSERVED_STANDARD", "MODEL_DERIVED", "EXPERT_SOURCED"]},
+    "evidence_tier": {"const": "T2_HISTORICAL_PYQ"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_document_ids"],
+      "properties": {
+        "source_document_ids": {"type": "array", "items": {"type": "string"}, "description": "Paper IDs whose questions evidence this family."},
+        "expert_source_ref": {"type": ["string", "null"], "description": "Required iff analysis_origin == EXPERT_SOURCED; not Instagram or YouTube."},
+        "generated_at": {"type": ["string", "null"]}
+      }
+    },
+    "verification_status": {"enum": ["VERIFIED", "UNVERIFIED", "DISPUTED", "REJECTED"]}
+  },
+  "invariants": [
+    "question_ids non-empty  =>  every listed id resolves to a real pyq/question record; an OBSERVED family with no member is not observed",
+    "basis == UNOBSERVED_CURRICULUM_CANDIDATE  =>  question_ids must be empty (a candidate has no members yet)",
+    "analysis_origin == EXPERT_SOURCED  =>  provenance.expert_source_ref is non-null and is not an Instagram or YouTube URL",
+    "a family is never T1_OFFICIAL; a pattern across questions is evidence of behaviour, not policy",
+    "candidate_fast_method_ids references a method whose state is UNVERIFIED_FAST_METHOD or VERIFIED_FAST_METHOD"
+  ]
+}

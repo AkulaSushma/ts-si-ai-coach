@@ -1,0 +1,456 @@
+[
+ {
+  "concept_id": "CON-PYQ-0001",
+  "name": "Number system and divisibility",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Divisibility, remainders, LCM/HCF, and counting integers with a property.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0001",
+   "FAM-PYQ-0002",
+   "FAM-PYQ-0003"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0001",
+   "MET-PYQ-0002",
+   "MET-PYQ-0003"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0002",
+  "name": "Ratio and proportion",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Quantities related by a fixed multiplier; scaling a ratio to a whole or to a known sum.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0004"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0004"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0003",
+  "name": "Ages",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Relating ages now, in the past, and in the future.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0005"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0005"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0004",
+  "name": "Percentage",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Percent of a quantity, successive percentage change, and percentage-part relations.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0006"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0006"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0005",
+  "name": "Simple interest",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "SI = P*r*t/100; principal, rate, time, and amount relationships.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0007"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0007"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0006",
+  "name": "Compound interest",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Amount = P(1+r/100)^t; growth over time and the gap versus simple interest.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0008",
+   "FAM-PYQ-0009"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0008",
+   "MET-PYQ-0009"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0007",
+  "name": "Profit and loss",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Cost price, selling price, gain/loss percentage, discounts, and net change on sale.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0010"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0010"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0008",
+  "name": "Partnership",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Splitting profit in the ratio of investment weighted by time.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0011"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0011"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0009",
+  "name": "Work and time",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Rates of work, efficiency, combined work, and wage share by work done.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0012"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0012"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0010",
+  "name": "Time, speed and distance",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Distance = speed x time; relative speed; boats and streams.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0013",
+   "FAM-PYQ-0014"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0013",
+   "MET-PYQ-0014"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0011",
+  "name": "Average and rate",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Total divided by count; weighted averages and target rates.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0015"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0015"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0012",
+  "name": "Linear quantities",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "A fixed part plus a variable part (a bill) or repeated scaling of a whole.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0016"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0016"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0013",
+  "name": "Mensuration",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Area, perimeter, volume, and surface relations of plane and solid figures.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0017",
+   "FAM-PYQ-0018",
+   "FAM-PYQ-0019",
+   "FAM-PYQ-0020"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0017",
+   "MET-PYQ-0018",
+   "MET-PYQ-0019",
+   "MET-PYQ-0020"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0014",
+  "name": "Sequence and classification",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Detecting a rule in a sequence or a property shared by a set.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0021",
+   "FAM-PYQ-0022",
+   "FAM-PYQ-0029"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0021",
+   "MET-PYQ-0022",
+   "MET-PYQ-0029"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0015",
+  "name": "Analogy and coding",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "A relation mapping one term to another, applied to a new term.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0023",
+   "FAM-PYQ-0024"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0023",
+   "MET-PYQ-0024"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0016",
+  "name": "Arrangement and direction",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Ordering people by relative position, or locating a point from displacements.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0025",
+   "FAM-PYQ-0027"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0025",
+   "MET-PYQ-0027"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0017",
+  "name": "Clock and calendar",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Hand positions on a clock, a gaining/losing watch, and day-of-the-century rules.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0026"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0026"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ },
+ {
+  "concept_id": "CON-PYQ-0018",
+  "name": "Set theory and Venn",
+  "subject": "Arithmetic & Test of Reasoning / Mental Ability",
+  "description": "Inclusion-exclusion over overlapping categories.",
+  "parent_concept_id": null,
+  "family_ids": [
+   "FAM-PYQ-0028"
+  ],
+  "standard_method_ids": [
+   "MET-PYQ-0028"
+  ],
+  "analysis_origin": "MODEL_DERIVED",
+  "evidence_tier": "T2_HISTORICAL_PYQ",
+  "provenance": {
+   "source_document_ids": [
+    "PAPER-PYQ-1601",
+    "PAPER-PYQ-1602"
+   ],
+   "expert_source_ref": null,
+   "generated_at": "2026-09-07"
+  },
+  "verification_status": "UNVERIFIED"
+ }
+]
