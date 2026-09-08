@@ -81,6 +81,8 @@ pnpm-debug.log*
 *.tgz
 *.iso
 # If a single PDF or image is very large, add it here by name.
+!SI & Constable Concepts Videos & photos/**
+!SI & Constable Concepts Videos & photos
 
 # --- Editor / machine-specific ---
 .claude/settings.local.json
