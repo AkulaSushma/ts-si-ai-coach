@@ -58,7 +58,7 @@ Neither command needs anything installed beyond Python itself.
 ## What is in each folder
 
 | Folder             | In plain language                                                  |
-| ------------------ | ------------------------------------------------------------------ |
+| ------------------ | ---------------------------------------------------------- |
 | `docs/`            | Guides and reports written for you to read                          |
 | `specs/`           | Plans written before anything is built                              |
 | `source_material/` | Original files exactly as they were found. Never edited             |
@@ -145,5 +145,3 @@ were checked and how. The project rules require an answer.
 This is a private study tool for one candidate. It does not give medical, dietary, legal,
 or recruitment advice, and it is not affiliated with TGPRB. Always confirm official
 examination details against the official notification.
-
-
