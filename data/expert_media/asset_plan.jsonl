@@ -1,0 +1,63 @@
+{"collection": "SI & Constable Concepts Videos & photos", "collection_id": "SI-Constable-media-ce938a9", "coverage_statement": "Inventory is complete for identity and size only. Content, attribution and teaching claims are unobserved.", "observed_from": "repository directory listing / local checkout bytes", "record": "header", "schema": "expert-media-asset-plan", "schema_version": 1, "totals": {"assets": 62, "bytes": 539873070, "images": 25, "unsupported": 0, "videos": 37}, "treatment_by_media_class": {"IMAGE": {"evidence_location": "image_region", "stages": ["identity", "probe", "ocr", "span_extraction", "candidate_proposal"]}, "UNSUPPORTED": {"evidence_location": null, "stages": ["identity"]}, "VIDEO": {"evidence_location": "video_interval", "stages": ["identity", "probe", "frame_sampling", "asr", "ocr_on_frames", "span_extraction", "candidate_proposal"]}}, "unobserved_defaults": {"attribution_status": "UNKNOWN_NOT_OBSERVED", "ocr_status": "ABSENT", "processing_state": "NOT_STARTED", "published_at": null, "publisher": null, "pyq_relationships_status": "NOT_EVALUATED", "sha256": null, "source_url": null, "transcript_status": "ABSENT"}}
+{"bytes": 4834180, "file_name": "60+ PYQs Using 9 Tricks _ General Studies_HD.mp4", "git_blob_sha1": "4a8d8cfdcf4b8f9010992b545fb2e4bdb42187e1", "media_class": "VIDEO"}
+{"bytes": 2347758, "file_name": "Dynasties & Founders (Tricks).mp4", "git_blob_sha1": "5766d6575b6a54ab477d188558223f319b72f8dd", "media_class": "VIDEO"}
+{"bytes": 266527, "file_name": "IMG_20260906_192918.jpg", "git_blob_sha1": "c14d211c80f3b32fc7e67b327823ebda86979988", "media_class": "IMAGE"}
+{"bytes": 4224894, "file_name": "INDIAN POLITY BEGINNER ఎలా ప్రిపేర్ అవ్వాలి_.mp4", "git_blob_sha1": "52752ddd5d5701a95a9fae55c13ac636465721c1", "media_class": "VIDEO"}
+{"bytes": 13027364, "file_name": "Original audio_HD.mp4", "git_blob_sha1": "89af0b03bb3e22bb68ce323e9327b7d3c0d21094", "media_class": "VIDEO"}
+{"bytes": 2892701, "file_name": "Polity -- (Very Imp Topic)- Constituent Assembly Committees.mp4", "git_blob_sha1": "feea5d35ece91cdbaa4d3c7295619b279b3b3546", "media_class": "VIDEO"}
+{"bytes": 429467, "file_name": "Screenshot_2026-09-01-19-51-34-89_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "b4b9a67b88cb54a1d6e744f83b5013de81af02da", "media_class": "IMAGE"}
+{"bytes": 423178, "file_name": "Screenshot_2026-09-01-19-51-42-53_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "b1705377c83a99ace5c92f63a57eb626e11c4835", "media_class": "IMAGE"}
+{"bytes": 324098, "file_name": "Screenshot_2026-09-01-19-57-10-82_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "5b4835709335954246a0bf603da4b7eb4b3c394b", "media_class": "IMAGE"}
+{"bytes": 1068494, "file_name": "Screenshot_2026-09-01-21-39-03-08_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "117a60209c01aceaa417203b5031ea9401d0e6f1", "media_class": "IMAGE"}
+{"bytes": 645264, "file_name": "Screenshot_2026-09-01-21-50-10-98_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "f90106e5896e58df62c36d9fd6ca70712e2fefc4", "media_class": "IMAGE"}
+{"bytes": 554319, "file_name": "Screenshot_2026-09-01-21-50-25-21_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "5d695542e27438bbb69b80626100cc732a4aff87", "media_class": "IMAGE"}
+{"bytes": 759993, "file_name": "Screenshot_2026-09-05-18-36-33-46_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "2877b28e4dcf9244a75bb1d1feab7dbaf7f47952", "media_class": "IMAGE"}
+{"bytes": 995209, "file_name": "Screenshot_2026-09-05-18-36-37-63_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "e1394d554f49b0e59f97dada8c3e2b2c324b26cc", "media_class": "IMAGE"}
+{"bytes": 1046929, "file_name": "Screenshot_2026-09-05-18-36-41-53_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "bec0cdbc0d2ed700b1fbc21a8be6ea1a3c069f54", "media_class": "IMAGE"}
+{"bytes": 902486, "file_name": "Screenshot_2026-09-05-18-36-45-73_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "8d6bd0ac7bcf3b5272877dfdde89367bfdedb5ce", "media_class": "IMAGE"}
+{"bytes": 1116277, "file_name": "Screenshot_2026-09-05-20-30-30-52_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "b40632b92775eddce1f0a594cd4ce0fabeb5cd75", "media_class": "IMAGE"}
+{"bytes": 656073, "file_name": "Screenshot_2026-09-06-14-15-34-01_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "a923e9f298a96ed71ba5cbcf7b8cebfa580d5b9b", "media_class": "IMAGE"}
+{"bytes": 992683, "file_name": "Screenshot_2026-09-06-15-44-02-77_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "a8a62dcf33eb16e32783848ea236d8c293178644", "media_class": "IMAGE"}
+{"bytes": 1136399, "file_name": "Screenshot_2026-09-06-16-22-24-99_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "612cddc200f0bd9c72c7056b9c6707a1972b4139", "media_class": "IMAGE"}
+{"bytes": 1126404, "file_name": "Screenshot_2026-09-06-16-22-35-65_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "ef231ffa5e1d5e85ec3df03fc7e34676a0cf9abd", "media_class": "IMAGE"}
+{"bytes": 1188980, "file_name": "Screenshot_2026-09-06-16-22-40-68_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "ab648abd9ccdac445ae2f9ac38ffd878cf6b6c10", "media_class": "IMAGE"}
+{"bytes": 982390, "file_name": "Screenshot_2026-09-06-17-30-12-26_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "acffe4908e24862453bbea43b804738f2eff1d20", "media_class": "IMAGE"}
+{"bytes": 870564, "file_name": "Screenshot_2026-09-06-17-37-11-61_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "fa8cf459fc6f553f084784a336b630b6667fe1cf", "media_class": "IMAGE"}
+{"bytes": 1110803, "file_name": "Screenshot_2026-09-06-17-43-15-32_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "5412cb5e61621c97071aaff084923d75ff53320a", "media_class": "IMAGE"}
+{"bytes": 1124119, "file_name": "Screenshot_2026-09-06-17-45-04-94_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "7cd890ecff49e69bef6d5ad42ad8491be131ca3d", "media_class": "IMAGE"}
+{"bytes": 1057166, "file_name": "Screenshot_2026-09-06-17-49-17-83_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "68786d51a32f1eb9e0d0abb9cb49a53fa3c33a4f", "media_class": "IMAGE"}
+{"bytes": 431429, "file_name": "Screenshot_2026-09-06-17-50-48-44_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "08182281fc54374ebf4184dc943f811a39ee6bfb", "media_class": "IMAGE"}
+{"bytes": 651908, "file_name": "Screenshot_2026-09-06-17-54-53-48_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "994b95de81ab777922508bfe904fef336c599254", "media_class": "IMAGE"}
+{"bytes": 761264, "file_name": "Screenshot_2026-09-06-18-51-28-22_1c337646f29875672b5a61192b9010f9.jpg", "git_blob_sha1": "1b7b4b86652571231c2c87f2367830bca2425424", "media_class": "IMAGE"}
+{"bytes": 5516960, "file_name": "Successive Percentage Trick Explained!.mp4", "git_blob_sha1": "d7728e9f0f403daad23bd709c7423b4ddfd93a9f", "media_class": "VIDEO"}
+{"bytes": 15582342, "file_name": "VID_20260901_072910_397.mp4", "git_blob_sha1": "23861b6c984a1891fa715259eb31ca7e36e6b9ec", "media_class": "VIDEO"}
+{"bytes": 13226565, "file_name": "VID_20260902_050000_698.mp4", "git_blob_sha1": "11fcf2b886d7efe9ee5b0ada827669af818faaaa", "media_class": "VIDEO"}
+{"bytes": 2809789, "file_name": "VID_20260902_071738_096.mp4", "git_blob_sha1": "9e2f27a329513a08a0e689a2c7bf0520b79c5155", "media_class": "VIDEO"}
+{"bytes": 3423497, "file_name": "VID_20260902_084706_356.mp4", "git_blob_sha1": "8d90a77799b9105c860511a05f54a2490386fa20", "media_class": "VIDEO"}
+{"bytes": 10869504, "file_name": "VID_20260904_085741_527.mp4", "git_blob_sha1": "2407fbbc965de0724cd6096f3a45512e23d4c46a", "media_class": "VIDEO"}
+{"bytes": 20388187, "file_name": "VID_20260904_092823_630.mp4", "git_blob_sha1": "b7b2a4ad698d7948cc55771420e15517aed360ad", "media_class": "VIDEO"}
+{"bytes": 63865028, "file_name": "VID_20260904_203155.mp4", "git_blob_sha1": "e8d24394ae0fe1fdfa1623b00d5508a9ded446a8", "media_class": "VIDEO"}
+{"bytes": 6555832, "file_name": "VID_20260905_054244_619.mp4", "git_blob_sha1": "bcf58d083cf6fec196de291d8df2fcd54585c6e9", "media_class": "VIDEO"}
+{"bytes": 15623805, "file_name": "VID_20260905_055355_776.mp4", "git_blob_sha1": "0178cdda23371a450bbc1280288baa9a2df8efd2", "media_class": "VIDEO"}
+{"bytes": 45630296, "file_name": "VID_20260905_060523_303.mp4", "git_blob_sha1": "3e2325a48e91fd26d9fa7dd66f79bdd8a3124d65", "media_class": "VIDEO"}
+{"bytes": 5931603, "file_name": "VID_20260905_060741_265.mp4", "git_blob_sha1": "d5864d318cc7dd42e6221d49a0a4bd0835375f57", "media_class": "VIDEO"}
+{"bytes": 23309005, "file_name": "VID_20260905_060938_773.mp4", "git_blob_sha1": "175c01781aac7124d45113216e30569b253c3008", "media_class": "VIDEO"}
+{"bytes": 5603797, "file_name": "VID_20260905_061018_493.mp4", "git_blob_sha1": "8d0121d3074bbd2f2054eebe284029cf26ea444e", "media_class": "VIDEO"}
+{"bytes": 5641059, "file_name": "VID_20260905_061521_694.mp4", "git_blob_sha1": "853ba2948be0f2ef2f0313fba2bc32df86510057", "media_class": "VIDEO"}
+{"bytes": 7366960, "file_name": "VID_20260905_075631_959.mp4", "git_blob_sha1": "809dfdc9a7419e38429cb974f5a766d140928c9d", "media_class": "VIDEO"}
+{"bytes": 29807779, "file_name": "VID_20260906_011349_769.mp4", "git_blob_sha1": "303a9a105834b23d498f4a101792e1772250e648", "media_class": "VIDEO"}
+{"bytes": 23824300, "file_name": "VID_20260906_013720_377.mp4", "git_blob_sha1": "f82d9eb55a85dc69446687e39c9a586172536ce7", "media_class": "VIDEO"}
+{"bytes": 7365774, "file_name": "VID_20260906_013805_555.mp4", "git_blob_sha1": "929e0631bef5480d9dd0e785f6564862791381a4", "media_class": "VIDEO"}
+{"bytes": 41847399, "file_name": "VID_20260906_050431_402.mp4", "git_blob_sha1": "85c98d5d790f848d6f8f5428428efd5c5456388e", "media_class": "VIDEO"}
+{"bytes": 10270087, "file_name": "VID_20260906_051011_136.mp4", "git_blob_sha1": "3f49b0a885466e0940606ce3a5838ceab7787c8d", "media_class": "VIDEO"}
+{"bytes": 6718031, "file_name": "VID_20260906_052039_697.mp4", "git_blob_sha1": "425b95e86415d04c3a12d542cb946ac0636b83fb", "media_class": "VIDEO"}
+{"bytes": 12924588, "file_name": "VID_20260906_060026_168.mp4", "git_blob_sha1": "831c0df2cfbd000e694922088cb84db7a7f4d7aa", "media_class": "VIDEO"}
+{"bytes": 8791143, "file_name": "VID_20260906_060434_637.mp4", "git_blob_sha1": "a9a87be251b8f6a17df80eebc10ea68b63793a92", "media_class": "VIDEO"}
+{"bytes": 18703845, "file_name": "VID_20260906_060852_701.mp4", "git_blob_sha1": "8911d4279f10e7e5a3f78bba0075f93ab3ea00db", "media_class": "VIDEO"}
+{"bytes": 9761305, "file_name": "VID_20260906_061046_527.mp4", "git_blob_sha1": "a1fefa7764fb5000a032d092d0eba2551b9016bd", "media_class": "VIDEO"}
+{"bytes": 20932574, "file_name": "VID_20260906_061215_071.mp4", "git_blob_sha1": "4dd2281a7b457e85de16e8f210d7d67cbcf1b087", "media_class": "VIDEO"}
+{"bytes": 4939486, "file_name": "VID_20260906_061556_225.mp4", "git_blob_sha1": "24a9f14b1beae76e0c43a21feed00cc2fbaf7b92", "media_class": "VIDEO"}
+{"bytes": 9619380, "file_name": "VID_20260906_061743_303.mp4", "git_blob_sha1": "14be80943cca1f715b067c1a36c6fe123353be25", "media_class": "VIDEO"}
+{"bytes": 8957234, "file_name": "VID_20260906_062715_152.mp4", "git_blob_sha1": "fd3ba9ae865e9d3e1479519f957da0271e3edf09", "media_class": "VIDEO"}
+{"bytes": 7821486, "file_name": "తెలంగాణ పదం - ఆవిర్భావం.mp4", "git_blob_sha1": "ba60ac964e1928677249a6831f540da4ba4feea7", "media_class": "VIDEO"}
+{"bytes": 18295110, "file_name": "️ 16 Mahajanapadas Made Easy! _ Simple Memory Tricks.mp4", "git_blob_sha1": "9981703cd6a099d326a6f4a6e501779c4e4b9b76", "media_class": "VIDEO"}
